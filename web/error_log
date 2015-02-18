@@ -1,0 +1,807 @@
+[04-Dec-2014 13:00:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:00:40 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:40 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:00:43 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:43 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:00:44 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:44 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:00:48 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:00:48 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:01:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:01:00 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:01:00 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:01:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:01:19 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:01:19 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:02:43 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:43 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:02:45 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:45 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:02:56 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:02:56 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 7
+[04-Dec-2014 13:03:33 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:03:33 UTC] PHP Fatal error:  Call to undefined function display_errors() in /home/k0455101/public_html/bdobpjs/web/index.php on line 3
+[04-Dec-2014 13:03:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:03:35 UTC] PHP Fatal error:  Call to undefined function display_errors() in /home/k0455101/public_html/bdobpjs/web/index.php on line 3
+[04-Dec-2014 13:04:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:04:28 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/web/index.php on line 8
+[04-Dec-2014 13:04:28 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/web/../vendor/autoload.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/web/index.php on line 8
+[04-Dec-2014 13:05:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:05:38 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:05:38 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:05:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:05:39 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:05:39 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:05:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:05:40 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:05:40 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/vendor/ezyang/htmlpurifier/library/HTMLPurifier.composer.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/vendor/composer/autoload_real.php on line 54
+[04-Dec-2014 13:06:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:06:25 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/swift_required.php on line 20
+[04-Dec-2014 13:06:25 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/swift_required.php on line 20
+[04-Dec-2014 13:06:26 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:06:26 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/swift_required.php on line 20
+[04-Dec-2014 13:06:26 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/classes/Swift.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/vendor/swiftmailer/swiftmailer/lib/swift_required.php on line 20
+[04-Dec-2014 13:16:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:16:39 UTC] PHP Warning:  array_map(): An error occurred while invoking the map callback in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/log/FileTarget.php on line 99
+[04-Dec-2014 13:21:03 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:21:03 UTC] PHP Warning:  array_map(): An error occurred while invoking the map callback in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/log/FileTarget.php on line 99
+[04-Dec-2014 13:23:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:29:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:29:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:29:25 UTC] PHP Parse error:  syntax error, unexpected '@', expecting identifier (T_STRING) or \\ (T_NS_SEPARATOR) or '{' in /home/k0455101/public_html/bdobpjs/controllers/SiteController.php on line 2
+[04-Dec-2014 13:29:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:30:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:30:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:31:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:32:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:34:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:36:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:36:01 UTC] PHP Fatal error:  Class 'backend\assets\AppAsset' not found in /home/k0455101/public_html/bdobpjs/views/layouts/main.php on line 9
+[04-Dec-2014 13:37:30 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:37:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:38:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:38:10 UTC] PHP Fatal error:  Class 'assets\AppAsset' not found in /home/k0455101/public_html/bdobpjs/views/layouts/main.php on line 9
+[04-Dec-2014 13:38:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:38:14 UTC] PHP Fatal error:  Class 'assets\AppAsset' not found in /home/k0455101/public_html/bdobpjs/views/layouts/main.php on line 9
+[04-Dec-2014 13:38:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:39:30 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:39:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:40:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:40:42 UTC] PHP Warning:  require(/home/k0455101/public_html/bdobpjs/config/module.php): failed to open stream: No such file or directory in /home/k0455101/public_html/bdobpjs/config/params.php on line 8
+[04-Dec-2014 13:40:42 UTC] PHP Fatal error:  require(): Failed opening required '/home/k0455101/public_html/bdobpjs/config/module.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/k0455101/public_html/bdobpjs/config/params.php on line 8
+[04-Dec-2014 13:41:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:42:23 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:42:26 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:42:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:43:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:47:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:48:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:48:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:48:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:23 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:23 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_REFERER' => 'http://bpjs.bdoindonesia.com/',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '40111',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/web/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBoQ2cLShQAABzEecoAAABl',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701443.573398113250732421875,
+    'REQUEST_TIME' => 1417701443,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:57:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:53 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_REFERER' => 'http://bpjs.bdoindonesia.com/',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '27544',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/web/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBoYWcLShQAACelwdIAAABL',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701473.8073899745941162109375,
+    'REQUEST_TIME' => 1417701473,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:57:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:55 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_REFERER' => 'http://bpjs.bdoindonesia.com/',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '20357',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/web/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBoY2cLShQAACWwsQsAAAAU',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701475.42485904693603515625,
+    'REQUEST_TIME' => 1417701475,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:57:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:57:58 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_REFERER' => 'http://bpjs.bdoindonesia.com/',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '48285',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/web/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBoZmcLShQAACWwsQwAAAAU',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701478.5839970111846923828125,
+    'REQUEST_TIME' => 1417701478,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:58:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:06 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_TZ' => 'Asia/Jakarta',
+    'REDIRECT_UNIQUE_ID' => 'VIBobmcLShQAACnjzlwAAAAv',
+    'REDIRECT_URL' => '/index.php',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '48319',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBobmcLShQAACnjzlwAAAAv',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701486.8149359226226806640625,
+    'REQUEST_TIME' => 1417701486,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:58:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:10 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REDIRECT_TZ' => 'Asia/Jakarta',
+    'REDIRECT_UNIQUE_ID' => 'VIBocmcLShQAACtj1ywAAABQ',
+    'REDIRECT_URL' => '/index.php',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '20831',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBocmcLShQAACtj1ywAAABQ',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701490.6162869930267333984375,
+    'REQUEST_TIME' => 1417701490,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:58:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:19 UTC] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: site/error' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('error', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/ErrorHandler.php(79): yii\base\Module->runAction('site/error')
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/ErrorHandler.php(95): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#4 {main}
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Controller.php:122
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#1 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('bpjs', Array)
+#2 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: bpjs/' in /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/web/Application.php:95
+Stack trace:
+#0 /home/k0455101/public_html/bdobpjs/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/k0455101/public_html/bdobpjs/web/index.php(13): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/home/k0455101/public_html/bdobpjs',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_COOKIE' => 'PHPSESSID=b91b7320d516e0471f40b699a90b1188; _csrf=fb6a9d18eb46f9c28933721cf4ca9471ed47746eefffde9e7e182c80fca276d2s%3A32%3A%22_4qUrXL_eRsHMz2ZiXT7J9vraHK3nQow%22%3B',
+    'HTTP_HOST' => 'bpjs.bdoindonesia.com',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:33.0) Gecko/20100101 Firefox/33.0',
+    'PATH' => '/bin:/usr/bin',
+    'QUERY_STRING' => 'r=bpjs',
+    'REDIRECT_STATUS' => '200',
+    'REMOTE_ADDR' => '202.62.17.2',
+    'REMOTE_PORT' => '21141',
+    'REQUEST_METHOD' => 'GET',
+    'REQUEST_URI' => '/web/index.php?r=bpjs',
+    'SCRIPT_FILENAME' => '/home/k0455101/public_html/bdobpjs/web/index.php',
+    'SCRIPT_NAME' => '/web/index.php',
+    'SERVER_ADDR' => '103.11.74.250',
+    'SERVER_ADMIN' => 'webmaster@bpjs.bdoindonesia.com',
+    'SERVER_NAME' => 'bpjs.bdoindonesia.com',
+    'SERVER_PORT' => '80',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'TZ' => 'Asia/Jakarta',
+    'UNIQUE_ID' => 'VIBoe2cLShQAACti1sEAAABN',
+    'PHP_SELF' => '/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1417701499.0962350368499755859375,
+    'REQUEST_TIME' => 1417701499,
+    'argv' => [
+        'r=bpjs',
+    ],
+    'argc' => 1,
+]
+[04-Dec-2014 13:58:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:58:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:59:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:59:11 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[04-Dec-2014 13:59:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:20:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:20:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:21:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:21:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:21:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:23:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:25:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:25:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:49 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:26:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:27:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:27:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:30:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:30:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:30:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:30:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:30:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:36:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:36:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:36:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:36:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:38:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:39:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:40:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:44:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:45:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:47:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:55:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 07:57:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 08:18:33 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 08:26:21 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 14:54:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 14:54:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 14:54:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 14:54:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:09:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:11:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:14:47 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:15:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:23:10 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:23:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:27:22 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:29:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:30:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:36:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:42:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:43:27 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:44:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:44:38 UTC] PHP Fatal error:  Cannot use object of type yii\web\Response as array in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/base/Controller.php on line 218
+[24-Dec-2014 15:44:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:45:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:47:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:48:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:49:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:49:17 UTC] PHP Notice:  Undefined index: args in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/views/errorHandler/exception.php on line 370
+[24-Dec-2014 15:49:17 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 348
+[24-Dec-2014 15:49:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 350
+[24-Dec-2014 15:49:17 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 389
+[24-Dec-2014 15:49:50 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:49:50 UTC] PHP Notice:  Undefined index: args in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/views/errorHandler/exception.php on line 370
+[24-Dec-2014 15:49:50 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 348
+[24-Dec-2014 15:49:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 350
+[24-Dec-2014 15:49:50 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 389
+[24-Dec-2014 15:50:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:50:00 UTC] PHP Notice:  Undefined index: args in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/views/errorHandler/exception.php on line 370
+[24-Dec-2014 15:50:00 UTC] PHP Warning:  array_values() expects parameter 1 to be array, null given in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 348
+[24-Dec-2014 15:50:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 350
+[24-Dec-2014 15:50:00 UTC] PHP Warning:  implode(): Invalid arguments passed in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/web/ErrorHandler.php on line 389
+[24-Dec-2014 15:50:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:50:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:54:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:59:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 15:59:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:00:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:06:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:06:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:08:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:09:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:10:49 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:17:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:19:31 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:20:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[24-Dec-2014 16:23:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:16:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:16:43 UTC] PHP Fatal error:  Cannot use object of type yii\web\Response as array in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/base/Controller.php on line 218
+[28-Dec-2014 03:16:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:16:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:16:52 UTC] PHP Fatal error:  Cannot use object of type yii\web\Response as array in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/base/Controller.php on line 218
+[28-Dec-2014 03:16:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:17:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:17:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:17:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:17:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:17:15 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:24:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:24:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:24:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:27:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:30:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:31:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:34:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:38:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:42:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:44:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 03:47:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:03:49 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:09:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:12:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:18:41 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:21:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:52:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:53:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:55:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:56:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:57:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 12:58:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 13:07:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 13:07:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 13:09:42 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 13:11:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 13:13:28 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:53:26 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:53:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:53:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:53:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:54:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:55:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:23 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:26 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:30 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:56:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:57:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:57:03 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:57:47 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:57:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:58:54 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:59:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:59:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 14:59:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:00:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:00:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:01:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:02:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:02:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:03:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:03:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:04:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:04:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:04:18 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:12:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:12:49 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:12:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:12:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:14:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:22:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:22:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:22:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:22:16 UTC] PHP Fatal error:  Class 'Url' not found in /home/k0455101/public_html/bdotiket/mail/ticket-open.php on line 129
+[28-Dec-2014 15:22:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:23:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:23:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:23:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:26:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:26:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:26:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:26:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:27:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:31:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:31:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:16 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/k0455101/public_html/bdotiket/controllers/TicketController.php on line 92
+[28-Dec-2014 15:46:53 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:46:53 UTC] PHP Parse error:  syntax error, unexpected ',' in /home/k0455101/public_html/bdotiket/controllers/TicketController.php on line 91
+[28-Dec-2014 15:47:47 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:47:47 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:47:51 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:47:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:53:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:53:03 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:53:11 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:54:12 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:54:22 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:55:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:55:21 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:55:22 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:57:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:57:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:58:23 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:58:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:58:27 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:58:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:59:43 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 15:59:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:00:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:00:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:00:07 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:00:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:00:19 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:02:47 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:03:03 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:03:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:03:08 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:04:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:04:25 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:04:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:05:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:05:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:05:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:06:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:06:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:24:30 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:26:46 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:26:55 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:27:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:27:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:30:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:30:48 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:31:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:35:52 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:37:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:38:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:41:01 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:42:18 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:43:04 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:24 UTC] PHP Fatal error:  Cannot use object of type yii\web\Response as array in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/base/Controller.php on line 218
+[28-Dec-2014 16:44:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:38 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:44:40 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:45:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:49:00 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:49:00 UTC] PHP Fatal error:  Call to undefined method yii\helpers\Url::baseUrl() in /home/k0455101/public_html/bdotiket/views/ticket/ticket_open.php on line 99
+[28-Dec-2014 16:50:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:50:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:50:44 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:50:57 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:51:45 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:52:17 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:53:26 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:53:37 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:54:02 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:54:59 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:55:06 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:55:09 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:56:58 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:57:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 16:59:21 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 17:00:13 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 17:02:36 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 17:06:34 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[28-Dec-2014 17:06:35 UTC] PHP Fatal error:  Cannot use object of type yii\web\Response as array in /home/k0455101/public_html/bdotiket/vendor/yiisoft/yii2/base/Controller.php on line 218
+[28-Dec-2014 17:06:35 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:21:56 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:14 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:16 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:24 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:29 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:32 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:22:39 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:24:05 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0
+[29-Dec-2014 02:24:20 UTC] PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so' - /usr/local/lib/php/extensions/no-debug-non-zts-20100525/suhosin.so: cannot open shared object file: No such file or directory in Unknown on line 0

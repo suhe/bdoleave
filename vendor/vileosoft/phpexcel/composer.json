@@ -1,0 +1,31 @@
+{
+    "name": "vileosoft/phpexcel",
+    "description": "Fixture generator. The Faker integration for the Yii framework.",
+    "keywords": ["yii2", "phpexcel", "fixture"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "support": {
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "authors": [
+        {
+            "name": "Suhendar",
+            "email": "hendarsyahss@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "phpexcel": "*"
+    },
+    "autoload": {
+        "psr-4": { "yii\\phpexcel\\": "" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
