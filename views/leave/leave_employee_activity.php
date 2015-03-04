@@ -79,11 +79,18 @@ $this->params['addUrl'] = ['leave/add_management'];
 				'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 				'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 			    ],
+			    'leave_description' => [
+				'attribute' => 'leave_description',
+				'footer' => Yii::t('app','necessary'),
+				'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+				'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+				'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    ],
 			    'leave_total' => [
 				'attribute' => 'leave_total',
 				'footer' => Yii::t('app','total'),
 			    ],
-			    'leave_description' => [
+			    'leave_status' => [
 				'attribute' => 'leave_status',
 				'value' => function($data) { return \app\models\Leaves::getStringStatus($data->leave_status); },
 				'footer' => Yii::t('app','status'),

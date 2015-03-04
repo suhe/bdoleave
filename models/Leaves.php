@@ -74,7 +74,7 @@ class Leaves extends \yii\db\ActiveRecord {
             1 => 'Cuti Bersama' ,
             2 => 'Cuti Tahunan' ,
             3 => 'Cuti Tambahan',
-			4 => 'Cuti Khusus',
+            4 => 'Cuti Khusus',
         ];
         return $data;
     }

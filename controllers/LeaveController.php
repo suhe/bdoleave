@@ -470,5 +470,26 @@ class LeaveController extends \yii\web\Controller {
         return $this->redirect(['leave/management'],301);
     }
     
+    public function actionDelete($id){
+        if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
+        
+        $model = new \app\models\Leaves();
+        $query = $model->findOne($id);
+        if(!$query){
+            Yii::$app->session->setFlash('msg','<div class="notice bg-success marker-on-left">'.Yii::t('app/message','leave can not delete').'</div>');
+            return $this->redirect(['leave/management'],301);
+        }
+        
+        if($query->leave_status==1){
+            $total = $query->leave_total;
+            $update = \app\models\Employee::updateAllCounters(['EmployeeLeaveUse' => -$total],['employee_id'=>$query->employee_id]);
+        }
+        
+        $model->deleteAll('leave_id = :id', [':id' => $id]);
+        Yii::$app->session->setFlash('msg','<div class="notice bg-success marker-on-left">'.Yii::t('app/message','leave has been successfuly deleted').'</div>');
+        return $this->redirect(['leave/management'],301);
+        
+    }
+    
     
 }

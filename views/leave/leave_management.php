@@ -10,13 +10,14 @@ $this->params['breadcrumbs'] = [
 ];
 $this->params['addUrl'] = ['leavet/add_management'];
 ?>
+<?=Yii::$app->session->getFlash('msg')?>
 <div class="row">
     <div class="col-lg-12">						
 	<!-- START YOUR CONTENT HERE -->
 	<div class="portlet"><!-- /Portlet -->
 	    <div class="portlet-heading dark">
 		<div class="portlet-title">
-		    <h4 class="text-danger"><?=Yii::$app->session->getFlash('msg')?></h4>
+		    <h4 class="text-danger"></h4>
 		</div>
 		<div class="portlet-widgets">
 		    <a data-toggle="collapse" data-parent="#accordion" href="#basic"><i class="fa fa-chevron-down"></i></a>
@@ -60,48 +61,55 @@ $this->params['addUrl'] = ['leavet/add_management'];
 				'ticket_id' => [
 				    'attribute' => 'leave_id',
 				    'footer' => Yii::t('app','id'),
-				    'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+				    'headerOptions' => ['class'=>'hidden-xs hidden-sm','style'=>'width:5%'],
 				    'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 				    'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 				],
 				'leave_date' => [
 				    'attribute' => 'leave_date',
+				    'headerOptions' => ['style'=>'width:12%'],
 				    'footer' => Yii::t('app','date of filing'),
 				],	
 				'employee_id' => [
 				    'attribute' => 'employeeid',
+				    'headerOptions' => ['style'=>'width:8%'],
 				    'footer' => Yii::t('app','nik'),
 				],
 				'employeefirstname' => [
 				    'attribute' => 'employeefirstname',
+				    'headerOptions' => ['style'=>'width:15%'],
 				    'footer' => Yii::t('app','name'),
 				],
-				'ticket_range' => [
+				'leave_range' => [
 				    'attribute' => 'leave_range',
 				    'footer' => Yii::t('app','range'),
-				    'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+				    'headerOptions' => ['class'=>'hidden-xs hidden-sm','style'=>'width:25%'],
 				    'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 				    'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 				],
 				'leave_total' => [
 				    'attribute' => 'leave_total',
+				    'headerOptions' => ['style'=>'width:5%'],
 				    'contentOptions'=> ['class'=>'text-center'],
 				    'footer' => Yii::t('app','total'),
 				],
-				'leave_description' => [
+				'leave_status' => [
 				    'attribute' => 'leave_status',
+				    'headerOptions' => ['style'=>'width:5%'],
 				    'value' => function($data) { return \app\models\Leaves::getStringStatus($data->leave_status); },
 				    'footer' => Yii::t('app','status'),
 				],
 				'leave_approved' => [
 				    'attribute' => 'leave_approved',
+				    'headerOptions' => ['style'=>'width:5%'],
 				    'value' => function($data) { return \app\models\Leaves::getStringApproved($data->leave_approved); },
 				    'footer' => Yii::t('app','approved'),
 				],
 				
 				['class'=>'yii\grid\ActionColumn',
 				 'controller'=>'leave',
-				 'template'=>'{detail}{exportform}',
+				 'headerOptions' => ['style'=>'width:10%'],
+				 'template'=>'{detail}{exportform}{delete}',
 				 'buttons' => [
 				    'detail' => function ($url,$data) {
 					return Html::a('<i class="fa fa-eye icon-only"></i>',$url,['class' => 'btn btn-inverse btn-xs',
@@ -109,6 +117,10 @@ $this->params['addUrl'] = ['leavet/add_management'];
 				    },
 				    'exportform' => function ($url,$data) {
 					return Html::a('<i class="fa fa-file-pdf-o icon-only"></i>',$url,['class' => 'btn btn-inverse btn-xs',
+					]);
+				    },
+				    'delete' => function ($url,$data) {
+					return Html::a('<i class="fa fa-trash icon-only"></i>',$url,['class' => 'btn btn-delete btn-inverse btn-xs',
 					]);
 				    },
 				    
