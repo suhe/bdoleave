@@ -583,10 +583,10 @@ class Leaves extends \yii\db\ActiveRecord {
             $query->andWhere(['l.leave_request' => 2]);
         
         if(Yii::$app->user->identity->project_title=='03')
-            $query->andWhere(['l.leave_request' => 4]);
+            $query->orWhere(['l.leave_request' => 4,'l.leave_request' => 5]);
         
         if(Yii::$app->user->identity->project_title=='041')
-            $query->andWhere(['l.leave_request' => 5]);
+            $query->orWhere(['l.leave_request' => 4,'l.leave_request' => 5]);
      
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
