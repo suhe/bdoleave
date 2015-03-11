@@ -145,4 +145,5 @@ return[
   'approved' => 'Approved',
   'minus' => 'Minus',
   'plus' => 'Plus',
+  'approval list' => 'Approval List',
 ];

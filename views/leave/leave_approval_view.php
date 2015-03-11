@@ -3,10 +3,9 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 $this->params['breadcrumbs'] = [
     ['label' => Yii::t('app','leave management'),'url' => ['leave/management']],
-    ['label' => Yii::t('app','leave approval'),'url' => ['leave/hrdapproval']],
-    ['label' => Yii::t('app','leave approval form'),'url' => ['leave/hrdapprovalform','id'=>$model->leave_id]],
+    ['label' => Yii::t('app','leave approval'),'url' => ['leave/approval']]
 ];
-$this->params['addUrl'] = ['leave/add_management'];
+$this->params['addUrl'] = ['leave/form'];
 use yii\widgets\DetailView;
 ?>
 <div class="row">
@@ -39,7 +38,7 @@ use yii\widgets\DetailView;
 			    'employee_name',
 			    [
 				'attribute'=>'leave_date_from',
-				'value' => \app\components\Common::dateToString($model->leave_date_from) .' to '. \app\components\Common::dateToString($model->leave_date_to)
+				'value' => $model->leave_date_from .' to '. $model->leave_date_to
 			    ],
 			    [
 				'attribute'=>'leave_total',
@@ -74,37 +73,10 @@ use yii\widgets\DetailView;
 			    ],
 			    
 			] );?>
-		    
-		    <!--<div class="form-group pull-right">
-                        <div class="col-md-offset-1 col-md-11">
-                            <?=Html::a(Yii::t('app','back'),['leave/management'], ['class' => 'btn btn-primary'])?>
-                        </div>
-                    </div>-->
+                        <?=Html::a(Yii::t('app','back'),['leave/approvallist'], ['class' => 'btn btn-primary pull-right'])?>
+                        
                     <div class="clearfix"></div>
-		    
-		    
-			    <?php $form = ActiveForm::begin([
-			    'id' => 'menu-add-form',
-			    'method' => 'post',
-			    'options' => ['class' => 'form-horizontal'],
-			    'fieldConfig' => [
-				'template' => "{label}\n<div class=\"col-sm-10 search\">{input} {error}</div>\n",
-				'labelOptions' => ['class' => 'col-sm-2 control-label'],
-			    ],
-			    ]);?>
-			    <?=$form->field($model,'leave_approval')->dropDownList(\app\models\Leaves::getDropDownHRApproval(),['class'=>'col-lg-5',])?>
-			    <?=$form->field($model,'leave_note')->textInput();?>
-			    
-			    
-			    
-			    <div class="form-group pull-right" style="margin-top:20px ">
-				<div class="col-md-offset-1 col-md-11">
-				    <?=Html::submitButton(Yii::t('app','approval'), ['class' => 'btn btn-primary','name' => 'save-button'])?>
-				    <?php // Html::a('<i class="fa fa-file-pdf-o icon-only"></i> '.Yii::t('app','print'),['leave/exportform','id'=>$model->leave_id], ['class' => 'btn btn-primary'])?>
-				</div>
-			    </div>
-			    <div class="clearfix"></div>
-			    <?php ActiveForm::end() ?>
+		       
 		</div>    
 	    </div>
 	</div><!--/Portlet -->

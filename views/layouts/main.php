@@ -221,6 +221,11 @@ if(!Yii::$app->user->isGuest){
 							      'url'  => 'leave/mybalance',
 							      'icon' => 'fa fa-list'
 							    ],
+							    [
+							      'label'=>Yii::t('app','approval list'),
+							      'url'  => 'leave/approvallist',
+							      'icon' => 'fa fa-list'
+							    ],
 								
 							  ]
 							],

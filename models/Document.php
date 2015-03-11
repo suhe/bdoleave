@@ -266,6 +266,11 @@ class Document extends \yii\base\Model{
         $pdf->SetFont('Helvetica','BI',8,'','false');
         $pdf->Cell(180,10,"Komentar :",0,0,'L',false,'',0,10,'T','M');
         
+        $x=$x;$y=$y;
+        $pdf->setXY($x+115,$y);
+        $pdf->SetFont('Helvetica','BI',8,'','false');
+        $pdf->Cell(180,10,"PIC / FMH / DIR *)",0,0,'L',false,'',0,10,'T','M');
+        
         $x=$x;$y=$y+5;
         $pdf->setXY($x,$y);
         $pdf->Cell(180,10,"Jika ada pertimbangan/informasi lainnya dari permohonan cuti diatas,harap memberikan catatan dibawah ini",0,0,'L',false,'',0,10,'T','M');

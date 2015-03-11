@@ -109,6 +109,17 @@ class LeaveController extends \yii\web\Controller {
         ]); 
     }
     
+    public function actionApprovallist(){
+        $model = new \app\models\Leaves(['scenario' => 'search']);
+        if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
+            //process here
+        }
+        return $this->render('leave_approval_list',[
+            'model' => $model,
+            'dataProvider' => $model->getLeaveApprovalList(Yii::$app->request->queryParams)
+        ]); 
+    }
+    
     public function actionApprovalform($id){
         //if(\app\models\Employee::isHR())
            // return $this->redirect(['leave/hrdapprovalform','id'=>$id],301);
@@ -151,6 +162,17 @@ class LeaveController extends \yii\web\Controller {
         ]); 
     }
     
+    
+    public function actionApprovalview($id){
+        $model = new \app\models\Leaves(['scenario'=>'approval']);
+        $query = $model->getLeaveSingleData($id);
+
+        return $this->render('leave_approval_view',[
+            'model' => $query,
+            'dataViewProvider' => \app\models\LeaveLog::getLeaveLogData($id)
+        ]); 
+    }
+    
     public function actionHrdapproval(){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
             
@@ -166,9 +188,13 @@ class LeaveController extends \yii\web\Controller {
     
     public function actionHrdapprovalform($id){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
-        
         $model = new \app\models\Leaves(['scenario'=>'approval']);
         $query = $model->getLeaveSingleData($id);
+        
+        if($query->leave_request==2){
+            return $this->redirect(['leave/partnerapprovalform','id'=>$id]);
+        }
+        
         if($model->load(Yii::$app->request->post()) && $model->getHRApprovalRequest($id)){
             $query = $model->getLeaveSingleData($id);
             $users=[];
@@ -193,12 +219,32 @@ class LeaveController extends \yii\web\Controller {
                 ->setSubject($subject);
             }
             Yii::$app->mailer->sendMultiple($mail);
+            
             /** End of Mail */
             
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg hrd approval has been finish'));
             return $this->redirect(['leave/hrdapproval'],301);
         }    
         return $this->render('leave_hrdapproval_form',[
+            'model' => $query,
+            'dataViewProvider' => \app\models\LeaveLog::getLeaveLogData($id)
+        ]); 
+    }
+    
+    public function actionPartnerapprovalform($id){
+        if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
+        $model = new \app\models\Leaves(['scenario'=>'approval']);
+        $query = $model->getLeaveSingleData($id);
+        
+        if($query->leave_request!=2){
+            return $this->redirect(['leave/hrdapproval','id'=>$id]);
+        }
+        
+        if($model->load(Yii::$app->request->post()) && $model->getPartnerApprovalRequest($id)){
+            Yii::$app->session->setFlash('msg',Yii::t('app/message','msg hrd approval has been finish'));
+            return $this->redirect(['leave/hrdapproval'],301);
+        }    
+        return $this->render('leave_partnerapproval_form',[
             'model' => $query,
             'dataViewProvider' => \app\models\LeaveLog::getLeaveLogData($id)
         ]); 

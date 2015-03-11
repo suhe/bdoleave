@@ -3,8 +3,8 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 $this->params['breadcrumbs'] = [
     ['label' => Yii::t('app','leave management'),'url' => ['leave/management']],
-    ['label' => Yii::t('app','leave approval'),'url' => ['leave/hrdapproval']],
-    ['label' => Yii::t('app','leave approval form'),'url' => ['leave/hrdapprovalform','id'=>$model->leave_id]],
+    ['label' => Yii::t('app','leave partner approval'),'url' => ['leave/hrdapproval']],
+    ['label' => Yii::t('app','leave partner approval form'),'url' => ['leave/partnerapprovalform','id'=>$model->leave_id]],
 ];
 $this->params['addUrl'] = ['leave/add_management'];
 use yii\widgets\DetailView;
@@ -92,15 +92,13 @@ use yii\widgets\DetailView;
 				'labelOptions' => ['class' => 'col-sm-2 control-label'],
 			    ],
 			    ]);?>
-			    <?=$form->field($model,'leave_approval')->dropDownList(\app\models\Leaves::getDropDownHRApproval(),['class'=>'col-lg-5',])?>
+			    <?=$form->field($model,'leave_approval')->dropDownList(\app\models\Leaves::getDropDownApproval(),['class'=>'col-lg-5',])?>
 			    <?=$form->field($model,'leave_note')->textInput();?>
-			    
-			    
 			    
 			    <div class="form-group pull-right" style="margin-top:20px ">
 				<div class="col-md-offset-1 col-md-11">
 				    <?=Html::submitButton(Yii::t('app','approval'), ['class' => 'btn btn-primary','name' => 'save-button'])?>
-				    <?php // Html::a('<i class="fa fa-file-pdf-o icon-only"></i> '.Yii::t('app','print'),['leave/exportform','id'=>$model->leave_id], ['class' => 'btn btn-primary'])?>
+				    <?=Html::a('<i class="fa fa-file-pdf-o icon-only"></i> '.Yii::t('app','print'),['leave/exportform','id'=>$model->leave_id], ['class' => 'btn btn-primary'])?>
 				</div>
 			    </div>
 			    <div class="clearfix"></div>
