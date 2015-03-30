@@ -273,10 +273,10 @@ class Leaves extends \yii\db\ActiveRecord {
             
             $model = new Leaves();
             $model->employee_id = $employee_id;
-			if($this->leave_approved)
-				$model->leave_approved = $this->leave_approved; //process 
-			else
-				$model->leave_approved = 3;
+	    if($this->leave_approved)
+		$model->leave_approved = $this->leave_approved; //process 
+	    else
+	    $model->leave_approved = 3;
             $model->leave_type = $this->leave_type;
             $model->leave_status = $this->status;
             $model->leave_date = date('Y-m-d');
