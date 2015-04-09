@@ -9,6 +9,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     public $leave_balance_type;
     public $balance;
     
+    
     public static function tableName(){
         return 'leave_balance';
     }

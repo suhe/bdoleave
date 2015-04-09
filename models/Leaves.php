@@ -20,8 +20,7 @@ class Leaves extends \yii\db\ActiveRecord {
     public $user2_name;
     public $hrd_name;
     public $pic_name;
-    public $balance;
-   
+    public $balance; 
     
     public static function tableName(){
         return 'leaves';
@@ -221,12 +220,18 @@ class Leaves extends \yii\db\ActiveRecord {
     }
     
     public function getSaveMyRequest(){
+        /** Leave Approval Status & name For Request **/
+        $request = Yii::$app->user->identity->EmployeeLeaveSenior; 
+        if(!$request) $request = Yii::$app->user->identity->EmployeeLeaveManager;
+        if(!$request) $request = Yii::$app->user->identity->EmployeeLeaveHRD;
+        /** End of Leave Approval Status & name For Request **/
         $this->status = 5;
         $save = $this->getSaveData(Yii::$app->user->getId(),TRUE);
         if($save){
+            $queryApp = \app\models\Employee::findOne($request);
             $data = $this->getLeaveSingleDataByEmployee(Yii::$app->user->getId());
             $status = \app\models\LeaveLog::getSaveData($data->leave_id,'Request by','Request By '.Yii::$app->user->identity->EmployeeFirstName);
-            $request = \app\models\LeaveLog::getSaveData($data->leave_id,'Request to',$this->getStringRequest($data->leave_request));
+            $request = \app\models\LeaveLog::getSaveData($data->leave_id,'Request to',$this->getStringRequest($data->leave_request)." ".$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
             return true;
         }
         return false;
@@ -365,11 +370,11 @@ class Leaves extends \yii\db\ActiveRecord {
         if($this->validate()){
             //find
             $query = Leaves::findOne($id);
-            //update init
+            //update initial
             $model = new Leaves();
             $model = $model->findOne($query->leave_id);
             //check if request to senior
-            if($query->leave_request==5){
+            if($query->leave_request == 5) {
                 $model->leave_app_user1_status = $this->leave_approval;
                 $model->leave_app_user1_note = $this->leave_note;
                 $model->leave_app_user1_date = date('Y-m-d H:i:s');
@@ -378,14 +383,15 @@ class Leaves extends \yii\db\ActiveRecord {
                 else
                     $approval = 4;                
                 $model->leave_status = $approval;
-                $model->leave_request = ($query->leave_request-1);
+                $model->leave_request = ($query->leave_request - 1);
                 $model->update();
                 //update for status
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1)));
+                $queryApp = \app\models\Employee::findOne($model->leave_app_user2);
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeID.' - '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1))." ".$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
                 return true;
             }
-            elseif($query->leave_request==4){
+            elseif($query->leave_request == 4){
                 $model->leave_app_user2_status = $this->leave_approval;
                 $model->leave_app_user2_note = $this->leave_note;
                 $model->leave_app_user2_date = date('Y-m-d H:i:s');
@@ -397,11 +403,12 @@ class Leaves extends \yii\db\ActiveRecord {
                 $model->leave_request = ($query->leave_request-1);
                 $model->update();
                 //update for status
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1)));
+                $queryApp = \app\models\Employee::findOne($model->leave_app_hrd);
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeID.' - '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1))." ".$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
                 return true;
             }
-            elseif($query->leave_request==2){
+            elseif($query->leave_request == 2){
                 $model->leave_app_pic_status = $this->leave_approval;
                 $model->leave_app_pic_note = $this->leave_note;
                 $model->leave_app_pic_date = date('Y-m-d H:i:s');
@@ -413,11 +420,12 @@ class Leaves extends \yii\db\ActiveRecord {
                 $model->leave_request = ($query->leave_request-1);
                 $model->update();
                 //update for status
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1)));
+                $queryApp = \app\models\Employee::findOne($model->leave_app_hrd);
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeID.' - '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1))." ".$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
                 return true;
             }
-            else{
+            else {
                 $model->leave_app_pic_status = $this->leave_approval;
                 $model->leave_app_pic_note = $this->leave_note;
                 $model->leave_app_pic_date = date('Y-m-d H:i:s');
@@ -428,12 +436,12 @@ class Leaves extends \yii\db\ActiveRecord {
                 $model->leave_status = $approval;
                 $model->update();
                 //update for status
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1)));
+                $queryApp = \app\models\Employee::findOne($model->leave_app_hrd);
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeID.' - '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(($query->leave_request-1))." ".$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
                 return true;
             }
-            
-        
+    
         }
         return false;
     }
@@ -458,7 +466,7 @@ class Leaves extends \yii\db\ActiveRecord {
             }
             $model->update();
             
-            $status = \app\models\LeaveLog::getSaveData($id,$this->getStringStatus($this->leave_approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
+            $status = \app\models\LeaveLog::getSaveData($id,$this->getStringStatus($this->leave_approval).' : '.Yii::$app->user->identity->EmployeeID.' - '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
             return true;    
             
         }
@@ -504,24 +512,21 @@ class Leaves extends \yii\db\ActiveRecord {
             //update for status
             if(($this->leave_approval==1) || ($this->leave_approval==3) ){
                 //check approval partner & hrd
+                $queryApp = \app\models\Employee::findOne($model->leave_app_pic);
                 if($this->leave_approval==1) $approval = 3; // 3 approve by hrd
                 if($this->leave_approval==3) $approval = 13; // 13 not approved by hrd
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                
-                //approval / reject by partner
-                //if($this->leave_approval==1) $approval = 2;
-                //if($this->leave_approval==3) $approval = 12;
-                //$this->status = 1; // status 
-                //$status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(2).' '.$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
             }
             
             if(($this->leave_approval==4) || ($this->leave_approval==5) ){
-                //check approval status 
+                //check approval status
+                $queryApp = \app\models\Employee::findOne($model->leave_app_pic);
                 if($this->leave_approval==4) $approval = 3;
                 if($this->leave_approval==5) $approval = 13;
                 
-                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note);
-                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(2));
+                $status = \app\models\LeaveLog::getSaveData($query->leave_id,$this->getStringStatus($approval).' : '.Yii::$app->user->identity->EmployeeFirstName,$this->leave_note?$this->leave_note:Yii::t('app','no comment'));
+                $request = \app\models\LeaveLog::getSaveData($query->leave_id,'Request to',$this->getStringRequest(2).' '.$queryApp->EmployeeID.' - '.$queryApp->EmployeeFirstName);
             }
             return true;
         }
@@ -562,13 +567,7 @@ class Leaves extends \yii\db\ActiveRecord {
                   'leave_total','leave_status','leave_request'])
         ->from('leaves')
         ->where(['employee_id' => Yii::$app->user->getId()]);
-        /*->select(['leaves.leave_id','DATE_FORMAT(leaves.leave_date,\'%d/%m/%Y\') as leave_date','employee.employeeid',
-                  'employee.employeefirstname','leaves.leave_range',
-                  'DATE_FORMAT(leaves.leave_date_from,\'%d/%m/%Y\') as leave_date_from',
-                  'leaves.leave_description','leaves.leave_request',
-                  'DATE_FORMAT(leaves.leave_date_to,\'%d/%m/%Y\') as leave_date_to','leaves.leave_total','leaves.leave_status'])
-        ->join('left join','employee','employee.employee_id = leaves.employee_id')
-        */
+        
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
             'pagination' =>[
@@ -581,8 +580,8 @@ class Leaves extends \yii\db\ActiveRecord {
         }
         
         if($this->leave_status) $query->andWhere(['leave_status'=>$this->leave_status]);
-        if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
-        if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
+        if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
+        if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
         
         return $dataProvider;
     }
@@ -593,21 +592,23 @@ class Leaves extends \yii\db\ActiveRecord {
                   'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description',
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status'])
         ->from('leaves l')
-        ->join('left join','employee e','e.employee_id = l.employee_id')
+        ->join('inner join','employee e','e.employee_id = l.employee_id');
+        
+        /*
         ->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_user2' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_hrd' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);
+        */
         
-        if(Yii::$app->user->identity->project_title=='01')
-            $query->andWhere(['l.leave_request' => 2]);
+        if(\app\models\Employee::isAuditorPartner())
+            $query->andWhere('l.leave_app_pic= '.Yii::$app->user->getId().' AND l.leave_request = 2');
         
-        if(Yii::$app->user->identity->project_title=='03')
-            $query->andWhere('l.leave_request = 4 OR l.leave_request= 5');
+        if(\app\models\Employee::isAuditorManager())
+            $query->andWhere('(l.leave_app_user1= '.Yii::$app->user->getId().' OR l.leave_app_user2= '.Yii::$app->user->getId().') AND l.leave_request = 4');
         
-        if(Yii::$app->user->identity->project_title=='041')
-            $query->andWhere('l.leave_request = 4 OR l.leave_request= 5');
-     
+        if(\app\models\Employee::isAuditorSenior())
+            $query->andWhere('l.leave_app_user1= '.Yii::$app->user->getId().' AND l.leave_request = 5');
+        
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
             'pagination' =>[
@@ -633,11 +634,21 @@ class Leaves extends \yii\db\ActiveRecord {
                   'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description',
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status'])
         ->from('leaves l')
-        ->join('left join','employee e','e.employee_id = l.employee_id')
-        ->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
+        ->join('left join','employee e','e.employee_id = l.employee_id');
+        
+        /*->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_user2' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_hrd' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);
+        ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);*/
+        
+        if(\app\models\Employee::isAuditorPartner())
+            $query->andWhere('l.leave_app_pic= '.Yii::$app->user->getId());
+        
+        if(\app\models\Employee::isAuditorManager())
+            $query->andWhere('(l.leave_app_user1= '.Yii::$app->user->getId().' OR l.leave_app_user2= '.Yii::$app->user->getId().')');
+        
+        if(\app\models\Employee::isAuditorSenior())
+            $query->andWhere('l.leave_app_user1= '.Yii::$app->user->getId());
         
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
@@ -664,29 +675,27 @@ class Leaves extends \yii\db\ActiveRecord {
                   'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description',
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status','leave_created_date'])
         ->from('leaves l')
-        ->join('left join','employee e','e.employee_id = l.employee_id')
+        ->join('inner join','employee e','e.employee_id = l.employee_id')
         ->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_user2' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_hrd' => Yii::$app->user->getId()])
         ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);
         
         //approval partner
-        if((Yii::$app->user->identity->project_title=='01') && (!\app\models\Employee::isHR()) )
+        if(\app\models\Employee::isAuditorPartner())
             $query->andWhere(['l.leave_request' => 2]);
         
         //approval hrd manager/hrd staff
-        if(\app\models\Employee::isHR())
+        if(\app\models\Employee::isHRD())
             $query->andWhere(['l.leave_request' => 3]);    
         
         //approval manager
-        if((Yii::$app->user->identity->project_title=='03') && (!\app\models\Employee::isHR()) )
+        if(\app\models\Employee::isAuditorManager())
             $query->andWhere(['l.leave_request' => 4]);
         
         //approval staff
-        if((Yii::$app->user->identity->project_title=='041') && (!\app\models\Employee::isHR()) )
+        if(\app\models\Employee::isAuditorSenior())
             $query->andWhere(['l.leave_request' => 5]);
-            
-        
             
         return $query->all();   
      

@@ -113,6 +113,53 @@
 </tr>
 
 <?php
+if($data->leave_request == 4){
+	$position = Yii::t('app','senior');
+	$name = Yii::$app->user->identity->EmployeeFirstName;
+	$leave_status = ($data->leave_app_user1_status==1?'Approved':'Reject');
+	$leave_note   =  $data->leave_app_user1_note;
+	$leave_date   =  $data->leave_app_user1_date;
+	$link = Yii::t('app','link approval');
+}
+
+elseif(($data->leave_request == 3) && ($data->leave_app_user2)){
+	$position = Yii::t('app','manager');
+	$name = Yii::$app->user->identity->EmployeeFirstName;
+	$leave_status = ($data->leave_app_user2_status==1?'Approved':'Reject');
+	$leave_note   =  $data->leave_app_user2_note;
+	$leave_date   =  $data->leave_app_user2_date;
+	$link = Yii::t('app','link approval');
+}
+
+elseif(($data->leave_request == 3) && (!$data->leave_app_user2) ){
+	$position = Yii::t('app','manager');
+	$name = Yii::$app->user->identity->EmployeeFirstName;
+	$leave_status = ($data->leave_app_user1_status==1?'Approved':'Reject');
+	$leave_note   =  $data->leave_app_user1_note;
+	$leave_date   =  $data->leave_app_user1_date;
+	$link = Yii::t('app','link approval');
+}
+
+elseif($data->leave_request == 2){
+	$position = Yii::t('app','hrd');
+	$name = Yii::$app->user->identity->EmployeeFirstName;
+	$leave_status = ($data->leave_app_hrd_status==1?'Approved':'Reject');
+	$leave_note   =  $data->leave_app_hrd_note;
+	$leave_date   =  $data->leave_app_hrd_date;
+	$link = Yii::t('app','waiting hr manager to send paper approval/reject');
+}
+
+elseif($data->leave_request == 1){
+	$position = Yii::t('app','pic');
+	$query = \app\models\Employee::findOne(isset($data->leave_app_pic)?$data->leave_app_pic:0);
+	$name = $query->EmployeeFirstName.' '.$query->EmployeeMiddleName.' '.$query->EmployeeLastName;
+	$leave_status = ($data->leave_app_pic_status==1?'Approved':'Reject');
+	$leave_note   =  $data->leave_app_pic_note;
+	$leave_date   =  $data->leave_app_pic_date;
+	$link = Yii::t('app','finish');
+}
+
+/*
 if($data->leave_request==1){
 	$position = Yii::t('app','partner');
 	$name = $data->pic_name;
@@ -153,6 +200,7 @@ elseif(Yii::$app->user->identity->project_title=='041'){
 	$leave_date   =  $data->leave_app_user1_date;
 	$link = Yii::t('app','link approval');
 }
+*/
 ?>
 
 <tr>

@@ -55,5 +55,6 @@ return [
   'msg support reply' => 'Balasan Support',
   'msg please fill email' => 'Mohon untuk mengisi field email yang valid!',
   'msg less than 1 second ago' => 'Kurang dari satu detik yang lalu',
+  'msg finish requested leave form' => 'Finish Requested Leave Form',
   'msg email helpdesk create a new ticket' => 'Anda menerima email ini karena salah satu karyawan telah membuat tiket support baru di tiket.bdoindonesia.com , berikut details tiket baru tersebut :',
 ];

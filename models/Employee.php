@@ -329,8 +329,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
     
     public static function getEmployeeEmailById($id){
         $query = Employee::findOne($id);
-        $email = $query->EmployeeEmail;
-        if(!$email) return 'ssuhendar@bdo.co.id';
+        $email = isset($query)?$query->EmployeeEmail:'ssuhendar@bdo.co.id';
         return $email;
     }
     
@@ -339,6 +338,72 @@ class Employee extends ActiveRecord implements IdentityInterface {
         $data[1] = Yii::t('app','must update');
         $data[2] = Yii::t('app','updated');
         return $data;
+    }
+    
+    /**
+     *Identity to Login
+     */
+    
+    public static function isAuditorAssistant(){
+        $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
+        switch($position){
+            case 'Assistant' : $status=true;break;
+            case 'Senior-2'  : $status=true;break;
+            case 'Associate Consultant' : $status=true;break;
+            case 'Sr Associate Consultant' : $status=true;break;
+            case 'Ass HRD' : $status=true;break;      
+            default : $status=false;break;   
+        }
+        return $status;
+    }
+    
+    public static function isAuditorSenior(){
+        $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
+        switch($position){
+            case 'Senior' : $status=true;break;
+            case 'Senior-1'  : $status=true;break;
+            case 'Supervisor' : $status=true;break;
+            case 'Assistant Manager' : $status=true;break;    
+            case 'Senior Supervisor' : $status=true;break;
+            case 'Consultant' : $status=true;break;
+            case 'Senior Consultant' : $status=true;break;
+            case 'Senior HRD' : $status=true;break;        
+            default : $status=false;break;   
+        }
+        return $status;
+    }
+    
+    public static function isAuditorManager(){
+        $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
+        switch($position){
+            case 'Manager' : $status=true;break;
+            case 'Manager HRD' : $status=true;break;    
+            case 'Senior Manager'  : $status=true;break;
+            case 'Manager Advisory' : $status=true;break;
+            default : $status=false;break;   
+        }
+        return $status;
+    }
+    
+    public static function isAuditorPartner(){
+        $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
+        switch($position){
+            case 'Partner' : $status=true;break;
+            case 'Associate Director' : $status=true;break;
+            case 'Director' : $status=true;break;    
+            default : $status=false;break;   
+        }
+        return $status;
+    }
+    
+    public static function isHRD(){
+        $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
+        switch($position){
+            case 'Manager HRD' : $status=true;break;
+            case 'Senior HRD' : $status=true;break;   
+            default : $status=false;break;   
+        }
+        return $status;
     }
     
 }

@@ -24,4 +24,5 @@ return [
     ],
     'mail_user' => 'support@bdoindonesia.com',
     'default_page' => 'leave/index',
+    'send_email' => false
 ];

@@ -152,7 +152,7 @@ if(!Yii::$app->user->isGuest){
 						</div>
 						<!-- END SHORTCUT BUTTONS -->	
 						
-						<?php if(\app\models\Employee::isHR() && Yii::$app->user->getId() ){?>
+						<?php if(\app\models\Employee::isHRD() && Yii::$app->user->getId() ){?>
 						<?=\app\components\NavMenuWidget::widget([
 						    'menu'=>[
 							[

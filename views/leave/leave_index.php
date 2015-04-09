@@ -39,8 +39,8 @@ $this->params['addUrl'] = ['leave/form'];
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
 			    
-			    <?=$form->field($model,'leave_date_from')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014',],]) ?>
-			    <?=$form->field($model,'leave_date_to')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014'],]) ?>
+			    <?=$form->field($model,'leave_date_from')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '12/12/2015',],]) ?>
+			    <?=$form->field($model,'leave_date_to')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '12/12/2015'],]) ?>
 			    <?=$form->field($model,'leave_status')->dropDownList(\app\models\Leaves::getDropDownStatus(TRUE))?>
              
 			    <div class="form-group ">

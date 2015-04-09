@@ -58,12 +58,13 @@ $this->params['addUrl'] = 'ticket/new';
 				'ticket_id' => [
 				    'attribute' => 'leave_id',
 				    'footer' => Yii::t('app','id'),
-				    'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+				    'headerOptions' => ['class'=>'hidden-xs hidden-sm','style'=>'width:3%'],
 				    'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 				    'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 				],
 				'leave_date' => [
 				    'attribute' => 'leave_date',
+				    'headerOptions' => ['style'=>'width:12%'],
 				    'footer' => Yii::t('app','date of filing'),
 				],	
 				'employee_id' => [
@@ -93,6 +94,7 @@ $this->params['addUrl'] = 'ticket/new';
 				
 				['class'=>'yii\grid\ActionColumn',
 				 'controller'=>'leave',
+				 'headerOptions' => ['style'=>'width:7%'],
 				 'template'=>'{hrdapprovalform}{exportform}',
 				 'buttons' => [
 				    'hrdapprovalform' => function ($url,$data) {

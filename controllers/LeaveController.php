@@ -18,6 +18,7 @@ class LeaveController extends \yii\web\Controller {
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
             //process here
         }
+        //default to date if empty
         return $this->render('leave_index',[
             'model' => $model,
             'dataProvider' => $model->getLeaveEmployee(Yii::$app->request->queryParams)
@@ -41,32 +42,39 @@ class LeaveController extends \yii\web\Controller {
         
         $model = new \app\models\Leaves(['scenario' => 'add_myleave']);
         if($model->load(Yii::$app->request->post()) && $model->getSaveMyRequest()){
-            
-            $users[] = $email; //register email for self
-            //check user leave
-            $approval = Yii::$app->user->identity->EmployeeLeaveSenior;
-            if(!$approval)
-               $approval = Yii::$app->user->identity->EmployeeLeaveManager;
-            
-            if(!$approval)
-               $approval = Yii::$app->user->identity->EmployeeLeaveHRD;
-            
-            if(!$approval)
-               $approval = Yii::$app->user->identity->EmployeeLeavePartner;
-               
-            $email = \app\models\Employee::getEmployeeEmailById($approval);   
-            $users[] = $email;
-            $mail = [];  //create mail
-            foreach ($users as $user) {
-                $mail[] = Yii::$app->mailer->compose('leave_form',['data' => $model->getLeaveSingleDataByEmployeeID(Yii::$app->user->getId())]) 
-                ->setFrom(Yii::$app->params['mail_user'])
-                ->setTo($user)
-                ->setSubject(Yii::t('app/message','msg create a new request form'));
+            /** 
+             * Send Email
+             */
+            if(Yii::$app->params['send_email'] == true) { // setting for email is send true for the config params
+                $users[] = $email; //register email for self
+                $approval = Yii::$app->user->identity->EmployeeLeaveSenior; // check if senior 
+                
+                if(!$approval)
+                    $approval = Yii::$app->user->identity->EmployeeLeaveManager;
+                
+                if(!$approval)
+                    $approval = Yii::$app->user->identity->EmployeeLeaveHRD;
+                
+                if(!$approval)
+                    $approval = Yii::$app->user->identity->EmployeeLeavePartner;
+                   
+                $email = \app\models\Employee::getEmployeeEmailById($approval);   
+                $users[] = $email;
+                $mail = [];  //create mail
+                foreach ($users as $user) {
+                    $mail[] = Yii::$app->mailer->compose('leave_form',['data' => $model->getLeaveSingleDataByEmployeeID(Yii::$app->user->getId())]) 
+                    ->setFrom(Yii::$app->params['mail_user'])
+                    ->setTo($user)
+                    ->setSubject(Yii::t('app/message','msg create a new request form'));
+                }
+                Yii::$app->mailer->sendMultiple($mail);
             }
-            Yii::$app->mailer->sendMultiple($mail);
+            /** Send Email End **/
+            
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg request has been created'));
             return $this->redirect(['leave/index'],301);
         }
+        
         $employee = \app\models\Employee::findOne(Yii::$app->user->getId());
         $model->leave_over = ($employee->EmployeeLeaveTotal-$employee->EmployeeLeaveUse).' '.Yii::t('app','days');
         return $this->render('leave_myform',[
@@ -96,9 +104,6 @@ class LeaveController extends \yii\web\Controller {
     }
     
     public function actionApproval(){
-        //if(\app\models\Employee::isHR())
-            //return $this->redirect(['leave/hrdapproval'],301);
-        
         $model = new \app\models\Leaves(['scenario' => 'search']);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
             //process here
@@ -121,38 +126,60 @@ class LeaveController extends \yii\web\Controller {
     }
     
     public function actionApprovalform($id){
-        //if(\app\models\Employee::isHR())
-           // return $this->redirect(['leave/hrdapprovalform','id'=>$id],301);
-        
         $model = new \app\models\Leaves(['scenario'=>'approval']);
         $query = $model->getLeaveSingleData($id);
+        
+        if($query->leave_request == 3)  //redirect if request to hrd
+            return $this->redirect(['leave/hrdapprovalform','id'=>$id],301);
+        
         if($model->load(Yii::$app->request->post()) && $model->getApprovalRequest($id)){
-            //check user leave
-            $query = $model->getLeaveSingleData($id);
-            //CHECK EMAIL
-            $users=[];
-            $approval = $query->employee_id;
-            $email = \app\models\Employee::getEmployeeEmailById($approval);   
-            $users[] = $email;
+            /** 
+             * Send Email
+             */
+            if(Yii::$app->params['send_email'] == true) { // setting for email is send true for the config params
+                //$model->refresh();
+                $query = $model->getLeaveSingleData($id);
+                //CHECK EMAIL
+                $users=[];
+                $approval = $query->employee_id;
+                $email = \app\models\Employee::getEmployeeEmailById($approval);   
+                $users[] = $email;
+                //to manager
+                if($query->leave_request==4){
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_user1);
+                    $users[] = isset($email)?$email:'';
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_user2);
+                    $users[] = isset($email)?$email:'';
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                    $users[] = isset($email)?$email:'';
+                }
+                //to hrd
+                elseif($query->leave_request==3){
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                    $users[] = isset($email)?$email:'';
+                    
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_user1);
+                    $users[] = isset($email)?$email:'';
+                    
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_user2);
+                    $users[] = isset($email)?$email:'';
+                }
+                // else if not one choice
+                else {
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                    $users[] = isset($email)?$email:'';
+                }
             
-            if($query->leave_request==5)
-                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_user2);
-            elseif($query->leave_request==4)
-                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
-            elseif($query->leave_request==2)
-                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
-            else
-                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
-                
-            $users[] = $email;
-            $mail = [];  //create mail
-            foreach ($users as $user) {
-                $mail[] = Yii::$app->mailer->compose('leave_form_approval',['data' => $query]) 
-                ->setFrom(Yii::$app->params['mail_user'])
-                ->setTo($user)
-                ->setSubject(Yii::t('app/message','msg continue approval request form'));
+                $mail = [];  //create mail
+                foreach ($users as $user) {
+                    $mail[] = Yii::$app->mailer->compose('leave_form_approval',['data' => $query]) 
+                    ->setFrom(Yii::$app->params['mail_user'])
+                    ->setTo($user)
+                    ->setSubject(Yii::t('app/message','msg continue approval request form'));
+                }
+                Yii::$app->mailer->sendMultiple($mail);
             }
-            Yii::$app->mailer->sendMultiple($mail);
+            
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg approval has been approved'));
             return $this->redirect(['leave/approval'],301);
         } 
@@ -191,37 +218,47 @@ class LeaveController extends \yii\web\Controller {
         $model = new \app\models\Leaves(['scenario'=>'approval']);
         $query = $model->getLeaveSingleData($id);
         
-        if($query->leave_request==2){
+        if($query->leave_request == 2){
             return $this->redirect(['leave/partnerapprovalform','id'=>$id]);
         }
         
         if($model->load(Yii::$app->request->post()) && $model->getHRApprovalRequest($id)){
-            $query = $model->getLeaveSingleData($id);
-            $users=[];
-            $email = \app\models\Employee::getEmployeeEmailById($query->employee_id);   
-            $users[] = $email;
-            /** Send Mail */
-            
-            if($model->leave_approval==1){
-                $subject = Yii::t('app/message','msg result approval request form');
-            }
-            else{
-                $subject = Yii::t('app/message','msg continue approval request form');
-                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_pic);   
+            /** 
+             * Send Email
+             */
+            if(Yii::$app->params['send_email'] == true) {
+                // setting for email is send true for the config params
+                $query = $model->getLeaveSingleData($id);
+                $users=[];
+                $email = \app\models\Employee::getEmployeeEmailById($query->employee_id);   
                 $users[] = $email;
-            }
-        
-            $mail = [];  //create mail
-            foreach ($users as $user) {
-                $mail[] = Yii::$app->mailer->compose('leave_form_approval',['data' => $query]) 
-                ->setFrom(Yii::$app->params['mail_user'])
-                ->setTo($user)
-                ->setSubject($subject);
-            }
-            Yii::$app->mailer->sendMultiple($mail);
+                /** Send Mail */
+                
+                if($model->leave_approval==1){
+                    $subject = Yii::t('app/message','msg result approval request form');
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_pic);
+                    $users[] = $email?$email:'';
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                    $users[] = $email?$email:'';
+                }
+                else{
+                    $subject = Yii::t('app/message','msg continue approval request form');
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_pic);
+                    $users[] = $email?$email:'';
+                    $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                    $users[] = $email?$email:'';
+                }
             
+                $mail = [];  //create mail
+                foreach ($users as $user) {
+                    $mail[] = Yii::$app->mailer->compose('leave_form_approval',['data' => $query]) 
+                    ->setFrom(Yii::$app->params['mail_user'])
+                    ->setTo($user)
+                    ->setSubject($subject);
+                }
+                Yii::$app->mailer->sendMultiple($mail);
+            }
             /** End of Mail */
-            
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg hrd approval has been finish'));
             return $this->redirect(['leave/hrdapproval'],301);
         }    
@@ -233,6 +270,7 @@ class LeaveController extends \yii\web\Controller {
     
     public function actionPartnerapprovalform($id){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
+        
         $model = new \app\models\Leaves(['scenario'=>'approval']);
         $query = $model->getLeaveSingleData($id);
         
@@ -241,6 +279,35 @@ class LeaveController extends \yii\web\Controller {
         }
         
         if($model->load(Yii::$app->request->post()) && $model->getPartnerApprovalRequest($id)){
+            //send email
+            if(Yii::$app->params['send_email'] == true) {
+                $query = $model->getLeaveSingleData($id);
+                 
+                //to email request
+                $users=[]; // array to stored user
+                
+                $email = \app\models\Employee::getEmployeeEmailById($query->employee_id);   
+                $users[] = $email?$email:'';
+                
+                //to email pic
+                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_pic);
+                $users[] = $email?$email:'';
+                //to mail hrd
+                $email = \app\models\Employee::getEmployeeEmailById($query->leave_app_hrd);
+                $users[] = $email?$email:'';
+                
+                $subject = Yii::t('app/message','msg finish requested leave form');
+                $mail = [];  //create mail
+                foreach ($users as $user) {
+                    $mail[] = Yii::$app->mailer->compose('leave_form_approval',['data' => $query]) 
+                    ->setFrom(Yii::$app->params['mail_user'])
+                    ->setTo($user)
+                    ->setSubject($subject);
+                }
+                Yii::$app->mailer->sendMultiple($mail);
+                
+            }
+            
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg hrd approval has been finish'));
             return $this->redirect(['leave/hrdapproval'],301);
         }    
@@ -291,6 +358,9 @@ class LeaveController extends \yii\web\Controller {
     
     public function actionEmployee(){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
+        
+        //load refresh employee
+        $this->Balance();
         
         $model = new \app\models\Employee(['scenario'=>'search']);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
@@ -444,10 +514,38 @@ class LeaveController extends \yii\web\Controller {
     }
     
     //balanced
-    public function actionBalance(){
+    public function Balance(){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
         
-        $date_now = date('Y-m-d');
+        $employeeModel = new \app\models\Employee();
+        $employee = $employeeModel->find()
+        ->join('inner join','sys_user','sys_user.employee_id=employee.employee_id')
+        ->where(['sys_user.user_active'=>1])
+        ->orderBy('employee_id')
+        ->all();
+        
+        foreach($employee as $row){
+            //select balance
+            $balanced = \app\models\LeaveBalance::find()
+            ->select('SUM(leave_balance_total) balance')
+            ->where(['employee_id'=>$row->employee_id])
+            ->one();
+            $balance = $balanced?$balanced->balance:0;
+            
+            //select to leave use
+            $leave = \app\models\Leaves::find()
+            ->select('SUM(leave_total) balance')
+            ->where(['employee_id'=>$row->employee_id,'leave_status'=>1])
+            ->one();
+            $total = $leave?$leave->balance:0;
+            
+            $employeeModel = new \app\models\Employee();
+            $employeeModel = $employeeModel->findOne($row->employee_id);
+            $employeeModel->EmployeeLeaveTotal = $balance;
+            $employeeModel->EmployeeLeaveUse = $total;
+            $employeeModel->update();
+        }
+        /*$date_now = date('Y-m-d');
         $employees = \app\models\Employee::find()
         ->orderBy('employee_id')
         ->all();
@@ -477,12 +575,10 @@ class LeaveController extends \yii\web\Controller {
             if($balanced){
                 $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $balanced->leave_balance_total,'EmployeeLeaveDate'=>$leave_date],['employee_id'=>$employee->employee_id]);
             }
-        }
+        }*/
         
     }
-    public function actionTest(){
-        
-    }
+    
     
     public function actionRequest_complete($id){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
