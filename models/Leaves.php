@@ -594,12 +594,6 @@ class Leaves extends \yii\db\ActiveRecord {
         ->from('leaves l')
         ->join('inner join','employee e','e.employee_id = l.employee_id');
         
-        /*
-        ->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_user2' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);
-        */
-        
         if(\app\models\Employee::isAuditorPartner())
             $query->andWhere('l.leave_app_pic= '.Yii::$app->user->getId().' AND l.leave_request = 2');
         

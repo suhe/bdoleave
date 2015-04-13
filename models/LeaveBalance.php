@@ -139,7 +139,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
             FROM leave_balance
             WHERE employee_id = $employee_id
             UNION ALL
-            SELECT leave_date leave_balance_date,leave_description,-leave_total
+            SELECT leave_date_from leave_balance_date,leave_description,-leave_total
             FROM `leaves` 
             WHERE employee_id = $employee_id and leave_approved = 1
             ) balance 

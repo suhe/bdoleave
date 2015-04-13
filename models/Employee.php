@@ -364,7 +364,6 @@ class Employee extends ActiveRecord implements IdentityInterface {
             case 'Senior-1'  : $status=true;break;
             case 'Supervisor' : $status=true;break;
             case 'Assistant Manager' : $status=true;break;    
-            case 'Senior Supervisor' : $status=true;break;
             case 'Consultant' : $status=true;break;
             case 'Senior Consultant' : $status=true;break;
             case 'Senior HRD' : $status=true;break;        
@@ -376,6 +375,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public static function isAuditorManager(){
         $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
         switch($position){
+			case 'Senior Supervisor' : $status=true;break;
             case 'Manager' : $status=true;break;
             case 'Manager HRD' : $status=true;break;    
             case 'Senior Manager'  : $status=true;break;
