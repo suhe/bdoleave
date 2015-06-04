@@ -543,6 +543,7 @@ class Leaves extends \yii\db\ActiveRecord {
         
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
+            'sort'  => ['defaultOrder' => ['leave_id'=>SORT_DESC]],
             'pagination' =>[
                 'pageSize' => Yii::$app->params['per_page']
             ]    

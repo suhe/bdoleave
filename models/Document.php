@@ -168,7 +168,12 @@ class Document extends \yii\base\Model{
             $user_status = $value->leave_app_user2_status;
             $user_date   = \app\components\Common::dateToString($value->leave_app_user2_date);
         }
-        elseif($value->leave_app_hrd){
+        else{
+            $user_name =  '';
+            $user_status = 0;
+            $user_date   = '';
+        }
+        /*elseif($value->leave_app_hrd){
             $user_name =  $value->hrd_name;
             $user_status = $value->leave_app_hrd_status;
             $user_date   = \app\components\Common::dateToString($value->leave_app_hrd_date);
@@ -177,15 +182,15 @@ class Document extends \yii\base\Model{
             $user_name =  $value->pic_name;
             $user_status = $value->leave_app_pic_status;
             $user_date   = \app\components\Common::dateToString($value->leave_app_pic_date);
-        }
+        }*/
         
         //approval atasan langsung
         $pdf->Cell(32,10,$user_name,0,0,'C',false,'',0,10,'T','M');
-        if(($user_status==1)  ){
+        if(($user_status==1)){
             $image_file = K_PATH_IMAGES.'recommended.png';
             $pdf->Image($image_file,$x+10,$y+6,40,'','PNG', '', 'T', true, 300,'', false, false, 0, false, false, false);
         }
-        elseif(($user_status==3)  ){
+        elseif(($user_status==3)){
             $image_file = K_PATH_IMAGES.'recommendedno.png';
             $pdf->Image($image_file,$x+10,$y+6,40,'','PNG', '', 'T', true, 300,'', false, false, 0, false, false, false);
         }
@@ -199,9 +204,9 @@ class Document extends \yii\base\Model{
             $user_date   = \app\components\Common::dateToString($value->leave_app_user2_date);
         }
         else {
-            $user_name =  "-";
+            $user_name =  "";
             $user_status = 0;
-            $user_date   = "-";
+            $user_date   = "";
         }
         
         $pdf->SetXY($x+130,$y);

@@ -33,7 +33,7 @@ $form = ActiveForm::begin([
 <?=$form->field($model,'EmployeeLeaveManager')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'03'),['class'=>'col-lg-12',])?>
 <?php //} ?>
 
-<?=$form->field($model,'EmployeeLeaveHRD')->dropDownList(['0'=>Yii::t('app','not set'),10444=>'Agus Rudyono'],['class'=>'col-lg-12',])?>
+<?=$form->field($model,'EmployeeLeaveHRD')->dropDownList(['0'=>Yii::t('app','not set'),10768=>'Maria Immaculat Chessy Purnamawati'],['class'=>'col-lg-12',])?>
 <?=$form->field($model,'EmployeeLeavePartner')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'01'),['class'=>'col-lg-12',])?>
 
 <div class="form-actions">
