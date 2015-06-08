@@ -191,6 +191,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
         $field = isset(Yii::$app->user->identity->employee_id)?Yii::$app->user->identity->employee_id:0;
         switch($field){
             case 10444 : $hrd = $field;break;
+            case 10768 : $hrd = $field;break;    
             case 10509 : $hrd = $field;break;
             default : $hrd = 0;break;    
         }
