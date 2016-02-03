@@ -11,7 +11,7 @@ $this->params ['addUrl'] = 'ticket/add';
 <div class="row">
 	<div class="col-lg-9">
 		<div id="jssor_1"
-			style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden; visibility: hidden;">
+			style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 100%; height: 325px; overflow: hidden; visibility: hidden;">
 			<!-- Loading Screen -->
 			<div data-u="loading"
 				style="position: absolute; top: 0px; left: 0px;">
@@ -21,21 +21,21 @@ $this->params ['addUrl'] = 'ticket/add';
 					style="position: absolute; display: block; background: url('img/loading.gif') no-repeat center center; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
 			</div>
 			<div data-u="slides"
-				style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 300px; overflow: hidden;">
+				style="cursor: default; position: relative; top: 0px; left: 0px; width: 600px; height: 325px; overflow: hidden;">
 				<div data-p="112.50" style="display: none;">
-					<img data-u="image" src="img/01.jpg" />
+					<img data-u="image" src="<?=Yii::$app->request->baseUrl?>/assets/images/01.jpg" />
 					<div data-u="thumb">Do you notice it is draggable by mouse/finger?</div>
 				</div>
 				<div data-p="112.50" style="display: none;">
-					<img data-u="image" src="img/02.jpg" />
+					<img data-u="image" src="<?=Yii::$app->request->baseUrl?>/assets/images/02.jpg" />
 					<div data-u="thumb">Did you drag by either horizontal or vertical?</div>
 				</div>
 				<div data-p="112.50" style="display: none;">
-					<img data-u="image" src="img/03.jpg" />
+					<img data-u="image" src="<?=Yii::$app->request->baseUrl?>/assets/images/03.jpg" />
 					<div data-u="thumb">Do you notice navigator responses when drag?</div>
 				</div>
 				<div data-p="112.50" style="display: none;">
-					<img data-u="image" src="img/04.jpg" />
+					<img data-u="image" src="<?=Yii::$app->request->baseUrl?>/assets/images/04.jpg" />
 					<div data-u="thumb">Do you notice arrow responses when click?</div>
 				</div>
 			</div>
@@ -114,3 +114,53 @@ $this->params ['addUrl'] = 'ticket/add';
 		<!-- END YOUR CONTENT HERE -->
 	</div>
 </div>
+
+<script>
+        jQuery(document).ready(function ($) {
+            
+            var jssor_1_SlideshowTransitions = [
+              {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
+              {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
+            ];
+            
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideshowOptions: {
+                $Class: $JssorSlideshowRunner$,
+                $Transitions: jssor_1_SlideshowTransitions,
+                $TransitionsOrder: 1
+              },
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              },
+              $ThumbnailNavigatorOptions: {
+                $Class: $JssorThumbnailNavigator$,
+                $Cols: 1,
+                $Align: 0
+              }
+            };
+            
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+            
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizing
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 100);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            //ScaleSlider();
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
