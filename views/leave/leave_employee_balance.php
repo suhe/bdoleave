@@ -58,6 +58,10 @@ $this->params['addUrl'] = ['leave/employee_balance_add','id'=>$query->employee_i
 				    'attribute' => 'leave_balance_description',
 				    'footer' => Yii::t('app','description'),
 			    ],
+			    'leave_balance_type' => [
+				    'attribute' => 'leave_balance_type',
+				    'footer' => Yii::t('app','type'),
+			    ],
 			    'leave_balance_total' => [
 				    'attribute' => 'leave_balance_total',
 				    

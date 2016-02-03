@@ -49,6 +49,7 @@ $this->params['addUrl'] = ['leave/employee_balance','id'=>$query->employee_id];
 			    
 			<div class="form-group ">
 			    <?=Html::submitButton(Yii::t('app','search'), ['class' => 'btn btn-primary btn-md','name' => 'search'])?>
+			    <?=Html::a('<i class="fa fa-file-pdf-o icon-only"></i> '.Yii::t('app','export'),['leave/employee_export','id'=>$query->employee_id], ['class' => 'btn btn-primary','target'=>'_blank'])?>
 			</div> 
 		    <?php ActiveForm::end(); ?>
 		    
@@ -63,25 +64,30 @@ $this->params['addUrl'] = ['leave/employee_balance','id'=>$query->employee_id];
 			    ['class' => 'yii\grid\SerialColumn'],
 			    
 			    'leave_date' => [
-				'attribute' => 'leave_balance_date',
-				'footer' => Yii::t('app','date'),
+					'attribute' => 'leave_balance_date',
+					'footer' => Yii::t('app','date'),
 			    ],	    
 			    'leave_description' => [
-				'attribute' => 'leave_balance_description',
-				'footer' => Yii::t('app','description'),
-				'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
-				'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
-				'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
+					'attribute' => 'leave_balance_description',
+					'footer' => Yii::t('app','description'),
+					'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+					'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+					'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 			    ],
 			    'leave_total' => [
-				'attribute' => 'leave_balance_total',
-				'footer' => Yii::t('app','total'),
-				'contentOptions'=> ['class'=>'text-center'],
+					'attribute' => 'leave_balance_total',
+					'footer' => Yii::t('app','total'),
+					'contentOptions'=> ['class'=>'text-center'],
 			    ],
 			    'balance' => [
-				'attribute' => 'balance',
-				'footer' => Yii::t('app','balance'),
-				'contentOptions'=> ['class'=>'text-center'],
+					'attribute' => 'balance',
+					'footer' => Yii::t('app','balance'),
+					'contentOptions'=> ['class'=>'text-center'],
+			    ],
+				'source' => [
+					'attribute' => 'source',
+					'footer' => Yii::t('app','source'),
+					'contentOptions'=> ['class'=>'text-center'],
 			    ],
 			    
 			],

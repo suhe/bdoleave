@@ -56,6 +56,96 @@ class Common {
         
         return $day.' '.$string.' '.$year;
     }
+	
+    public static function dateRange($date_from,$date_to){
+	//$dt1 = explode("-", $date_from);
+	$year_from = substr($date_from,0,4);
+	$month_from = substr($date_from,5,2);
+	$day_from = substr($date_from,8,2);
+	/*$year_from = $dt1[0];
+	$month_from = $dt1[1];
+	$day_from = $dt1[2];
+		
+	$dt2 = explode("-", $date_to);
+	$year_to = $dt2[0];
+	$month_to = $dt2[1];
+	$day_to = $dt2[2];
+	*/
+	$year_to = substr($date_to,0,4);
+	$month_to = substr($date_to,5,2);
+	$day_to = substr($date_to,8,2);
+	
+    	$jd1 = GregorianToJD($month_from, $day_from, $year_from);
+	$jd2 = GregorianToJD($month_to, $day_to, $year_to);
+	$range = $jd2 - $jd1;
+	return $range;
+    }
+    
+    public static function dateStringLong($date_from,$date_to){
+	//variable
+	$string = '';
+	$date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_from);
+        $date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_to);
+        $range = strtotime($date_to) -  strtotime($date_from);
+        $range = ($range/(60*60*24)) + 1;
+	if($range > 0){
+	    $x = 0;
+	    $date_char='';
+	    $newdate = $date_from;
+	    for($i=1;$i<=$range;$i++){
+                //$date_char.='';
+                //check sunday & saturday
+                if(date('N', strtotime($newdate))<6){
+                    //check holiday
+                    $holiday = \app\models\Holiday::find()
+                    ->where(['holiday_date' => $newdate])
+                    ->one();
+                    if(!$holiday){
+                       $x++;
+                       $string.= Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y").",";
+                    }
+                }
+                //counter
+                $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+            }
+	    
+	    if($x==0){
+		$x=1;
+		$string.=  $this->date_from;
+	    }
+	
+        }
+        
+	else {
+	    $string = '';
+	}
+	return $string;
+    }
+    
+    public static function MysqlDateToString($date){
+        //2014/05/12
+        $day = substr($date,8,2);
+        $month = substr($date,5,2);
+        $year = substr($date,0,4);
+        
+        switch($month){
+            case '01' : $string = 'Januari';break;
+            case '02' : $string = 'Februari';break;
+            case '03' : $string = 'Maret';break;
+            case '04' : $string = 'April';break;
+            case '05' : $string = 'Mei';break;
+            case '06' : $string = 'Juni';break;
+            case '07' : $string = 'Juli';break;
+            case '08' : $string = 'Agustus';break;
+            case '09' : $string = 'September';break;
+            case '10' : $string = 'Oktober';break;
+            case '11' : $string = 'November';break;
+            case '12' : $string = 'Desember';break;
+            default : $string = '----';break;
+        }
+        
+        return $day.' '.$string.' '.$year;
+    }
     
     public static function force_download($filename = '', $data = ''){
 	if ($filename == '' || $data == '')

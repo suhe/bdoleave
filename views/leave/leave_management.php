@@ -32,6 +32,7 @@ $this->params['addUrl'] = ['leavet/add_management'];
 		    
 		    <div class="row">
 			<div class="col-lg-12" style="margin-bottom:20px">
+			    <?=$tanggal;?>
 			    <?php $form = ActiveForm::begin([
 			    'id' => 'form',
 			    'method' => 'GET',
@@ -39,14 +40,16 @@ $this->params['addUrl'] = ['leavet/add_management'];
 			    'options' => ['class' => 'form-inline pull-right','role' => 'form',],
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
-			    <?=$form->field($model,'employee_name')->textInput(['placeholder'=>Yii::t('app','name')])?>
-			    <?=$form->field($model,'leave_date_from')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014',],]) ?>
-			    <?=$form->field($model,'leave_date_to')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014'],]) ?>
+			    <?=$form->field($model,'employee_name')->textInput(['placeholder'=>Yii::t('app','nik or name')])?>
+			    <?=$form->field($model,'leave_date_type')->dropDownList(\app\models\Leaves::getDropDownDateType(TRUE))?>
+			    <?=$form->field($model,'leave_date_from')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => date('d/m/Y')],]) ?>
+			    <?=$form->field($model,'leave_date_to')->widget(yii\jui\DatePicker::className(),  ['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => date('d/m/Y')],]) ?>
 			    <?=$form->field($model,'leave_status')->dropDownList(\app\models\Leaves::getDropDownStatus(TRUE))?>
-			    <?=$form->field($model,'leave_approved')->dropDownList(\app\models\Leaves::getDropDownApproved(TRUE))?>
+			    <?php //$form->field($model,'leave_approved')->dropDownList(\app\models\Leaves::getDropDownApproved(TRUE))?>
              
 			    <div class="form-group ">
-				<?=Html::submitButton(Yii::t('app','search'), ['class' => 'btn btn-primary btn-md','name' => 'search'])?>
+				<?=Html::submitButton(Yii::t('app','find'), ['class' => 'btn btn-primary btn-md','name' => 'search'])?>
+				<?=Html::a(Yii::t('app','export'),['leave/exportleave'],['class' => 'btn btn-primary btn-md'])?>
 			    </div> 
 			    <?php ActiveForm::end(); ?>
 			</div>

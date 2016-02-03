@@ -9,6 +9,7 @@ return[
   'no' => 'No',
   'nik' => 'NIK',
   'name' => 'Name',
+  'nik or name' => 'Name or NIK',
   'password' => 'Password',
   'problem' => 'Permasalahan',
   'status' => 'Status',
@@ -148,4 +149,5 @@ return[
   'minus' => 'Minus',
   'plus' => 'Plus',
   'approval list' => 'Approval List',
+  'find' => 'Find'
 ];

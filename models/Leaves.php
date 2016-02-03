@@ -6,6 +6,7 @@ class Leaves extends \yii\db\ActiveRecord {
     
     public $employeeid;
     public $employeefirstname;
+    public $employeetitle;
     public $employee_name;
     public $status = 5;
     public $leave_over;
@@ -16,11 +17,18 @@ class Leaves extends \yii\db\ActiveRecord {
     public $EmployeeLeaveTotal;
     public $EmployeeLeaveUse;
     public $EmployeeLeaveOver;
+    public $EmployeeEmail;
     public $user1_name;
+    public $user1_email;
     public $user2_name;
+    public $user2_email;
     public $hrd_name;
+    public $hrd_email;
     public $pic_name;
-    public $balance; 
+    public $balance;
+    public $total;
+    public $leave_date_type;
+    public $sysdate;
     
     public static function tableName(){
         return 'leaves';
@@ -39,6 +47,7 @@ class Leaves extends \yii\db\ActiveRecord {
             [['leave_status'],'safe','on'=>['search']],
             [['leave_date_from'],'safe','on'=>['search']],
             [['leave_date_to'],'safe','on'=>['search']],
+            [['leave_date_type'],'safe','on'=>['search']],
             [['leave_approval'],'required','on'=>['approval']],
             [['leave_approved'],'safe','on'=>['search','add_leave','add_myleave']],
             [['leave_note'],'safe','on'=>['approval']],
@@ -74,6 +83,7 @@ class Leaves extends \yii\db\ActiveRecord {
             2 => 'Cuti Tahunan' ,
             3 => 'Cuti Tambahan',
             4 => 'Cuti Khusus',
+            5 => 'Izin diklasifikasikan Cuti',
         ];
         return $data;
     }
@@ -86,10 +96,14 @@ class Leaves extends \yii\db\ActiveRecord {
             3 => 'Approved By HRD',
             4 => 'Approved By Senior/Manager',
             5 => 'Request',
+            6 => 'Request By Timesheet',
+            //7 => 'Waiting By Timesheet',
+            //8 => 'Approved By Timesheet',
             12 => 'Don\'t Agree By Partner',
             13 => 'Don\'t Agree By HRD',
             14 => 'Don\'t Agree By Senior/Manager',
             15 => 'Failed',
+            16 => 'Returned By Timesheet',
         ];
         
         if($ALL==TRUE)
@@ -105,6 +119,7 @@ class Leaves extends \yii\db\ActiveRecord {
             3 => 'Request to HRD',
             4 => 'Request to Manager',
             5 => 'Request to Senior',
+            6 => 'By Timesheet',
         ];
         
         if($ALL==TRUE)
@@ -118,7 +133,7 @@ class Leaves extends \yii\db\ActiveRecord {
             case 1 : $string = 'Cuti Bersama';break;
             case 2 : $string = 'Cuti Tahunan';break;
             case 3 : $string = 'Cuti Tambahan';break;
-            case 4 : $string = 'Cuti Melahirkan';break;
+            case 4 : $string = 'Cuti Khusus';break;
         }
         return $string;
     }
@@ -141,6 +156,14 @@ class Leaves extends \yii\db\ActiveRecord {
         return $data;
     }
     
+    public static function getDropDownDateType(){
+        $data = [
+            1 => 'Date Filling',
+            2 => 'Date Leave'
+        ];
+        return $data;
+    }
+    
      public static function getDropDownHRApproval(){
         $data = [
             1 => 'Approve By HRD Request to Partner (By Paper)',
@@ -158,10 +181,12 @@ class Leaves extends \yii\db\ActiveRecord {
             case 3 : $string = 'Approved By HRD';break;
             case 4 : $string = 'Approved By Senior/Manager';break;
             case 5 : $string = 'Request';break;
+            case 6 : $string = 'By Timesheet';break;    
             case 12 : $string = 'Don\'t Agree By Partner';break;
             case 13 : $string = 'Don\'t Agree By HRD';break;
             case 14 : $string = 'Don\'t Agree By Senior/Manager';break;    
             case 15 : $string = 'Failed';break;
+            case 16 : $string = 'Returned By Timesheet';break;
             default : $string = Yii::t('app','uknown');break;    
         }
         return $string;
@@ -174,6 +199,7 @@ class Leaves extends \yii\db\ActiveRecord {
             case 3 : $string = 'Request to HRD';break;
             case 4 : $string = 'Request to Manager';break;
             case 5 : $string = 'Request to Senior';break;
+            case 6 : $string = 'Request By Timesheet';break;    
             default : $string = Yii::t('app','uknown');break;    
         }
         return $string;
@@ -253,6 +279,11 @@ class Leaves extends \yii\db\ActiveRecord {
             $x = 0;
             $date_char='';
             $newdate = $leave_date_from;
+            if($range>=60)
+                $timesheetLeaveJobId = "10";
+            else
+                $timesheetLeaveJobId = "11";
+                
             for($i=1;$i<=$range;$i++){
                 //$date_char.='';
                 //check sunday & saturday
@@ -261,9 +292,54 @@ class Leaves extends \yii\db\ActiveRecord {
                     $holiday = \app\models\Holiday::find()
                     ->where(['holiday_date' => $newdate])
                     ->one();
-                    if(!$holiday){
-                       $x++;
-                       $date_char.= Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y").",";
+					
+                    if(!$holiday) {
+                        //check last date leave
+                        $lastLeave = static::find()
+                        ->andFilterWhere(['like', "leave_range", Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y")])
+                        ->andWhere(['employee_id' => Yii::$app->user->getId()])
+                        ->one();
+                        
+                        if(!$lastLeave) {
+                            $x++;
+                            $date_char.= Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y").",";
+                        }
+                        
+                        /** Start Patch For Timesheet **/
+                        $ddate = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$newdate);
+                        $date = new \DateTime($ddate);
+                        $timesheet = [
+                            'week'  =>  $date->format("W"),
+                            'year'  =>  $date->format("Y"),
+                            'project_id' => 1,
+                            'job_id' => 11,
+                            'notes' => "Leave :".$this->leave_description,
+                            'date' => $newdate,
+                            'employee_id' => Yii::$app->user->getId(),
+                            'hour' => 8,
+                            'overtime' => 0,
+                            'transport_type' => 1,
+                            'cost' => 0,
+                            'approval' => 4
+                        ];
+                        
+                        $timesheetModel = new \app\models\Timesheet();
+                        $timesheetStatusModel = new \app\models\TimesheetStatus();
+                        //counter for timesheet status id
+                        $timesheet_status_id = 0;
+                        $EmployeeWeek = $timesheetStatusModel->checkTimesheetWeek($timesheet);
+                        
+                        if (!$EmployeeWeek)
+                            $timesheet_status_id = $timesheetStatusModel->insertTimesheetWeekly($timesheet);
+                        else 
+                            $timesheet_status_id = $EmployeeWeek->timesheet_status_id;
+                        
+                        $EmployeeTimesheet = $timesheetModel->checkTimesheetByEmployee($timesheet);
+                        
+                        if(!$EmployeeTimesheet)
+                            $insertTimesheet =  $timesheetModel->saveTimesheet($timesheet,$timesheet_status_id);    
+                        
+                       /** End of Patch For Timesheet **/
                     }
                     
                 }
@@ -272,16 +348,55 @@ class Leaves extends \yii\db\ActiveRecord {
             }
             
             if($x==0){
-               $x=1;
-               $date_char.=  $this->leave_date_from;
+                $x=1;
+                $date_char.=  $this->leave_date_from;
+    
+                /** Start Patch For Single Timesheet **/
+                $timesheetLeaveJobId = "11";
+                $date2 = new \DateTime($leave_date_from);
+                $timesheet = [
+                    'week'  =>  $date2->format("W"),
+                    'year'  =>  $date2->format("Y"),
+                    'project_id' => 1,
+                    'job_id' => 11,
+                    'notes' => $this->leave_description,
+                    'date'  => $leave_date_from,
+                    'employee_id' => Yii::$app->user->getId(),
+                    'hour' => 8,
+                    'overtime' => 0,
+                    'transport_type' => 1,
+                    'cost' => 0,
+                    'approval' => 4
+                ];
+                
+                $timesheetModel = new \app\models\Timesheet();
+                $timesheetStatusModel = new \app\models\TimesheetStatus();
+                
+                //counter for timesheet status id
+                $timesheet_status_id = 0;
+                
+                $EmployeeWeek = $timesheetStatusModel->checkTimesheetWeek($timesheet);
+                        
+                if (!$EmployeeWeek)
+                    $timesheet_status_id = $timesheetStatusModel->insertTimesheetWeekly($timesheet);
+                else 
+                    $timesheet_status_id = $EmployeeWeek->timesheet_status_id;
+                        
+                $EmployeeTimesheet = $timesheetModel->checkTimesheetByEmployee($timesheet);
+                        
+                if(!$EmployeeTimesheet)
+                    $insertTimesheet =  $timesheetModel->saveTimesheet($timesheet,$timesheet_status_id);    
+                /** End of Patch For Single Timesheet **/
             }
             
             $model = new Leaves();
             $model->employee_id = $employee_id;
-	    if($this->leave_approved)
-		$model->leave_approved = $this->leave_approved; //process 
-	    else
-	    $model->leave_approved = 3;
+            
+            if($this->leave_approved)
+                $model->leave_approved = $this->leave_approved; //process 
+            else
+                $model->leave_approved = 3;
+            
             $model->leave_type = $this->leave_type;
             $model->leave_status = $this->status;
             $model->leave_date = date('Y-m-d');
@@ -456,6 +571,42 @@ class Leaves extends \yii\db\ActiveRecord {
                 $model->leave_app_pic_date = date('Y-m-d H:i:s');
                 $model->leave_request = 1;
                 $model->leave_status = 2;
+                
+                /** Linked to timesheet **/
+                $leave = static::findOne($id);
+                $employee_id = $leave->employee_id;
+                $leave_range = strtotime($leave->leave_date_to) -  strtotime($leave->leave_date_from);
+                $range = ($leave_range/(60*60*24)) + 1;
+                
+                $newdate = $leave->leave_date_from;
+                
+                if($range>59)
+                    $jobId = 10;
+                else
+                    $jobId = 11;
+                
+                for($i=1;$i<=$range;$i++){
+                    //variabel
+                    $timesheet = [
+                        'date' => $newdate,
+                        'project_id' => 1,
+                        'employee_id' => $employee_id,
+                        'job_id' => $jobId,
+                    ];
+                    $timesheetModel = new \app\models\Timesheet();
+                    $data = $timesheetModel->checkTimesheetByApproval($timesheet);
+                    
+                    if($data){
+                        $timesheetModel->UpdateAll(['timesheet_approval' => 2],['timesheetdate' => $timesheet['date'],'project_id' => $timesheet['project_id'],'job_id' => $timesheet['job_id']]);
+                        //check status timesheetModel
+                        $timesheetStatusModel = new \app\models\TimesheetStatus();
+                        $timesheetStatusModel->UpdateAll(['timesheet_approval' => 2],['timesheet_status_id' => $data->timesheet_status_id]);
+                    }
+                    
+                    $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+                }
+                /** Linked to timesheet **/
+                
             }
             elseif($this->leave_approval==3){
                 $model->leave_app_pic_status = 3;
@@ -463,6 +614,41 @@ class Leaves extends \yii\db\ActiveRecord {
                 $model->leave_app_pic_date = date('Y-m-d H:i:s');
                 $model->leave_request = 1;
                 $model->leave_status = 12;
+                
+                /** Linked to timesheet for Returned **/
+                $leave = static::findOne($id);
+                $leave_range = strtotime($leave->leave_date_to) -  strtotime($leave->leave_date_from);
+                $range = ($leave_range/(60*60*24)) + 1;
+                
+                $newdate = $leave->leave_date_from;
+                
+                if($range>59)
+                    $jobId = 10;
+                else
+                    $jobId = 11;
+                
+                for($i=1;$i<=$range;$i++){
+                    //variabel
+                    $timesheet = [
+                        'date' => $newdate,
+                        'project_id' => 1,
+                        'employee_id' => $employee_id,
+                        'job_id' => $jobId,
+                    ];
+                    $timesheetModel = new \app\models\Timesheet();
+                    $data = $timesheetModel->checkTimesheetByApproval($timesheet);
+                    
+                    if($data){
+                        $timesheetModel->UpdateAll(['timesheet_approval' => 3],['timesheetdate' => $timesheet['date'],'project_id' => $timesheet['project_id'],'job_id' => $timesheet['job_id']]);
+                        //check status timesheetModel
+                        $timesheetStatusModel = new \app\models\TimesheetStatus();
+                        $timesheetStatusModel->UpdateAll(['timesheet_approval' => 3],['timesheet_status_id' => $data->timesheet_status_id]);
+                    }
+                    
+                    $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+                }
+                /** Linked to timesheet **/
+                
             }
             $model->update();
             
@@ -533,13 +719,96 @@ class Leaves extends \yii\db\ActiveRecord {
         return false;
     }
     
+    
+    public function getLeaves($params)
+    {
+        $query = static::find()
+        ->select(['l.leave_id','DATE_FORMAT(l.leave_date,\'%d/%m/%Y\') as leave_date','e.employeeid','e.employeefirstname','e.employeetitle','l.leave_range',
+                  'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description','leave_approved',
+                  'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status',
+                  "CONCAT(EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName) as employee_name"])
+        ->from('leaves l')
+        ->join('inner join','employee e','e.employee_id = l.employee_id');
+        
+        if (!$this->load($params))
+        {
+            return $query->all();
+        }
+        
+        $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
+        
+        if($this->leave_status)
+        {
+            $query->andFilterWhere(['leave_status'=>$this->leave_status]);
+        }
+        
+        if($this->leave_date_type == 1)
+        {
+            if($this->leave_date_from)
+            {
+                $query->andFilterWhere(['>=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
+            }
+            
+            if($this->leave_date_from)
+            {
+                $query->andFilterWhere(['<=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
+            }
+        }
+        else
+        {
+            if($this->leave_date_from)
+            {
+                $date_from = $this->leave_date_from;
+                $date_to = $this->leave_date_to;
+                $date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_from);
+                $date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_to);
+                $range = strtotime($date_to) -  strtotime($date_from);
+                $range = ($range/(60*60*24)) + 1;
+                if($range>0)
+                    $total = $range;
+                else
+                    $total = 0;
+                
+                
+                $x = 0;
+                $date_char='';
+                $newdate = $date_from;    
+                for($i=1;$i<=$total;$i++)
+                {
+                    if(date('N', strtotime($newdate))<6)
+                    {
+                        //check holiday
+                        $holiday = \app\models\Holiday::find()
+                        ->where(['holiday_date' => $newdate])
+                        ->one();
+                        
+                        if(!$holiday)
+                        {
+                            $x++;
+                            $string = Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y");
+                            $query->orFilterWhere(['like', "leave_range",  $string]);
+                        }
+                    }
+                    
+                    //counter
+                    $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+                }
+                
+            }
+        }
+        
+        return $query->all();
+        
+    }
+    
     public function getLeaveManagement($params){
+        
         $query = Leaves::find()
         ->select(['l.leave_id','DATE_FORMAT(l.leave_date,\'%d/%m/%Y\') as leave_date','e.employeeid','e.employeefirstname','l.leave_range',
                   'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description','leave_approved',
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status'])
         ->from('leaves l')
-        ->join('left join','employee e','e.employee_id = l.employee_id');
+        ->join('inner join','employee e','e.employee_id = l.employee_id');
         
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
@@ -553,11 +822,52 @@ class Leaves extends \yii\db\ActiveRecord {
             return $dataProvider;
         }
         
-        $query->andFilterWhere(['like', "CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
-        if($this->leave_status) $query->andWhere(['leave_status'=>$this->leave_status]);
-        if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
-        if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
-        if($this->leave_approved) $query->andWhere(['leave_approved'=>$this->leave_approved]);
+        $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
+        if($this->leave_status) $query->andFilterWhere(['leave_status'=>$this->leave_status]);
+        
+        if($this->leave_date_type==1){
+            if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
+            if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
+        }
+        else {
+            if($this->leave_date_from) {
+                $date_from = $this->leave_date_from;
+                $date_to = $this->leave_date_to;
+                $date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_from);
+                $date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$date_to);
+                $range = strtotime($date_to) -  strtotime($date_from);
+                $range = ($range/(60*60*24)) + 1;
+                if($range>0)
+                    $total = $range;
+                else
+                    $total = 0;
+                
+                
+                $x = 0;
+                $date_char='';
+                $newdate = $date_from;    
+                for($i=1;$i<=$total;$i++){
+                    if(date('N', strtotime($newdate))<6){
+                        //check holiday
+                        $holiday = \app\models\Holiday::find()
+                        ->where(['holiday_date' => $newdate])
+                        ->one();
+                        
+                        if(!$holiday){
+                            $x++;
+                            $string = Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y");
+                            $query->orFilterWhere(['like', "leave_range",  $string]);
+                        }
+                    }
+                    
+                    //counter
+                    $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+                }
+                
+            }
+        }
+        
+        //if($this->leave_approved) $query->andWhere(['leave_approved'=>$this->leave_approved]);
         
         return $dataProvider;
     }
@@ -703,7 +1013,6 @@ class Leaves extends \yii\db\ActiveRecord {
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total','l.leave_status'])
         ->from('leaves l')
         ->join('left join','employee e','e.employee_id = l.employee_id')
-        //->andWhere(['l.leave_app_hrd' => Yii::$app->user->getId()])
         ->andWhere('l.leave_request=3 or l.leave_request =2');
         
         $dataProvider = new \yii\data\ActiveDataProvider([
@@ -717,7 +1026,7 @@ class Leaves extends \yii\db\ActiveRecord {
             return $dataProvider;
         }
         
-        $query->andFilterWhere(['like', "CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
+        $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
         if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
         if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(l.leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
         
@@ -726,15 +1035,18 @@ class Leaves extends \yii\db\ActiveRecord {
     
     public function getLeaveSingleData($id){
         return Leaves::find()
-        ->select(['l.leave_id','DATE_FORMAT(l.leave_date,\'%d/%m/%Y\') as leave_date','e.employeeid','CONCAT(e.employeefirstname,\' \',e.employeemiddlename,\' \',e.employeelastname) as employee_name',
-                  'l.leave_range','l.leave_type','l.leave_address','d.department','leave_status','leave_request',
+        ->select(['l.leave_id','leave_date as sysdate','DATE_FORMAT(l.leave_date,\'%d/%m/%Y\') as leave_date','e.employeeid','CONCAT(e.employeefirstname,\' \',e.employeemiddlename,\' \',e.employeelastname) as employee_name',
+                  'l.leave_range','l.leave_type','l.leave_address','d.department','leave_status','leave_request','e.EmployeeEmail',
                   'DATE_FORMAT(l.leave_date_from,\'%d/%m/%Y\') as leave_date_from','l.leave_description',
                   'DATE_FORMAT(l.leave_date_to,\'%d/%m/%Y\') as leave_date_to','l.leave_total',
                   'e.EmployeeLeaveTotal','e.EmployeeLeaveUse','(e.EmployeeLeaveTotal-e.EmployeeLeaveUse) as leave_over',
                   'leave_app_user1','leave_app_user2','leave_app_hrd','leave_app_pic','l.employee_id',
                   'CONCAT(u1.employeefirstname,\' \',u1.employeemiddlename,\' \',u1.employeelastname) as user1_name',
+                  'u1.EmployeeEmail as user1_email',
                   'CONCAT(u2.employeefirstname,\' \',u2.employeemiddlename,\' \',u2.employeelastname) as user2_name',
+                  'u2.EmployeeEmail as user2_email',
                   'CONCAT(hr.employeefirstname,\' \',hr.employeemiddlename,\' \',hr.employeelastname) as hrd_name',
+                  'hr.EmployeeEmail as hrd_email',
                   'CONCAT(pic.employeefirstname,\' \',pic.employeemiddlename,\' \',pic.employeelastname) as pic_name',
                   'leave_app_user1_status','leave_app_user2_status','leave_app_hrd_status','leave_app_pic_status',
                   'DATE_FORMAT(l.leave_app_user1_date,\'%d/%m/%Y\')  leave_app_user1_date',
@@ -824,4 +1136,84 @@ class Leaves extends \yii\db\ActiveRecord {
         ->orderBy('l.leave_id DESC')
         ->one();
     }
+    
+    public static function ExpiredNotify(){
+        /*$hire_date = substr(Yii::$app->user->identity->EmployeeLeaveDate,0,10);
+        $leave_total = Yii::$app->user->identity->EmployeeLeaveTotal;
+        $leave_use = Yii::$app->user->identity->EmployeeLeaveUse;
+        $leave = $leave_total - $leave_use;
+        $year_date = substr($hire_date,0,4) + 1;
+        $exp_date = $year_date.substr($hire_date,4,6); //-05-12
+        $now_date = date('Y-m-d');
+        
+        /*$datetime1 = new \DateTime($exp_date);
+        $datetime2 = new \DateTime($now_date);
+        $date = $datetime1->diff($datetime2);
+        *
+        $range = \app\components\Common::dateRange($exp_date,$now_date);
+		
+        if(($range<=150) && ($leave>0)){
+            $message = 'Hak Cuti Anda sebesar '.$leave.' Hari akan Kadaluarsa pada Tanggal '.\app\components\Common::MysqlDateToString($exp_date);
+        }
+        else {
+            $message = false;
+        }
+        */
+        $message = '';
+        $hire_date = substr(Yii::$app->user->identity->EmployeeHireDate,0,10);
+        $now_date =  date('Y-m-d');
+        $range1 = \app\components\Common::dateRange($hire_date,$now_date);
+        //$message.= "Jumlah Hari Pengabdian :". $hire_date;
+        
+        if($range1 >= 365) {
+            $lyear = date('Y') - 1;
+            $ldate = $lyear.substr($hire_date,4,6);
+            
+            // + 1 tahun untuk Expired
+            $exlyear = substr($ldate,0,4)+1;
+            $exldate = $exlyear.substr($ldate,4,6);
+            
+            $range2 = \app\components\Common::dateRange($now_date,$exldate);
+            
+            if($range2>0) 
+                $ldate = $ldate;
+            else 
+                $ldate = $exldate;
+            
+            $expyear = substr($ldate,0,4) + 1;
+            $expdate =  $expyear.substr($ldate,4,6);
+            
+            $range3 = \app\components\Common::dateRange($now_date,$expdate);
+            $leave = Yii::$app->user->identity->EmployeeLeaveTotal - Yii::$app->user->identity->EmployeeLeaveUse;
+            
+            if( ($range3<=150) && ($leave > 0) )
+                $message.= 'Hak Cuti Anda sebesar '.$leave.' Hari akan Kadaluarsa pada Tanggal '.\app\components\Common::MysqlDateToString($expdate);    
+        
+        }
+        
+        return $message;
+        
+    }
+    
+    public static function sumLastLeaveByEmployee($employee_id){
+        $sqlquery = "
+            SELECT SUM(leave_total) AS total
+            FROM leaves
+            WHERE employee_id = ".$employee_id."
+            and leave_approved = 1
+        ";
+        return Leaves::findBySql($sqlquery)->one();
+    }
+    
+    public static function sumLastLeave($employee_id,$date){
+        $sqlquery = "
+            SELECT SUM(leave_total) AS total
+            FROM leaves
+            WHERE employee_id = ".$employee_id."
+            AND leave_date < '".$date."'
+            and leave_approved = 1
+        ";
+        return Leaves::findBySql($sqlquery)->one();
+    }
+    
 }    

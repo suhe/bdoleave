@@ -20,7 +20,7 @@ if(!Yii::$app->user->isGuest){
 <html lang="<?= Yii::$app->language ?>">
   <head>
     <meta charset="utf-8">
-    <title><?=Yii::t('app','page title').' '.$this->title?></title>
+    <title><?=Yii::t('app','page title').' x '.$this->title?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -297,6 +297,12 @@ if(!Yii::$app->user->isGuest){
 						
 					<!-- END PAGE HEADING ROW -->					
 						<div class="row">
+						  <?php if(!Yii::$app->user->isGuest){?>
+						  <?php if($message=\app\models\Leaves::ExpiredNotify()){ ?>
+						    <div class="notice bg-danger marker-on-left"><?=$message?></div>
+						  <?php }
+						    }
+						  ?>
 						   <?=$content;?>	
 						</div>
 						

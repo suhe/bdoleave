@@ -8,6 +8,10 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     public $leave_date_to;
     public $leave_balance_type;
     public $balance;
+    public $date;
+    public $leave_type; //
+    public $total;
+    public $source;
     
     
     public static function tableName(){
@@ -18,6 +22,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
         return [
             [['leave_balance_date'],'required','on'=>['save']],
             [['leave_balance_description'],'required','on'=>['save']],
+            [['leave_balance_stype'],'required','on'=>['save']],
             [['leave_balance_total'],'required','on'=>['save']],
             [['leave_balance_total'],'number','on'=>['save']],
             [['leave_date_from'],'safe','on'=>['search']],
@@ -28,6 +33,9 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     public function attributeLabels(){
         return [
             'leave_balance_date' => Yii::t('app','date'),
+            'leave_balance_description' => Yii::t('app','description'),
+            'leave_balance_stype' => Yii::t('app','type'),
+            'leave_balance_type' => Yii::t('app','type'),
             'leave_balance_total' => Yii::t('app','total'),
         ];
     }
@@ -73,7 +81,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     public function getLeaveBalanceData($employee_id){
         $query = LeaveBalance::find()
         ->select(["leave_balance_id","DATE_FORMAT(leave_balance_date,'%d/%m/%Y') as leave_balance_date",
-                  "leave_balance_description","leave_balance_total"])
+                  "leave_balance_description","leave_balance_total","IF(leave_balance_stype=0,'Saldo Awal','Tambahan') as leave_balance_type"])
         ->from('leave_balance lb')
         ->where(['lb.employee_id' => $employee_id]);
         
@@ -93,65 +101,98 @@ class LeaveBalance extends \yii\db\ActiveRecord {
             $model->employee_id = $employee_id;
             $model->leave_balance_date = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_balance_date);
             $model->leave_balance_description = $this->leave_balance_description;
+            $model->leave_balance_stype = $this->leave_balance_stype;
             $model->leave_balance_total = $this->leave_balance_total;
             $model->insert();
             
-            //update balance for employee
-            $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $this->leave_balance_total,'EmployeeLeaveDate' => preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_balance_date)],['employee_id'=>$employee_id]);            
+            
+            /** Perhitungan Update Cuti **/
+            //total cuti
+            $sumTotal = \app\models\LeaveBalance::sumLastBalanceByEmployee($employee_id);
+            if(count($sumTotal)>0)
+                $xtotals = $sumTotal->total;
+            else 
+                $xtotals = 0;
+            
+            //total saldo cuti
+            $sumUse = \app\models\Leaves::sumLastLeaveByEmployee($employee_id);
+            if(count($sumUse->total)>0)
+                $xuse = $sumUse->total;
+            else 
+                $xuse = 0;
+                
+            //update employee
+            $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $xtotals,'EmployeeLeaveUse' => $xuse],['employee_id'=>$employee_id]);
+            
+            //update tanggal
+            $lastDate = \app\models\LeaveBalance::lastDateSadloBalanceByEmployee($employee_id);
+            if($lastDate)
+                 $updateDate = \app\models\Employee::updateAll(['EmployeeLeaveDate' => $lastDate->date],['employee_id'=>$employee_id]);
+            /** Perhitungan Update Cuti **/
+            
             return true;
         }
         return false;
     }
     
-    public function getLeaveBalanceByEmployee($employee_id,$params){
+    public function getLeaveBalanceByEmployee($employee_id,$params='')
+    {
         $sqlquery = "
-            SELECT
-            DATE_FORMAT(leave_balance_date,'%d/%m/%Y') as leave_balance_date,leave_balance_description,leave_balance_total,@saldo:=@saldo+leave_balance_total AS balance
+            SELECT DATE_FORMAT(Balanced.leave_balance_date,'%d/%m/%Y') as leave_balance_date,
+            Balanced.leave_balance_description,Balanced.leave_balance_total,Balanced.source,Balanced.balance
             FROM
-            (SELECT leave_balance_date leave_balance_date,leave_balance_description,+leave_balance_total
-            FROM leave_balance
-            WHERE employee_id = $employee_id
-            UNION ALL
-            SELECT leave_date leave_balance_date,leave_description,-leave_total
-            FROM `leaves` 
-            WHERE employee_id = $employee_id
-            ) balance 
-            JOIN (SELECT @saldo:=0) a
-            WHERE balance.leave_balance_date<>''
-            
+            (
+                SELECT
+                leave_balance_date as leave_balance_date,leave_balance_description,leave_balance_total,source,@saldo:=@saldo+leave_balance_total AS balance
+                FROM
+                (SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+                FROM leave_balance
+                WHERE employee_id = $employee_id
+                UNION ALL
+                SELECT leave_date leave_balance_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+                FROM `leaves` 
+                WHERE employee_id = $employee_id and leave_approved = 1
+                ) balance 
+                JOIN (SELECT @saldo:=0) a
+                ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+            ) AS Balanced
+            WHERE Balanced.leave_balance_date <> ''
         ";
         
-        if($this->leave_date_from) $sqlquery.="AND balance.leave_balance_date >= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from)."' ";
-        if($this->leave_date_to)   $sqlquery.="AND balance.leave_balance_date <= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to)."' ";
-        
-        $sqlquery.= " ORDER BY balance.leave_balance_date ";
-        
+        if(\Yii::$app->session->get('leave_date_from')) $sqlquery.="AND Balanced.leave_balance_date >= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',\Yii::$app->session->get('leave_date_from'))."' ";
+        if(\Yii::$app->session->get('leave_date_to'))   $sqlquery.="AND Balanced.leave_balance_date <= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',\Yii::$app->session->get('leave_date_to'))."' ";
+         
         return LeaveBalance::findBySql($sqlquery)
         ->all();
     }
     
-    public function getLeaveBalanceDataByEmployee($employee_id,$params){
+    public function getLeaveBalanceDataByEmployee($employee_id,$params=''){
         $sqlquery = "
-            SELECT
-            DATE_FORMAT(leave_balance_date,'%d/%m/%Y') as leave_balance_date,leave_balance_description,leave_balance_total,@saldo:=@saldo+leave_balance_total AS balance
+            SELECT DATE_FORMAT(Balanced.leave_balance_date,'%d/%m/%Y') as leave_balance_date,
+            Balanced.leave_balance_description,Balanced.leave_balance_total,Balanced.source,Balanced.balance
             FROM
-            (SELECT leave_balance_date leave_balance_date,leave_balance_description,+leave_balance_total
-            FROM leave_balance
-            WHERE employee_id = $employee_id
-            UNION ALL
-            SELECT leave_date_from leave_balance_date,leave_description,-leave_total
-            FROM `leaves` 
-            WHERE employee_id = $employee_id and leave_approved = 1
-            ) balance 
-            JOIN (SELECT @saldo:=0) a
-            WHERE balance.leave_balance_date<>''
-            
+            (
+                SELECT
+                leave_balance_date as leave_balance_date,leave_balance_description,leave_balance_total,source,@saldo:=@saldo+leave_balance_total AS balance
+                FROM
+                (SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+                FROM leave_balance
+                WHERE employee_id = $employee_id
+                UNION ALL
+                SELECT leave_date leave_balance_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+                FROM `leaves` 
+                WHERE employee_id = $employee_id and leave_approved = 1
+                ) balance 
+                JOIN (SELECT @saldo:=0) a
+                ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+            ) AS Balanced
+            WHERE Balanced.leave_balance_date <> ''
         ";
         
-        if($this->leave_date_from) $sqlquery.="AND balance.leave_balance_date >= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from)."' ";
-        if($this->leave_date_to)   $sqlquery.="AND balance.leave_balance_date <= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to)."' ";
+        if($this->leave_date_from) $sqlquery.="AND Balanced.leave_balance_date >= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from)."' ";
+        if($this->leave_date_to)   $sqlquery.="AND Balanced.leave_balance_date <= '".preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to)."' ";
         
-        $sqlquery.= " ORDER BY balance.leave_balance_date ";
+        //$sqlquery.= " ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC ";
         
         $query = LeaveBalance::findBySql($sqlquery);
         
@@ -165,6 +206,63 @@ class LeaveBalance extends \yii\db\ActiveRecord {
         
         
         return $dataProvider;
+    }
+    
+    public static function sumLastLeaveBalance($employee_id,$date){
+        $sqlquery = "
+            SELECT leave_balance_date,SUM(leave_balance_total) AS total
+            FROM
+            (SELECT leave_balance_date,+leave_balance_total
+            FROM leave_balance
+            WHERE employee_id = $employee_id
+            UNION ALL
+            SELECT leave_date as leave_balance_date,-leave_total
+            FROM `leaves` 
+            WHERE employee_id = $employee_id and leave_approved = 1
+            ) balance 
+            WHERE balance.leave_balance_date < '".$date."'
+            ORDER BY balance.leave_balance_date    
+        ";
+        return LeaveBalance::findBySql($sqlquery)->one();
+    }
+	
+    public static function sumLastLeaveBalanceDateRange($employee_id,$date_from,$date_to){
+        $sqlquery = "
+            SELECT leave_balance_date,SUM(leave_balance_total) AS total
+            FROM
+            (SELECT leave_balance_date,+leave_balance_total
+            FROM leave_balance
+            WHERE employee_id = $employee_id
+            UNION ALL
+            SELECT leave_date as leave_balance_date,-leave_total
+            FROM `leaves` 
+            WHERE employee_id = $employee_id and leave_approved = 1
+            ) balance 
+            WHERE balance.leave_balance_date >= '".$date_from."'
+			and balance.leave_balance_date < '".$date_to."'
+            ORDER BY balance.leave_balance_date    
+        ";
+        return LeaveBalance::findBySql($sqlquery)->one();
+    }
+    
+    public static function sumLastBalanceByEmployee($employee_id){
+        $sqlquery = "
+            SELECT SUM(leave_balance_total) AS total
+            FROM leave_balance
+            WHERE employee_id = ".$employee_id."
+        ";
+        return LeaveBalance::findBySql($sqlquery)->one();
+    }
+    
+    public static function lastDateSadloBalanceByEmployee($employee_id){
+        $sqlquery = "
+            SELECT leave_balance_date as date
+            FROM leave_balance
+            WHERE employee_id = ".$employee_id."
+            AND leave_balance_stype = 0
+            ORDER BY leave_balance_date DESC
+        ";
+        return LeaveBalance::findBySql($sqlquery)->one();
     }
 
 }

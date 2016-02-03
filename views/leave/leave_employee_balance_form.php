@@ -48,6 +48,7 @@ $this->params['addUrl'] = ['leave/employee_balance_add'];
 			]);?>
 			<?=$form->field($model,'leave_balance_date')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014'],]) ?>
 			<?=$form->field($model,'leave_balance_description')->textInput(['value' => 'Saldo Awal per Tanggal ']);?>
+			<?=$form->field($model,'leave_balance_stype')->dropDownList(['0'=>'Saldo Awal',1=>'Tambahan'])?>
 			<?=$form->field($model,'leave_balance_total')->textInput(['value'=>'0','class'=>'col-lg-2 text-right']);?>
 			
 			<div class="form-actions">

@@ -42,17 +42,17 @@ $this->params['addUrl'] = ['leave/add_management'];
 			    'id' => 'personal-form',
 			    'options' => ['class' => 'form-horizontal'],
 			    'fieldConfig' => [
-				'template' => "{label}\n<div class=\"col-sm-10\">{input} {error}</div>\n",
-				'labelOptions' => ['class' => 'col-sm-2 control-label'],
+					'template' => "{label}\n<div class=\"col-sm-10\">{input} {error}</div>\n",
+					'labelOptions' => ['class' => 'col-sm-2 control-label'],
 			    ],
 			]);?>
-			
+			<?=$form->field($model,'EmployeeID')->textInput(['value'=>$query->EmployeeID,'disabled'=>true]);?>
 			<?=$form->field($model,'EmployeeFirstName')->textInput(['value'=>$query->EmployeeFirstName]);?>
 			<?=$form->field($model,'EmployeeMiddleName')->textInput(['value'=>$query->EmployeeMiddleName]);?>
 			<?=$form->field($model,'EmployeeLastName')->textInput(['value'=>$query->EmployeeLastName]);?>
 			<?=$form->field($model,'EmployeeEmail')->textInput(['value'=>$query->EmployeeEmail]);?>
 			<?=$form->field($model,'EmployeeHireDate')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014'],]) ?>
-			<?=$form->field($model,'EmployeeLeaveSenior')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'041'),['class'=>'col-lg-12',])?>
+			<?php //$form->field($model,'EmployeeLeaveSenior')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'041'),['class'=>'col-lg-12',])?>
 			<?=$form->field($model,'EmployeeLeaveManager')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'03'),['class'=>'col-lg-12',])?>
 			<?=$form->field($model,'EmployeeLeaveHRD')->dropDownList(['0'=>Yii::t('app','not set'),10768=>'Maria Immaculat Chessy Purnamawati'],['class'=>'col-lg-12',])?>
 			<?=$form->field($model,'EmployeeLeavePartner')->dropDownList(\app\models\Employee::getEmployeeGroupDropdownList(Yii::$app->user->identity->department_id,'01'),['class'=>'col-lg-12',])?>

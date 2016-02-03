@@ -38,7 +38,7 @@ $this->params['addUrl'] = 'ticket/new';
 			    'options' => ['class' => 'form-inline pull-right','role' => 'form',],
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
-			    <?=$form->field($model,'EmployeeName')->textInput(['placeholder'=>Yii::t('app','name')])?>
+			    <?=$form->field($model,'EmployeeName')->textInput(['placeholder'=>Yii::t('app','name or nik')])?>
 			    <?=$form->field($model,'leave_status')->dropDownList(\app\models\Employee::getDropDownLeaveStatus(TRUE))?>
              
 			    <div class="form-group ">
@@ -84,11 +84,6 @@ $this->params['addUrl'] = 'ticket/new';
 				    'footer' => Yii::t('app','title'),
 				],
 				
-				'EmployeeLeaveTotal' => [
-				    'attribute' => 'EmployeeLeaveTotal',
-				    'contentOptions'=> ['class'=>'text-right'],
-				    'footer' => Yii::t('app','entitlement'),
-				],
 				
 				'EmployeeLeaveUse' => [
 				    'attribute' => 'EmployeeLeaveUse',

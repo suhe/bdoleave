@@ -39,7 +39,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
             [['EmployeeLeavePartner'],'required','on'=>['update_account','update_myaccount']],
             [['EmployeeLeaveHRD'],'required','on'=>['update_account','update_myaccount']],
             [['EmployeeLeaveManager'],'safe','on'=>['update_account','update_myaccount']],
-            [['EmployeeLeaveSenior'],'safe','on'=>['update_account','update_myaccount']],
+            //[['EmployeeLeaveSenior'],'safe','on'=>['update_account','update_myaccount']],
             [['leave_status'],'safe','on'=>['search']]
         ];
     }
@@ -92,11 +92,11 @@ class Employee extends ActiveRecord implements IdentityInterface {
     
     public static function getAllEmployee(){
         $Employee = Employee::find()
-        ->select(["E.employee_id"])
+        ->select(["E.employee_id","E.EmployeeID","DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate ","E.EmployeeLeaveDate"])
         ->from('employee E')
         ->join('inner join','sys_user U','U.employee_id=E.employee_id')
-        ->join('inner join','department D','D.department_id=E.department_id')
-        ->where(['U.user_active'=>1])
+        ->join('left join','department D','D.department_id=E.department_id')
+        ->where(['U.user_active' => 1])
         ->orderBy("E.EmployeeFirstName,E.EmployeeMiddleName,E.EmployeeLastName")
         ->all();
         return $Employee;
@@ -107,10 +107,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
         ->select(["e.employee_id","CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName) as EmployeeName",
                   "e.EmployeeID","DATE_FORMAT(e.EmployeeHireDate,'%d/%m/%Y') as EmployeeHireDate","e.EmployeeTitle",
                   "DATE_FORMAT(EmployeeLeaveDate,'%d/%m/%Y') as EmployeeLeaveDate","IF(TO_DAYS(CURDATE())-TO_DAYS(EmployeeLeaveDate)>364,'Must Update','Updated') as leave_status",
-                  "e.EmployeeLeaveTotal","e.EmployeeLeaveUse","(e.EmployeeLeaveTotal-e.EmployeeLeaveUse) as EmployeeLeaveOver"])
+                  "e.EmployeeLeaveTotal","e.EmployeeLeaveUse","(e.EmployeeLeaveTotal - e.EmployeeLeaveUse) as EmployeeLeaveOver"])
         ->from('employee e')
         ->join('inner join','sys_user u','u.employee_id=e.employee_id')
-        //->orderBy('e.EmployeeFirstname,e.EmployeeMiddleName,e.EmployeeLastName')
         ->where(['u.user_active'=>1]);
         
         $dataProvider = new \yii\data\ActiveDataProvider([
@@ -154,7 +153,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
         elseif($this->leave_status==2)
             $query->andFilterWhere(['<','(TO_DAYS(CURDATE())-TO_DAYS(EmployeeLeaveDate))',365]);
         
-        $query->andFilterWhere(['like', "CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->EmployeeName]);
+        $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->EmployeeName]);
         
         return $dataProvider;
         
@@ -193,6 +192,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
             case 10444 : $hrd = $field;break;
             case 10768 : $hrd = $field;break;    
             case 10509 : $hrd = $field;break;
+			case 10872 : $hrd = $field;break;
             default : $hrd = 0;break;    
         }
         if($hrd>0) return true;
@@ -204,7 +204,8 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public function getLogin(){
         if($this->validate())
             return Yii::$app->user->login($this->getUserSingleData(),$this->remember_me ? 3600 * 24 * 30 : 0);
-        else return false;
+        else 
+        	return false;
     }
     
     public function getUserSingleData(){
@@ -281,7 +282,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
             $model->EmployeeEmail = $this->EmployeeEmail;
             if($this->EmployeeHireDate)
                $model->EmployeeHireDate = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->EmployeeHireDate);
-            $model->EmployeeLeaveSenior = $this->EmployeeLeaveSenior;
+            //$model->EmployeeLeaveSenior = $this->EmployeeLeaveSenior;
             $model->EmployeeLeaveManager = $this->EmployeeLeaveManager;
             $model->EmployeeLeaveHRD = $this->EmployeeLeaveHRD;
             $model->EmployeeLeavePartner = $this->EmployeeLeavePartner;
@@ -307,7 +308,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
         if($this->validate()){
             $model = new Employee();
             $model = $model->findOne($id);
-            $model->EmployeeLeaveSenior = $this->EmployeeLeaveSenior;
+            //$model->EmployeeLeaveSenior = $this->EmployeeLeaveSenior;
             $model->EmployeeLeaveManager = $this->EmployeeLeaveManager;
             $model->EmployeeLeaveHRD = $this->EmployeeLeaveHRD;
             $model->EmployeeLeavePartner = $this->EmployeeLeavePartner;
@@ -401,10 +402,25 @@ class Employee extends ActiveRecord implements IdentityInterface {
         $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;
         switch($position){
             case 'Manager HRD' : $status=true;break;
+			case 'Assistant Manager HRD' : $status=true;break;   
             case 'Senior HRD' : $status=true;break;   
             default : $status=false;break;   
         }
         return $status;
+    }
+    
+    public static function isNotifyDate(){
+        $hire_date = Yii::$app->user->identity->EmployeeHireDate;
+    }
+    
+    public static function findOneEmployee($id)
+    {
+        return static::find()
+        ->select(['employee_id','EmployeeID','CONCAT(EmployeeFirstName,\' \',EmployeeMiddleName,\' \',EmployeeLastName) as EmployeeName',
+            'DATE_FORMAT(EmployeeHireDate,\'%d/%m/%Y\')  EmployeeHireDate','EmployeeStatus'
+        ])
+        ->where(['employee_id' => $id])
+        ->one();
     }
     
 }

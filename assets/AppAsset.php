@@ -32,6 +32,7 @@ class AppAsset extends AssetBundle
     public $js = [
         'assets/js/jquery.min.js',
         'assets/js/bootstrap.min.js',
+    	'assets/js/jssor.slider.mini.js',	
         //'assets/js/plugins/slimscroll/jquery.slimscroll.min.js',
         //'assets/js/plugins/pace/pace.min.js',
         //'assets/js/plugins/jqueryui/jquery-ui-1.10.4.custom.min.js',

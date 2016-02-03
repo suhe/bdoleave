@@ -38,7 +38,7 @@ $this->params['addUrl'] = 'ticket/new';
 			    'options' => ['class' => 'form-inline pull-right','role' => 'form',],
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
-			    <?=$form->field($model,'employee_name')->textInput(['placeholder'=>Yii::t('app','name')])?>
+			    <?=$form->field($model,'employee_name')->textInput(['placeholder'=>Yii::t('app','nik or name')])?>
 			    <?=$form->field($model,'leave_date_from')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014',],]) ?>
 			    <?=$form->field($model,'leave_date_to')->widget(yii\jui\DatePicker::className(),['dateFormat'=>'dd/MM/yyyy','clientOptions' => ['defaultDate' => '24/01/2014'],]) ?>
 			    

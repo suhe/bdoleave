@@ -343,11 +343,14 @@ class LeaveController extends \yii\web\Controller {
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
         
         $model = new \app\models\Leaves(['scenario' => 'search']);
+        
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
             //process here
         }
+        $tanggal = $model->leave_date_from;
         return $this->render('leave_management',[
             'model' => $model,
+            'tanggal' => $model->leave_date_from,
             'dataProvider' => $model->getLeaveManagement(Yii::$app->request->queryParams)
         ]); 
     }
@@ -356,11 +359,17 @@ class LeaveController extends \yii\web\Controller {
         $export = \app\models\Document::getPdfLeaveForm($id);
     }
     
+    //export all leave
+    public function actionExportleave()
+    {
+        $export = \app\models\Document::getExcelLeave();
+    }
+    
     public function actionEmployee(){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
         
         //load refresh employee
-        $this->Balance();
+        //$this->Balance();
         
         $model = new \app\models\Employee(['scenario'=>'search']);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
@@ -393,7 +402,7 @@ class LeaveController extends \yii\web\Controller {
         $model->EmployeeLeavePartner = $query->EmployeeLeavePartner;
         $model->EmployeeLeaveHRD = $query->EmployeeLeaveHRD;
         $model->EmployeeLeaveManager = $query->EmployeeLeaveManager;
-        $model->EmployeeLeaveSenior = $query->EmployeeLeaveSenior;
+        //$model->EmployeeLeaveSenior = $query->EmployeeLeaveSenior;
         return $this->render('leave_employee_bio',[
             'title' => Yii::t('app','personal'),
             'model' => $model,
@@ -465,6 +474,31 @@ class LeaveController extends \yii\web\Controller {
         $employee_id = $findField->employee_id;
         if($findField){
             \app\models\LeaveBalance::deleteAll('leave_balance_id = :id',[':id' => $id]);
+            
+            /** Perhitungan Update Cuti **/
+            //total cuti
+            $sumTotal = \app\models\LeaveBalance::sumLastBalanceByEmployee($employee_id);
+            if(count($sumTotal)>0)
+                $xtotals = $sumTotal->total;
+            else 
+                $xtotals = 0;
+            
+            //total saldo cuti
+            $sumUse = \app\models\Leaves::sumLastLeaveByEmployee($employee_id);
+            if(count($sumUse->total)>0)
+                $xuse = $sumUse->total;
+            else 
+                $xuse = 0;
+                
+            //update employee
+            $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $xtotals,'EmployeeLeaveUse' => $xuse],['employee_id'=>$employee_id]);
+            
+            //update tanggal
+            $lastDate = \app\models\LeaveBalance::lastDateSadloBalanceByEmployee($employee_id);
+            if($lastDate)
+                 $updateDate = \app\models\Employee::updateAll(['EmployeeLeaveDate' => $lastDate->date],['employee_id'=>$employee_id]);
+            /** Perhitungan Update Cuti **/
+            
             Yii::$app->session->setFlash('msg','<div class="notice bg-success marker-on-left">'.Yii::t('app/message','msg leave balance has been deleted').'</div>');
             return $this->redirect(['leave/employee_balance','id'=>$employee_id],301);
         } else {
@@ -495,6 +529,8 @@ class LeaveController extends \yii\web\Controller {
         $query = \app\models\Employee::findOne($id);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
             //process here
+           \Yii::$app->session->set('leave_date_from',$model->leave_date_from);
+           \Yii::$app->session->set('leave_date_to', $model->leave_date_to);
         }
         return $this->render('leave_employee_endbalance',[
             'title' => Yii::t('app','end balance'),
@@ -513,102 +549,139 @@ class LeaveController extends \yii\web\Controller {
         ]); 
     }
     
-    //balanced
-    public function Balance(){
-        if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
-        
-        $employeeModel = new \app\models\Employee();
-        $employee = $employeeModel->find()
-        ->join('inner join','sys_user','sys_user.employee_id=employee.employee_id')
-        ->where(['sys_user.user_active'=>1])
-        ->orderBy('employee_id')
-        ->all();
-        
-        foreach($employee as $row){
-            //select balance
-            $balanced = \app\models\LeaveBalance::find()
-            ->select('SUM(leave_balance_total) balance')
-            ->where(['employee_id'=>$row->employee_id])
-            ->one();
-            $balance = $balanced?$balanced->balance:0;
-            
-            //select to leave use
-            $leave = \app\models\Leaves::find()
-            ->select('SUM(leave_total) balance')
-            ->where(['employee_id'=>$row->employee_id,'leave_status'=>1])
-            ->one();
-            $total = $leave?$leave->balance:0;
-            
-            $employeeModel = new \app\models\Employee();
-            $employeeModel = $employeeModel->findOne($row->employee_id);
-            $employeeModel->EmployeeLeaveTotal = $balance;
-            $employeeModel->EmployeeLeaveUse = $total;
-            $employeeModel->update();
-        }
-        /*$date_now = date('Y-m-d');
-        $employees = \app\models\Employee::find()
-        ->orderBy('employee_id')
-        ->all();
-        
-        foreach($employees as $employee){
-            if($employee->EmployeeHireDate){
-                $range = strtotime($date_now) -  strtotime($employee->EmployeeHireDate);
-                $days = $range/(60*60*24);
-                if($days>364){
-                    $leave_date =  date('Y').'-'.substr($employee->EmployeeHireDate,5,5); //2014-01-02
-                    $range = strtotime($date_now) -  strtotime($leave_date);
-                    if($range<0)
-                        $leave_date = (date('Y')-1).'-'.substr($employee->EmployeeHireDate,5,5); //2014-01-02 
-                }
-                
-            } else {
-                $leave_date = '0000-00-00';
-            }
-            
-            $update = \app\models\LeaveBalance::updateAll(['leave_balance_date' => $leave_date,'leave_balance_description' => 'Saldo Awal per '.$leave_date],['employee_id'=>$employee->employee_id]);
-            
-            //search balance    
-            $balanced = \app\models\LeaveBalance::find()
-            ->where(['employee_id'=>$employee->employee_id])
-            ->one();
-            
-            if($balanced){
-                $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $balanced->leave_balance_total,'EmployeeLeaveDate'=>$leave_date],['employee_id'=>$employee->employee_id]);
-            }
-        }*/
-        
-    }
     
     
     public function actionRequest_complete($id){
         if(!\app\models\Employee::isHR()) return $this->redirect([Yii::$app->params['default_page']]);
-        $status  = 1;
+        
         //check status for approved/reject
         $query = \app\models\Leaves::findOne($id);
-        if($query->leave_status==2){
+        
+		if($query->leave_status == 2){
             $employee = \app\models\Employee::findOne($query->employee_id);
-            if(!$employee->EmployeeLeaveUse){
+            
+			/*if(!$employee->EmployeeLeaveUse){
                 $update = \app\models\Employee::updateAll(['EmployeeLeaveUse' => 0],['employee_id'=>$query->employee_id]);
-                $query = \app\models\Leaves::findOne($id);    
-            }
+                //$query  = \app\models\Leaves::findOne($id);    
+            }*/
+            
             //update counter for use
             \app\models\Employee::updateAllCounters(['EmployeeLeaveUse' => $query->leave_total],['employee_id' => $query->employee_id]);
-            $status_approval = 1;
+            $status_approval = 1; //approved
             //log - leave balance
-            if($query->leave_type<=2)
+			if($query->leave_type<=2)
                 $str = Yii::t('app','minus');
             else
                 $str = Yii::t('app','plus');
-                
-            $status = \app\models\LeaveLog::getSaveData($id,Yii::t('app','leave balance'),Yii::t('app','leave balance').' '.$str.' '.$query->leave_total);
+            
+			$status_approval1 = 1; //reject;
+            $status_app = 1;
+			$status  = 1;	
+			$update = \app\models\Leaves::updateAll(['leave_status' => $status,'leave_approved' => $status_approval1],['leave_id'=>$query->leave_id]);			
+            $logsave = \app\models\LeaveLog::getSaveData($id,Yii::t('app','leave balance'),Yii::t('app','leave balance').' '.$str.' '.$query->leave_total);
         }
-        else {
-            $status_approval = 2;
+        elseif($query->leave_status == 12) {
+            $status_approval2 = 2; //reject;
+            $status_app = 2;
+			$status  = 1;
+			$update = \app\models\Leaves::updateAll(['leave_status' => $status,'leave_approved' => $status_approval2],['leave_id'=>$query->leave_id]);
         }
+		else {
+            $status_app = 0;
+			$status  = 17;
+			$status_approval2 = 22; 
+		}
         
-        $update = \app\models\Leaves::updateAll(['leave_status' => $status,'leave_approved' => $status_approval],['leave_id'=>$id]);
-        $status = \app\models\LeaveLog::getSaveData($id,\app\models\Leave::getStringStatus($status),\app\models\Leave::getStringStatus($status).' By '.Yii::$app->user->identity->EmployeeFirstName);
+        /** Integaration BDO Timesheet**/
+        if($query)
+        {
+            $date_from = $query->leave_date_from;
+            $date_to = $query->leave_date_to;
+            $leave_range = strtotime($date_to) -  strtotime($date_from);
+            $total = ($leave_range/(60*60*24)) + 1;
+            $newdate = $date_from;
+            for($i=1;$i<=$total;$i++)
+            {
+                //check sunday & saturday only monday - friday
+                if(date('N', strtotime($newdate))<6)
+                {
+                    //check holiday
+                    $holiday = \app\models\Holiday::find()->where(['holiday_date' => $newdate])->one();
+                    //if not holiday execution this leave
+                    if(!$holiday)
+                    {
+                        //check this date leave on leave table
+                        $Leaves = \app\models\Leaves::find()
+                        ->andFilterWhere(['like', "leave_range", Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y")])
+                        ->andWhere(['employee_id' => $query->employee_id])
+                        ->one();
+                        
+                        if($Leaves)
+                        {
+                            $timesheetModel = new \app\models\Timesheet();
+                            $status_app = $status_app;
+                            $timesheet['date'] = $newdate;
+                            $timesheet['employee_id'] = $Leaves->employee_id;
+                            $EmployeeTimesheet = $timesheetModel->checkTimesheetByEmployee($timesheet);
+                            
+                            if($EmployeeTimesheet)
+                            {
+                                switch($status_app)
+                                {
+                                    /**
+                                     * Timesheet : 1 : Waiting , 2 : Approved , 3 : Reject
+                                     * Leaves : 1 : Approved , 2 : Reject , 3 : Process , 4 : Leaves Waiting
+                                    */
+                                    case 1 : $tstatus  = 2;break;
+                                    case 2 : $tstatus  = 3;break;
+                                    default : $tstatus = 0;break;
+                                }
+                                
+                                $timesheetUpdate = $timesheetModel->UpdateAll(['timesheet_approval' => $tstatus ],['employee_id'=>$query->employee_id,'timesheetdate'=>$newdate,'hour'=> 8]);
+                                $timesheetModel = new \app\models\TimesheetStatus();
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+                //counter next date
+                $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+            }
+            
+        }
+        /** Integaration Timesheet**/
+        
+        $logstatus = \app\models\LeaveLog::getSaveData($query->leave_id,\app\models\Leaves::getStringStatus($status),\app\models\Leaves::getStringStatus($status).' By '.Yii::$app->user->identity->EmployeeFirstName);
         // return to management
+        
+        /** Perhitungan Update Cuti **/
+        //total cuti
+        $sumTotal = \app\models\LeaveBalance::sumLastBalanceByEmployee($query->employee_id);
+        
+        if(count($sumTotal)>0)
+            $xtotals = $sumTotal->total;
+        else 
+            $xtotals = 0;
+            
+        //total saldo cuti
+        $sumUse = \app\models\Leaves::sumLastLeaveByEmployee($query->employee_id);
+            
+        if(count($sumUse->total)>0)
+            $xuse = $sumUse->total;
+        else 
+            $xuse = 0;
+                
+        //update employee
+        $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $xtotals,'EmployeeLeaveUse' => $xuse],['employee_id'=>$query->employee_id]);
+            
+        //update tanggal
+        $lastDate = \app\models\LeaveBalance::lastDateSadloBalanceByEmployee($query->employee_id);
+        if($lastDate)
+            $updateDate = \app\models\Employee::updateAll(['EmployeeLeaveDate' => $lastDate->date],['employee_id'=>$query->employee_id]);
+        /** Perhitungan Update Cuti **/
+        
         return $this->redirect(['leave/management'],301);
     }
     
@@ -622,16 +695,309 @@ class LeaveController extends \yii\web\Controller {
             return $this->redirect(['leave/management'],301);
         }
         
-        if($query->leave_status==1){
-            $total = $query->leave_total;
-            $update = \app\models\Employee::updateAllCounters(['EmployeeLeaveUse' => -$total],['employee_id'=>$query->employee_id]);
+        /** Integaration BDO Timesheet**/
+        $date_from = $query->leave_date_from;
+        $date_to = $query->leave_date_to;
+        $leave_range = strtotime($date_to) -  strtotime($date_from);
+        $total = ($leave_range/(60*60*24)) + 1;
+        $newdate = $date_from;
+        
+        for($i=1;$i<=$total;$i++)
+        {
+            $timesheetModel = new \app\models\Timesheet();
+            $timesheet['date'] = $newdate;
+            $timesheet['employee_id'] = $query->employee_id;
+            $EmployeeTimesheet = $timesheetModel->checkTimesheetByEmployee($timesheet);
+                            
+            if($EmployeeTimesheet)
+            {
+                $DeleteTimesheet = \app\models\Timesheet::deleteAll('timesheetid = :id', [':id' => $EmployeeTimesheet->timesheetid]);
+            }
+            
+            //counter next date
+            $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
         }
+            
+        /** Integaration Timesheet**/
         
         $model->deleteAll('leave_id = :id', [':id' => $id]);
+        
+        /** Perhitungan Update Cuti **/
+        //total cuti
+        $sumTotal = \app\models\LeaveBalance::sumLastBalanceByEmployee($query->employee_id);
+        
+        if(count($sumTotal)>0)
+            $xtotals = $sumTotal->total;
+        else 
+            $xtotals = 0;
+            
+        //total saldo cuti
+        $sumUse = \app\models\Leaves::sumLastLeaveByEmployee($query->employee_id);
+            
+        if(count($sumUse->total)>0)
+            $xuse = $sumUse->total;
+        else 
+            $xuse = 0;
+                
+        //update employee
+        $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $xtotals,'EmployeeLeaveUse' => $xuse],['employee_id'=>$query->employee_id]);
+            
+        //update tanggal
+        $lastDate = \app\models\LeaveBalance::lastDateSadloBalanceByEmployee($query->employee_id);
+        if($lastDate)
+            $updateDate = \app\models\Employee::updateAll(['EmployeeLeaveDate' => $lastDate->date],['employee_id'=>$query->employee_id]);
+        /** Perhitungan Update Cuti **/
+        
+        
+        
         Yii::$app->session->setFlash('msg','<div class="notice bg-success marker-on-left">'.Yii::t('app/message','leave has been successfuly deleted').'</div>');
         return $this->redirect(['leave/management'],301);
         
     }
+	
+    
+    public function actionRefresh(){
+        $Employee = \app\models\Employee::getAllEmployee();
+        foreach($Employee as $row){
+            if($row->EmployeeHireDate!='0000-00-00'){
+                
+                /** Variable Counter **/
+                $ledate = '';
+                    
+                $models = new \app\models\LeaveBalance();
+                $balances = $models->getLeaveBalanceByEmployee($row->employee_id);
+                echo $row->EmployeeID."<br/>";
+                echo '===========================<br/>';
+                    
+                if($balances){
+                    
+                    foreach($balances as $v){
+                        echo "<br/>";
+                        echo $v->leave_balance_date." / ";
+                        echo $v->leave_balance_description." / ";
+                        echo $v->leave_type." / ";
+                        echo $v->leave_balance_total." / ";
+                        echo $v->balance." = / ";
+                    }
+                    
+                    echo "<br/>";
+                    
+                }
+                    
+                //update automatic leave
+                $hire_date = $row->EmployeeHireDate;
+                $now_date =  date('Y-m-d');
+                
+                echo "Tanggal Masuk :".$hire_date."<br/>";
+                echo "Tanggal Hari ini :".$now_date."<br/>";
+				
+                $range1 = \app\components\Common::dateRange($hire_date,$now_date);
+                
+                echo "Selisih Tanggal Masuk :".$range1."<br/>";
+				
+                //if > 1 (one) year in executed hak cuti
+                if($range1 >= 365) {
+                    $lyear = date('Y') - 1;
+                    $ldate = $lyear.substr($hire_date,4,6);
+                    
+                    // + 1 tahun untuk Expired
+                    $exlyear = substr($ldate,0,4)+1;
+                    $exldate = $exlyear.substr($ldate,4,6);
+                    
+                    $range2 = \app\components\Common::dateRange($now_date,$exldate);
+                    if($range2>0) {
+                        $ldate = $ldate;
+                    }
+                    else {
+                        $ldate = $exldate;
+                    }
+                
+                    echo "Tanggal Hak Cuti :".$ldate."<br/>";    
+                    $leaves = \app\models\LeaveBalance::findOne(['employee_id' => $row->employee_id,'leave_balance_date' => $ldate,'leave_balance_stype' => 0]);
+                    
+                    if(!$leaves) {
+                        $lbtotal = 12;
+                        $ledate = $ldate;
+                        $description = 'Hak Cuti Tahun ('.\app\components\Common::MysqlDateToString($ldate).') Dengan Jumlah '.$lbtotal;
+                        echo $description."<br/>";
+                        
+                        $exyear = substr($ldate,0,4) + 1;
+                        $exdate = $exyear.substr($ldate,4,6);
+                        echo "Tanggal Expired Cuti : ".$exdate."<br/>";
+                        /**save data update **/
+                        $modelUpdate = new \app\models\LeaveBalance();
+                        $modelUpdate->employee_id = $row->employee_id;
+                        $modelUpdate->leave_balance_date = $ldate;
+                        $modelUpdate->leave_balance_description = $description;
+                        $modelUpdate->leave_balance_total = $lbtotal;
+                                    $modelUpdate->leave_balance_stype = 0;
+                        $modelUpdate->leave_balance_created_date =date('Y-m-d H:i:s');	
+                        $modelUpdate->leave_balance_created_by = 0;
+                        $modelUpdate->insert();
+                        /** save data update **/
+                        
+                        $last_leave = \app\models\LeaveBalance::sumLastLeaveBalance($row->employee_id,$ldate);
+                        
+                        if($last_leave->total > 0)
+                            $xtotal = $last_leave->total;
+                        else
+                            $xtotal = 0;
+                        
+                        //apabila ada sisa cuti + sebelum hak cuti maka kurangi
+                        if($xtotal>0) {
+                            $xtotalmin = $xtotal * -1;
+                            $descriptionx = 'Hak Cuti Hangus Sebelum Tanggal '.\app\components\Common::MysqlDateToString($ldate).' Dengan Jumlah '.$xtotal;
+                            echo $descriptionx."<br/>";
+                            /**save data update **/
+                            $modelUpdate = new \app\models\LeaveBalance();
+                            $modelUpdate->employee_id = $row->employee_id;
+                            $modelUpdate->leave_balance_date = $ldate;
+                            $modelUpdate->leave_balance_description = $descriptionx;
+                            $modelUpdate->leave_balance_total = $xtotalmin;
+                            $modelUpdate->leave_balance_stype = 1;
+                            $modelUpdate->leave_balance_created_date = date('Y-m-d H:i:s');	
+                            $modelUpdate->leave_balance_created_by = 0;
+                            $modelUpdate->insert();
+                            /**save data update **/
+                            
+                        }
+                        
+                    }
+                    
+                }
+                
+                
+                //search employee
+                $sumTotal = \app\models\LeaveBalance::sumLastBalanceByEmployee($row->employee_id);
+                
+                if($sumTotal->total>0)
+                    $xtotals = $sumTotal->total;
+                else 
+                    $xtotals = 0;
+                
+                $sumUse = \app\models\Leaves::sumLastLeaveByEmployee($row->employee_id);
+                
+                if($sumUse->total>0)
+                    $xuse = $sumUse->total;
+                else 
+                    $xuse = 0;
+                
+                $xo = $xtotals - $xuse;    
+                    
+                echo "Total Hak Cuti : ".$xtotals."<br/>";
+                echo "Total Cuti : ".$xuse."<br/>";
+                echo "Sisa Cuti : ".$xo."<br/>";  
+                
+                //update employee
+                $update = \app\models\Employee::updateAll(['EmployeeLeaveTotal' => $xtotals,'EmployeeLeaveUse' => $xuse],['employee_id'=>$row->employee_id]);
+		
+                if($ledate)
+                    $update = \app\models\Employee::updateAll(['EmployeeLeaveDate' => $ledate],['employee_id'=>$row->employee_id]);
+                
+                echo "==================================================================== <br/>";
+            }
+        }
+    }
+    
+    
+    public function actionTimesheet()
+    {
+        $total = 30;
+        //counter start day
+        $newdate = '2015-07-13';
+        
+        for($i=1;$i<=$total;$i++)
+        {
+            //check sunday & saturday only monday - friday
+            if(date('N', strtotime($newdate))<6)
+            {
+                //check holiday
+                $holiday = \app\models\Holiday::find()->where(['holiday_date' => $newdate])->one();
+                //if not holiday execution this leave
+                if(!$holiday)
+                {
+                    //search for active employee
+                    $employeeModel = new \app\models\Employee();
+                    $employeeRecords = $employeeModel->getAllEmployee();
+                    
+                    foreach($employeeRecords as $user)
+                    {
+                        //check this date leave on leave table
+                        $Leaves = \app\models\Leaves::find()
+                        ->andFilterWhere(['like', "leave_range", Yii::$app->formatter->asDatetime($newdate,"php:d/m/Y")])
+                        ->andWhere(['employee_id' => $user->employee_id])
+                        ->one();
+                    
+                        // if ready execution / transfer to timesheet
+                        if($Leaves)
+                        {
+                            $timesheetModel = new \app\models\Timesheet();
+                            //check if ready on timesheet
+                            $status = $Leaves->leave_approved;
+                            $timesheet = [
+                                'employee_id' => $Leaves->employee_id,
+                                'date' => $newdate
+                            ];
+                            $EmployeeTimesheet = $timesheetModel->checkTimesheetByEmployee($timesheet);
+                            //if not data on this date from timesheet, transfer leave to timesheet
+                            if(!$EmployeeTimesheet)
+                            {
+                                $ddate = $newdate;
+                                $date = new \DateTime($ddate);
+                                
+                                switch($status)
+                                {
+                                    /**
+                                     * Timesheet : 1 : Waiting , 2 : Approved , 3 : Reject
+                                     * Leaves : 1 : Approved , 2 : Reject , 3 : Process , 4 : Leaves Waiting
+                                    */
+                                    case 1 : $tstatus = 2;break;
+                                    case 2 : $tstatus = 3;break;
+                                    default : $tstatus = 4;break;
+                                }
+                                
+                                $timesheet = [
+                                    'week'  =>  $date->format("W"),
+                                    'year'  =>  $date->format("Y"),
+                                    'project_id' => 1,
+                                    'job_id' => 11,
+                                    'notes' => "Leave :".$Leaves->leave_description,
+                                    'date' => $newdate,
+                                    'employee_id' => $Leaves->employee_id,
+                                    'hour' => 8, 
+                                    'overtime' => 0,
+                                    'transport_type' => 1,
+                                    'cost' => 0,
+                                    'approval' => $tstatus
+                                ];
+                                
+                                //get timesheet status id 
+                                $timesheetStatusModel = new \app\models\TimesheetStatus();
+                                //counter for timesheet status id
+                                $timesheet_status_id = 0;
+                                $EmployeeWeek = $timesheetStatusModel->checkTimesheetWeek($timesheet);
+                                if (!$EmployeeWeek)
+                                    $timesheet_status_id = $timesheetStatusModel->insertTimesheetWeekly($timesheet);
+                                else
+                                    $timesheet_status_id = $EmployeeWeek->timesheet_status_id;
+                                //insert timesheet by leave    
+                                $insertTimesheet =  $timesheetModel->saveTimesheet($timesheet,$timesheet_status_id);    
+                            }
+                            
+                            
+                        }    
+                    }
+                    
+                }
+            }
+            
+            //counter for next day
+            $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
+        }
+    }
+    
+    
+   
     
     
 }
