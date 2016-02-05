@@ -30,4 +30,22 @@ class LeaveLog extends \yii\db\ActiveRecord {
         $model->insert();
         return true;
     }
+    
+    /** 
+     * Set to log data from leave
+     * @param array $data
+     */
+    public static function set($data = array()) {
+    	$model = new LeaveLog();
+    	$model->leave_id = $data['id'];
+    	$model->leave_log_date = date('Y-m-d H:i:s');
+    	$model->leave_status = $data['status'];
+    	$model->leave_log_title = $data['title'];
+    	$model->leave_employee_id_approval = $data['approval'];
+    	$model->leave_employee_name_approval = $data['approval_name'];
+        if($model->insert()) 
+        	return true;
+        return false;
+    }
+    
 }

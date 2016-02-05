@@ -1,56 +1,109 @@
 <?php
 namespace app\controllers;
 use yii;
-
+use app\models\Employee;
 
 class LeaveController extends \yii\web\Controller {
-    public $class='Leave';
-    
-    public function actions(){
+	public $class = "leave";
+	
+    public function actions() {
         if(Yii::$app->user->isGuest){
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg you must login'));
             return $this->redirect(['site/login']);
         }
     }
     
-    public function actionIndex(){
+    /**
+     *  Action My Leave
+     * @return string
+     */
+    public function actionIndex() {
+    	/**
+    	 * Proses to Form Search
+    	 * @var model database
+    	 */
         $model = new \app\models\Leaves(['scenario' => 'search']);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
-            //process here
+            
         }
-        //default to date if empty
+        
+        /**
+         *  Template View
+         */
         return $this->render('leave_index',[
             'model' => $model,
             'dataProvider' => $model->getLeaveEmployee(Yii::$app->request->queryParams)
         ]); 
     }
     
-    public function actionForm(){
+    /**
+     * Action My Leave Formulir
+     * @return \yii\web\Response|string
+     */
+    public function actionForm() {
+    	/**
+    	 * Proses to Form CRUD
+    	 * @var model database
+    	 */
+    	$model = new \app\models\Leaves(['scenario' => 'add_myleave']);
+    	if($model->load(Yii::$app->request->post()) && $model->getSaveLeaveRequest(Yii::$app->user->getId())){
+    		Yii::$app->session->setFlash('msg',Yii::t('app/message','msg request has been created'));
+    		return $this->redirect(['leave/index'],301);
+    	}
+    	
+    	/**
+    	 *  Template View Form
+    	 */
+    	return $this->render('leave_myform',[
+    			'title' => Yii::t('app','leave form'),
+    			'employee' => Employee::getEmployee(Yii::$app->user->getId()),
+    			'model' => $model,
+    	]);
+    }
+    
+    /**
+     * Leave Details 
+     * @param unknown $id
+     * @return string
+     */
+    public function actionDetail($id) {
+    	$model = new \app\models\Leaves();
+    	return $this->render('leave_detail',[
+    			'id' => $id,
+    			'model' => $model->getLeaveSingleData($id),
+    			'dataViewProvider' => \app\models\LeaveLog::getLeaveLogData($id),
+    	]);
+    }
+   
+    public function actionFormBackup(){
         /** Check Approval **/
         $approval = \app\models\Employee::findOne(Yii::$app->user->getId());
-        if((!$approval->EmployeeLeaveHRD) && (!$approval->EmployeeLeavePartner)){
+        if((!$approval->EmployeeLeaveHRD) && (!$approval->EmployeeLeavePartner)) {
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg please set the default approval'));
             return $this->redirect(['administration/approval'],301);
         }
         //CHECK EMAIL
         $users=[];
         $email = \app\models\Employee::getEmployeeEmailById(Yii::$app->user->getId());
+        
         if(!$email){
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg please fill email'));
             return $this->redirect(['administration/general'],301);
         }
         
         $model = new \app\models\Leaves(['scenario' => 'add_myleave']);
-        if($model->load(Yii::$app->request->post()) && $model->getSaveMyRequest()){
+        if($model->load(Yii::$app->request->post()) && $model->isValidRangeDate() && $model->getSaveLeaveRequest(Yii::$app->user->getId())){
             /** 
              * Send Email
              */
             if(Yii::$app->params['send_email'] == true) { // setting for email is send true for the config params
                 $users[] = $email; //register email for self
-                $approval = Yii::$app->user->identity->EmployeeLeaveSenior; // check if senior 
+                //$approval = Yii::$app->user->identity->EmployeeLeaveSenior; // check if senior 
+                $approval = Yii::$app->user->identity->EmployeeLeaveManager;
                 
-                if(!$approval)
+                /*if(!$approval)
                     $approval = Yii::$app->user->identity->EmployeeLeaveManager;
+                */
                 
                 if(!$approval)
                     $approval = Yii::$app->user->identity->EmployeeLeaveHRD;
@@ -67,18 +120,19 @@ class LeaveController extends \yii\web\Controller {
                     ->setTo($user)
                     ->setSubject(Yii::t('app/message','msg create a new request form'));
                 }
+                
                 Yii::$app->mailer->sendMultiple($mail);
-            }
+            } 
             /** Send Email End **/
             
             Yii::$app->session->setFlash('msg',Yii::t('app/message','msg request has been created'));
             return $this->redirect(['leave/index'],301);
-        }
+        } 
         
-        $employee = \app\models\Employee::findOne(Yii::$app->user->getId());
-        $model->leave_over = ($employee->EmployeeLeaveTotal-$employee->EmployeeLeaveUse).' '.Yii::t('app','days');
+        $employee = \app\models\Employee::getEmployee(Yii::$app->user->getId());
         return $this->render('leave_myform',[
             'title' => Yii::t('app','leave form'),
+        	'employee' => $employee,	
             'model' => $model,
             'dropDownEmployee'=> \app\models\Employee::getEmployeeDropdownList(),
         ]);    
@@ -540,14 +594,6 @@ class LeaveController extends \yii\web\Controller {
         ]); 
     }
     
-    public function actionDetail($id){
-        $model = new \app\models\Leaves();
-        return $this->render('leave_detail',[
-            'model' => $model->getLeaveSingleData($id),
-            'dataViewProvider' => \app\models\LeaveLog::getLeaveLogData($id),
-            'id' => $id
-        ]); 
-    }
     
     
     
@@ -995,9 +1041,5 @@ class LeaveController extends \yii\web\Controller {
             $newdate = date('Y-m-d', strtotime('+1 days', strtotime($newdate)));
         }
     }
-    
-    
-   
-    
     
 }

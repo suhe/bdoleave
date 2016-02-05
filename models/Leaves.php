@@ -1,6 +1,8 @@
 <?php
 namespace app\models;
 use yii;
+use app\models\LeaveLog;
+use app\models\Employee;
  
 class Leaves extends \yii\db\ActiveRecord {
     
@@ -30,51 +32,84 @@ class Leaves extends \yii\db\ActiveRecord {
     public $leave_date_type;
     public $sysdate;
     
+    /**
+     * Status to Process
+     * @var unknown
+     */
+    public $request = 5;
+    public $approve_manager = 4;
+    public $approve_hrd = 3;
+    public $approve_partner = 2;
+    public $completed = 1;
+    
     public static function tableName(){
         return 'leaves';
     }
     
     public function rules(){
         return [
-            [['employee_id'],'required','on'=>['add_leave']],
-            [['leave_type'],'required','on'=>['add_leave','add_myleave']],
-            [['leave_date_from'],'required','on'=>['add_leave','add_myleave']],
-            [['leave_date_to'],'required','on'=>['add_leave','add_myleave']],
-            [['leave_description'],'required','on'=>['add_leave','add_myleave']],
-            [['leave_address'],'required','on'=>['add_leave','add_myleave']],
-            [['leave_over'],'safe','on'=>['add_myleave']],
-            [['employee_name'],'safe','on'=>['search']],
-            [['leave_status'],'safe','on'=>['search']],
-            [['leave_date_from'],'safe','on'=>['search']],
-            [['leave_date_to'],'safe','on'=>['search']],
-            [['leave_date_type'],'safe','on'=>['search']],
-            [['leave_approval'],'required','on'=>['approval']],
-            [['leave_approved'],'safe','on'=>['search','add_leave','add_myleave']],
-            [['leave_note'],'safe','on'=>['approval']],
+            	[['employee_id'],'required','on'=>['add_leave']],
+            	[['leave_type'],'required','on'=>['add_leave','add_myleave']],
+	            [['leave_date_from'],'required','on'=>['add_leave','add_myleave']],
+	            [['leave_date_to'],'required','on'=>['add_leave','add_myleave']],
+	            [['leave_description'],'required','on'=>['add_leave','add_myleave']],
+	            [['leave_address'],'required','on'=>['add_leave','add_myleave']],
+	            [['leave_over'],'safe','on'=>['add_myleave']],
+	            [['employee_name'],'safe','on'=>['search']],
+	            [['leave_status'],'safe','on'=>['search']],
+	            [['leave_date_from'],'safe','on'=>['search']],
+	            [['leave_date_to'],'safe','on'=>['search']],
+	            [['leave_date_type'],'safe','on'=>['search']],
+	            [['leave_approval'],'required','on'=>['approval']],
+	            [['leave_approved'],'safe','on'=>['search','add_leave','add_myleave']],
+	            [['leave_note'],'safe','on'=>['approval']],
+	        	//custom validate on use
+        		[['leave_date_from','leave_date_to'],'isValidDateRange','on'=>['add_myleave']],
         ];
     }
     
     public function attributeLabels(){
         return [
-            'leave_id' => Yii::t('app','id'),
-            'employee_id' => Yii::t('app','nik'),
-            'employeeid' => Yii::t('app','nik'),
-            'employee_name' => Yii::t('app','name'),
-            'leave_date' => Yii::t('app','date of filing'),
-            'leave_type' => Yii::t('app','type'),
-            'leave_status' => Yii::t('app','status'), 
-            'leave_description' => Yii::t('app','necessary'),
-            'leave_date_from' => Yii::t('app','date from'),
-            'leave_date_to' => Yii::t('app','date to'),
-            'leave_range' => Yii::t('app','range'),
-            'leave_total' => Yii::t('app','total'),
-            'leave_address' => Yii::t('app','leave address'),
-            'employeefirstname' => Yii::t('app','name'),
-            'leave_over' => Yii::t('app','the amount of leave'),
-            'leave_pdf' => Yii::t('app','export pdf'),
-            'leave_approved' => Yii::t('app','approved'),
+	            'leave_id' => Yii::t('app','id'),
+	            'employee_id' => Yii::t('app','nik'),
+	            'employeeid' => Yii::t('app','nik'),
+	            'employee_name' => Yii::t('app','name'),
+	            'leave_date' => Yii::t('app','date of filing'),
+	            'leave_type' => Yii::t('app','type'),
+	            'leave_status' => Yii::t('app','status'), 
+	            'leave_description' => Yii::t('app','necessary'),
+	            'leave_date_from' => Yii::t('app','date from'),
+	            'leave_date_to' => Yii::t('app','date to'),
+	            'leave_range' => Yii::t('app','range'),
+	            'leave_total' => Yii::t('app','total'),
+	            'leave_address' => Yii::t('app','address'),
+	            'employeefirstname' => Yii::t('app','name'),
+	            'leave_over' => Yii::t('app','the amount of leave'),
+	            'leave_pdf' => Yii::t('app','export pdf'),
+	            'leave_approved' => Yii::t('app','approved'),
         ];
     }
+    
+    /**
+     * Custom Validate Model
+     * 
+     * @return string[]
+     */
+    
+    public function isValidDateRange($attribute, $params) {
+    	$leave_date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from);
+    	$leave_date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to);
+    	$leave_range = strtotime($leave_date_to) -  strtotime($leave_date_from);
+    	$deviation = ($leave_range / (60 * 60 * 24)) + 1;
+    	 
+    	if($deviation < 0)
+    		$this->addError($attribute, Yii::t('app/msg','date range is not valid'));
+    }
+    
+    /**
+     * End Of Validate
+     * 
+     */
     
     
     public static function getDropDownType(){
@@ -86,15 +121,24 @@ class Leaves extends \yii\db\ActiveRecord {
             5 => 'Izin diklasifikasikan Cuti',
         ];
         return $data;
-    }
+    } 
     
+    public static function getDropDownSelfLeave(){
+    	$data = [
+    		2 => 'Cuti Tahunan' ,
+    		3 => 'Cuti Tambahan',
+    		4 => 'Cuti Khusus',
+    		5 => 'Izin diklasifikasikan Cuti',
+    	];
+    	return $data;
+    }
     
     public static function getDropDownStatus($ALL=FALSE){
         $data = [
             1 => 'Completed' ,
             2 => 'Approved By Partner' ,
             3 => 'Approved By HRD',
-            4 => 'Approved By Senior/Manager',
+            4 => 'Approved By Manager',
             5 => 'Request',
             6 => 'Request By Timesheet',
             //7 => 'Waiting By Timesheet',
@@ -174,7 +218,7 @@ class Leaves extends \yii\db\ActiveRecord {
         return $data;
     }
     
-    public static function getStringStatus($key){
+    public static function getStringStatus($key) {
         switch($key){
             case 1 : $string = 'Completed';break;
             case 2 : $string = 'Approved By Partner';break;
@@ -245,7 +289,95 @@ class Leaves extends \yii\db\ActiveRecord {
         
     }
     
-    public function getSaveMyRequest(){
+    /** 
+     * Save/Update The Process 
+     * @param integer $employee_id
+     * @return boolean
+     */
+    public function getSaveLeaveRequest($employee_id) {
+    	if($this->validate()) {
+    		$model = new Leaves();
+	    	$model->leave_type = $this->leave_type;
+	    	$model->employee_id = $employee_id;
+	    	$model->leave_status = $this->request;
+	    	$model->leave_date = date('Y-m-d');
+	    	$model->leave_date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from);
+	    	$model->leave_date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to);
+	    	$model->leave_total = $this->getRangeData()['count'];
+	    	$model->leave_range = $this->getRangeData()['description'];
+	    	$model->leave_description = $this->leave_description;
+	    	$model->leave_address = $this->leave_address;
+	    	$model->leave_app_user1 = Employee::getField($employee_id,'EmployeeLeaveManager') ? Employee::getField($employee_id,'EmployeeLeaveManager') : 0;
+	    	$model->leave_app_user1_status = Employee::getField($employee_id,'EmployeeLeaveManager') ? 2 : 0;
+	    	$model->leave_app_hrd = Employee::getField($employee_id,'EmployeeLeaveHRD') ? Employee::getField($employee_id,'EmployeeLeaveHRD') : 0;
+	    	$model->leave_app_hrd_status = Employee::getField($employee_id,'EmployeeLeaveHRD') ? 2 : 0;
+	    	$model->leave_app_pic = Employee::getField($employee_id,'EmployeeLeavePartner') ? Employee::getField($employee_id,'EmployeeLeaveHRD') : 0;
+	    	$model->leave_app_pic_status = Employee::getField($employee_id,'EmployeeLeavePartner') ? 2 : 0;
+	    	$model->leave_created_by = Yii::$app->user->getId();
+	    	$model->leave_created_date = date('Y-m-d H:i:s');
+	    	
+	    	if($model->insert()) {
+	    		if($model->leave_app_user1) 
+	    			$approval = $model->leave_app_user1;
+	    		else if($model->leave_app_hrd)
+	    			$approval = $model->leave_app_hrd;
+	    		else if($model->leave_app_partner)
+	    			$approval = $model->leave_partner;
+	    		
+	    		/** 
+	    		 * Save to Log Lestatus
+	    		 * @Set to leave Log
+	    		 */	
+	    		LeaveLog::set([
+	    				'id' => $model->leave_id,
+	    				'status'=>$this->request,
+	    				'title'=>Yii::t('app','request from').' '.Yii::$app->user->identity->EmployeeFirstName,
+	    				'approval' =>  $approval,
+	    				'approval_name' => Employee::getField($approval,"EmployeeFirstName")
+	    		]);
+	    		return true;
+	    	}
+    	}
+    	
+    	return false;
+    }
+    
+    /**
+     *  Process to get Range Total Data
+     *  return @array
+     */
+    private function getRangeData() {
+    	$data = [];
+    	$data['description'] = '';
+    	$data['count'] = 0;
+    	$date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from);
+    	$date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to);
+    	$range = strtotime($date_to) -  strtotime($date_from);
+    	$range = ($range/(60*60*24)) + 1;
+    	
+    	$new_date = $date_from;
+    	for($i=1;$i<=$range;$i++) {
+    		if(date('N', strtotime($new_date))< 6 ) {
+    			//check holiday
+    			$holiday = \app\models\Holiday::find()->where(['holiday_date' => $new_date])->one();
+    			
+    			if(!$holiday) {
+    				$data['count']+=1;
+    				$data['description'].= Yii::$app->formatter->asDatetime($new_date,"php:d/m/Y").",";
+    			}
+    		}
+    		
+    		//counter for new date
+    		$new_date = date('Y-m-d', strtotime('+1 days', strtotime($new_date)));
+    	}
+    	
+    	return $data;
+    	
+    }
+    
+    
+    
+    public function getSaveMyRequest() {
         /** Leave Approval Status & name For Request **/
         $request = Yii::$app->user->identity->EmployeeLeaveSenior; 
         if(!$request) $request = Yii::$app->user->identity->EmployeeLeaveManager;
@@ -271,7 +403,7 @@ class Leaves extends \yii\db\ActiveRecord {
             $leave_range = strtotime($leave_date_to) -  strtotime($leave_date_from);
             $range = ($leave_range/(60*60*24))+1;
             
-            if($range<0){
+            if($range > 0){
                 Yii::$app->session->setFlash('msg','<div class="notice bg-success marker-on-left">'.Yii::t('app/message','msg date range is not correct').'</div>');
                 return false;
             }
@@ -875,7 +1007,9 @@ class Leaves extends \yii\db\ActiveRecord {
     public function getLeaveEmployee($params){
         $query = Leaves::find()
         ->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
-                  'leave_total','leave_status','leave_request'])
+                  'leave_total','leave_status','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from',
+        		  'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to'
+        ])
         ->from('leaves')
         ->where(['employee_id' => Yii::$app->user->getId()]);
         
@@ -941,11 +1075,7 @@ class Leaves extends \yii\db\ActiveRecord {
         ->from('leaves l')
         ->join('left join','employee e','e.employee_id = l.employee_id');
         
-        /*->orWhere(['l.leave_app_user1' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_user2' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_hrd' => Yii::$app->user->getId()])
-        ->orWhere(['l.leave_app_pic' => Yii::$app->user->getId()]);*/
-        
+
         if(\app\models\Employee::isAuditorPartner())
             $query->andWhere('l.leave_app_pic= '.Yii::$app->user->getId());
         
@@ -1138,27 +1268,6 @@ class Leaves extends \yii\db\ActiveRecord {
     }
     
     public static function ExpiredNotify(){
-        /*$hire_date = substr(Yii::$app->user->identity->EmployeeLeaveDate,0,10);
-        $leave_total = Yii::$app->user->identity->EmployeeLeaveTotal;
-        $leave_use = Yii::$app->user->identity->EmployeeLeaveUse;
-        $leave = $leave_total - $leave_use;
-        $year_date = substr($hire_date,0,4) + 1;
-        $exp_date = $year_date.substr($hire_date,4,6); //-05-12
-        $now_date = date('Y-m-d');
-        
-        /*$datetime1 = new \DateTime($exp_date);
-        $datetime2 = new \DateTime($now_date);
-        $date = $datetime1->diff($datetime2);
-        *
-        $range = \app\components\Common::dateRange($exp_date,$now_date);
-		
-        if(($range<=150) && ($leave>0)){
-            $message = 'Hak Cuti Anda sebesar '.$leave.' Hari akan Kadaluarsa pada Tanggal '.\app\components\Common::MysqlDateToString($exp_date);
-        }
-        else {
-            $message = false;
-        }
-        */
         $message = '';
         $hire_date = substr(Yii::$app->user->identity->EmployeeHireDate,0,10);
         $now_date =  date('Y-m-d');

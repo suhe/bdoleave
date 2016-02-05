@@ -4,7 +4,6 @@ use app\assets\AppAssetIE8;
 use app\assets\AppAssetIE9;
 use yii\helpers\Url;
 use yii\helpers\Html;
-use backend\components\Auth;
 use yii\widgets\Breadcrumbs;
 AppAsset::register($this);
 AppAssetIE8::register($this);
@@ -20,7 +19,7 @@ if(!Yii::$app->user->isGuest){
 <html lang="<?= Yii::$app->language ?>">
   <head>
     <meta charset="utf-8">
-    <title><?=Yii::t('app','page title').' x '.$this->title?></title>
+    <title><?=Yii::t('app','page title').$this->title?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -99,9 +98,9 @@ if(!Yii::$app->user->isGuest){
 		  <img class="img-circle" src="assets/images/user.jpg" alt=""> <span class="user-info"><?=Yii::$app->user->identity->EmployeeFirstName?> (<?=Yii::$app->user->identity->EmployeeTitle?>)</span> <b class="caret"></b>
 		</a>
 		<ul class="dropdown-menu dropdown-user">
-		  <li><?=Html::a('<i class="fa fa-wrench"></i> '.Yii::t('app','general setting'),['administration/general'])?></li>
+		  <li><?=Html::a('<i class="fa fa-user-md"></i> '.Yii::t('app','my profile'),['administration/general'])?></li>
+		  <li><?=Html::a('<i class="fa fa-pencil"></i> '.Yii::t('app','approval setting'),['administration/approval'])?></li>
 		  <li><?=Html::a('<i class="fa fa-key"></i> '.Yii::t('app','change password'),['administration/password'])?></li>
-		  <li><?=Html::a('<i class="fa fa-exchange"></i> '.Yii::t('app','my leave'),['leave/index'])?></li>
 		  <li><?=Html::a('<i class="fa fa-power-off"></i> '.Yii::t('app','logout'),['site/logout'])?></li>
 		</ul>
 	      </li>
@@ -122,7 +121,7 @@ if(!Yii::$app->user->isGuest){
 		  <ul class="dropdown-menu">
 		    <li><a href="<?=Url::to(['leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','form')?></a></li>
 		    <li><a href="<?=Url::to(['leave/index'])?>"> <i class="fa fa-list"></i> <?=Yii::t('app','my leave')?></a></li>
-		    <li><a href="<?=Url::to(['administration/general'])?>"> <i class="fa fa-wrench"></i> <?=Yii::t('app','general setting')?></a></li>
+		    <li><a href="<?=Url::to(['administration/general'])?>"> <i class="fa fa-user-md"></i> <?=Yii::t('app','my profile')?></a></li>
 		     <li><a href="<?=Url::to(['administration/approval'])?>"> <i class="fa fa-user"></i> <?=Yii::t('app','leave approval')?></a></li>
 		    <li><a href="<?=Url::to(['administration/password'])?>"> <i class="fa fa-key"></i> <?=Yii::t('app','change password')?></a></li>
 		  </ul>
@@ -202,25 +201,23 @@ if(!Yii::$app->user->isGuest){
 							  'icon'  => 'fa fa-file',
 							  'sub'   => [
 							    [
-							      'label'=>Yii::t('app','leave form'),
-							      'url'  => 'leave/form',
-							      'icon' => 'fa fa-plus'
+							    	'label'=>Yii::t('app','my leave list'),
+							      	'url'  => 'leave/index',
+							      	'icon' => 'fa fa-list'
 							    ],
-							    [
-							      'label'=>Yii::t('app','my leave'),
-							      'url'  => 'leave/index',
-							      'icon' => 'fa fa-list'
-							    ],
+							  	
+							  	[
+							  		'label'=>Yii::t('app','my leave balance'),
+							  		'url'  => 'leave/mybalance',
+							  		'icon' => 'fa fa-list'
+							  	],
+							  		
 							    [
 							      'label'=>Yii::t('app','approval leave'),
 							      'url'  => 'leave/approval',
-							      'icon' => 'fa fa-pencil'
-							    ],
-							    [
-							      'label'=>Yii::t('app','my leave balance'),
-							      'url'  => 'leave/mybalance',
 							      'icon' => 'fa fa-list'
 							    ],
+							    
 							    [
 							      'label'=>Yii::t('app','approval list'),
 							      'url'  => 'leave/approvallist',
@@ -229,34 +226,10 @@ if(!Yii::$app->user->isGuest){
 								
 							  ]
 							],
-							[
-							  'url' => '#',
-							  'label'=> Yii::t('app','preference'),
-							  'icon' => 'fa fa-wrench',
-							  'sub'   => [
-							    [
-							      'label'=> Yii::t('app','general'),
-							      'url'  => 'administration/general',
-							      'icon' => 'fa fa-wrench'
-							    ],
-							    [
-							      'label'=> Yii::t('app','leave approval'),
-							      'url'  => 'administration/approval',
-							      'icon' => 'fa fa-user'
-							    ],
-							    [
-							      'label'=> Yii::t('app','change password'),
-							      'url'  => 'administration/password',
-							      'icon' => 'fa fa-key'
-							    ],
-								
-							  ]
-							],
+							
 						    ]
 						])?>
 						<?php } ?>
-						
-							
 							
 					</div><!-- /.navbar-collapse -->
 				</nav><!-- /.navbar-side -->

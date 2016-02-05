@@ -16,7 +16,7 @@ $this->params['addUrl'] = ['leave/form'];
 	<div class="portlet"><!-- /Portlet -->
 	    <div class="portlet-heading dark">
 		<div class="portlet-title">
-		    <h4 class="text-danger"><?=Yii::$app->session->getFlash('msg')?></h4>
+		    <h4 class="text-white"><?=Yii::$app->session->getFlash('msg')?></h4>
 		</div>
 		<div class="portlet-widgets">
 		    <a data-toggle="collapse" data-parent="#accordion" href="#basic"><i class="fa fa-chevron-down"></i></a>
@@ -30,7 +30,12 @@ $this->params['addUrl'] = ['leave/form'];
 		<div class="portlet-body">
 		    
 		    <div class="row">
-			<div class="col-lg-12" style="margin-bottom:20px">
+		    
+		    <div class="col-lg-2">
+		    	<a href="<?=\yii\helpers\Url::to(['leave/form'])?>" class="btn btn-primary"><i class="fa fa-pencil"></i> <?=Yii::t('app','leave form')?></a>
+		    </div>
+			
+			<div class="col-lg-10" style="margin-bottom:20px">
 			    <?php $form = ActiveForm::begin([
 			    'id' => 'form',
 			    'method' => 'GET',
@@ -67,6 +72,20 @@ $this->params['addUrl'] = ['leave/form'];
 				    'attribute' => 'leave_date',
 				    'footer' => Yii::t('app','date of filing'),
 				],
+			    'leave_date_from' => [
+			    	'attribute' => 'leave_date_from',
+			    	'footer' => Yii::t('app','date from'),
+			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    	'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+			    	'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    ],
+			    	'leave_date_to' => [
+			    	'attribute' => 'leave_date_to',
+			    	'footer' => Yii::t('app','date to'),
+			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    	'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+			    	'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    ],
 				'leave_description' => [
 				    'attribute' => 'leave_description',
 				    'footer' => Yii::t('app','description'),
@@ -74,13 +93,7 @@ $this->params['addUrl'] = ['leave/form'];
 				    'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 				    'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
 				],	
-				'leave_range' => [
-				    'attribute' => 'leave_range',
-				    'footer' => Yii::t('app','range'),
-				    'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
-				    'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
-				    'footerOptions' => ['class'=>'hidden-xs hidden-sm'],
-				],
+				
 				'leave_total' => [
 				    'attribute' => 'leave_total',
 				    'footer' => Yii::t('app','total'),

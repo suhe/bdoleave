@@ -16,6 +16,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public $entitlement_date;
     public $EmployeeLeaveOver;
     public $leave_status;
+    public $manager_approval;
+    public $hrd_approval;
+    public $partner_approval;
     
     public static function tableName(){
         return 'employee';
@@ -100,6 +103,37 @@ class Employee extends ActiveRecord implements IdentityInterface {
         ->orderBy("E.EmployeeFirstName,E.EmployeeMiddleName,E.EmployeeLastName")
         ->all();
         return $Employee;
+    }
+    
+    /**
+     * Get Single Data From Employee 
+     * @param unknown $employee_id
+     * @return boolean
+     */
+    public static function getEmployee($employee_id){
+    	$Employee = Employee::find()
+    	->select(["e.*","CONCAT(em.EmployeeFirstName,' ',em.EmployeeLastName) as manager_approval","CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeLastName) as hrd_approval","CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeLastName) as partner_approval"])
+    	->from('employee e')
+    	->join('left join','employee em','em.employee_id=e.EmployeeLeaveManager')
+    	->join('left join','employee eh','eh.employee_id=e.EmployeeLeaveHRD')
+    	->join('left join','employee ep','ep.employee_id=e.EmployeeLeavePartner')
+    	->where(['e.employee_id' => $employee_id])
+    	->one();
+    	return $Employee;
+    }
+    
+    /**
+     *  Get Employee and set to One Parameter from Field
+     * @param unknown $employee_id
+     * @param unknown $field_name
+     * @return boolean
+     */
+    public static function getField($employee_id,$field_name) {
+    	$employee = Employee::findOne($employee_id);
+    	if($employee)
+    		return $employee->$field_name;
+    	else 
+    		return false;
     }
     
     public function getEmployeeLeaveData($params){

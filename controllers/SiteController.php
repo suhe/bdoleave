@@ -9,25 +9,28 @@ use app\models\Employee;
 /**
  * Site controller
  */
-class SiteController extends Controller {
-    public $class="Site";
-   	
-    public function actions(){
-        
-    }
-    
-    public function behaviors() {
-    	$subDomain = 'http://timesheet.local/';
-    	return [
-    			'corsFilter' => [
-    					'class' => \yii\filters\Cors::className(),
-    					'cors'  => [
-    							'Origin' => ["*" ],
-    							'Access-Control-Request-Method' => ['GET'],
-    							'Access-Control-Request-Headers' => ['*'],
-    							'Access-Control-Allow-Credentials' => null,
-    							'Access-Control-Max-Age' => 3600,
-    					],
+class SiteController extends Controller {	
+    public function actions() {
+	}
+	
+	public function behaviors() {
+		$subDomain = 'http://timesheet.local/';
+		return [ 
+			'corsFilter' => [ 
+				'class' => \yii\filters\Cors::className (),
+					'cors' => [ 
+						'Origin' => [ 
+							"*" 
+						],
+						'Access-Control-Request-Method' => [ 
+							'GET' 
+						],
+						'Access-Control-Request-Headers' => [ 
+							'*' 
+						],
+						'Access-Control-Allow-Credentials' => null,
+						'Access-Control-Max-Age' => 3600,
+    				],
     			],
     	];
     }
@@ -42,11 +45,12 @@ class SiteController extends Controller {
     	}
     		
 		$model = new Employee(['scenario'=>'login']);
-		$this->TimesheetRevival();
-		$this->actionRefresh();
+		//$this->TimesheetRevival();
+		///$this->actionRefresh();
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->getLogin()) {
 	    	return $this->redirect(['leave/index']);
-        } 
+        }
+        $this->layout = 'login';
         return $this->render('login',[
             'model' => $model,        ]);
     }
@@ -65,7 +69,7 @@ class SiteController extends Controller {
     
     public function actionLogout(){
         Yii::$app->user->logout();
-	Yii::$app->session->set('helpdesk','');
+		//Yii::$app->session->set('helpdesk','');
         $this->redirect(['site/login'],301);
     }
     
@@ -90,9 +94,6 @@ class SiteController extends Controller {
                 $hire_date = $row->EmployeeHireDate;
                 $now_date =  date('Y-m-d');
                 
-                //echo "Tanggal Masuk :".$hire_date."<br/>";
-                //echo "Tanggal Hari ini :".$now_date."<br/>";
-				
 				$range1 = \app\components\Common::dateRange($hire_date,$now_date);
                 
                 //echo "Selisih Tanggal Masuk :".$range1."<br/>";
