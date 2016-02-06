@@ -202,8 +202,8 @@ if(!Yii::$app->user->isGuest){
 							  'sub'   => [
 							    [
 							    	'label'=>Yii::t('app','my leave list'),
-							      	'url'  => 'leave/index',
-							      	'icon' => 'fa fa-list'
+							      	'url'  => 'my-leave/index',
+							      	'icon' => 'fa fa-user-md'
 							    ],
 							  	
 							  	[

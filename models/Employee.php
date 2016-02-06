@@ -17,8 +17,11 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public $EmployeeLeaveOver;
     public $leave_status;
     public $manager_approval;
+    public $manager_email;
     public $hrd_approval;
+    public $hrd_email;
     public $partner_approval;
+    public $partner_email;
     
     public static function tableName(){
         return 'employee';
@@ -112,7 +115,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
      */
     public static function getEmployee($employee_id){
     	$Employee = Employee::find()
-    	->select(["e.*","CONCAT(em.EmployeeFirstName,' ',em.EmployeeLastName) as manager_approval","CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeLastName) as hrd_approval","CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeLastName) as partner_approval"])
+    	->select(["e.*","CONCAT(em.EmployeeFirstName,' ',em.EmployeeLastName) as manager_approval","em.EmployeeEmail as manager_email",
+    	"CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeLastName) as hrd_approval","eh.EmployeeEmail as hrd_email",	
+    	"CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeLastName) as partner_approval","ep.EmployeeEmail as partner_email"])
     	->from('employee e')
     	->join('left join','employee em','em.employee_id=e.EmployeeLeaveManager')
     	->join('left join','employee eh','eh.employee_id=e.EmployeeLeaveHRD')
