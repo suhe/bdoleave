@@ -1,8 +1,8 @@
 <?php
     return [
         'class' => 'yii\db\Connection',
-        'dsn' => 'mysql:host=localhost;dbname=dbtimesheet',
+        'dsn' => 'mysql:host=localhost;dbname=bdo',
         'username' => 'root',
-        'password' => 'mysql',
+        'password' => '',
         'charset' => 'utf8',
     ];

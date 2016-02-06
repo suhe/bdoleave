@@ -146,14 +146,7 @@ $this->params ['addUrl'] = 'ticket/add';
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-md-12">
-		<div class="page">
-			<p>Layanan Untuk Informasi Cuti & Pengajuan Cuti </p>
-			<p>Untuk Informasi Lebih Lanjut Hub Anda </p>
-		</div>
-	</div>
-</div>
+
 
 <script>
 	jQuery(document).ready(function ($) {

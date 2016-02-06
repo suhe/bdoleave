@@ -1,5 +1,7 @@
 <?php
-return [ 
+return [
+		'msg approval and approval email must be valid' => 'Approval and Approval Email must be valid please info BDO Management is your setting is not Valid',
+		
 		'msg date is already' => 'Date is Available',
 		'msg date range is not valid' => 'Date Range is Not Valid',
 		'msg create a new request form' => 'Formulir Permohonan Online Cuti',

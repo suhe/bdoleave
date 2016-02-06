@@ -3,14 +3,21 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 $this->params ['breadcrumbs'] = [ 
 		[ 
-			'label' => Yii::t ( 'app', 'leave management' ),
-			'url' => [ 'leave/management' ] 
+				'label' => Yii::t ( 'app', 'leave management' ),
+				'url' => [ 
+						'leave/management' 
+				] 
 		],
 		[ 
-			'label' => Yii::t ( 'app', 'leave form' ),
-			'url' => [ 'leave/add_management' ] 
-		] ];
-$this->params ['addUrl'] = [ 'leave/add_management' ];
+				'label' => Yii::t ( 'app', 'leave form' ),
+				'url' => [ 
+						'leave/add_management' 
+				] 
+		] 
+];
+$this->params ['addUrl'] = [ 
+		'leave/add_management' 
+];
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -31,8 +38,8 @@ $this->params ['addUrl'] = [ 'leave/add_management' ];
 
 			<div id="ft-3" class="panel-collapse collapse in">
 				<div class="portlet-body">			
-                        <?php																								
-$form = ActiveForm::begin ( [ 
+                        <?php
+																								$form = ActiveForm::begin ( [ 
 																										'id' => 'menu-add-form',
 																										'method' => 'post',
 																										'options' => [ 

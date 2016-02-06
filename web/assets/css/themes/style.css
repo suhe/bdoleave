@@ -41,6 +41,15 @@ html{position:relative;min-height:100%}body{font-family:'Open Sans',sans-serif;f
     right: 0;
 }
 
+/* Table Detail View */
+table.detail-view th {
+    width: 25%;
+}
+
+table.detail-view td {
+    width: 75%;
+}
+
 /* jssor slider bullet navigator skin 05 css */
 /*
     .jssorb05 div           (normal)

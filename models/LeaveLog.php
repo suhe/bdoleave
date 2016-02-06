@@ -3,14 +3,27 @@ namespace app\models;
 use yii;
  
 class LeaveLog extends \yii\db\ActiveRecord {
+	
+	/** Variabel
+	 * 
+	 * @return variabel
+	 */
+	public static $request = 5;
+	public $leave_log_status_string = "";
 
     public static function tableName(){
         return 'leave_log';
     }
     
-    public static function getLeaveLogData($id){
+    /**
+     * Log Data Provider
+     * @param unknown $id
+     * @return \yii\data\ActiveDataProvider
+     */
+    public static function getLogLeaveDataProvider($id){
         $query = LeaveLog::find()
-        ->where(['leave_id' =>$id]);
+        ->select(["*","(CASE WHEN leave_log_status =".self::$request." THEN '".Yii::t('app','request')."' END) as leave_log_status_string"])
+        ->where(['leave_id' => $id]);
         
         $dataProvider = new \yii\data\ActiveDataProvider([
             'query' => $query,
@@ -39,10 +52,10 @@ class LeaveLog extends \yii\db\ActiveRecord {
     	$model = new LeaveLog();
     	$model->leave_id = $data['id'];
     	$model->leave_log_date = date('Y-m-d H:i:s');
-    	$model->leave_status = $data['status'];
+    	$model->leave_log_status = $data['status'];
     	$model->leave_log_title = $data['title'];
-    	$model->leave_employee_id_approval = $data['approval'];
-    	$model->leave_employee_name_approval = $data['approval_name'];
+    	$model->leave_log_approval_id = $data['approval'];
+    	$model->leave_log_approval_name = $data['approval_name'];
         if($model->insert()) 
         	return true;
         return false;

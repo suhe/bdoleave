@@ -33,14 +33,23 @@ class Leaves extends \yii\db\ActiveRecord {
     public $sysdate;
     
     /**
-     * Status to Process
+     * Status to Variabel
      * @var unknown
      */
-    public $request = 5;
-    public $approve_manager = 4;
-    public $approve_hrd = 3;
-    public $approve_partner = 2;
-    public $completed = 1;
+    public static $request = 5;
+    public static $approve_manager = 4;
+    public static $approve_hrd = 3;
+    public static $approve_partner = 2;
+    public static $completed = 1;
+    public static $timesheet_source = 1;
+    public static $leave_source  = 2;
+    
+    /**
+     * Setting to Component Field
+     * @var unknown
+     */
+    public $leave_status_string = '';
+    public $leave_source_string = '';
     
     public static function tableName(){
         return 'leaves';
@@ -54,9 +63,11 @@ class Leaves extends \yii\db\ActiveRecord {
 	            [['leave_date_to'],'required','on'=>['add_leave','add_myleave']],
 	            [['leave_description'],'required','on'=>['add_leave','add_myleave']],
 	            [['leave_address'],'required','on'=>['add_leave','add_myleave']],
+        		[['leave_saldo_total'],'required','on'=>['add_leave','add_myleave']],
 	            [['leave_over'],'safe','on'=>['add_myleave']],
 	            [['employee_name'],'safe','on'=>['search']],
 	            [['leave_status'],'safe','on'=>['search']],
+        		[['leave_source'],'safe','on'=>['search']],
 	            [['leave_date_from'],'safe','on'=>['search']],
 	            [['leave_date_to'],'safe','on'=>['search']],
 	            [['leave_date_type'],'safe','on'=>['search']],
@@ -81,12 +92,14 @@ class Leaves extends \yii\db\ActiveRecord {
 	            'leave_date_from' => Yii::t('app','date from'),
 	            'leave_date_to' => Yii::t('app','date to'),
 	            'leave_range' => Yii::t('app','range'),
-	            'leave_total' => Yii::t('app','total'),
+	            'leave_total' => Yii::t('app','days'),
 	            'leave_address' => Yii::t('app','address'),
 	            'employeefirstname' => Yii::t('app','name'),
 	            'leave_over' => Yii::t('app','the amount of leave'),
 	            'leave_pdf' => Yii::t('app','export pdf'),
 	            'leave_approved' => Yii::t('app','approved'),
+        		'leave_status_string' => Yii::t('app','status'),
+        		'leave_source_string' => Yii::t('app','source'),
         ];
     }
     
@@ -111,6 +124,105 @@ class Leaves extends \yii\db\ActiveRecord {
      * 
      */
     
+    /**
+     * Custom List Dropdown 
+     *
+     * @return string[]
+     */
+    
+    public static function getDropDownSelfLeave(){
+    	$data = [
+    			2 => 'Cuti Tahunan' ,
+    			3 => 'Cuti Tambahan',
+    			4 => 'Cuti Khusus',
+    			5 => 'Izin diklasifikasikan Cuti',
+    	];
+    	return $data;
+    }
+    
+    /**
+     * List of Status Leave
+     * @param unknown $label
+     * @return string
+     */
+    public static function getListStatus($label) {
+    	if($label)
+    		$data = [0 => $label];
+    	$data[self::$request] = Yii::t('app','request');    	
+    	return $data;
+    }
+    
+    public static function getListSource($label) {
+    	if($label)
+    		$data = [0 => $label];
+    		$data[self::$timesheet_source] = Yii::t('app','timesheet');
+    		$data[self::$leave_source] = Yii::t('app','leave');
+    		return $data;
+    }
+    
+    
+    /**
+     * End Of List Dropdown
+     *
+     */
+    
+    
+    /** 
+     * Get DataProvider for MyLeave
+     * return $model
+     */
+    public function getMyLeaveDataProvider($params){
+    	$query = Leaves::find()
+    	->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
+    			'leave_total','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from',
+    			'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to',
+    			"(CASE WHEN leave_status = 5 THEN '".Yii::t('app','request')."' END) as leave_status_string",
+    			"(CASE WHEN leave_status = 1 THEN '".Yii::t('app','timesheet')."' ELSE '".Yii::t('app','leave')."' END) as leave_source_string"
+    	])
+    	->from('leaves')
+    	->where(['employee_id' => Yii::$app->user->getId()]);
+    
+    	$dataProvider = new \yii\data\ActiveDataProvider([
+    			'query' => $query,
+    			//'count' => clone ($query),
+    			'pagination' =>[
+    					'pageSize' => Yii::$app->params['per_page']
+    			]
+    	]);
+    
+    	if ((!$this->load($params)) && ($this->validate())) {
+    		return $dataProvider;
+    	}
+    
+    	if($this->leave_status) $query->andWhere(['leave_status'=>$this->leave_status]);
+    	if($this->leave_source) $query->andWhere(['leave_source'=>$this->leave_source]);
+    	if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
+    	if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
+    
+    	return $dataProvider;
+    }
+    
+    /**
+     * Get Details View of Leave Data
+     * @param integer $id
+     */
+    public function getDetailView($id) {
+    	return Leaves::find()
+    	->select(["DATE_FORMAT(leave_date,'%d %M %Y') as leave_date","leave_total","leave_range","leave_description","leave_address",
+    	"DATE_FORMAT(leave_date_from,'%d %M %Y') as leave_date_from","DATE_FORMAT(leave_date_to,'%d %M %Y') as leave_date_to",
+    	"leave_saldo_total","leave_saldo_balanced",
+    	"(CASE WHEN leave_status = ".self::$request." THEN '".Yii::t('app','request')."' END) as leave_status_string",
+    	"(CASE WHEN leave_status = 1 THEN '".Yii::t('app','timesheet')."' ELSE '".Yii::t('app','leave')."' END) as leave_source_string"
+    	])
+    	->from('leaves l')
+    	//->join('left join','employee e','e.employee_id = l.employee_id')
+        //->join('left join','employee u1','u1.employee_id = l.leave_app_user1')
+        //->join('left join','employee hr','hr.employee_id = l.leave_app_hrd')
+    	//->join('left join','employee pic','pic.employee_id = l.leave_app_pic')
+    	->where(['l.leave_id' => $id])
+    	->one();
+    }
+    
     
     public static function getDropDownType(){
         $data = [
@@ -123,15 +235,7 @@ class Leaves extends \yii\db\ActiveRecord {
         return $data;
     } 
     
-    public static function getDropDownSelfLeave(){
-    	$data = [
-    		2 => 'Cuti Tahunan' ,
-    		3 => 'Cuti Tambahan',
-    		4 => 'Cuti Khusus',
-    		5 => 'Izin diklasifikasikan Cuti',
-    	];
-    	return $data;
-    }
+    
     
     public static function getDropDownStatus($ALL=FALSE){
         $data = [
@@ -299,11 +403,14 @@ class Leaves extends \yii\db\ActiveRecord {
     		$model = new Leaves();
 	    	$model->leave_type = $this->leave_type;
 	    	$model->employee_id = $employee_id;
-	    	$model->leave_status = $this->request;
+	    	$model->leave_status = self::$request;
+	    	$model->leave_source = self::$leave_source;
 	    	$model->leave_date = date('Y-m-d');
 	    	$model->leave_date_from = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_from);
 	    	$model->leave_date_to = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_date_to);
 	    	$model->leave_total = $this->getRangeData()['count'];
+	    	$model->leave_saldo_total = $this->leave_saldo_total;
+	    	$model->leave_saldo_balanced = ($this->leave_saldo_total?$this->leave_saldo_total:0) - ($model->leave_total?$model->leave_total:0);
 	    	$model->leave_range = $this->getRangeData()['description'];
 	    	$model->leave_description = $this->leave_description;
 	    	$model->leave_address = $this->leave_address;
@@ -330,7 +437,7 @@ class Leaves extends \yii\db\ActiveRecord {
 	    		 */	
 	    		LeaveLog::set([
 	    				'id' => $model->leave_id,
-	    				'status'=>$this->request,
+	    				'status'=>self::$request,
 	    				'title'=>Yii::t('app','request from').' '.Yii::$app->user->identity->EmployeeFirstName,
 	    				'approval' =>  $approval,
 	    				'approval_name' => Employee::getField($approval,"EmployeeFirstName")
@@ -1004,32 +1111,7 @@ class Leaves extends \yii\db\ActiveRecord {
         return $dataProvider;
     }
     
-    public function getLeaveEmployee($params){
-        $query = Leaves::find()
-        ->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
-                  'leave_total','leave_status','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from',
-        		  'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to'
-        ])
-        ->from('leaves')
-        ->where(['employee_id' => Yii::$app->user->getId()]);
-        
-        $dataProvider = new \yii\data\ActiveDataProvider([
-            'query' => $query,
-            'pagination' =>[
-                'pageSize' => Yii::$app->params['per_page']
-            ]    
-        ]);
-        
-        if ((!$this->load($params)) && ($this->validate())) {
-            return $dataProvider;
-        }
-        
-        if($this->leave_status) $query->andWhere(['leave_status'=>$this->leave_status]);
-        if($this->leave_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_from]);
-        if($this->leave_date_from) $query->andFilterWhere(['<=', 'DATE_FORMAT(leave_date,\'%d/%m/%Y\')', $this->leave_date_to]);
-        
-        return $dataProvider;
-    }
+    
     
     public function getLeaveApproval($params){
         $query = Leaves::find()
