@@ -1,7 +1,9 @@
 <?php
 return [
 		'msg approval and approval email must be valid' => 'Approval and Approval Email must be valid please info BDO Management is your setting is not Valid',
-		
+		'msg request has been approved' => 'Request has been Approved',
+		'msg request has been completed' => 'Request has been Completed',
+		'msg search by nik or name' => 'Search By NIK OR Name',
 		'msg date is already' => 'Date is Available',
 		'msg date range is not valid' => 'Date Range is Not Valid',
 		'msg create a new request form' => 'Formulir Permohonan Online Cuti',
@@ -31,6 +33,7 @@ return [
 		'msg ticket has been insert' => 'Tiket berhasil dibuat',
 		'msg no data selection' => 'Tidak ada data yang diseleksi',
 		'msg delete success' => 'Hapus data sukses !',
+		'msg please select employee' => 'Please Select Employee',
 		'msg employee has been use' => 'Karyawan sudah ada di daftar Helpdesk',
 		'msg set helpdesk successfully' => 'Set Helpdesk Berhasil !',
 		'msg new ticket' => 'Tiket Baru',
@@ -59,5 +62,6 @@ return [
 		'msg please fill email' => 'Mohon untuk mengisi field email yang valid!',
 		'msg less than 1 second ago' => 'Kurang dari satu detik yang lalu',
 		'msg finish requested leave form' => 'Finish Requested Leave Form',
-		'msg leave balance has been deleted' => 'Leave Balance has been Deleted' 
+		'msg leave balance has been deleted' => 'Leave Balance has been Deleted', 
+		'msg update account has been successfully' => 'Update account has been successfully',
 ];

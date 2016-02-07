@@ -5,7 +5,7 @@ use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 
 class Employee extends ActiveRecord implements IdentityInterface {
-    
+    public $employee_name;
     public $passtext;
     public $remember_me;
     public $EmployeeName;
@@ -33,19 +33,19 @@ class Employee extends ActiveRecord implements IdentityInterface {
             [['EmployeeID'],'required','message'=>Yii::t('app/message','msg identity not empty'),'on'=>'login'],
             [['passtext'],'required','message'=>Yii::t('app/message','msg password not empty'),'on'=>'login'],
             [['passtext'],'validatePassword','on'=>'login'],
-            [['EmployeeFirstName'],'required','on'=>['update_account','update_myprofile']],
-            [['EmployeeMiddleName'],'safe','on'=>['update_account','update_myprofile']],
-            [['EmployeeLastName'],'safe','on'=>['update_account','update_myprofile']],
-            [['EmployeeEmail'],'required','on'=>['update_account','update_myprofile']],
-            [['EmployeeEmail'],'email','on'=>['update_account','update_myprofile']],
-            [['EmployeeName'],'safe','on'=>'search'],
+            [['EmployeeFirstName'],'required','on'=>['update_personal','update_myprofile']],
+            [['EmployeeMiddleName'],'safe','on'=>['update_personal','update_myprofile']],
+            [['EmployeeLastName'],'safe','on'=>['update_personal','update_myprofile']],
+            [['EmployeeEmail'],'required','on'=>['update_personal','update_myprofile']],
+            [['EmployeeEmail'],'email','on'=>['update_personal','update_myprofile']],
+        	[['EmployeeHandPhone'],'required','on'=>['update_personal']],
+            [['employee_name'],'safe','on'=>'search'],
             [['employee_date_from'],'safe','on'=>'search'],
             [['employee_date_to'],'safe','on'=>'search'],
-            [['EmployeeHireDate'],'safe','on'=>'update_account'],
-            [['EmployeeLeavePartner'],'required','on'=>['update_account','update_myaccount']],
-            [['EmployeeLeaveHRD'],'required','on'=>['update_account','update_myaccount']],
-            [['EmployeeLeaveManager'],'safe','on'=>['update_account','update_myaccount']],
-            //[['EmployeeLeaveSenior'],'safe','on'=>['update_account','update_myaccount']],
+            [['EmployeeHireDate'],'required','on'=>'update_personal'],
+            [['EmployeeLeavePartner'],'required','on'=>['update_personal_approval','update_myaccount']],
+            [['EmployeeLeaveHRD'],'required','on'=>['update_personal_approval','update_myaccount']],
+            [['EmployeeLeaveManager'],'safe','on'=>['update_personal_approval','update_myaccount']],
             [['leave_status'],'safe','on'=>['search']]
         ];
     }
@@ -59,6 +59,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
             'EmployeeEmail' => Yii::t('app','email'),
             'passtext' => Yii::t('app','password'),
             'EmployeeHireDate' => Yii::t('app','hire date'),
+        	'EmployeeHandPhone' => Yii::t('app','handphone'),
             'EmployeeTitle' => Yii::t('app','title'),
             'EmployeeLeaveDate' => Yii::t('app','entitlement date'),
             'EmployeeLeaveTotal' => Yii::t('app','Entitlement'),
@@ -71,6 +72,43 @@ class Employee extends ActiveRecord implements IdentityInterface {
             'leave_status' => Yii::t('app','Status'),
         ];
     }
+    
+    /** 
+     * Get Dropdown List
+     * 
+     */
+    
+    /**
+     * Get Employee List from Dropdown
+     * @param array $data
+     */
+    public static function getEmployeeList($data = array()){
+    	$lists = [];
+    	$models = Employee::find()
+    	->from('employee e')
+    	->join('inner join','sys_user su','su.employee_id=e.employee_id')
+    	->orderBy('e.EmployeeFirstname ASC,e.EmployeeMiddleName ASC,e.EmployeeLastName ASC')
+    	->where(['su.user_active'=>1]);
+    	
+    	if(isset($data['position']))
+    		$models = $models->where(['EmployeeTitle' => $data['position']]);
+    	$models = $models->all();
+    	
+    	
+    	if(isset($data['label'])) 
+    		$lists[0] = $data['label'];
+    	
+    	foreach($models as $row){
+    		$lists[$row->employee_id] = $row->EmployeeFirstName.' '.$row->EmployeeMiddleName.' '.$row->EmployeeLastName.' '.$row->EmployeeID;
+    	}
+    	return $lists;
+    }
+    
+    /**
+     * End of Dropdown List
+     *
+     */
+    
     
     public static function getStringStatus($int){
         switch($int){
@@ -116,6 +154,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public static function getEmployee($employee_id){
     	$Employee = Employee::find()
     	->select(["e.*","CONCAT(em.EmployeeFirstName,' ',em.EmployeeLastName) as manager_approval","em.EmployeeEmail as manager_email",
+    	"DATE_FORMAT(e.EmployeeHireDate,'%d/%m/%Y') as EmployeeHireDate",		
     	"CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeLastName) as hrd_approval","eh.EmployeeEmail as hrd_email",	
     	"CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeLastName) as partner_approval","ep.EmployeeEmail as partner_email"])
     	->from('employee e')
@@ -141,7 +180,12 @@ class Employee extends ActiveRecord implements IdentityInterface {
     		return false;
     }
     
-    public function getEmployeeLeaveData($params){
+    /**
+     * Active Employee Data Provider
+     * @param unknown $params
+     * @return \yii\data\ActiveDataProvider
+     */
+    public function getActiveEmployeeDataProvider($params){
         $query = Employee::find()
         ->select(["e.employee_id","CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName) as EmployeeName",
                   "e.EmployeeID","DATE_FORMAT(e.EmployeeHireDate,'%d/%m/%Y') as EmployeeHireDate","e.EmployeeTitle",
@@ -187,12 +231,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
             return $dataProvider;
         }
         
-        if($this->leave_status==1)
-            $query->andFilterWhere(['>','(TO_DAYS(CURDATE())-TO_DAYS(EmployeeLeaveDate))',364]);
-        elseif($this->leave_status==2)
-            $query->andFilterWhere(['<','(TO_DAYS(CURDATE())-TO_DAYS(EmployeeLeaveDate))',365]);
-        
-        $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->EmployeeName]);
+        if($this->employee_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(EmployeeHireDate,\'%d/%m/%Y\')', $this->employee_date_from]);
+        if($this->employee_date_to) $query->andFilterWhere(['<=', 'DATE_FORMAT(EmployeeHireDate,\'%d/%m/%Y\')', $this->employee_date_to]);
+        if($this->employee_name) $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
         
         return $dataProvider;
         
@@ -311,7 +352,11 @@ class Employee extends ActiveRecord implements IdentityInterface {
         return $arr;
     }
     
-    public function getUpdateProfile($id){
+    /**
+     *  Save Employee Profile
+     * @param unknown $id
+     */
+    public function getUpdateProfile($id) {
         if($this->validate()){
             $model = new Employee();
             $model = $model->findOne($id);
@@ -319,15 +364,27 @@ class Employee extends ActiveRecord implements IdentityInterface {
             $model->EmployeeMiddleName = $this->EmployeeMiddleName;
             $model->EmployeeLastName = $this->EmployeeLastName;
             $model->EmployeeEmail = $this->EmployeeEmail;
-            if($this->EmployeeHireDate)
-               $model->EmployeeHireDate = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->EmployeeHireDate);
-            //$model->EmployeeLeaveSenior = $this->EmployeeLeaveSenior;
-            $model->EmployeeLeaveManager = $this->EmployeeLeaveManager;
-            $model->EmployeeLeaveHRD = $this->EmployeeLeaveHRD;
-            $model->EmployeeLeavePartner = $this->EmployeeLeavePartner;
+            $model->EmployeeHireDate = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->EmployeeHireDate);
+            $model->EmployeeHandPhone = $this->EmployeeHandPhone;
             $model->update();
             return true;
         }
+    }
+    
+    /**
+     *  Save Employee Profile Approval
+     * @param unknown $id
+     */
+    public function getUpdateProfileApproval($id) {
+    	if($this->validate()){
+    		$model = new Employee();
+    		$model = $model->findOne($id);
+    		$model->EmployeeLeaveManager = $this->EmployeeLeaveManager;
+    		$model->EmployeeLeaveHRD = $this->EmployeeLeaveHRD;
+    		$model->EmployeeLeavePartner = $this->EmployeeLeavePartner;
+    		$model->update();
+    		return true;
+    	}
     }
     
     public function getUpdateMyProfile($id){

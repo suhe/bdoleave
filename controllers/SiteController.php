@@ -41,14 +41,14 @@ class SiteController extends Controller {
 
     public function actionLogin() {
     	if(!Yii::$app->user->isGuest) {
-    		return $this->redirect(['leave/index']);
+    		return $this->redirect(['my-leave/index']);
     	}
     		
 		$model = new Employee(['scenario'=>'login']);
 		//$this->TimesheetRevival();
 		///$this->actionRefresh();
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->getLogin()) {
-	    	return $this->redirect(['leave/index']);
+	    	return $this->redirect(['my-leave/index']);
         }
         $this->layout = 'login';
         return $this->render('login',[

@@ -151,47 +151,8 @@ if(!Yii::$app->user->isGuest){
 						</div>
 						<!-- END SHORTCUT BUTTONS -->	
 						
-						<?php if(\app\models\Employee::isHRD() && Yii::$app->user->getId() ){?>
-						<?=\app\components\NavMenuWidget::widget([
-						    'menu'=>[
-							[
-							  'label' => Yii::t('app','leave management'),
-							  'url'   => 'ticket',
-							  'icon'  => 'fa fa-file',
-							  'sub'   => [
-							    [
-							      'label'=>Yii::t('app','approval leave'),
-							      'url'  => 'leave/hrdapproval',
-							      'icon' => 'fa fa-pencil'
-							    ],
-							    [
-							      'label'=>Yii::t('app','leave form'),
-							      'url'  => 'leave/add_management',
-							      'icon' => 'fa fa-plus'
-							    ],
-							    [
-							      'label'=>Yii::t('app','leave list'),
-							      'url'  => 'leave/management',
-							      'icon' => 'fa fa-list'
-							    ],
-							    [
-							      'label'=>Yii::t('app','employee leave'),
-							      'url'  => 'leave/employee',
-							      'icon' => 'fa fa-user'
-							    ],
-							    [
-							      'label'=>Yii::t('app','holiday list'),
-							      'url'  => 'holiday/index',
-							      'icon' => 'fa fa-area-chart'
-							    ],
-							    
-								
-							  ]
-							],
-			
-						    ]
-						])?>
-						<?php }
+						
+						<?php
 						if(Yii::$app->user->getId()) { ?>
 						<?=\app\components\NavMenuWidget::widget([
 						    'menu'=>[
@@ -207,26 +168,68 @@ if(!Yii::$app->user->isGuest){
 							    ],
 							  	
 							  	[
-							  		'label'=>Yii::t('app','my leave balance'),
+							  		'label'=>Yii::t('app','my leave balanced'),
 							  		'url'  => 'leave/mybalance',
-							  		'icon' => 'fa fa-list'
+							  		'icon' => 'fa fa-dropbox'
 							  	],
 							  		
 							    [
-							      'label'=>Yii::t('app','approval leave'),
-							      'url'  => 'leave/approval',
-							      'icon' => 'fa fa-list'
+							      'label'=>Yii::t('app','to be approval'),
+							      'url'  => 'app-leave/index',
+							      'icon' => 'fa fa-pencil'
 							    ],
 							    
-							    [
+							    /*[
 							      'label'=>Yii::t('app','approval list'),
 							      'url'  => 'leave/approvallist',
 							      'icon' => 'fa fa-list'
-							    ],
+							    ],*/
 								
 							  ]
 							],
 							
+						    ]
+						])?>
+						<?php } ?>
+						
+						<?php if(\app\models\Employee::isHRD() && Yii::$app->user->getId() ){?>
+						<?=\app\components\NavMenuWidget::widget([
+						    'menu'=>[
+							[
+							  'label' => Yii::t('app','management'),
+							  'url'   => 'ticket',
+							  'icon'  => 'fa fa-file',
+							  'sub'   => [
+							    [
+							      'label'=>Yii::t('app','to be approval'),
+							      'url'  => 'manage-leave/index',
+							      'icon' => 'fa fa-pencil'
+							    ],
+							    /*[
+							      'label'=>Yii::t('app','leave form'),
+							      'url'  => 'leave/add_management',
+							      'icon' => 'fa fa-plus'
+							    ],*/
+							    /*[
+							      'label'=>Yii::t('app','leave list'),
+							      'url'  => 'leave/management',
+							      'icon' => 'fa fa-list'
+							    ],**/
+							    [
+							      'label'=>Yii::t('app','employee'),
+							      'url'  => 'employee/index',
+							      'icon' => 'fa fa-user'
+							    ],
+							    [
+							      'label'=>Yii::t('app','holiday list'),
+							      'url'  => 'holiday/index',
+							      'icon' => 'fa fa-area-chart'
+							    ],
+							    
+								
+							  ]
+							],
+			
 						    ]
 						])?>
 						<?php } ?>

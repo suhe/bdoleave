@@ -217,7 +217,7 @@ $this->params ['addUrl'] = [
 					    	
 					    ],
 					    'leave_log_approval_name' => [
-					    	'label' => Yii::t('app','to approval'),
+					    	'label' => Yii::t('app','to be approval'),
 					    	'attribute' => 'leave_log_approval_name',
 					    		
 					    ],

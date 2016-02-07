@@ -54,11 +54,12 @@ class MyLeaveController extends Controller {
 	 */
 	public function actionDetailView($id) {
 		$model = new \app\models\Leaves();
+		$app_model = $model->getDetailView($id);
 		return $this->render('detail-view',[
 				'title' => Yii::t('app','my leave'),
 				'id' => $id,
 				'employee' => Employee::getEmployee(Yii::$app->user->getId()),
-				'leave' => $model->getDetailView($id),
+				'leave' => $app_model,
 				'logDataProvider' => LeaveLog::getLogLeaveDataProvider($id),
 		]);
 	}

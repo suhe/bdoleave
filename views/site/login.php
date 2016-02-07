@@ -126,8 +126,8 @@ $this->params ['addUrl'] = 'ticket/add';
 					] );
 					?>
 		
-			  <?=$form->field ( $model, 'EmployeeID', [ 'inputTemplate' => '<div class="form-group"><div class="input-icon right"><span class="fa fa-user text-gray"></span>{input}</div></div>' ] )->textInput ( [ 'placeholder' => Yii::t ( 'app/message', 'msg enter your nik' ) ] );?>
-			  <?=$form->field ( $model, 'passtext', [ 'inputTemplate' => '<div class="form-group"><div class="input-icon right"><span class="fa fa-key text-gray"></span>{input}</div></div>' ] )->passwordInput ( [ 'placeholder' => Yii::t ( 'app/message', 'msg enter your password' ) ] );?>
+			  <?=$form->field ( $model, 'EmployeeID', [ 'inputTemplate' => '<div class="form-group"><div class="input-icon right"><span class="fa fa-user text-gray"></span>{input}</div></div>' ] )->textInput ( [ 'maxlength' =>5, 'placeholder' => Yii::t ( 'app/message', 'msg enter your nik' ) ] );?>
+			  <?=$form->field ( $model, 'passtext', [ 'inputTemplate' => '<div class="form-group"><div class="input-icon right"><span class="fa fa-key text-gray"></span>{input}</div></div>' ] )->passwordInput ( [ 'maxlength' =>15, 'placeholder' => Yii::t ( 'app/message', 'msg enter your password' ) ] );?>
 			    <div class="tcb">
 								<label> <?=$form->field($model,'remember_me')->checkbox()?></label>
 								<div class="form-group pull-right">
