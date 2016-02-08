@@ -1,0 +1,331 @@
+a:8:{s:6:"config";a:5:{s:10:"phpVersion";s:5:"7.0.1";s:10:"yiiVersion";s:9:"2.0.7-dev";s:11:"application";a:4:{s:3:"yii";s:9:"2.0.7-dev";s:4:"name";s:14:"My Application";s:3:"env";s:3:"dev";s:5:"debug";b:1;}s:3:"php";a:4:{s:7:"version";s:5:"7.0.1";s:6:"xdebug";b:0;s:3:"apc";b:0;s:8:"memcache";b:0;}s:10:"extensions";a:11:{s:18:"vileosoft/phpexcel";a:3:{s:4:"name";s:18:"vileosoft/phpexcel";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:13:"@yii/phpexcel";s:43:"/app/www/bdoleave/vendor/vileosoft/phpexcel";}}s:16:"vileosoft/phppdf";a:3:{s:4:"name";s:18:"vileosoft/phpexcel";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:11:"@yii/phppdf";s:33:"/app/www/bdoleave/vendor/phpexcel";}}s:20:"alexgx/yii2-phpexcel";a:3:{s:4:"name";s:20:"alexgx/yii2-phpexcel";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:16:"@alexgx/phpexcel";s:45:"/app/www/bdoleave/vendor/alexgx/yii2-phpexcel";}}s:25:"kartik-v/yii2-krajee-base";a:3:{s:4:"name";s:25:"kartik-v/yii2-krajee-base";s:7:"version";s:7:"1.8.2.0";s:5:"alias";a:1:{s:12:"@kartik/base";s:50:"/app/www/bdoleave/vendor/kartik-v/yii2-krajee-base";}}s:28:"kartik-v/yii2-widget-select2";a:3:{s:4:"name";s:28:"kartik-v/yii2-widget-select2";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:15:"@kartik/select2";s:53:"/app/www/bdoleave/vendor/kartik-v/yii2-widget-select2";}}s:18:"yiisoft/yii2-faker";a:3:{s:4:"name";s:18:"yiisoft/yii2-faker";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:10:"@yii/faker";s:43:"/app/www/bdoleave/vendor/yiisoft/yii2-faker";}}s:24:"yiisoft/yii2-swiftmailer";a:3:{s:4:"name";s:24:"yiisoft/yii2-swiftmailer";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:16:"@yii/swiftmailer";s:49:"/app/www/bdoleave/vendor/yiisoft/yii2-swiftmailer";}}s:24:"yiisoft/yii2-codeception";a:3:{s:4:"name";s:24:"yiisoft/yii2-codeception";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:16:"@yii/codeception";s:49:"/app/www/bdoleave/vendor/yiisoft/yii2-codeception";}}s:22:"yiisoft/yii2-bootstrap";a:3:{s:4:"name";s:22:"yiisoft/yii2-bootstrap";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:14:"@yii/bootstrap";s:47:"/app/www/bdoleave/vendor/yiisoft/yii2-bootstrap";}}s:18:"yiisoft/yii2-debug";a:3:{s:4:"name";s:18:"yiisoft/yii2-debug";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:10:"@yii/debug";s:43:"/app/www/bdoleave/vendor/yiisoft/yii2-debug";}}s:16:"yiisoft/yii2-gii";a:3:{s:4:"name";s:16:"yiisoft/yii2-gii";s:7:"version";s:11:"9999999-dev";s:5:"alias";a:1:{s:8:"@yii/gii";s:41:"/app/www/bdoleave/vendor/yiisoft/yii2-gii";}}}}s:7:"request";a:14:{s:7:"flashes";a:0:{}s:10:"statusCode";i:500;s:14:"requestHeaders";a:9:{s:4:"host";s:14:"bdoleave.local";s:10:"user-agent";s:90:"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 FirePHP/0.7.4";s:6:"accept";s:63:"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";s:15:"accept-language";s:14:"en-US,en;q=0.5";s:15:"accept-encoding";s:13:"gzip, deflate";s:6:"cookie";s:158:"PHPSESSID=tj5q289vb04r7itiv3enfh1ij0; _csrf=3c34aab6d18b5ea180ebbde1a516a498edf59e50990312d81883c1747daf03das%3A32%3A%22mLb8fXEkekyWwW1jLLs8hRKyaIIjdviY%22%3B";s:9:"x-insight";s:8:"activate";s:10:"connection";s:10:"keep-alive";s:13:"cache-control";s:9:"max-age=0";}s:15:"responseHeaders";a:5:{s:12:"X-Powered-By";s:9:"PHP/7.0.1";s:7:"Expires";s:29:"Thu, 19 Nov 1981 08:52:00 GMT";s:13:"Cache-Control";s:35:"no-store, no-cache, must-revalidate";s:6:"Pragma";s:8:"no-cache";s:12:"Content-Type";s:24:"text/html; charset=UTF-8";}s:5:"route";s:20:"report/balanced-card";s:6:"action";s:54:"app\controllers\ReportController::actionBalancedCard()";s:12:"actionParams";a:0:{}s:11:"requestBody";a:0:{}s:6:"SERVER";a:34:{s:9:"UNIQUE_ID";s:24:"VriFtX8AAQEAACUeDyYAAAAK";s:9:"HTTP_HOST";s:14:"bdoleave.local";s:15:"HTTP_USER_AGENT";s:90:"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 FirePHP/0.7.4";s:11:"HTTP_ACCEPT";s:63:"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";s:20:"HTTP_ACCEPT_LANGUAGE";s:14:"en-US,en;q=0.5";s:20:"HTTP_ACCEPT_ENCODING";s:13:"gzip, deflate";s:11:"HTTP_COOKIE";s:158:"PHPSESSID=tj5q289vb04r7itiv3enfh1ij0; _csrf=3c34aab6d18b5ea180ebbde1a516a498edf59e50990312d81883c1747daf03das%3A32%3A%22mLb8fXEkekyWwW1jLLs8hRKyaIIjdviY%22%3B";s:14:"HTTP_X_INSIGHT";s:8:"activate";s:15:"HTTP_CONNECTION";s:10:"keep-alive";s:18:"HTTP_CACHE_CONTROL";s:9:"max-age=0";s:4:"PATH";s:60:"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin";s:15:"LD_LIBRARY_PATH";s:29:"/opt/lampp/lib:/opt/lampp/lib";s:16:"SERVER_SIGNATURE";s:0:"";s:15:"SERVER_SOFTWARE";s:77:"Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3";s:11:"SERVER_NAME";s:14:"bdoleave.local";s:11:"SERVER_ADDR";s:9:"127.0.1.1";s:11:"SERVER_PORT";s:2:"80";s:11:"REMOTE_ADDR";s:9:"127.0.0.1";s:13:"DOCUMENT_ROOT";s:18:"/app/www/bdoleave/";s:14:"REQUEST_SCHEME";s:4:"http";s:14:"CONTEXT_PREFIX";s:0:"";s:21:"CONTEXT_DOCUMENT_ROOT";s:18:"/app/www/bdoleave/";s:12:"SERVER_ADMIN";s:9:"ims@local";s:15:"SCRIPT_FILENAME";s:31:"/app/www/bdoleave/web/index.php";s:11:"REMOTE_PORT";s:5:"53574";s:17:"GATEWAY_INTERFACE";s:7:"CGI/1.1";s:15:"SERVER_PROTOCOL";s:8:"HTTP/1.1";s:14:"REQUEST_METHOD";s:3:"GET";s:12:"QUERY_STRING";s:60:"r=report%2Fbalanced-card&Leaves[employee_name]=10596&search=";s:11:"REQUEST_URI";s:75:"/web/index.php?r=report%2Fbalanced-card&Leaves[employee_name]=10596&search=";s:11:"SCRIPT_NAME";s:14:"/web/index.php";s:8:"PHP_SELF";s:14:"/web/index.php";s:18:"REQUEST_TIME_FLOAT";d:1454933429.2460000514984130859375;s:12:"REQUEST_TIME";i:1454933429;}s:3:"GET";a:3:{s:1:"r";s:20:"report/balanced-card";s:6:"Leaves";a:1:{s:13:"employee_name";s:5:"10596";}s:6:"search";s:0:"";}s:4:"POST";a:0:{}s:6:"COOKIE";a:2:{s:9:"PHPSESSID";s:26:"tj5q289vb04r7itiv3enfh1ij0";s:5:"_csrf";s:104:"3c34aab6d18b5ea180ebbde1a516a498edf59e50990312d81883c1747daf03das:32:"mLb8fXEkekyWwW1jLLs8hRKyaIIjdviY";";}s:5:"FILES";a:0:{}s:7:"SESSION";a:2:{s:7:"__flash";a:0:{}s:4:"__id";i:10768;}}s:3:"log";a:1:{s:8:"messages";a:51:{i:0;a:5:{i:0;s:33:"Bootstrap with yii\log\Dispatcher";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1454933429.2592980861663818359375;i:4;a:0:{}}i:1;a:5:{i:0;s:21:"Loading module: debug";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1454933429.25932788848876953125;i:4;a:0:{}}i:2;a:5:{i:0;s:44:"Bootstrap with yii\debug\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1454933429.263392925262451171875;i:4;a:0:{}}i:3;a:5:{i:0;s:19:"Loading module: gii";i:1;i:8;i:2;s:26:"yii\base\Module::getModule";i:3;d:1454933429.26461696624755859375;i:4;a:0:{}}i:4;a:5:{i:0;s:42:"Bootstrap with yii\gii\Module::bootstrap()";i:1;i:8;i:2;s:31:"yii\base\Application::bootstrap";i:3;d:1454933429.2651119232177734375;i:4;a:0:{}}i:5;a:5:{i:0;s:56:"Pretty URL not enabled. Using default URL parsing logic.";i:1;i:8;i:2;s:32:"yii\web\UrlManager::parseRequest";i:3;d:1454933429.2666409015655517578125;i:4;a:0:{}}i:6;a:5:{i:0;s:39:"Route requested: 'report/balanced-card'";i:1;i:8;i:2;s:34:"yii\web\Application::handleRequest";i:3;d:1454933429.2666680812835693359375;i:4;a:0:{}}i:7;a:5:{i:0;s:34:"Route to run: report/balanced-card";i:1;i:8;i:2;s:30:"yii\base\Controller::runAction";i:3;d:1454933429.2681839466094970703125;i:4;a:0:{}}i:8;a:5:{i:0;s:70:"Running action: app\controllers\ReportController::actionBalancedCard()";i:1;i:8;i:2;s:36:"yii\base\InlineAction::runWithParams";i:3;d:1454933429.2683069705963134765625;i:4;a:0:{}}i:9;a:5:{i:0;s:31:"SHOW FULL COLUMNS FROM `leaves`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.278688907623291015625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:10;a:5:{i:0;s:54:"Opening DB connection: mysql:host=localhost;dbname=bdo";i:1;i:4;i:2;s:23:"yii\db\Connection::open";i:3;d:1454933429.2787349224090576171875;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:15;a:5:{i:0;s:599:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leaves' AND kcu.table_name = 'leaves'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.281446933746337890625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:18;a:5:{i:0;s:69:"Rendering view file: /app/www/bdoleave/views/report/balanced-card.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.2903959751129150390625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:19;a:5:{i:0;s:201:"SELECT `e`.* FROM `employee` `e` inner join `sys_user` `su` ON su.employee_id=e.employee_id WHERE `su`.`user_active`=1 ORDER BY `e`.`EmployeeFirstname`, `e`.`EmployeeMiddleName`, `e`.`EmployeeLastName`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3014891147613525390625;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:22;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `employee`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.31667804718017578125;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:25;a:5:{i:0;s:603:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'employee' AND kcu.table_name = 'employee'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3191020488739013671875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:28;a:5:{i:0;s:15:"Session started";i:1;i:4;i:2;s:21:"yii\web\Session::open";i:3;d:1454933429.3616790771484375;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:59;s:8:"function";s:8:"getFlash";s:5:"class";s:15:"yii\web\Session";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:29;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `leave_balance`";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3653690814971923828125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:32;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leave_balance' AND kcu.table_name = 'leave_balance'";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3662979602813720703125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:35;a:5:{i:0;s:1027:"
+    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_description,balanced.leave_total,balanced.source,balanced.balance
+    	FROM
+    	(
+    	SELECT
+    	leave_balance_date as leave_date,leave_balance_description as leave_description,leave_balance_total as leave_total,source,@saldo:=@saldo+leave_balance_total AS balance
+    	FROM
+    	(SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+    	FROM leave_balance
+    	WHERE employee_id = 10406
+    	UNION ALL
+    	SELECT leave_date leave_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+    	FROM `leaves`
+    	WHERE employee_id = 10406 and leave_approved = 1
+    	) balance
+    	JOIN (SELECT @saldo:=0) a
+    	ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+    	) AS balanced
+    	WHERE balanced.leave_date <> '' ";i:1;i:4;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.367537975311279296875;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:38;a:5:{i:0;s:3463:"yii\base\UnknownPropertyException: Getting unknown property: app\models\LeaveBalance::leave_saldo in /app/www/bdoleave/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/BaseActiveRecord.php(247): yii\base\Component->__get('leave_saldo')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/helpers/BaseArrayHelper.php(204): yii\db\BaseActiveRecord->__get('leave_saldo')
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/grid/DataColumn.php(193): yii\helpers\BaseArrayHelper::getValue(Object(app\models\LeaveBalance), 'leave_saldo')
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/grid/DataColumn.php(204): yii\grid\DataColumn->getDataCellValue(Object(app\models\LeaveBalance), NULL, 0)
+#4 /app/www/bdoleave/vendor/yiisoft/yii2/grid/Column.php(108): yii\grid\DataColumn->renderDataCellContent(Object(app\models\LeaveBalance), NULL, 0)
+#5 /app/www/bdoleave/vendor/yiisoft/yii2/grid/GridView.php(504): yii\grid\Column->renderDataCell(Object(app\models\LeaveBalance), NULL, 0)
+#6 /app/www/bdoleave/vendor/yiisoft/yii2/grid/GridView.php(473): yii\grid\GridView->renderTableRow(Object(app\models\LeaveBalance), NULL, 0)
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/grid/GridView.php(344): yii\grid\GridView->renderTableBody()
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/widgets/BaseListView.php(151): yii\grid\GridView->renderItems()
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/grid/GridView.php(313): yii\widgets\BaseListView->renderSection('{items}')
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/widgets/BaseListView.php(126): yii\grid\GridView->renderSection('{items}')
+#11 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#12 /app/www/bdoleave/vendor/yiisoft/yii2/widgets/BaseListView.php(129): preg_replace_callback('/{\\w+}/', Object(Closure), '<div class="hid...')
+#13 /app/www/bdoleave/vendor/yiisoft/yii2/grid/GridView.php(288): yii\widgets\BaseListView->run()
+#14 /app/www/bdoleave/vendor/yiisoft/yii2/base/Widget.php(98): yii\grid\GridView->run()
+#15 /app/www/bdoleave/views/report/balanced-card.php(117): yii\base\Widget::widget(Array)
+#16 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(325): require('/app/www/bdolea...')
+#17 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/app/www/bdolea...', Array)
+#18 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/app/www/bdolea...', Array, Object(app\controllers\ReportController))
+#19 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(377): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#20 /app/www/bdoleave/controllers/ReportController.php(62): yii\base\Controller->render('balanced-card', Array)
+#21 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#22 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#23 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(154): yii\base\InlineAction->runWithParams(Array)
+#24 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(454): yii\base\Controller->runAction('balanced-card', Array)
+#25 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('report/balanced...', Array)
+#26 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#28 {main}";i:1;i:1;i:2;s:33:"yii\base\UnknownPropertyException";i:3;d:1454933429.3736069202423095703125;i:4;a:0:{}}i:39;a:5:{i:0;s:91:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/exception.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.37460994720458984375;i:4;a:0:{}}i:40;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.37508106231689453125;i:4;a:0:{}}i:41;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.375399112701416015625;i:4;a:0:{}}i:42;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.375659942626953125;i:4;a:0:{}}i:43;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.375895977020263671875;i:4;a:0:{}}i:44;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.376101016998291015625;i:4;a:0:{}}i:45;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.37629604339599609375;i:4;a:0:{}}i:46;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3765161037445068359375;i:4;a:0:{}}i:47;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.376739025115966796875;i:4;a:0:{}}i:48;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3769600391387939453125;i:4;a:0:{}}i:49;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3771610260009765625;i:4;a:0:{}}i:50;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3773710727691650390625;i:4;a:0:{}}i:51;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.377574920654296875;i:4;a:0:{}}i:52;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3777449131011962890625;i:4;a:0:{}}i:53;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.37792205810546875;i:4;a:0:{}}i:54;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.378140926361083984375;i:4;a:0:{}}i:55;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3783318996429443359375;i:4;a:0:{}}i:56;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3785169124603271484375;i:4;a:0:{}}i:57;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.378798007965087890625;i:4;a:0:{}}i:58;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.379026889801025390625;i:4;a:0:{}}i:59;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3792979717254638671875;i:4;a:0:{}}i:60;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3795320987701416015625;i:4;a:0:{}}i:61;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.379726886749267578125;i:4;a:0:{}}i:62;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3799068927764892578125;i:4;a:0:{}}i:63;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3800609111785888671875;i:4;a:0:{}}i:64;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.380278110504150390625;i:4;a:0:{}}i:65;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3806231021881103515625;i:4;a:0:{}}i:66;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.3809149265289306640625;i:4;a:0:{}}i:67;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.381256103515625;i:4;a:0:{}}i:68;a:5:{i:0;s:95:"Rendering view file: /app/www/bdoleave/vendor/yiisoft/yii2/views/errorHandler/callStackItem.php";i:1;i:8;i:2;s:25:"yii\base\View::renderFile";i:3;d:1454933429.381473064422607421875;i:4;a:0:{}}}}s:9:"profiling";a:3:{s:6:"memory";i:13866496;s:4:"time";d:0.1349170207977294921875;s:8:"messages";a:18:{i:11;a:5:{i:0;s:54:"Opening DB connection: mysql:host=localhost;dbname=bdo";i:1;i:80;i:2;s:23:"yii\db\Connection::open";i:3;d:1454933429.2787621021270751953125;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:12;a:5:{i:0;s:54:"Opening DB connection: mysql:host=localhost;dbname=bdo";i:1;i:96;i:2;s:23:"yii\db\Connection::open";i:3;d:1454933429.279181003570556640625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:13;a:5:{i:0;s:31:"SHOW FULL COLUMNS FROM `leaves`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2792460918426513671875;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:14;a:5:{i:0;s:31:"SHOW FULL COLUMNS FROM `leaves`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2805049419403076171875;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:16;a:5:{i:0;s:599:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leaves' AND kcu.table_name = 'leaves'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2814939022064208984375;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:17;a:5:{i:0;s:599:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leaves' AND kcu.table_name = 'leaves'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2819540500640869140625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:20;a:5:{i:0;s:201:"SELECT `e`.* FROM `employee` `e` inner join `sys_user` `su` ON su.employee_id=e.employee_id WHERE `su`.`user_active`=1 ORDER BY `e`.`EmployeeFirstname`, `e`.`EmployeeMiddleName`, `e`.`EmployeeLastName`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.301536083221435546875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:21;a:5:{i:0;s:201:"SELECT `e`.* FROM `employee` `e` inner join `sys_user` `su` ON su.employee_id=e.employee_id WHERE `su`.`user_active`=1 ORDER BY `e`.`EmployeeFirstname`, `e`.`EmployeeMiddleName`, `e`.`EmployeeLastName`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.316565990447998046875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `employee`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.31672000885009765625;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `employee`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3180129528045654296875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:26;a:5:{i:0;s:603:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'employee' AND kcu.table_name = 'employee'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.319139957427978515625;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:27;a:5:{i:0;s:603:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'employee' AND kcu.table_name = 'employee'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3194921016693115234375;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:30;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `leave_balance`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3654229640960693359375;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:31;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `leave_balance`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.366085052490234375;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:33;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leave_balance' AND kcu.table_name = 'leave_balance'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3663399219512939453125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:34;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leave_balance' AND kcu.table_name = 'leave_balance'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3667418956756591796875;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:36;a:5:{i:0;s:1027:"
+    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_description,balanced.leave_total,balanced.source,balanced.balance
+    	FROM
+    	(
+    	SELECT
+    	leave_balance_date as leave_date,leave_balance_description as leave_description,leave_balance_total as leave_total,source,@saldo:=@saldo+leave_balance_total AS balance
+    	FROM
+    	(SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+    	FROM leave_balance
+    	WHERE employee_id = 10406
+    	UNION ALL
+    	SELECT leave_date leave_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+    	FROM `leaves`
+    	WHERE employee_id = 10406 and leave_approved = 1
+    	) balance
+    	JOIN (SELECT @saldo:=0) a
+    	ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+    	) AS balanced
+    	WHERE balanced.leave_date <> '' ";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.367577075958251953125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:37;a:5:{i:0;s:1027:"
+    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_description,balanced.leave_total,balanced.source,balanced.balance
+    	FROM
+    	(
+    	SELECT
+    	leave_balance_date as leave_date,leave_balance_description as leave_description,leave_balance_total as leave_total,source,@saldo:=@saldo+leave_balance_total AS balance
+    	FROM
+    	(SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+    	FROM leave_balance
+    	WHERE employee_id = 10406
+    	UNION ALL
+    	SELECT leave_date leave_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+    	FROM `leaves`
+    	WHERE employee_id = 10406 and leave_approved = 1
+    	) balance
+    	JOIN (SELECT @saldo:=0) a
+    	ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+    	) AS balanced
+    	WHERE balanced.leave_date <> '' ";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.372127056121826171875;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}}}s:2:"db";a:1:{s:8:"messages";a:16:{i:13;a:5:{i:0;s:31:"SHOW FULL COLUMNS FROM `leaves`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2792460918426513671875;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:14;a:5:{i:0;s:31:"SHOW FULL COLUMNS FROM `leaves`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2805049419403076171875;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:16;a:5:{i:0;s:599:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leaves' AND kcu.table_name = 'leaves'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2814939022064208984375;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:17;a:5:{i:0;s:599:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leaves' AND kcu.table_name = 'leaves'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.2819540500640869140625;i:4;a:1:{i:0;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:55;s:8:"function";s:11:"__construct";s:5:"class";s:15:"yii\base\Object";s:4:"type";s:2:"->";}}}i:20;a:5:{i:0;s:201:"SELECT `e`.* FROM `employee` `e` inner join `sys_user` `su` ON su.employee_id=e.employee_id WHERE `su`.`user_active`=1 ORDER BY `e`.`EmployeeFirstname`, `e`.`EmployeeMiddleName`, `e`.`EmployeeLastName`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.301536083221435546875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:21;a:5:{i:0;s:201:"SELECT `e`.* FROM `employee` `e` inner join `sys_user` `su` ON su.employee_id=e.employee_id WHERE `su`.`user_active`=1 ORDER BY `e`.`EmployeeFirstname`, `e`.`EmployeeMiddleName`, `e`.`EmployeeLastName`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.316565990447998046875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:23;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `employee`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.31672000885009765625;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:24;a:5:{i:0;s:33:"SHOW FULL COLUMNS FROM `employee`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3180129528045654296875;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:26;a:5:{i:0;s:603:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'employee' AND kcu.table_name = 'employee'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.319139957427978515625;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:27;a:5:{i:0;s:603:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'employee' AND kcu.table_name = 'employee'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3194921016693115234375;i:4;a:3:{i:0;a:5:{s:4:"file";s:37:"/app/www/bdoleave/models/Employee.php";s:4:"line";i:95;s:8:"function";s:3:"all";s:5:"class";s:18:"yii\db\ActiveQuery";s:4:"type";s:2:"->";}i:1;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:47;s:8:"function";s:15:"getEmployeeList";s:5:"class";s:19:"app\models\Employee";s:4:"type";s:2:"::";}i:2;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:30;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `leave_balance`";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3654229640960693359375;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:31;a:5:{i:0;s:38:"SHOW FULL COLUMNS FROM `leave_balance`";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.366085052490234375;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:33;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leave_balance' AND kcu.table_name = 'leave_balance'";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3663399219512939453125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:34;a:5:{i:0;s:613:"SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'leave_balance' AND kcu.table_name = 'leave_balance'";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.3667418956756591796875;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:36;a:5:{i:0;s:1027:"
+    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_description,balanced.leave_total,balanced.source,balanced.balance
+    	FROM
+    	(
+    	SELECT
+    	leave_balance_date as leave_date,leave_balance_description as leave_description,leave_balance_total as leave_total,source,@saldo:=@saldo+leave_balance_total AS balance
+    	FROM
+    	(SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+    	FROM leave_balance
+    	WHERE employee_id = 10406
+    	UNION ALL
+    	SELECT leave_date leave_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+    	FROM `leaves`
+    	WHERE employee_id = 10406 and leave_approved = 1
+    	) balance
+    	JOIN (SELECT @saldo:=0) a
+    	ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+    	) AS balanced
+    	WHERE balanced.leave_date <> '' ";i:1;i:80;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.367577075958251953125;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}i:37;a:5:{i:0;s:1027:"
+    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_description,balanced.leave_total,balanced.source,balanced.balance
+    	FROM
+    	(
+    	SELECT
+    	leave_balance_date as leave_date,leave_balance_description as leave_description,leave_balance_total as leave_total,source,@saldo:=@saldo+leave_balance_total AS balance
+    	FROM
+    	(SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
+    	FROM leave_balance
+    	WHERE employee_id = 10406
+    	UNION ALL
+    	SELECT leave_date leave_date,'2' as leave_balance_stype,CONCAT(leave_description,' (',leave_range,')') leave_description,-leave_total,IF(leave_source=1,'Timesheet','Leaves') as source
+    	FROM `leaves`
+    	WHERE employee_id = 10406 and leave_approved = 1
+    	) balance
+    	JOIN (SELECT @saldo:=0) a
+    	ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
+    	) AS balanced
+    	WHERE balanced.leave_date <> '' ";i:1;i:96;i:2;s:21:"yii\db\Command::query";i:3;d:1454933429.372127056121826171875;i:4;a:2:{i:0;a:5:{s:4:"file";s:48:"/app/www/bdoleave/views/report/balanced-card.php";s:4:"line";i:117;s:8:"function";s:6:"widget";s:5:"class";s:15:"yii\base\Widget";s:4:"type";s:2:"::";}i:1;a:5:{s:4:"file";s:50:"/app/www/bdoleave/controllers/ReportController.php";s:4:"line";i:62;s:8:"function";s:6:"render";s:5:"class";s:19:"yii\base\Controller";s:4:"type";s:2:"->";}}}}}s:6:"assets";a:8:{s:19:"yii\web\JqueryAsset";a:9:{s:10:"sourcePath";s:42:"/app/www/bdoleave/vendor/bower/jquery/dist";s:2:"js";a:1:{i:0;s:9:"jquery.js";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/3b54a64f";s:7:"baseUrl";s:20:"/web/assets/3b54a64f";s:7:"depends";a:0:{}s:3:"css";a:0:{}s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:23:"kartik\base\WidgetAsset";a:9:{s:2:"js";a:0:{}s:3:"css";a:1:{i:0;s:18:"css/kv-widgets.css";}s:10:"sourcePath";s:57:"/app/www/bdoleave/vendor/kartik-v/yii2-krajee-base/assets";s:7:"depends";a:3:{i:0;s:19:"yii\web\JqueryAsset";i:1;s:16:"yii\web\YiiAsset";i:2;s:28:"yii\bootstrap\BootstrapAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/52c2c488";s:7:"baseUrl";s:20:"/web/assets/52c2c488";s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:16:"yii\web\YiiAsset";a:9:{s:10:"sourcePath";s:44:"/app/www/bdoleave/vendor/yiisoft/yii2/assets";s:2:"js";a:1:{i:0;s:6:"yii.js";}s:7:"depends";a:1:{i:0;s:19:"yii\web\JqueryAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/2cbc1bcd";s:7:"baseUrl";s:20:"/web/assets/2cbc1bcd";s:3:"css";a:0:{}s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:28:"yii\bootstrap\BootstrapAsset";a:9:{s:10:"sourcePath";s:45:"/app/www/bdoleave/vendor/bower/bootstrap/dist";s:3:"css";a:1:{i:0;s:17:"css/bootstrap.css";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/17221d9e";s:7:"baseUrl";s:20:"/web/assets/17221d9e";s:7:"depends";a:0:{}s:2:"js";a:0:{}s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:27:"kartik\select2\Select2Asset";a:9:{s:2:"js";a:2:{i:0;s:18:"js/select2.full.js";i:1;s:20:"js/select2-krajee.js";}s:3:"css";a:2:{i:0;s:15:"css/select2.css";i:1;s:20:"css/select2-addl.css";}s:10:"sourcePath";s:60:"/app/www/bdoleave/vendor/kartik-v/yii2-widget-select2/assets";s:7:"depends";a:3:{i:0;s:19:"yii\web\JqueryAsset";i:1;s:16:"yii\web\YiiAsset";i:2;s:28:"yii\bootstrap\BootstrapAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/f4f35b18";s:7:"baseUrl";s:20:"/web/assets/f4f35b18";s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:31:"kartik\select2\ThemeKrajeeAsset";a:9:{s:2:"js";a:0:{}s:3:"css";a:1:{i:0;s:22:"css/select2-krajee.css";}s:10:"sourcePath";s:60:"/app/www/bdoleave/vendor/kartik-v/yii2-widget-select2/assets";s:7:"depends";a:3:{i:0;s:19:"yii\web\JqueryAsset";i:1;s:16:"yii\web\YiiAsset";i:2;s:28:"yii\bootstrap\BootstrapAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/f4f35b18";s:7:"baseUrl";s:20:"/web/assets/f4f35b18";s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:27:"yii\widgets\ActiveFormAsset";a:9:{s:10:"sourcePath";s:44:"/app/www/bdoleave/vendor/yiisoft/yii2/assets";s:2:"js";a:1:{i:0;s:17:"yii.activeForm.js";}s:7:"depends";a:1:{i:0;s:16:"yii\web\YiiAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/2cbc1bcd";s:7:"baseUrl";s:20:"/web/assets/2cbc1bcd";s:3:"css";a:0:{}s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}s:22:"yii\grid\GridViewAsset";a:9:{s:10:"sourcePath";s:44:"/app/www/bdoleave/vendor/yiisoft/yii2/assets";s:2:"js";a:1:{i:0;s:15:"yii.gridView.js";}s:7:"depends";a:1:{i:0;s:16:"yii\web\YiiAsset";}s:8:"basePath";s:37:"/app/www/bdoleave/web/assets/2cbc1bcd";s:7:"baseUrl";s:20:"/web/assets/2cbc1bcd";s:3:"css";a:0:{}s:9:"jsOptions";a:0:{}s:10:"cssOptions";a:0:{}s:14:"publishOptions";a:0:{}}}s:4:"mail";a:0:{}s:7:"summary";a:9:{s:3:"tag";s:13:"56b885b5406ff";s:3:"url";s:96:"http://bdoleave.local/web/index.php?r=report%2Fbalanced-card&Leaves[employee_name]=10596&search=";s:4:"ajax";i:0;s:6:"method";s:3:"GET";s:2:"ip";s:9:"127.0.0.1";s:4:"time";i:1454933429;s:10:"statusCode";i:500;s:8:"sqlCount";i:8;s:9:"mailCount";i:0;}}

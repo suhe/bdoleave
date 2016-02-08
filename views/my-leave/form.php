@@ -2,6 +2,7 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use app\models\Leaves;
 $this->params ['breadcrumbs'] = [ 
 		[ 
 				'label' => Yii::t ( 'app', 'my leave' ),
@@ -138,7 +139,7 @@ $this->params ['addUrl'] = [
 						] 
 					] );?>
 					
-					<?=$form->field($model,'leave_type')->dropDownList(\app\models\Leaves::getDropDownSelfLeave(),['class'=>'col-lg-6'])?>
+					<?=$form->field($model,'leave_type')->dropDownList(Leaves::getListLeaveType(),['class'=>'col-lg-6'])?>
                     <?=$form->field($model,'leave_description')->textArea(['rows'=>3]);?>
                     <?=$form->field($model,'leave_date_from',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
 			    	<?=$form->field($model,'leave_date_to',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>

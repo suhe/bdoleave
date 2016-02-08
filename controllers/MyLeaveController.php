@@ -8,6 +8,7 @@ namespace app\controllers;
 use yii;
 use yii\web\Controller;
 use app\models\Employee;
+use app\models\Leaves;
 use app\models\LeaveLog;
 
 class MyLeaveController extends Controller {
@@ -17,7 +18,7 @@ class MyLeaveController extends Controller {
 	 * @return string
 	 */
 	public function actionIndex() {
-		$model = new \app\models\Leaves(['scenario' => 'search']);
+		$model = new Leaves(['scenario' => 'search']);
 		if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
 	
 		}
@@ -34,7 +35,7 @@ class MyLeaveController extends Controller {
 	 * @return \yii\web\Response|string
 	 */
 	public function actionForm() {
-		$model = new \app\models\Leaves(['scenario' => 'add_myleave']);
+		$model = new Leaves(['scenario' => 'add_myleave']);
 		if($model->load(Yii::$app->request->post()) && $model->getSaveLeaveRequest(Yii::$app->user->getId())){
 			Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been created').'</strong></div>');
 			return $this->redirect(['my-leave/index'],301);
@@ -53,7 +54,7 @@ class MyLeaveController extends Controller {
 	 * @return string
 	 */
 	public function actionDetailView($id) {
-		$model = new \app\models\Leaves();
+		$model = new Leaves();
 		$app_model = $model->getDetailView($id);
 		return $this->render('detail-view',[
 				'title' => Yii::t('app','my leave'),
@@ -61,6 +62,19 @@ class MyLeaveController extends Controller {
 				'employee' => Employee::getEmployee(Yii::$app->user->getId()),
 				'leave' => $app_model,
 				'logDataProvider' => LeaveLog::getLogLeaveDataProvider($id),
+		]);
+	}
+	
+	/**
+	 *  Action Balanced Card
+	 * @return string
+	 */
+	public function actionBalancedCard() {
+		$model = new Leaves();
+		return $this->render('balanced-card',[
+				'title' => Yii::t('app','balanced card'),
+				'model' => $model,
+				'dataProvider' => $model->getMyBalanceLeaveCardDataProvider()
 		]);
 	}
 	

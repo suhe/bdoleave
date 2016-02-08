@@ -16,6 +16,8 @@ use yii\debug\models\search\Db;
  * Debugger panel that collects and displays database queries performed.
  *
  * @property array $profileLogs This property is read-only.
+ * @property string $summaryName Short name of the panel, which will be use in summary. This property is
+ * read-only.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -30,14 +32,30 @@ class DbPanel extends Panel
     public $criticalQueryThreshold;
 
     /**
+     * @var string the name of the database component to use for executing (explain) queries
+     */
+    public $db = 'db';
+
+    /**
      * @var array db queries info extracted to array as models, to use with data provider.
      */
     private $_models;
+
     /**
      * @var array current database request timings
      */
     private $_timings;
 
+    /**
+     * @inheritdoc
+     */
+    public function init()
+    {
+        $this->actions['db-explain'] = [
+            'class' => 'yii\\debug\\actions\\db\\ExplainAction',
+            'panel' => $this,
+        ];
+    }
 
     /**
      * @inheritdoc
@@ -84,6 +102,7 @@ class DbPanel extends Panel
             'panel' => $this,
             'dataProvider' => $dataProvider,
             'searchModel' => $searchModel,
+            'hasExplain' => $this->hasExplain()
         ]);
     }
 
@@ -92,7 +111,7 @@ class DbPanel extends Panel
      *
      * @return array timings [token, category, timestamp, traces, nesting level, elapsed time]
      */
-    protected function calculateTimings()
+    public function calculateTimings()
     {
         if ($this->_timings === null) {
             $this->_timings = Yii::getLogger()->calculateTimings($this->data['messages']);
@@ -175,7 +194,7 @@ class DbPanel extends Panel
         $timing = ltrim($timing);
         preg_match('/^([a-zA-z]*)/', $timing, $matches);
 
-        return count($matches) ? $matches[0] : '';
+        return count($matches) ? mb_strtoupper($matches[0], 'utf8') : '';
     }
 
     /**
@@ -187,5 +206,68 @@ class DbPanel extends Panel
     public function isQueryCountCritical($count)
     {
         return (($this->criticalQueryThreshold !== null) && ($count > $this->criticalQueryThreshold));
+    }
+
+    /**
+     * Returns array query types
+     *
+     * @return array
+     * @since 2.0.3
+     */
+    public function getTypes()
+    {
+        return array_reduce(
+            $this->_models,
+            function ($result, $item) {
+                $result[$item['type']] = $item['type'];
+                return $result;
+            },
+            []
+        );
+    }
+
+    /**
+     * @return boolean Whether the DB component has support for EXPLAIN queries
+     * @since 2.0.5
+     */
+    protected function hasExplain()
+    {
+        $db = $this->getDb();
+        if (!($db instanceof \yii\db\Connection)) {
+            return false;
+        }
+        switch ($db->getDriverName()) {
+            case 'mysql':
+            case 'sqlite':
+            case 'pgsql':
+            case 'cubrid':
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Check if given query type can be explained.
+     *
+     * @param string $type query type
+     * @return boolean
+     *
+     * @since 2.0.5
+     */
+    public static function canBeExplained($type)
+    {
+        return $type !== 'SHOW';
+    }
+
+    /**
+     * Returns a reference to the DB component associated with the panel
+     * 
+     * @return \yii\db\Connection
+     * @since 2.0.5
+     */
+    public function getDb()
+    {
+        return Yii::$app->get($this->db);
     }
 }

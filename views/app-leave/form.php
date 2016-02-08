@@ -59,7 +59,7 @@ $this->params ['addUrl'] = [
 					    	],
 					    	[
 					    		'label' => Yii::t('app','hire date'),
-					    		'format' => ['date', 'php:d M Y'],
+					    		//'format' => ['date', 'php:d M Y'],
 					    		'value' => $employee->EmployeeHireDate,
 					    	],
 					    	[
@@ -124,6 +124,10 @@ $this->params ['addUrl'] = [
 					<?=DetailView::widget([
 					    'model' => $leave,
 					    'attributes' => [
+					    	[
+					    		'label' => Yii::t('app','type'),
+					    		'value' => $leave->leave_type_string,
+					    	],
 					    	[
 					    		'label' => Yii::t('app','status'),
 					    		'value' => $leave->leave_status_string,

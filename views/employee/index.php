@@ -82,31 +82,26 @@ $this->params['addUrl'] = ['my-leave/form'];
 					    'attribute' => 'EmployeeLeaveDate',
 					    'footer' => Yii::t('app','entitlement date'),
 					],
-					'leave_status' => [
-					    'attribute' => 'leave_status',
-					    'footer' => Yii::t('app','status'),
-					],
+					
 					'EmployeeTitle' => [
 					    'attribute' => 'EmployeeTitle',
 					    'footer' => Yii::t('app','title'),
 					],
+			    	'manager_approval' => [
+			    		'attribute' => 'manager_approval',
+			    		
+			    	],
+			    	'hrd_approval' => [
+			    		'attribute' => 'hrd_approval',			 
+			    	],
+			    	'partner_approval' => [
+			    		'attribute' => 'partner_approval',			 
+			    	],
 					
-					
-					'EmployeeLeaveUse' => [
-					    'attribute' => 'EmployeeLeaveUse',
-					    'contentOptions'=> ['class'=>'text-right'],
-					    'footer' => Yii::t('app','leave'),
-					],
-					
-					'EmployeeLeaveOver' => [
-					    'attribute' => 'EmployeeLeaveOver',
-					    'contentOptions'=> ['class'=>'text-right'],
-					    'footer' => Yii::t('app','over'),
-					],
 					
 					['class'=>'yii\grid\ActionColumn',
 					 //'controller'=>'leave',
-					 'template'=>'{form}{employee_export}',
+					 'template'=>'{form}{employee_export2}',
 					 'buttons' => [
 					    'form' => function ($url,$data) {
 						return Html::a('<i class="fa fa-pencil icon-only"></i>',$url,['class' => 'btn btn-inverse btn-xs',

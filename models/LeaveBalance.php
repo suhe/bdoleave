@@ -3,10 +3,16 @@ namespace app\models;
 use yii;
  
 class LeaveBalance extends \yii\db\ActiveRecord {
-    
+    public $leave_date;
     public $leave_date_from;
     public $leave_date_to;
     public $leave_balance_type;
+    public $leave_description;
+    public $leave_source_string;
+    public $leave_status_string;
+    public $leave_type_string;
+    public $leave_total;
+    public $leave_saldo;
     public $balance;
     public $date;
     public $leave_type; //
@@ -143,7 +149,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
             FROM
             (
                 SELECT
-                leave_balance_date as leave_balance_date,leave_balance_description,leave_balance_total,source,@saldo:=@saldo+leave_balance_total AS balance
+                leave_balance_date as leave_balance_date,leave_balance_description,leave_balance_total,source,@saldo:=@saldo + leave_balance_total AS balance
                 FROM
                 (SELECT leave_balance_date leave_balance_date,leave_balance_stype,leave_balance_description,+leave_balance_total,'Leaves' as source
                 FROM leave_balance
@@ -153,7 +159,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
                 FROM `leaves` 
                 WHERE employee_id = $employee_id and leave_approved = 1
                 ) balance 
-                JOIN (SELECT @saldo:=0) a
+                JOIN (SELECT @saldo := 0) a
                 ORDER BY balance.leave_balance_date,balance.leave_balance_stype DESC
             ) AS Balanced
             WHERE Balanced.leave_balance_date <> ''

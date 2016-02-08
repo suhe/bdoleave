@@ -1,36 +1,46 @@
 <?php
 namespace app\controllers;
 use yii;
+use app\models\Holiday;
 
 
 class HolidayController extends \yii\web\Controller {
-    public $class='Holiday';
-    
-    public function actions(){
-        
-    }
-    
-    public function actionIndex(){
-        $model = new \app\models\Holiday(['scenario' => 'search']);
+    /**
+     * List Index of Holiday List
+     * return dataProvider
+     */
+	public function actionIndex(){
+        $model = new Holiday(['scenario' => 'search']);
         if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
             //process here
         }
-        return $this->render('holiday_index',[
-            'model' => $model,
-            'dataProvider' => $model->getHolidayData(Yii::$app->request->queryParams)
+        return $this->render('index',[
+        		'title' => Yii::t('app','holiday list'),
+	            'model' => $model,
+	            'dataProvider' => $model->getAllDataProvider(Yii::$app->request->queryParams)
         ]); 
     }
     
-    public function actionNew(){
-        $model = new \app\models\Holiday(['scenario' => 'save']);
-        if($model->load(Yii::$app->request->post()) && $model->getSaveData()){
+    /**
+     * Action Form
+     * for CRUD Database Binding
+     * @param number $id
+     */
+    public function actionForm($id = 0){
+        $model = new \app\models\Holiday(['scenario' => $id ? 'update' : 'save']);
+        $query = $model->findOne($id);
+        if($model->load(Yii::$app->request->post()) && $model->getSaveRequest($id)){
+        	Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been created').'</strong></div>');
             return $this->redirect(['holiday/index'],301);
         }
-    
-        return $this->render('holiday_form',[
+    	
+        $model->holiday_date = $query ?  Yii::$app->formatter->asDatetime($query->holiday_date, "php:d/m/Y") : "";
+        $model->holiday_type = $query ? $query->holiday_type : "";
+        $model->holiday_desc = $query ? $query->holiday_desc : "";
+        return $this->render('form',[
             'title' => Yii::t('app','holiday form'),
             'model' => $model,
-            'query' => 0
+            'query' => $query,
         ]);    
     }
     

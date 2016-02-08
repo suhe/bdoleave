@@ -187,12 +187,19 @@ class Employee extends ActiveRecord implements IdentityInterface {
      */
     public function getActiveEmployeeDataProvider($params){
         $query = Employee::find()
-        ->select(["e.employee_id","CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName) as EmployeeName",
+        ->select(["e.employee_id","CONCAT(e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',e.EmployeeLastName) as EmployeeName",
                   "e.EmployeeID","DATE_FORMAT(e.EmployeeHireDate,'%d/%m/%Y') as EmployeeHireDate","e.EmployeeTitle",
-                  "DATE_FORMAT(EmployeeLeaveDate,'%d/%m/%Y') as EmployeeLeaveDate","IF(TO_DAYS(CURDATE())-TO_DAYS(EmployeeLeaveDate)>364,'Must Update','Updated') as leave_status",
-                  "e.EmployeeLeaveTotal","e.EmployeeLeaveUse","(e.EmployeeLeaveTotal - e.EmployeeLeaveUse) as EmployeeLeaveOver"])
+                  "DATE_FORMAT(e.EmployeeLeaveDate,'%d/%m/%Y') as EmployeeLeaveDate",
+                  "e.EmployeeLeaveTotal","e.EmployeeLeaveUse","(e.EmployeeLeaveTotal - e.EmployeeLeaveUse) as EmployeeLeaveOver",
+        		"CONCAT(em.EmployeeFirstName,' ',em.EmployeeLastName) as manager_approval",
+        		"CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeLastName) as hrd_approval",	
+    			"CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeLastName) as partner_approval"
+        ])
         ->from('employee e')
         ->join('inner join','sys_user u','u.employee_id=e.employee_id')
+        ->join('left join','employee em','em.employee_id=e.EmployeeLeaveManager')
+        ->join('left join','employee eh','eh.employee_id=e.EmployeeLeaveHRD')
+        ->join('left join','employee ep','ep.employee_id=e.EmployeeLeavePartner')
         ->where(['u.user_active'=>1]);
         
         $dataProvider = new \yii\data\ActiveDataProvider([
@@ -231,8 +238,8 @@ class Employee extends ActiveRecord implements IdentityInterface {
             return $dataProvider;
         }
         
-        if($this->employee_date_from) $query->andFilterWhere(['>=', 'DATE_FORMAT(EmployeeHireDate,\'%d/%m/%Y\')', $this->employee_date_from]);
-        if($this->employee_date_to) $query->andFilterWhere(['<=', 'DATE_FORMAT(EmployeeHireDate,\'%d/%m/%Y\')', $this->employee_date_to]);
+        if($this->employee_date_from && $this->employee_date_to)
+        	$query->andWhere("EmployeeHireDate between STR_TO_DATE('".$this->employee_date_from."', '%d/%m/%Y') and STR_TO_DATE('".$this->$this->employee_date_to."', '%d/%m/%Y') ");
         if($this->employee_name) $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
         
         return $dataProvider;

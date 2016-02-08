@@ -43,10 +43,9 @@ $this->params['addUrl'] = ['my-leave/form'];
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
 			    
-			    <?=$form->field($model,'leave_date_from',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
-			    <?=$form->field($model,'leave_date_to',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
-			    <?php //$form->field($model,'leave_status')->dropDownList(Leaves::getListStatus(Yii::t('app','all')))?>
-			    <?php //$form->field($model,'leave_source')->dropDownList(Leaves::getListSource(Yii::t('app','all')))?>
+			    <?=$form->field($model,'leave_date_from',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput(['placeholder' => Yii::t('app','date filing from')]);?>
+			    <?=$form->field($model,'leave_date_to',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput(['placeholder' => Yii::t('app','date filing to')]);?>
+			    <?=$form->field($model,'employee_name')->textInput(['placeholder' => Yii::t('app/message','msg search by nik or name') ]);?>
              
 			    <div class="form-group ">
 				<?=Html::submitButton('<i class="fa fa-search"></i>'.Yii::t('app','search'), ['class' => 'btn btn-primary btn-md','name' => 'search'])?>
@@ -72,6 +71,10 @@ $this->params['addUrl'] = ['my-leave/form'];
 			    'employee_name' => [
 			    	'label' => Yii::t('app','name'),
 			    	'attribute' => 'employee_name',
+			    ],
+			    'EmployeeTitle' => [
+			    	'label' => Yii::t('app','position'),
+			    	'attribute' => 'EmployeeTitle',
 			    ],
 			    'leave_date_from' => [
 			    	'attribute' => 'leave_date_from',

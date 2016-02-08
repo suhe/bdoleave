@@ -14,6 +14,9 @@ return array(
     'yii\\codeception\\' => array($vendorDir . '/yiisoft/yii2-codeception'),
     'yii\\bootstrap\\' => array($vendorDir . '/yiisoft/yii2-bootstrap'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
+    'kartik\\select2\\' => array($vendorDir . '/kartik-v/yii2-widget-select2'),
+    'kartik\\base\\' => array($vendorDir . '/kartik-v/yii2-krajee-base'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
-	
+    'alexgx\\phpexcel\\' => array($vendorDir . '/alexgx/yii2-phpexcel'),
+    'Faker\\' => array($vendorDir . '/fzaninotto/faker/src/Faker'),
 );

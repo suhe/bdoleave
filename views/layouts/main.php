@@ -64,16 +64,16 @@ if(!Yii::$app->user->isGuest){
 			   <?php foreach($model->getLeaveApprovalData() as $row){ ?>
 			    <li>
 			      <a href="<?=Url::to(['leave/approvalform','id'=>$row->leave_id])?>">
-				<div class="row">
-				  <div class="col-xs-12">
-				    <p>
-				      <strong><?=$row->employeefirstname?></strong>: <?=$row->leave_date?>
-				    </p>
-				    <p class="small">
-				      <i class="fa fa-clock-o"></i> <?=\app\components\Common::timeAgo(strtotime($row->leave_created_date))?>
-				    </p>
-				  </div>
-				</div>
+					<div class="row">
+						  <div class="col-xs-12">
+						    <p>
+						      <strong><?=$row->employeefirstname?></strong>: <?=$row->leave_date?>
+						    </p>
+						    <p class="small">
+						      <i class="fa fa-clock-o"></i> <?=\app\components\Common::timeAgo(strtotime($row->leave_created_date))?>
+						    </p>
+						  </div>
+					</div>
 			      </a>
 			    </li>
 			    <?php } ?>
@@ -168,8 +168,8 @@ if(!Yii::$app->user->isGuest){
 							    ],
 							  	
 							  	[
-							  		'label'=>Yii::t('app','my leave balanced'),
-							  		'url'  => 'leave/mybalance',
+							  		'label'=>Yii::t('app','my balanced card'),
+							  		'url'  => 'my-leave/balanced-card',
 							  		'icon' => 'fa fa-dropbox'
 							  	],
 							  		
@@ -201,7 +201,7 @@ if(!Yii::$app->user->isGuest){
 							  'icon'  => 'fa fa-file',
 							  'sub'   => [
 							    [
-							      'label'=>Yii::t('app','to be approval'),
+							      'label'=>Yii::t('app','outstanding leave'),
 							      'url'  => 'manage-leave/index',
 							      'icon' => 'fa fa-pencil'
 							    ],
@@ -225,6 +225,11 @@ if(!Yii::$app->user->isGuest){
 							      'url'  => 'holiday/index',
 							      'icon' => 'fa fa-area-chart'
 							    ],
+							  	[
+							  		'label'=>Yii::t('app','reports'),
+							  		'url'  => 'report/index',
+							  		'icon' => 'fa fa-github'
+							  	],
 							    
 								
 							  ]

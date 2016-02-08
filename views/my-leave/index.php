@@ -43,8 +43,8 @@ $this->params['addUrl'] = ['my-leave/form'];
 			    'fieldConfig' => ['template' => "{input}",]
 			    ]);?>
 			    
-			    <?=$form->field($model,'leave_date_from',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
-			    <?=$form->field($model,'leave_date_to',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
+			    <?=$form->field($model,'leave_date_from',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput(['placeholder' => Yii::t('app','date filing from')]);?>
+			    <?=$form->field($model,'leave_date_to',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput(['placeholder' => Yii::t('app','date filing to')]);?>
 			    <?=$form->field($model,'leave_status')->dropDownList(Leaves::getListStatus(Yii::t('app','all')))?>
 			    <?=$form->field($model,'leave_source')->dropDownList(Leaves::getListSource(Yii::t('app','all')))?>
              
@@ -65,6 +65,9 @@ $this->params['addUrl'] = ['my-leave/form'];
 				'leave_date' => [
 				    'attribute' => 'leave_date',
 				 ],
+			    'leave_type' => [
+			    	'attribute' => 'leave_type_string',	
+			    ],
 			    'leave_date_from' => [
 			    	'attribute' => 'leave_date_from',
 			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],

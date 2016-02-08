@@ -3,19 +3,21 @@ namespace app\models;
 use yii;
  
 class Holiday extends \yii\db\ActiveRecord {
-    
-    public $holiday_year = 2015;
-    
+    public $holiday_date_from = '01/01/2016';
+    public $holiday_date_to = '31/12/2016';
+	
     public static function tableName(){
         return 'holiday';
     }
     
     public function rules(){
         return [
-            [['holiday_year'],'safe','on'=>['search']],
-            [['holiday_date'],'required','on'=>['save','update']],
-            [['holiday_desc'],'required','on'=>['save','update']],
-            [['holiday_date'],'validateHolidayDate','on'=>['save']],
+	            [['holiday_date_from'],'safe','on'=>['search']],
+	        	[['holiday_date_to'],'safe','on'=>['search']],
+	            [['holiday_date'],'required','on'=>['save','update']],
+	        	[['holiday_type'],'required','on'=>['save','update']],
+	            [['holiday_desc'],'required','on'=>['save','update']],
+	            [['holiday_date'],'validateHolidayDate','on'=>['save']],
         ];
     }
     
@@ -26,6 +28,31 @@ class Holiday extends \yii\db\ActiveRecord {
         ];
     }
     
+    /**
+     * Dropdown List Get
+     * @return string
+     */
+    
+    /**
+     * Get Type List
+     * @param string $ALL
+     */
+    public static function getListType($data = array()){
+    	$lists = [];
+    	if(isset($data['label']))
+    		$lists[""] = $data['label'];
+    	
+    	$lists["Libur"] = "Libur";
+    	$lists["Cuti Bersama"] = "Cuti Bersama";
+    	return $lists;
+    }
+    
+    
+    /**
+     * End Dropdown List Get
+     * @return string
+     */
+    
     
     public static function getDropDownYear($ALL=TRUE){
         $data[0] = Yii::t('app','all');
@@ -35,9 +62,9 @@ class Holiday extends \yii\db\ActiveRecord {
     }
     
     
-    public function getHolidayData($params){
+    public function getAllDataProvider($params){
         $query = Holiday::find()
-        ->select(['holiday_id','DATE_FORMAT(holiday_date,\'%d/%m/%Y\') as holiday_date','holiday_desc'])
+        ->select(['holiday_id','DATE_FORMAT(holiday_date,\'%d/%m/%Y\') as holiday_date','holiday_type','holiday_desc'])
         ->orderBy('holiday_date');
         
         $dataProvider = new \yii\data\ActiveDataProvider([
@@ -47,29 +74,45 @@ class Holiday extends \yii\db\ActiveRecord {
             ]    
         ]);
         
-        $query->andWhere(['YEAR(holiday_date)'=>$this->holiday_year]);
+        //if ((!$this->load($params)) && ($this->validate())) {
+        	//return $dataProvider;
+        //}
         
+        if($this->holiday_date_from && $this->holiday_date_to) 
+        	$query->andWhere("holiday_date between STR_TO_DATE('".$this->holiday_date_from."', '%d/%m/%Y') and STR_TO_DATE('".$this->holiday_date_to."', '%d/%m/%Y') ");
+    	
         return $dataProvider;
     }
     
     public function getSingleHolidayDataByDate($date){
         return Holiday::find()
-        ->select(['holiday_id','DATE_FORMAT(holiday_date,\'%d/%m/%Y\') as holiday_date','holiday_desc'])
+        ->select(['holiday_id','DATE_FORMAT(holiday_date,\'%d/%m/%Y\') as holiday_date','holiday_type','holiday_desc'])
         ->where(['DATE_FORMAT(holiday_date,\'%d/%m/%Y\')' => $date])
         ->one();
     }
     
-    public function getSaveData(){
+    
+    /**
+     * Get Save / Update Request
+     * @param number $id
+     */
+    public function getSaveRequest($id = 0 ){
         if($this->validate()){
             $model = new Holiday();
+            if($id) $model =  $model->findOne($id);
             $model->holiday_date = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->holiday_date);
+            $model->holiday_type = $this->holiday_type;
             $model->holiday_desc = $this->holiday_desc;
-            $model->insert();
+            if($id) 
+            	$model->update();
+            else
+            	$model->insert(); 
             return true;
         }
+        return false;
     }
     
-    public function getUpdateData($id){
+    public function getUpdateRequest($id){
         if($this->validate()){
             $model = new Holiday();
             $model = $model->findOne($id);
