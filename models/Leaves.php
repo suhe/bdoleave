@@ -437,7 +437,7 @@ class Leaves extends \yii\db\ActiveRecord {
     
     	$dataProvider = new \yii\data\ActiveDataProvider([
     			'query' => $query,
-    			'count' => clone ($query),
+    			'totalCount' => count ($query),
     			'pagination' =>[
     					'pageSize' => Yii::$app->params['per_page']
     			]
