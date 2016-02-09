@@ -100,14 +100,14 @@
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','description')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','necessary')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_description?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','leave of address')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','address')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_address?></td>
 </tr>

@@ -18,7 +18,7 @@ class SiteController extends Controller {
 		return [ 
 			'corsFilter' => [ 
 				'class' => \yii\filters\Cors::className (),
-					'cors' => [ 
+					'cors' => [                      
 						'Origin' => [ 
 							"*" 
 						],

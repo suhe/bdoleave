@@ -1,16 +1,8 @@
 Gii Extension for Yii 2
 ========================
 
-This extension provides a Web-based code generator, called Gii, for [Yii framework 2.0](http://www.yiiframework.com) applications.
+This extension provides a Web-based code generator, called Gii, for Yii 2 applications.
 You can use Gii to quickly generate models, forms, modules, CRUD, etc.
-
-For license information check the [LICENSE](LICENSE.md)-file.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-gii/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-gii)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-gii/downloads.png)](https://packagist.org/packages/yiisoft/yii2-gii)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-gii.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-gii)
 
 
 Installation
@@ -21,16 +13,16 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --dev --prefer-dist yiisoft/yii2-gii
+php composer.phar require --prefer-dist yiisoft/yii2-gii "*"
 ```
 
 or add
 
 ```
-"yiisoft/yii2-gii": "~2.0.0"
+"yiisoft/yii2-gii": "*"
 ```
 
-to the require-dev section of your `composer.json` file.
+to the require section of your `composer.json` file.
 
 
 Usage
@@ -42,9 +34,7 @@ Once the extension is installed, simply modify your application configuration as
 return [
     'bootstrap' => ['gii'],
     'modules' => [
-        'gii' => [
-            'class' => 'yii\gii\Module',
-        ],
+        'gii' => 'yii\gii\Module',
         // ...
     ],
     // ...

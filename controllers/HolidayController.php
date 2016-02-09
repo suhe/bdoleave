@@ -1,10 +1,41 @@
 <?php
 namespace app\controllers;
-use yii;
+use Yii;
 use app\models\Holiday;
+use yii\web\Controller;
+use yii\filters\AccessControl;
+use app\components\Role;
+use app\models\Employee;
 
-
-class HolidayController extends \yii\web\Controller {
+class HolidayController extends Controller {
+	/**
+	 * Behaviour Function
+	 * Control Access Control Rule
+	 */
+	public function behaviors() {
+		return [
+			'access' => [
+				'class' => AccessControl::className(),
+				'ruleConfig' => [
+					'class' => Role::className(),
+				],
+				'only' => ['index', 'form','form-approval'],
+				'rules' => [
+					[
+						'allow' => true,
+						'actions' => ['index', 'form','form-approval'],
+						'roles' => [
+							Employee::ROLE_SENIOR_HRD,
+							Employee::ROLE_MANAGER_HRD
+						],
+					],
+				],
+				'denyCallback' => function ($rule, $action) {
+					echo ('You are not allowed to access this page');
+				},
+			],
+		];
+	}
     /**
      * List Index of Holiday List
      * return dataProvider

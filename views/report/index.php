@@ -4,10 +4,8 @@ use yii\helpers\Url;
 
 $this->params ['breadcrumbs'] = [ 
 		[ 
-				'label' => Yii::t ( 'app', 'to be approval' ),
-				'url' => [ 
-						'my-leave/index' 
-				] 
+				'label' => Yii::t ( 'app', 'reports' ),
+				'url' => [ 'report/index' ] 
 		] 
 ]
 ;

@@ -16,7 +16,7 @@ use yii\data\Pagination;
 /**
  * LinkPager displays a list of hyperlinks that lead to different pages of target.
  *
- * LinkPager works with a [[Pagination]] object which specifies the total number
+ * LinkPager works with a [[Pagination]] object which specifies the totally number
  * of pages and the current page number.
  *
  * Note that LinkPager only generates the necessary HTML markups. In order for it
@@ -43,11 +43,6 @@ class LinkPager extends Widget
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $linkOptions = [];
-    /**
-     * @var string the CSS class for the each page button.
-     * @since 2.0.7
-     */
-    public $pageCssClass = null;
     /**
      * @var string the CSS class for the "first" page button.
      */
@@ -88,13 +83,11 @@ class LinkPager extends Widget
     public $prevPageLabel = '&laquo;';
     /**
      * @var string|boolean the text label for the "first" page button. Note that this will NOT be HTML-encoded.
-     * If it's specified as true, page number will be used as label.
      * Default is false that means the "first" page button will not be displayed.
      */
     public $firstPageLabel = false;
     /**
      * @var string|boolean the text label for the "last" page button. Note that this will NOT be HTML-encoded.
-     * If it's specified as true, page number will be used as label.
      * Default is false that means the "last" page button will not be displayed.
      */
     public $lastPageLabel = false;
@@ -161,9 +154,8 @@ class LinkPager extends Widget
         $currentPage = $this->pagination->getPage();
 
         // first page
-        $firstPageLabel = $this->firstPageLabel === true ? '1' : $this->firstPageLabel;
-        if ($firstPageLabel !== false) {
-            $buttons[] = $this->renderPageButton($firstPageLabel, 0, $this->firstPageCssClass, $currentPage <= 0, false);
+        if ($this->firstPageLabel !== false) {
+            $buttons[] = $this->renderPageButton($this->firstPageLabel, 0, $this->firstPageCssClass, $currentPage <= 0, false);
         }
 
         // prev page
@@ -189,9 +181,8 @@ class LinkPager extends Widget
         }
 
         // last page
-        $lastPageLabel = $this->lastPageLabel === true ? $pageCount : $this->lastPageLabel;
-        if ($lastPageLabel !== false) {
-            $buttons[] = $this->renderPageButton($lastPageLabel, $pageCount - 1, $this->lastPageCssClass, $currentPage >= $pageCount - 1, false);
+        if ($this->lastPageLabel !== false) {
+            $buttons[] = $this->renderPageButton($this->lastPageLabel, $pageCount - 1, $this->lastPageCssClass, $currentPage >= $pageCount - 1, false);
         }
 
         return Html::tag('ul', implode("\n", $buttons), $this->options);
@@ -209,7 +200,7 @@ class LinkPager extends Widget
      */
     protected function renderPageButton($label, $page, $class, $disabled, $active)
     {
-        $options = ['class' => empty($class) ? $this->pageCssClass : $class];
+        $options = ['class' => $class === '' ? null : $class];
         if ($active) {
             Html::addCssClass($options, $this->activePageCssClass);
         }

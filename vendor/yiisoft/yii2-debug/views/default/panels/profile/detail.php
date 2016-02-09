@@ -15,7 +15,7 @@ use yii\helpers\Html;
 echo GridView::widget([
     'dataProvider' => $dataProvider,
     'id' => 'profile-panel-detailed-grid',
-    'options' => ['class' => 'detail-grid-view table-responsive'],
+    'options' => ['class' => 'detail-grid-view'],
     'filterModel' => $searchModel,
     'filterUrl' => $panel->getUrl(),
     'columns' => [

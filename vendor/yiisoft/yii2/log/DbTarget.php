@@ -16,15 +16,8 @@ use yii\helpers\VarDumper;
 /**
  * DbTarget stores log messages in a database table.
  *
- * The database connection is specified by [[db]]. Database schema could be initialized by applying migration:
- *
- * ```
- * yii migrate --migrationPath=@yii/log/migrations/
- * ```
- *
- * If you don't want to use migration and need SQL instead, files for all databases are in migrations directory.
- *
- * You may change the name of the table used to store the data by setting [[logTable]].
+ * By default, DbTarget stores the log messages in a DB table named 'log'. This table
+ * must be pre-created. The table name can be changed by setting the [[logTable]] property.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -32,14 +25,35 @@ use yii\helpers\VarDumper;
 class DbTarget extends Target
 {
     /**
-     * @var Connection|array|string the DB connection object or the application component ID of the DB connection.
+     * @var Connection|string the DB connection object or the application component ID of the DB connection.
      * After the DbTarget object is created, if you want to change this property, you should only assign it
      * with a DB connection object.
-     * Starting from version 2.0.2, this can also be a configuration array for creating the object.
      */
     public $db = 'db';
     /**
-     * @var string name of the DB table to store cache content. Defaults to "log".
+     * @var string name of the DB table to store cache content.
+     * The table should be pre-created as follows:
+     *
+     * ~~~
+     * CREATE TABLE log (
+     *     id       BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     *     level    INTEGER,
+     *     category VARCHAR(255),
+     *     log_time INTEGER,
+     *     prefix   TEXT,
+     *     message  TEXT,
+     *     INDEX idx_log_level (level),
+     *     INDEX idx_log_category (category)
+     * )
+     * ~~~
+     *
+     * Note that the 'id' column must be created as an auto-incremental column.
+     * The above SQL uses the MySQL syntax. If you are using other DBMS, you need
+     * to adjust it accordingly. For example, in PostgreSQL, it should be `id SERIAL PRIMARY KEY`.
+     *
+     * The indexes declared above are not required. They are mainly used to improve the performance
+     * of some queries about message levels and categories. Depending on your actual needs, you may
+     * want to create additional indexes (e.g. index on `log_time`).
      */
     public $logTable = '{{%log}}';
 
@@ -67,12 +81,7 @@ class DbTarget extends Target
         foreach ($this->messages as $message) {
             list($text, $level, $category, $timestamp) = $message;
             if (!is_string($text)) {
-                // exceptions may not be serializable if in the call stack somewhere is a Closure
-                if ($text instanceof \Exception) {
-                    $text = (string) $text;
-                } else {
-                    $text = VarDumper::export($text);
-                }
+                $text = VarDumper::export($text);
             }
             $command->bindValues([
                 ':level' => $level,

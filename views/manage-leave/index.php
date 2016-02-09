@@ -31,23 +31,17 @@ $this->params['addUrl'] = ['manage-leave/form'];
 		    
 		    <div class="row">
 		    
-		    <div class="col-lg-4">
+		    <div class="col-lg-2">
 		    	<div class="row">
-		    		<div class="col-md-5">
-		    			<?=Html::dropDownList('bulk_type',0, ['0' => Yii::t('app','single employee'),'1' => Yii::t('app','multiple employee')],['class'=>'form-control col-md-3'])?>
-		    		</div>
-		    		<div class="col-md-5">
-		    			<?=Html::dropDownList('bulk_form',0, ['0' => Yii::t('app','leave form'),'1' => Yii::t('app','saldo balanced')],['class'=>'form-control col-md-3'])?>
-		    		</div>
-		    		<div class="col-md-2">
-		    			<a id="btn-add" href="#" class="btn btn-primary"><i class="fa fa-pencil"></i> <?=Yii::t('app','new')?></a>
+		    		<div class="col-md-12">
+		    			<a id="btn-add" href="<?=Url::to(['manage-leave/form-leave'])?>" class="btn btn-primary"><i class="fa fa-pencil"></i> <?=Yii::t('app','leave form')?></a>
 		    		</div>
 		    	</div>
 		    	
 		    	
 		    </div>
 		    
-			<div class="col-lg-8" style="margin-bottom:20px">
+			<div class="col-lg-10" style="margin-bottom:20px">
 			    <?php $form = ActiveForm::begin([
 			    'id' => 'form',
 			    'method' => 'GET',
@@ -57,8 +51,7 @@ $this->params['addUrl'] = ['manage-leave/form'];
 			    <?=$form->field($model,'employee_name')->textInput(['placeholder' => Yii::t('app/message','msg search by nik or name') ]);?>
 			    <?=$form->field($model,'leave_date_from',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
 			    <?=$form->field($model,'leave_date_to',['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput();?>
-			   
-             
+			
 			    <div class="form-group ">
 				<?=Html::submitButton('<i class="fa fa-search"></i>'.Yii::t('app','search'), ['class' => 'btn btn-primary btn-md','name' => 'search'])?>
 			    </div> 

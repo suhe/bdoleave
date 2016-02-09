@@ -37,7 +37,6 @@ class Schema extends \yii\db\Schema
         'money' => self::TYPE_MONEY,
         // approximate numbers
         'float' => self::TYPE_FLOAT,
-        'double' => self::TYPE_DOUBLE,
         'real' => self::TYPE_FLOAT,
         // date and time
         'date' => self::TYPE_DATE,
@@ -152,13 +151,13 @@ class Schema extends \yii\db\Schema
     {
         $parts = explode('.', str_replace(['[', ']'], '', $name));
         $partCount = count($parts);
-        if ($partCount === 3) {
+        if ($partCount == 3) {
             // catalog name, schema name and table name passed
             $table->catalogName = $parts[0];
             $table->schemaName = $parts[1];
             $table->name = $parts[2];
             $table->fullName = $table->catalogName . '.' . $table->schemaName . '.' . $table->name;
-        } elseif ($partCount === 2) {
+        } elseif ($partCount == 2) {
             // only schema name and table name passed
             $table->schemaName = $parts[0];
             $table->name = $parts[1];
@@ -180,7 +179,7 @@ class Schema extends \yii\db\Schema
         $column = $this->createColumnSchema();
 
         $column->name = $info['column_name'];
-        $column->allowNull = $info['is_nullable'] === 'YES';
+        $column->allowNull = $info['is_nullable'] == 'YES';
         $column->dbType = $info['data_type'];
         $column->enumValues = []; // mssql has only vague equivalents to enum
         $column->isPrimaryKey = null; // primary key will be determined in findColumns() method
@@ -214,7 +213,7 @@ class Schema extends \yii\db\Schema
 
         $column->phpType = $this->getColumnPhpType($column);
 
-        if ($info['column_default'] === '(NULL)') {
+        if ($info['column_default'] == '(NULL)') {
             $info['column_default'] = null;
         }
         if (!$column->isPrimaryKey && ($column->type !== 'timestamp' || $info['column_default'] !== 'CURRENT_TIMESTAMP')) {
@@ -283,13 +282,10 @@ SQL;
     }
 
     /**
-     * Collects the constraint details for the given table and constraint type.
-     * @param TableSchema $table
-     * @param string $type either PRIMARY KEY or UNIQUE
-     * @return array each entry contains index_name and field_name
-     * @since 2.0.4
+     * Collects the primary key column details for the given table.
+     * @param TableSchema $table the table metadata
      */
-    protected function findTableConstraints($table, $type)
+    protected function findPrimaryKeys($table)
     {
         $keyColumnUsageTableName = 'INFORMATION_SCHEMA.KEY_COLUMN_USAGE';
         $tableConstraintsTableName = 'INFORMATION_SCHEMA.TABLE_CONSTRAINTS';
@@ -302,39 +298,20 @@ SQL;
 
         $sql = <<<SQL
 SELECT
-    [kcu].[constraint_name] AS [index_name],
     [kcu].[column_name] AS [field_name]
 FROM {$keyColumnUsageTableName} AS [kcu]
 LEFT JOIN {$tableConstraintsTableName} AS [tc] ON
-    [kcu].[table_schema] = [tc].[table_schema] AND
     [kcu].[table_name] = [tc].[table_name] AND
     [kcu].[constraint_name] = [tc].[constraint_name]
 WHERE
-    [tc].[constraint_type] = :type AND
+    [tc].[constraint_type] = 'PRIMARY KEY' AND
     [kcu].[table_name] = :tableName AND
     [kcu].[table_schema] = :schemaName
 SQL;
 
-        return $this->db
-            ->createCommand($sql, [
-                ':tableName' => $table->name,
-                ':schemaName' => $table->schemaName,
-                ':type' => $type,
-            ])
-            ->queryAll();
-    }
-
-    /**
-     * Collects the primary key column details for the given table.
-     * @param TableSchema $table the table metadata
-     */
-    protected function findPrimaryKeys($table)
-    {
-        $result = [];
-        foreach ($this->findTableConstraints($table, 'PRIMARY KEY') as $row) {
-            $result[] = $row['field_name'];
-        }
-        $table->primaryKey = $result;
+        $table->primaryKey = $this->db
+            ->createCommand($sql, [':tableName' => $table->name, ':schemaName' => $table->schemaName])
+            ->queryColumn();
     }
 
     /**
@@ -369,13 +346,10 @@ JOIN {$keyColumnUsageTableName} AS [kcu2] ON
     [kcu2].[constraint_schema] = [rc].[constraint_schema] AND
     [kcu2].[constraint_name] = [rc].[unique_constraint_name] AND
     [kcu2].[ordinal_position] = [kcu1].[ordinal_position]
-WHERE [kcu1].[table_name] = :tableName AND [kcu1].[table_schema] = :schemaName
+WHERE [kcu1].[table_name] = :tableName
 SQL;
 
-        $rows = $this->db->createCommand($sql, [
-            ':tableName' => $table->name,
-            ':schemaName' => $table->schemaName,
-        ])->queryAll();
+        $rows = $this->db->createCommand($sql, [':tableName' => $table->name])->queryAll();
         $table->foreignKeys = [];
         foreach ($rows as $row) {
             $table->foreignKeys[] = [$row['uq_table_name'], $row['fk_column_name'] => $row['uq_column_name']];
@@ -396,42 +370,9 @@ SQL;
         $sql = <<<SQL
 SELECT [t].[table_name]
 FROM [INFORMATION_SCHEMA].[TABLES] AS [t]
-WHERE [t].[table_schema] = :schema AND [t].[table_type] IN ('BASE TABLE', 'VIEW')
-ORDER BY [t].[table_name]
+WHERE [t].[table_schema] = :schema AND [t].[table_type] = 'BASE TABLE'
 SQL;
 
         return $this->db->createCommand($sql, [':schema' => $schema])->queryColumn();
-    }
-
-    /**
-     * Returns all unique indexes for the given table.
-     * Each array element is of the following structure:
-     *
-     * ```php
-     * [
-     *     'IndexName1' => ['col1' [, ...]],
-     *     'IndexName2' => ['col2' [, ...]],
-     * ]
-     * ```
-     *
-     * @param TableSchema $table the table metadata
-     * @return array all unique indexes for the given table.
-     * @since 2.0.4
-     */
-    public function findUniqueIndexes($table)
-    {
-        $result = [];
-        foreach ($this->findTableConstraints($table, 'UNIQUE') as $row) {
-            $result[$row['index_name']][] = $row['field_name'];
-        }
-        return $result;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function createColumnSchemaBuilder($type, $length = null)
-    {
-        return new ColumnSchemaBuilder($type, $length);
     }
 }

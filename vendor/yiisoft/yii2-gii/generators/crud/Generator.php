@@ -24,7 +24,7 @@ use yii\web\Controller;
  * read-only.
  * @property array $searchAttributes Searchable attributes. This property is read-only.
  * @property boolean|\yii\db\TableSchema $tableSchema This property is read-only.
- * @property string $viewPath The controller view path. This property is read-only.
+ * @property string $viewPath The action view file path. This property is read-only.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -32,17 +32,12 @@ use yii\web\Controller;
 class Generator extends \yii\gii\Generator
 {
     public $modelClass;
+    public $moduleID;
     public $controllerClass;
-    public $viewPath;
     public $baseControllerClass = 'yii\web\Controller';
     public $indexWidgetType = 'grid';
     public $searchModelClass = '';
 
-    /**
-     * @var boolean whether to wrap the `GridView` or `ListView` widget with the `yii\widgets\Pjax` widget
-     * @since 2.0.5
-     */
-    public $enablePjax = false;
 
     /**
      * @inheritdoc
@@ -67,7 +62,7 @@ class Generator extends \yii\gii\Generator
     public function rules()
     {
         return array_merge(parent::rules(), [
-            [['controllerClass', 'modelClass', 'searchModelClass', 'baseControllerClass'], 'filter', 'filter' => 'trim'],
+            [['moduleID', 'controllerClass', 'modelClass', 'searchModelClass', 'baseControllerClass'], 'filter', 'filter' => 'trim'],
             [['modelClass', 'controllerClass', 'baseControllerClass', 'indexWidgetType'], 'required'],
             [['searchModelClass'], 'compare', 'compareAttribute' => 'modelClass', 'operator' => '!==', 'message' => 'Search Model Class must not be equal to Model Class.'],
             [['modelClass', 'controllerClass', 'baseControllerClass', 'searchModelClass'], 'match', 'pattern' => '/^[\w\\\\]*$/', 'message' => 'Only word characters and backslashes are allowed.'],
@@ -78,9 +73,9 @@ class Generator extends \yii\gii\Generator
             [['controllerClass', 'searchModelClass'], 'validateNewClass'],
             [['indexWidgetType'], 'in', 'range' => ['grid', 'list']],
             [['modelClass'], 'validateModelClass'],
-            [['enableI18N', 'enablePjax'], 'boolean'],
+            [['moduleID'], 'validateModuleID'],
+            [['enableI18N'], 'boolean'],
             [['messageCategory'], 'validateMessageCategory', 'skipOnEmpty' => false],
-            ['viewPath', 'safe'],
         ]);
     }
 
@@ -91,12 +86,11 @@ class Generator extends \yii\gii\Generator
     {
         return array_merge(parent::attributeLabels(), [
             'modelClass' => 'Model Class',
+            'moduleID' => 'Module ID',
             'controllerClass' => 'Controller Class',
-            'viewPath' => 'View Path',
             'baseControllerClass' => 'Base Controller Class',
             'indexWidgetType' => 'Widget Used in Index Page',
             'searchModelClass' => 'Search Model Class',
-            'enablePjax' => 'Enable Pjax',
         ]);
     }
 
@@ -112,18 +106,14 @@ class Generator extends \yii\gii\Generator
                 provide a fully qualified namespaced class (e.g. <code>app\controllers\PostController</code>),
                 and class name should be in CamelCase with an uppercase first letter. Make sure the class
                 is using the same namespace as specified by your application\'s controllerNamespace property.',
-            'viewPath' => 'Specify the directory for storing the view scripts for the controller. You may use path alias here, e.g.,
-                <code>/var/www/basic/controllers/views/post</code>, <code>@app/views/post</code>. If not set, it will default
-                to <code>@app/views/ControllerID</code>',
             'baseControllerClass' => 'This is the class that the new CRUD controller class will extend from.
                 You should provide a fully qualified class name, e.g., <code>yii\web\Controller</code>.',
+            'moduleID' => 'This is the ID of the module that the generated controller will belong to.
+                If not set, it means the controller will belong to the application.',
             'indexWidgetType' => 'This is the widget type to be used in the index page to display list of the models.
                 You may choose either <code>GridView</code> or <code>ListView</code>',
             'searchModelClass' => 'This is the name of the search model class to be generated. You should provide a fully
                 qualified namespaced class name, e.g., <code>app\models\PostSearch</code>.',
-            'enablePjax' => 'This indicates whether the generator should wrap the <code>GridView</code> or <code>ListView</code>
-                widget on the index page with <code>yii\widgets\Pjax</code> widget. Set this to <code>true</code> if you want to get
-                sorting, filtering and pagination without page refreshing.',
         ]);
     }
 
@@ -140,7 +130,7 @@ class Generator extends \yii\gii\Generator
      */
     public function stickyAttributes()
     {
-        return array_merge(parent::stickyAttributes(), ['baseControllerClass', 'indexWidgetType']);
+        return array_merge(parent::stickyAttributes(), ['baseControllerClass', 'moduleID', 'indexWidgetType']);
     }
 
     /**
@@ -153,6 +143,19 @@ class Generator extends \yii\gii\Generator
         $pk = $class::primaryKey();
         if (empty($pk)) {
             $this->addError('modelClass', "The table associated with $class must have primary key(s).");
+        }
+    }
+
+    /**
+     * Checks if model ID is valid
+     */
+    public function validateModuleID()
+    {
+        if (!empty($this->moduleID)) {
+            $module = Yii::$app->getModule($this->moduleID);
+            if ($module === null) {
+                $this->addError('moduleID', "Module '{$this->moduleID}' does not exist.");
+            }
         }
     }
 
@@ -198,15 +201,13 @@ class Generator extends \yii\gii\Generator
     }
 
     /**
-     * @return string the controller view path
+     * @return string the action view file path
      */
     public function getViewPath()
     {
-        if (empty($this->viewPath)) {
-            return Yii::getAlias('@app/views/' . $this->getControllerID());
-        } else {
-            return Yii::getAlias($this->viewPath);
-        }
+        $module = empty($this->moduleID) ? Yii::$app : Yii::$app->getModule($this->moduleID);
+
+        return $module->getViewPath() . '/' . $this->getControllerID() ;
     }
 
     public function getNameAttribute()
@@ -259,7 +260,7 @@ class Generator extends \yii\gii\Generator
             } elseif ($column->phpType !== 'string' || $column->size === null) {
                 return "\$form->field(\$model, '$attribute')->$input()";
             } else {
-                return "\$form->field(\$model, '$attribute')->$input(['maxlength' => true])";
+                return "\$form->field(\$model, '$attribute')->$input(['maxlength' => $column->size])";
             }
         }
     }
@@ -326,7 +327,6 @@ class Generator extends \yii\gii\Generator
                     $types['boolean'][] = $column->name;
                     break;
                 case Schema::TYPE_FLOAT:
-                case Schema::TYPE_DOUBLE:
                 case Schema::TYPE_DECIMAL:
                 case Schema::TYPE_MONEY:
                     $types['number'][] = $column->name;
@@ -415,7 +415,6 @@ class Generator extends \yii\gii\Generator
                 case Schema::TYPE_BIGINT:
                 case Schema::TYPE_BOOLEAN:
                 case Schema::TYPE_FLOAT:
-                case Schema::TYPE_DOUBLE:
                 case Schema::TYPE_DECIMAL:
                 case Schema::TYPE_MONEY:
                 case Schema::TYPE_DATE:

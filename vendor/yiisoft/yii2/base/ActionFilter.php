@@ -37,6 +37,7 @@ class ActionFilter extends Behavior
      */
     public $except = [];
 
+
     /**
      * @inheritdoc
      */
@@ -110,13 +111,14 @@ class ActionFilter extends Behavior
     }
 
     /**
-     * Returns an $action ID, convert action uniqueId into an ID relative to the module
-     * @param Action $action
-     * @return string
-     * @since 2.0.7
+     * Returns a value indicating whether the filer is active for the given action.
+     * @param Action $action the action being filtered
+     * @return boolean whether the filer is active for the given action.
      */
-    protected function getActionId($action) {
+    protected function isActive($action)
+    {
         if ($this->owner instanceof Module) {
+            // convert action uniqueId into an ID relative to the module
             $mid = $this->owner->getUniqueId();
             $id = $action->getUniqueId();
             if ($mid !== '' && strpos($id, $mid) === 0) {
@@ -125,18 +127,6 @@ class ActionFilter extends Behavior
         } else {
             $id = $action->id;
         }
-
-        return $id;
-    }
-
-    /**
-     * Returns a value indicating whether the filter is active for the given action.
-     * @param Action $action the action being filtered
-     * @return boolean whether the filter is active for the given action.
-     */
-    protected function isActive($action)
-    {
-        $id = $this->getActionId($action);
         return !in_array($id, $this->except, true) && (empty($this->only) || in_array($id, $this->only, true));
     }
 }

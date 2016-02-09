@@ -11,7 +11,7 @@ $this->params ['breadcrumbs'] = [
 				] 
 		],
 		[ 
-				'label' => Yii::t ( 'app', 'leave form' ),
+				'label' => Yii::t ( 'app', 'detail view' ),
 				'url' => [ 
 						'my-leave/detail-view/'.$id 
 				] 

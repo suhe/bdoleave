@@ -9,6 +9,7 @@ namespace yii\bootstrap;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 
 /**
  * Modal renders a modal window that can be toggled by clicking on a button.
@@ -43,21 +44,9 @@ class Modal extends Widget
      */
     public $header;
     /**
-     * @var string additional header options
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.1
-     */
-    public $headerOptions;
-    /**
      * @var string the footer content in the modal window.
      */
     public $footer;
-    /**
-     * @var string additional footer options
-     * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
-     * @since 2.0.1
-     */
-    public $footerOptions;
     /**
      * @var string the modal size. Can be [[SIZE_LARGE]] or [[SIZE_SMALL]], or empty for default.
      */
@@ -136,8 +125,7 @@ class Modal extends Widget
             $this->header = $button . "\n" . $this->header;
         }
         if ($this->header !== null) {
-            Html::addCssClass($this->headerOptions, ['widget' => 'modal-header']);
-            return Html::tag('div', "\n" . $this->header . "\n", $this->headerOptions);
+            return Html::tag('div', "\n" . $this->header . "\n", ['class' => 'modal-header']);
         } else {
             return null;
         }
@@ -168,8 +156,7 @@ class Modal extends Widget
     protected function renderFooter()
     {
         if ($this->footer !== null) {
-            Html::addCssClass($this->footerOptions, ['widget' => 'modal-footer']);
-            return Html::tag('div', "\n" . $this->footer . "\n", $this->footerOptions);
+            return Html::tag('div', "\n" . $this->footer . "\n", ['class' => 'modal-footer']);
         } else {
             return null;
         }
@@ -181,14 +168,14 @@ class Modal extends Widget
      */
     protected function renderToggleButton()
     {
-        if (($toggleButton = $this->toggleButton) !== false) {
-            $tag = ArrayHelper::remove($toggleButton, 'tag', 'button');
-            $label = ArrayHelper::remove($toggleButton, 'label', 'Show');
-            if ($tag === 'button' && !isset($toggleButton['type'])) {
-                $toggleButton['type'] = 'button';
+        if ($this->toggleButton !== false) {
+            $tag = ArrayHelper::remove($this->toggleButton, 'tag', 'button');
+            $label = ArrayHelper::remove($this->toggleButton, 'label', 'Show');
+            if ($tag === 'button' && !isset($this->toggleButton['type'])) {
+                $this->toggleButton['type'] = 'button';
             }
 
-            return Html::tag($tag, $label, $toggleButton);
+            return Html::tag($tag, $label, $this->toggleButton);
         } else {
             return null;
         }
@@ -200,14 +187,14 @@ class Modal extends Widget
      */
     protected function renderCloseButton()
     {
-        if (($closeButton = $this->closeButton) !== false) {
-            $tag = ArrayHelper::remove($closeButton, 'tag', 'button');
-            $label = ArrayHelper::remove($closeButton, 'label', '&times;');
-            if ($tag === 'button' && !isset($closeButton['type'])) {
-                $closeButton['type'] = 'button';
+        if ($this->closeButton !== false) {
+            $tag = ArrayHelper::remove($this->closeButton, 'tag', 'button');
+            $label = ArrayHelper::remove($this->closeButton, 'label', '&times;');
+            if ($tag === 'button' && !isset($this->closeButton['type'])) {
+                $this->closeButton['type'] = 'button';
             }
 
-            return Html::tag($tag, $label, $closeButton);
+            return Html::tag($tag, $label, $this->closeButton);
         } else {
             return null;
         }
@@ -224,7 +211,7 @@ class Modal extends Widget
             'role' => 'dialog',
             'tabindex' => -1,
         ], $this->options);
-        Html::addCssClass($this->options, ['widget' => 'modal']);
+        Html::addCssClass($this->options, 'modal');
 
         if ($this->clientOptions !== false) {
             $this->clientOptions = array_merge(['show' => false], $this->clientOptions);

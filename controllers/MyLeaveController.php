@@ -6,12 +6,48 @@
 namespace app\controllers;
 
 use yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
+use app\components\Role;
 use app\models\Employee;
 use app\models\Leaves;
 use app\models\LeaveLog;
 
+
+
 class MyLeaveController extends Controller {
+	/**
+	 * Behaviour Function
+	 * Control Access Control Rule
+	 */
+	public function behaviors() {
+		return [
+            'access' => [
+                'class' => AccessControl::className(),
+            	'ruleConfig' => [
+            		'class' => Role::className(),
+            	],
+            	'only' => ['index', 'form', 'detail-view','balanced-card'],
+                'rules' => [
+                    [
+                        'allow' => true,
+                        'actions' => ['index', 'form','detail-view','balanced-card'],
+                        'roles' => [
+                        	Employee::ROLE_ASSISTANT,
+                        	Employee::ROLE_SENIOR_1,
+                        	Employee::ROLE_SENIOR_2,
+                        	Employee::ROLE_MANAGER,
+                        	Employee::ROLE_SENIOR_HRD,	
+                        	Employee::ROLE_MANAGER_HRD	
+                        ],
+                    ],
+                ],
+            	'denyCallback' => function ($rule, $action) {
+            		echo ('You are not allowed to access this page');
+            	},	
+            ],
+        ];
+	}
 	
 	/**
 	 *  Action My Leave
@@ -76,6 +112,47 @@ class MyLeaveController extends Controller {
 				'model' => $model,
 				'dataProvider' => $model->getMyBalanceLeaveCardDataProvider()
 		]);
+	}
+	
+	/**
+	 * This command echoes what you have email.
+	 * @param email
+	 * //cron job php -q /home/k0455101/public_html/devleave/yii app-leave/email
+	 */
+	public function actionEmail() {
+		if(Yii::$app->params['send_email'] == true) {
+			$apps = Leaves::getAppLeave();
+			if($apps) {
+				$mail = [];
+				foreach($apps as  $app) {
+					$employee_id = 0;
+					if($app->leave_app_user1_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_user1;
+					} else if($app->leave_app_hrd_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_hrd;
+					} else if($app->leave_app_pic_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_pic;
+					}
+						
+					$employee_id = 10406;
+						
+					$employee = Employee::findOne($employee_id);
+					if($employee) {
+						$email_receiver = $employee ? $employee->EmployeeEmail : "";
+						if($email_receiver) {
+							$mail[]  = Yii::$app->mailer->compose('leave_form',['data' => $app])
+							->setFrom(Yii::$app->params['mail_user'])
+							->setTo("hendarsyahss@gmail.com")
+							->setSubject(Yii::t('app/message','msg request approved leave form'));
+						}
+					}
+				}
+				//send multiple email
+				Yii::$app->mailer->sendMultiple($mail);
+			}
+		}
+		/** end of send email **/
+		return false;
 	}
 	
 }

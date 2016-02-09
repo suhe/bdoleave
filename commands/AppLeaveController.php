@@ -1,0 +1,51 @@
+<?php
+namespace app\commands;
+use yii\console\Controller;
+use app\models\Leaves;
+use Yii;
+use app\models\Employee;
+
+class AppLeaveController extends Controller  {
+	/**
+	 * This command echoes what you have email.
+	 * @param email
+	 * //cron job php -q /home/k0455101/public_html/devleave/yii app-leave/email
+	 */
+	public function actionEmail() {
+		if(Yii::$app->params['send_email'] == true) {
+			$apps = Leaves::getAppAllLeave();
+			if($apps) {
+				$mail = [];
+				foreach($apps as  $app) {
+					$employee_id = 0;
+					if($app->leave_app_user1_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_user1;
+					} else if($app->leave_app_hrd_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_hrd;
+					} else if($app->leave_app_pic_status == Leaves::$approval_progress) {
+						$employee_id = $app->leave_app_pic;
+					}
+						
+					$employee_id = 10406;
+						
+					$employee = Employee::findOne($employee_id);
+					if($employee) {
+						$email_receiver = $employee ? $employee->EmployeeEmail : "";
+						if($email_receiver) {
+							$mail[]  = Yii::$app->mailer->compose('leave_form',['data' => $app])
+							->setFrom(Yii::$app->params['mail_user'])
+							->setTo("hendarsyahss@gmail.com")
+							->setSubject(Yii::t('app/message','msg request approved leave form'));
+						}
+					}
+				}
+				//send multiple email
+				Yii::$app->mailer->sendMultiple($mail);
+			}
+		}
+		/** end of send email **/
+		return false;
+	}
+}
+
+

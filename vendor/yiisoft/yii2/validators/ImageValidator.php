@@ -29,25 +29,25 @@ class ImageValidator extends FileValidator
     /**
      * @var integer the minimum width in pixels.
      * Defaults to null, meaning no limit.
-     * @see underWidth for the customized message used when image width is too small.
+     * @see underWidth
      */
     public $minWidth;
     /**
      * @var integer the maximum width in pixels.
      * Defaults to null, meaning no limit.
-     * @see overWidth for the customized message used when image width is too big.
+     * @see overWidth
      */
     public $maxWidth;
     /**
      * @var integer the minimum height in pixels.
      * Defaults to null, meaning no limit.
-     * @see underHeight for the customized message used when image height is too small.
+     * @see underHeight
      */
     public $minHeight;
     /**
      * @var integer the maximum width in pixels.
      * Defaults to null, meaning no limit.
-     * @see overWidth for the customized message used when image height is too big.
+     * @see overWidth
      */
     public $maxHeight;
     /**
@@ -162,21 +162,21 @@ class ImageValidator extends FileValidator
     /**
      * @inheritdoc
      */
-    public function clientValidateAttribute($model, $attribute, $view)
+    public function clientValidateAttribute($object, $attribute, $view)
     {
         ValidationAsset::register($view);
-        $options = $this->getClientOptions($model, $attribute);
+        $options = $this->getClientOptions($object, $attribute);
         return 'yii.validation.image(attribute, messages, ' . json_encode($options, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . ', deferred);';
     }
 
     /**
      * @inheritdoc
      */
-    protected function getClientOptions($model, $attribute)
+    protected function getClientOptions($object, $attribute)
     {
-        $options = parent::getClientOptions($model, $attribute);
+        $options = parent::getClientOptions($object, $attribute);
 
-        $label = $model->getAttributeLabel($attribute);
+        $label = $object->getAttributeLabel($attribute);
 
         if ($this->notImage !== null) {
             $options['notImage'] = Yii::$app->getI18n()->format($this->notImage, [

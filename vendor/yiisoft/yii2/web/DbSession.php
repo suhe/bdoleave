@@ -22,41 +22,39 @@ use yii\di\Instance;
  * The following example shows how you can configure the application to use DbSession:
  * Add the following to your application config under `components`:
  *
- * ```php
+ * ~~~
  * 'session' => [
  *     'class' => 'yii\web\DbSession',
  *     // 'db' => 'mydb',
  *     // 'sessionTable' => 'my_session',
  * ]
- * ```
+ * ~~~
  *
- * DbSession extends [[MultiFieldSession]], thus it allows saving extra fields into the [[sessionTable]].
- * Refer to [[MultiFieldSession]] for more details.
+ * @property boolean $useCustomStorage Whether to use custom storage. This property is read-only.
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class DbSession extends MultiFieldSession
+class DbSession extends Session
 {
     /**
-     * @var Connection|array|string the DB connection object or the application component ID of the DB connection.
+     * @var Connection|string the DB connection object or the application component ID of the DB connection.
      * After the DbSession object is created, if you want to change this property, you should only assign it
      * with a DB connection object.
-     * Starting from version 2.0.2, this can also be a configuration array for creating the object.
      */
     public $db = 'db';
     /**
      * @var string the name of the DB table that stores the session data.
      * The table should be pre-created as follows:
      *
-     * ```sql
+     * ~~~
      * CREATE TABLE session
      * (
      *     id CHAR(40) NOT NULL PRIMARY KEY,
      *     expire INTEGER,
      *     data BLOB
      * )
-     * ```
+     * ~~~
      *
      * where 'BLOB' refers to the BLOB-type of your preferred DBMS. Below are the BLOB type
      * that can be used for some popular DBMS:
@@ -87,6 +85,16 @@ class DbSession extends MultiFieldSession
     }
 
     /**
+     * Returns a value indicating whether to use custom session storage.
+     * This method overrides the parent implementation and always returns true.
+     * @return boolean whether to use custom storage.
+     */
+    public function getUseCustomStorage()
+    {
+        return true;
+    }
+
+    /**
      * Updates the current session ID with a newly generated one .
      * Please refer to <http://php.net/session_regenerate_id> for more details.
      * @param boolean $deleteOldSession Whether to delete the old associated session file or not.
@@ -103,7 +111,7 @@ class DbSession extends MultiFieldSession
         parent::regenerateID(false);
         $newID = session_id();
 
-        $query = new Query();
+        $query = new Query;
         $row = $query->from($this->sessionTable)
             ->where(['id' => $oldID])
             ->createCommand($this->db)
@@ -122,8 +130,10 @@ class DbSession extends MultiFieldSession
         } else {
             // shouldn't reach here normally
             $this->db->createCommand()
-                ->insert($this->sessionTable, $this->composeFields($newID, ''))
-                ->execute();
+                ->insert($this->sessionTable, [
+                    'id' => $newID,
+                    'expire' => time() + $this->getTimeout(),
+                ])->execute();
         }
     }
 
@@ -135,16 +145,13 @@ class DbSession extends MultiFieldSession
      */
     public function readSession($id)
     {
-        $query = new Query();
-        $query->from($this->sessionTable)
-            ->where('[[expire]]>:expire AND [[id]]=:id', [':expire' => time(), ':id' => $id]);
+        $query = new Query;
+        $data = $query->select(['data'])
+            ->from($this->sessionTable)
+            ->where('[[expire]]>:expire AND [[id]]=:id', [':expire' => time(), ':id' => $id])
+            ->createCommand($this->db)
+            ->queryScalar();
 
-        if ($this->readCallback !== null) {
-            $fields = $query->one($this->db);
-            return $fields === false ? '' : $this->extractData($fields);
-        }
-
-        $data = $query->select(['data'])->scalar($this->db);
         return $data === false ? '' : $data;
     }
 
@@ -160,21 +167,23 @@ class DbSession extends MultiFieldSession
         // exception must be caught in session write handler
         // http://us.php.net/manual/en/function.session-set-save-handler.php
         try {
+            $expire = time() + $this->getTimeout();
             $query = new Query;
             $exists = $query->select(['id'])
                 ->from($this->sessionTable)
                 ->where(['id' => $id])
                 ->createCommand($this->db)
                 ->queryScalar();
-            $fields = $this->composeFields($id, $data);
             if ($exists === false) {
                 $this->db->createCommand()
-                    ->insert($this->sessionTable, $fields)
-                    ->execute();
+                    ->insert($this->sessionTable, [
+                        'id' => $id,
+                        'data' => $data,
+                        'expire' => $expire,
+                    ])->execute();
             } else {
-                unset($fields['id']);
                 $this->db->createCommand()
-                    ->update($this->sessionTable, $fields, ['id' => $id])
+                    ->update($this->sessionTable, ['data' => $data, 'expire' => $expire], ['id' => $id])
                     ->execute();
             }
         } catch (\Exception $e) {

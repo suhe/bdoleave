@@ -5,14 +5,12 @@ use app\assets\AppAssetIE9;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use app\models\Employee;
+use app\models\Leaves;
+
 AppAsset::register($this);
 AppAssetIE8::register($this);
 AppAssetIE9::register($this);
-if(!Yii::$app->user->isGuest){
-  $model = new \app\models\Leaves();
-  $totalLeaveBalanceApp=count($model->getLeaveApprovalData());
-  $totalLeaveApp=count($model->getLeaveApprovalData());
-}
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -53,21 +51,23 @@ if(!Yii::$app->user->isGuest){
 		</button>
 	    </li>
 	    
-	      <?php if(!Yii::$app->user->isGuest){ ?>
-	      <li class="dropdown">
-		<a title="<?=Yii::t('app','leave approval')?>"  href="#" class="dropdown-toggle" data-toggle="dropdown">
-		  <i class="fa fa-exchange"></i> <?php if($totalLeaveApp>0){ ?><span class="badge up badge-primary"><?=$totalLeaveApp?></span><?php } ?></a>
+	    
+	    <li class="dropdown">
+		<a title="<?=Yii::t('app','to be approval')?>"  href="#" class="dropdown-toggle" data-toggle="dropdown">
+		  <i class="fa fa-exchange"></i> <?php if(Leaves::sumAppLeave()){ ?><span class="badge up badge-primary"><?=Leaves::sumAppLeave()?></span><?php } ?></a>
 		    <ul class="dropdown-menu dropdown-scroll dropdown-messages">
-			<li class="dropdown-header"><i class="fa fa-exchange"></i> <?=$totalLeaveApp?> <?=Yii::t('app','leave approval')?></li>
+			<li class="dropdown-header"><i class="fa fa-exchange"></i> <?=Leaves::sumAppLeave()?> <?=Yii::t('app','to be approval')?></li>
 			<li id="messageScroll">
 			  <ul class="list-unstyled">
-			   <?php foreach($model->getLeaveApprovalData() as $row){ ?>
+			   <?php 
+			   if(Leaves::sumAppLeave()) {
+			   foreach(Leaves::getAppLeave() as $row){ ?>
 			    <li>
-			      <a href="<?=Url::to(['leave/approvalform','id'=>$row->leave_id])?>">
+			      <a href="<?=Url::to(['app-leave/form','id'=>$row->leave_id])?>">
 					<div class="row">
 						  <div class="col-xs-12">
 						    <p>
-						      <strong><?=$row->employeefirstname?></strong>: <?=$row->leave_date?>
+						      <strong><?=$row->employee_name?></strong>: <?=$row->leave_date?>
 						    </p>
 						    <p class="small">
 						      <i class="fa fa-clock-o"></i> <?=\app\components\Common::timeAgo(strtotime($row->leave_created_date))?>
@@ -76,11 +76,11 @@ if(!Yii::$app->user->isGuest){
 					</div>
 			      </a>
 			    </li>
-			    <?php } ?>
+			    <?php } } ?>
 			  </ul>
 			</li>
 			<li class="dropdown-footer">
-			  <a href="<?=Url::to(['leave/approval'])?>"><?=Yii::t('app','read all')?></a>
+			  <a href="<?=Url::to(['app-leave/'])?>"><?=Yii::t('app','read all')?></a>
 			</li>
 		      </ul>
 	      </li>
@@ -103,8 +103,8 @@ if(!Yii::$app->user->isGuest){
 		  <li><?=Html::a('<i class="fa fa-key"></i> '.Yii::t('app','change password'),['administration/password'])?></li>
 		  <li><?=Html::a('<i class="fa fa-power-off"></i> '.Yii::t('app','logout'),['site/logout'])?></li>
 		</ul>
-	      </li>
-	      <?php } ?>
+	   </li>
+	     
 	      
 	    </ul>
 	    <!-- END RIGHT SIDE DROPDOWN BUTTONS -->
@@ -113,17 +113,14 @@ if(!Yii::$app->user->isGuest){
 	    <div class="collapse navbar-collapse top-collapse">
 	      <!-- .nav -->
 	      <ul class="nav navbar-left navbar-nav">
-		<li><a href="<?=Url::to(['leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','form')?></a></li>
+		<li><a href="<?=Url::to(['my-leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','leave form')?></a></li>
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 		    <i class="fa fa-link"></i> <?=Yii::t('app','quick shortcut')?> <b class="caret"></b>
 		  </a>
 		  <ul class="dropdown-menu">
-		    <li><a href="<?=Url::to(['leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','form')?></a></li>
-		    <li><a href="<?=Url::to(['leave/index'])?>"> <i class="fa fa-list"></i> <?=Yii::t('app','my leave')?></a></li>
-		    <li><a href="<?=Url::to(['administration/general'])?>"> <i class="fa fa-user-md"></i> <?=Yii::t('app','my profile')?></a></li>
-		     <li><a href="<?=Url::to(['administration/approval'])?>"> <i class="fa fa-user"></i> <?=Yii::t('app','leave approval')?></a></li>
-		    <li><a href="<?=Url::to(['administration/password'])?>"> <i class="fa fa-key"></i> <?=Yii::t('app','change password')?></a></li>
+		    <li><a href="<?=Url::to(['my-leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','leave form')?></a></li>
+		    <li><a href="<?=Url::to(['my-leave/balanced-card'])?>"> <i class="fa fa-dropbox"></i> <?=Yii::t('app','my balanced card')?></a></li>
 		  </ul>
 	      </li>
 	      <li><a href="<?=Url::to(['guide/index'])?>" target="_blank"><i class="fa fa-umbrella"></i> <?=Yii::t('app','guide')?></a></li>	
@@ -152,92 +149,28 @@ if(!Yii::$app->user->isGuest){
 						<!-- END SHORTCUT BUTTONS -->	
 						
 						
-						<?php
-						if(Yii::$app->user->getId()) { ?>
-						<?=\app\components\NavMenuWidget::widget([
-						    'menu'=>[
-							[
-							  'label' => Yii::t('app','my leave'),
-							  'url'   => 'leave',
-							  'icon'  => 'fa fa-file',
-							  'sub'   => [
-							    [
-							    	'label'=>Yii::t('app','my leave list'),
-							      	'url'  => 'my-leave/index',
-							      	'icon' => 'fa fa-user-md'
-							    ],
-							  	
-							  	[
-							  		'label'=>Yii::t('app','my balanced card'),
-							  		'url'  => 'my-leave/balanced-card',
-							  		'icon' => 'fa fa-dropbox'
-							  	],
-							  		
-							    [
-							      'label'=>Yii::t('app','to be approval'),
-							      'url'  => 'app-leave/index',
-							      'icon' => 'fa fa-pencil'
-							    ],
-							    
-							    /*[
-							      'label'=>Yii::t('app','approval list'),
-							      'url'  => 'leave/approvallist',
-							      'icon' => 'fa fa-list'
-							    ],*/
-								
-							  ]
+						<?php echo \yii\widgets\Menu::widget([
+						    'items' => [
+						        ['label' => '<i class="fa fa-user-md"></i> ' .Yii::t('app','my leave'), 'url' => ['my-leave/'],'visible' => Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER ? false :true],
+						    	['label' => '<i class="fa fa-dropbox"></i> ' .Yii::t('app','my balanced card'), 'url' => ['my-leave/balanced-card'],'visible' => Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER ? false :true],
+						    	['label' => '<i class="fa fa-plus"></i> ' .Yii::t('app','to be approval'), 'url' => ['app-leave/'],'visible' => Yii::$app->user->isGuest ? false :true],
+						    	['label' => '<i class="fa fa-newspaper-o"></i> ' .Yii::t('app','manage leave'), 'url' => ['manage-leave/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
+						    	['label' => '<i class="fa fa-user"></i> ' .Yii::t('app','employee'), 'url' => ['employee/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
+						    	['label' => '<i class="fa fa-area-chart"></i> ' .Yii::t('app','holiday list'), 'url' => ['holiday/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
+						    	['label' => '<i class="fa fa-github"></i> ' .Yii::t('app','reports'), 'url' => ['report/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
+						    ],
+							'options' => [
+								'class' => 'nav navbar-nav side-nav',
+								'id' => 'side'
 							],
-							
-						    ]
-						])?>
-						<?php } ?>
-						
-						<?php if(\app\models\Employee::isHRD() && Yii::$app->user->getId() ){?>
-						<?=\app\components\NavMenuWidget::widget([
-						    'menu'=>[
-							[
-							  'label' => Yii::t('app','management'),
-							  'url'   => 'ticket',
-							  'icon'  => 'fa fa-file',
-							  'sub'   => [
-							    [
-							      'label'=>Yii::t('app','outstanding leave'),
-							      'url'  => 'manage-leave/index',
-							      'icon' => 'fa fa-pencil'
-							    ],
-							    /*[
-							      'label'=>Yii::t('app','leave form'),
-							      'url'  => 'leave/add_management',
-							      'icon' => 'fa fa-plus'
-							    ],*/
-							    /*[
-							      'label'=>Yii::t('app','leave list'),
-							      'url'  => 'leave/management',
-							      'icon' => 'fa fa-list'
-							    ],**/
-							    [
-							      'label'=>Yii::t('app','employee'),
-							      'url'  => 'employee/index',
-							      'icon' => 'fa fa-user'
-							    ],
-							    [
-							      'label'=>Yii::t('app','holiday list'),
-							      'url'  => 'holiday/index',
-							      'icon' => 'fa fa-area-chart'
-							    ],
-							  	[
-							  		'label'=>Yii::t('app','reports'),
-							  		'url'  => 'report/index',
-							  		'icon' => 'fa fa-github'
-							  	],
-							    
+							'activeCssClass'=>'active',
+							'encodeLabels' => false,
+							'labelTemplate' =>'{label} Label',
+							'linkTemplate' => '<a href="{url}">{label}<span class="fa arrow"></span></a>',
+							'submenuTemplate' => "\n<ul class='collapse in nav' role='menu'>\n{items}\n</ul>\n",
 								
-							  ]
-							],
-			
-						    ]
-						])?>
-						<?php } ?>
+						]);
+						?>
 							
 					</div><!-- /.navbar-collapse -->
 				</nav><!-- /.navbar-side -->

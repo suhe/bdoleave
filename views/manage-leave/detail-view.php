@@ -182,7 +182,7 @@ $this->params ['addUrl'] = [
 
 
 <div class="row">
-	<div class="col-lg-9">
+	<div class="col-lg-8">
 		<!-- START YOUR CONTENT HERE -->
 		<div class="portlet">
 			<div class="portlet-heading">
@@ -246,7 +246,7 @@ $this->params ['addUrl'] = [
 		
 	</div>
 	
-	<div class="col-lg-3">
+	<div class="col-lg-4">
 		<!-- START YOUR CONTENT HERE -->
 		<div class="portlet">
 			<div class="portlet-heading">

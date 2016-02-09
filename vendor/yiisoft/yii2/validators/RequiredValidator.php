@@ -86,7 +86,7 @@ class RequiredValidator extends Validator
     /**
      * @inheritdoc
      */
-    public function clientValidateAttribute($model, $attribute, $view)
+    public function clientValidateAttribute($object, $attribute, $view)
     {
         $options = [];
         if ($this->requiredValue !== null) {
@@ -102,7 +102,7 @@ class RequiredValidator extends Validator
         }
 
         $options['message'] = Yii::$app->getI18n()->format($options['message'], [
-            'attribute' => $model->getAttributeLabel($attribute),
+            'attribute' => $object->getAttributeLabel($attribute),
         ], Yii::$app->language);
 
         ValidationAsset::register($view);

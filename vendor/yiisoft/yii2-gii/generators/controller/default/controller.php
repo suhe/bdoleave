@@ -4,7 +4,6 @@
  */
 
 use yii\helpers\Inflector;
-use yii\helpers\StringHelper;
 
 /* @var $this yii\web\View */
 /* @var $generator yii\gii\generators\controller\Generator */
@@ -12,9 +11,11 @@ use yii\helpers\StringHelper;
 echo "<?php\n";
 ?>
 
-namespace <?= $generator->getControllerNamespace() ?>;
+<?php if (!empty($generator->ns)): ?>
+namespace <?= $generator->ns ?>;
+<?php endif; ?>
 
-class <?= StringHelper::basename($generator->controllerClass) ?> extends <?= '\\' . trim($generator->baseClass, '\\') . "\n" ?>
+class <?= $generator->getControllerClass() ?> extends <?= '\\' . trim($generator->baseClass, '\\') . "\n" ?>
 {
 <?php foreach ($generator->getActionIDs() as $action): ?>
     public function action<?= Inflector::id2camel($action) ?>()

@@ -7,6 +7,8 @@
 
 namespace yii\bootstrap;
 
+use yii\helpers\Html;
+
 /**
  * Button renders a bootstrap button.
  *
@@ -46,7 +48,7 @@ class Button extends Widget
     {
         parent::init();
         $this->clientOptions = false;
-        Html::addCssClass($this->options, ['widget' => 'btn']);
+        Html::addCssClass($this->options, 'btn');
     }
 
     /**
@@ -54,7 +56,7 @@ class Button extends Widget
      */
     public function run()
     {
+        echo Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label, $this->options);
         $this->registerPlugin('button');
-        return Html::tag($this->tagName, $this->encodeLabel ? Html::encode($this->label) : $this->label, $this->options);
     }
 }

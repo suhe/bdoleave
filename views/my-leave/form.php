@@ -132,9 +132,9 @@ $this->params ['addUrl'] = [
 							'class' => 'form-horizontal' 
 						],
 						'fieldConfig' => [ 
-							'template' => "{label}\n<div class=\"col-sm-10 search\">{input} {error}</div>\n",
+							'template' => "{label}\n<div class=\"col-sm-9 search\">{input} {error}</div>\n",
 							'labelOptions' => [ 
-								'class' => 'col-sm-2 control-label' 
+								'class' => 'col-sm-3 control-label' 
 							] 
 						] 
 					] );?>

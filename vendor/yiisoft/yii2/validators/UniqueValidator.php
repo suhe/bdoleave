@@ -16,7 +16,7 @@ use yii\db\ActiveRecordInterface;
  * UniqueValidator checks if the value being validated is unique in the table column specified by
  * the ActiveRecord class [[targetClass]] and the attribute [[targetAttribute]].
  *
- * The following are examples of validation rules using this validator:
+ * The followings are examples of validation rules using this validator:
  *
  * ```php
  * // a1 needs to be unique
@@ -74,24 +74,24 @@ class UniqueValidator extends Validator
     /**
      * @inheritdoc
      */
-    public function validateAttribute($model, $attribute)
+    public function validateAttribute($object, $attribute)
     {
         /* @var $targetClass ActiveRecordInterface */
-        $targetClass = $this->targetClass === null ? get_class($model) : $this->targetClass;
+        $targetClass = $this->targetClass === null ? get_class($object) : $this->targetClass;
         $targetAttribute = $this->targetAttribute === null ? $attribute : $this->targetAttribute;
 
         if (is_array($targetAttribute)) {
             $params = [];
             foreach ($targetAttribute as $k => $v) {
-                $params[$v] = is_int($k) ? $model->$v : $model->$k;
+                $params[$v] = is_integer($k) ? $object->$v : $object->$k;
             }
         } else {
-            $params = [$targetAttribute => $model->$attribute];
+            $params = [$targetAttribute => $object->$attribute];
         }
 
         foreach ($params as $value) {
             if (is_array($value)) {
-                $this->addError($model, $attribute, Yii::t('yii', '{attribute} is invalid.'));
+                $this->addError($object, $attribute, Yii::t('yii', '{attribute} is invalid.'));
 
                 return;
             }
@@ -106,15 +106,14 @@ class UniqueValidator extends Validator
             $query->andWhere($this->filter);
         }
 
-        if (!$model instanceof ActiveRecordInterface || $model->getIsNewRecord() || $model->className() !== $targetClass::className()) {
-            // if current $model isn't in the database yet then it's OK just to call exists()
-            // also there's no need to run check based on primary keys, when $targetClass is not the same as $model's class
+        if (!$object instanceof ActiveRecordInterface || $object->getIsNewRecord()) {
+            // if current $object isn't in the database yet then it's OK just to call exists()
             $exists = $query->exists();
         } else {
-            // if current $model is in the database already we can't use exists()
-            /* @var $models ActiveRecordInterface[] */
-            $models = $query->limit(2)->all();
-            $n = count($models);
+            // if current $object is in the database already we can't use exists()
+            /* @var $objects ActiveRecordInterface[] */
+            $objects = $query->limit(2)->all();
+            $n = count($objects);
             if ($n === 1) {
                 $keys = array_keys($params);
                 $pks = $targetClass::primaryKey();
@@ -122,10 +121,10 @@ class UniqueValidator extends Validator
                 sort($pks);
                 if ($keys === $pks) {
                     // primary key is modified and not unique
-                    $exists = $model->getOldPrimaryKey() != $model->getPrimaryKey();
+                    $exists = $object->getOldPrimaryKey() != $object->getPrimaryKey();
                 } else {
                     // non-primary key, need to exclude the current record based on PK
-                    $exists = $models[0]->getPrimaryKey() != $model->getOldPrimaryKey();
+                    $exists = $objects[0]->getPrimaryKey() != $object->getOldPrimaryKey();
                 }
             } else {
                 $exists = $n > 1;
@@ -133,7 +132,7 @@ class UniqueValidator extends Validator
         }
 
         if ($exists) {
-            $this->addError($model, $attribute, $this->message);
+            $this->addError($object, $attribute, $this->message);
         }
     }
 }

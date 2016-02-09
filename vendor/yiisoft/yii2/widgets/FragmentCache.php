@@ -14,7 +14,6 @@ use yii\caching\Dependency;
 use yii\di\Instance;
 
 /**
- * FragmentCache is used by [[\yii\base\View]] to provide caching of page fragments.
  *
  * @property string|boolean $cachedContent The cached content. False is returned if valid content is not found
  * in the cache. This property is read-only.
@@ -25,10 +24,9 @@ use yii\di\Instance;
 class FragmentCache extends Widget
 {
     /**
-     * @var Cache|array|string the cache object or the application component ID of the cache object.
+     * @var Cache|string the cache object or the application component ID of the cache object.
      * After the FragmentCache object is created, if you want to change this property,
      * you should only assign it with a cache object.
-     * Starting from version 2.0.2, this can also be a configuration array for creating the object.
      */
     public $cache = 'cache';
     /**
@@ -41,12 +39,12 @@ class FragmentCache extends Widget
      * This can be either a [[Dependency]] object or a configuration array for creating the dependency object.
      * For example,
      *
-     * ```php
+     * ~~~
      * [
      *     'class' => 'yii\caching\DbDependency',
      *     'sql' => 'SELECT MAX(updated_at) FROM post',
      * ]
-     * ```
+     * ~~~
      *
      * would make the output cache depends on the last modified time of all posts.
      * If any post has its modification time changed, the cached content would be invalidated.
@@ -58,11 +56,10 @@ class FragmentCache extends Widget
      * The following variation setting will cause the content to be cached in different versions
      * according to the current application language:
      *
-     * ```php
+     * ~~~
      * [
      *     Yii::$app->language,
      * ]
-     * ```
      */
     public $variations;
     /**
@@ -86,7 +83,7 @@ class FragmentCache extends Widget
 
         $this->cache = $this->enabled ? Instance::ensure($this->cache, Cache::className()) : null;
 
-        if ($this->cache instanceof Cache && $this->getCachedContent() === false) {
+        if ($this->getCachedContent() === false) {
             $this->getView()->cacheStack[] = $this;
             ob_start();
             ob_implicit_flush(false);
@@ -105,9 +102,6 @@ class FragmentCache extends Widget
             echo $content;
         } elseif ($this->cache instanceof Cache) {
             $content = ob_get_clean();
-            if ($content === false || $content === '') {
-                return;
-            }
             array_pop($this->getView()->cacheStack);
             if (is_array($this->dependency)) {
                 $this->dependency = Yii::createObject($this->dependency);
@@ -158,7 +152,7 @@ class FragmentCache extends Widget
     }
 
     /**
-     * Replaces placeholders in content by results of evaluated dynamic statements.
+     * Replaces placeholders in content by results of evaluated dynamic statemens
      *
      * @param string $content
      * @param array $placeholders

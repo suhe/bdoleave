@@ -20,15 +20,6 @@ use yii\helpers\Html;
  * or a name and a value. If the former, the name and the value will
  * be generated automatically.
  *
- * Classes extending from this widget can be used in an [[\yii\widgets\ActiveForm|ActiveForm]]
- * using the [[\yii\widgets\ActiveField::widget()|widget()]] method, for example like this:
- *
- * ```php
- * <?= $form->field($model, 'from_date')->widget('WidgetClassName', [
- *     // configure additional widget properties here
- * ]) ?>
- * ```
- *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
@@ -63,7 +54,7 @@ class InputWidget extends Widget
      */
     public function init()
     {
-        if ($this->name === null && !$this->hasModel()) {
+        if (!$this->hasModel() && $this->name === null) {
             throw new InvalidConfigException("Either 'name', or 'model' and 'attribute' properties must be specified.");
         }
         if (!isset($this->options['id'])) {

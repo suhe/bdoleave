@@ -14,6 +14,11 @@ return [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
+    	/*'user' => [
+    		'class' => 'yii\web\User',
+    		'identityClass' => 'app\models\Employee',
+    		'enableAutoLogin' => false,
+    	],*/
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
@@ -25,6 +30,22 @@ return [
                 ],
             ],
         ],
+    	'mailer' => [
+    		'class' => 'yii\swiftmailer\Mailer',
+    		'viewPath' => '@app/mail',
+    		'useFileTransport' => false,
+    			'transport' => [
+    				'class' => 'Swift_SmtpTransport',
+    				'host' => 'mail.bdoindonesia.com',
+    				'username' => 'support@bdoindonesia.com',
+    				'password' => 'admin1234',
+    				'port' => '587'
+    			]
+    					
+    	],
+    	/*'session' => [
+    		'class' => 'yii\web\Session',
+    	],*/
         'db' => $db,
     ],
     'params' => $params,

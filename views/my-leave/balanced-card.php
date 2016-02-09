@@ -9,8 +9,8 @@ use kartik\select2\Select2;
 
 
 $this->params['breadcrumbs'] = [
-		['label' => Yii::t('app','leave'),'url' => ['my-leave/index']],
-		['label' => Yii::t('app','balance card'),'url' => ['my-leave/balance-card']],
+		['label' => Yii::t('app','my leave'),'url' => ['my-leave/index']],
+		['label' => Yii::t('app','balanced card'),'url' => ['my-leave/balanced-card']],
 
 ];
 $this->params['addUrl'] = ['manage-leave/form'];

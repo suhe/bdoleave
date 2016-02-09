@@ -9,6 +9,7 @@ namespace yii\bootstrap;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
+use yii\helpers\Html;
 
 /**
  * Carousel renders a carousel bootstrap javascript component.
@@ -72,7 +73,7 @@ class Carousel extends Widget
     public function init()
     {
         parent::init();
-        Html::addCssClass($this->options, ['widget' => 'carousel']);
+        Html::addCssClass($this->options, 'carousel');
     }
 
     /**
@@ -80,14 +81,12 @@ class Carousel extends Widget
      */
     public function run()
     {
+        echo Html::beginTag('div', $this->options) . "\n";
+        echo $this->renderIndicators() . "\n";
+        echo $this->renderItems() . "\n";
+        echo $this->renderControls() . "\n";
+        echo Html::endTag('div') . "\n";
         $this->registerPlugin('carousel');
-        return implode("\n", [
-            Html::beginTag('div', $this->options),
-            $this->renderIndicators(),
-            $this->renderItems(),
-            $this->renderControls(),
-            Html::endTag('div')
-        ]) . "\n";
     }
 
     /**
@@ -149,7 +148,7 @@ class Carousel extends Widget
             throw new InvalidConfigException('The "content" option is required.');
         }
 
-        Html::addCssClass($options, ['widget' => 'item']);
+        Html::addCssClass($options, 'item');
         if ($index === 0) {
             Html::addCssClass($options, 'active');
         }

@@ -8,11 +8,10 @@
 namespace yii\console\controllers;
 
 use Yii;
+use yii\console\Exception;
 use yii\db\Connection;
 use yii\db\Query;
-use yii\di\Instance;
 use yii\helpers\ArrayHelper;
-use yii\helpers\Console;
 
 /**
  * Manages application migrations.
@@ -30,16 +29,16 @@ use yii\helpers\Console;
  * this command is executed, if it does not exist. You may also manually
  * create it as follows:
  *
- * ```sql
+ * ~~~
  * CREATE TABLE migration (
  *     version varchar(180) PRIMARY KEY,
  *     apply_time integer
  * )
- * ```
+ * ~~~
  *
  * Below are some common usages of this command:
  *
- * ```
+ * ~~~
  * # creates a new migration named 'create_user_table'
  * yii migrate/create create_user_table
  *
@@ -48,7 +47,7 @@ use yii\helpers\Console;
  *
  * # reverts the last applied migration
  * yii migrate/down
- * ```
+ * ~~~
  *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
@@ -64,19 +63,8 @@ class MigrateController extends BaseMigrateController
      */
     public $templateFile = '@yii/views/migration.php';
     /**
-     * @inheritdoc
-     */
-    public $generatorTemplateFiles = [
-        'create_table' => '@yii/views/createTableMigration.php',
-        'drop_table' => '@yii/views/dropTableMigration.php',
-        'add_column' => '@yii/views/addColumnMigration.php',
-        'drop_column' => '@yii/views/dropColumnMigration.php',
-        'create_junction' => '@yii/views/createJunctionMigration.php'
-    ];
-    /**
-     * @var Connection|array|string the DB connection object or the application component ID of the DB connection to use
-     * when applying migrations. Starting from version 2.0.3, this can also be a configuration array
-     * for creating the object.
+     * @var Connection|string the DB connection object or the application
+     * component ID of the DB connection.
      */
     public $db = 'db';
 
@@ -96,13 +84,19 @@ class MigrateController extends BaseMigrateController
      * This method is invoked right before an action is to be executed (after all possible filters.)
      * It checks the existence of the [[migrationPath]].
      * @param \yii\base\Action $action the action to be executed.
+     * @throws Exception if db component isn't configured
      * @return boolean whether the action should continue to be executed.
      */
     public function beforeAction($action)
     {
         if (parent::beforeAction($action)) {
             if ($action->id !== 'create') {
-                $this->db = Instance::ensure($this->db, Connection::className());
+                if (is_string($this->db)) {
+                    $this->db = Yii::$app->get($this->db);
+                }
+                if (!$this->db instanceof Connection) {
+                    throw new Exception("The 'db' option must refer to the application component ID of a DB connection.");
+                }
             }
             return true;
         } else {
@@ -134,7 +128,7 @@ class MigrateController extends BaseMigrateController
         $query = new Query;
         $rows = $query->select(['version', 'apply_time'])
             ->from($this->migrationTable)
-            ->orderBy('apply_time DESC, version DESC')
+            ->orderBy('version DESC')
             ->limit($limit)
             ->createCommand($this->db)
             ->queryAll();
@@ -150,7 +144,7 @@ class MigrateController extends BaseMigrateController
     protected function createMigrationHistoryTable()
     {
         $tableName = $this->db->schema->getRawTableName($this->migrationTable);
-        $this->stdout("Creating migration history table \"$tableName\"...", Console::FG_YELLOW);
+        echo "Creating migration history table \"$tableName\"...";
         $this->db->createCommand()->createTable($this->migrationTable, [
             'version' => 'varchar(180) NOT NULL PRIMARY KEY',
             'apply_time' => 'integer',
@@ -159,7 +153,7 @@ class MigrateController extends BaseMigrateController
             'version' => self::BASE_MIGRATION,
             'apply_time' => time(),
         ])->execute();
-        $this->stdout("Done.\n", Console::FG_GREEN);
+        echo "done.\n";
     }
 
     /**

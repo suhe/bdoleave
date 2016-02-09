@@ -8,6 +8,7 @@
 namespace app\commands;
 
 use yii\console\Controller;
+use app\models\Test;
 
 /**
  * This command echoes the first argument that you have entered.
@@ -17,14 +18,19 @@ use yii\console\Controller;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class HelloController extends Controller
-{
+class HelloController extends Controller {
     /**
      * This command echoes what you have entered as the message.
      * @param string $message the message to be echoed.
      */
-    public function actionIndex($message = 'hello world')
-    {
-        echo $message . "\n";
+    public function actionIndex($message = 'console is running') {
+        //echo $message . "\n";
+        $model = new Test();
+        $model->name = substr(md5(rand()), 0, 10);
+        $model->insert();
+    }
+    
+    public function actionMail($to) {
+    	echo "Sending mail to " . $to;
     }
 }

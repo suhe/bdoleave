@@ -3,24 +3,6 @@
 $vendorDir = dirname(__DIR__);
 
 return array (
-  'vileosoft/phpexcel' => 
-  array (
-    'name' => 'vileosoft/phpexcel',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@yii/phpexcel' => $vendorDir . '/vileosoft/phpexcel',
-    ),
-  ),
-  'vileosoft/phppdf' => 
-  array (
-    'name' => 'vileosoft/phpexcel',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@yii/phppdf' => $vendorDir . '/phpexcel',
-    ),
-  ),
   'alexgx/yii2-phpexcel' => 
   array (
     'name' => 'alexgx/yii2-phpexcel',
@@ -28,6 +10,24 @@ return array (
     'alias' => 
     array (
       '@alexgx/phpexcel' => $vendorDir . '/alexgx/yii2-phpexcel',
+    ),
+  ),
+  'yiisoft/yii2-swiftmailer' => 
+  array (
+    'name' => 'yiisoft/yii2-swiftmailer',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer',
+    ),
+  ),
+  'yiisoft/yii2-bootstrap' => 
+  array (
+    'name' => 'yiisoft/yii2-bootstrap',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap',
     ),
   ),
   'kartik-v/yii2-krajee-base' => 
@@ -48,22 +48,13 @@ return array (
       '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2',
     ),
   ),
-  'yiisoft/yii2-faker' => 
+  'kartik-v/yii2-widget-sidenav' => 
   array (
-    'name' => 'yiisoft/yii2-faker',
+    'name' => 'kartik-v/yii2-widget-sidenav',
     'version' => '9999999-dev',
     'alias' => 
     array (
-      '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
-    ),
-  ),
-  'yiisoft/yii2-swiftmailer' => 
-  array (
-    'name' => 'yiisoft/yii2-swiftmailer',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@yii/swiftmailer' => $vendorDir . '/yiisoft/yii2-swiftmailer',
+      '@kartik/sidenav' => $vendorDir . '/kartik-v/yii2-widget-sidenav',
     ),
   ),
   'yiisoft/yii2-codeception' => 
@@ -73,15 +64,6 @@ return array (
     'alias' => 
     array (
       '@yii/codeception' => $vendorDir . '/yiisoft/yii2-codeception',
-    ),
-  ),
-  'yiisoft/yii2-bootstrap' => 
-  array (
-    'name' => 'yiisoft/yii2-bootstrap',
-    'version' => '9999999-dev',
-    'alias' => 
-    array (
-      '@yii/bootstrap' => $vendorDir . '/yiisoft/yii2-bootstrap',
     ),
   ),
   'yiisoft/yii2-debug' => 
@@ -100,6 +82,15 @@ return array (
     'alias' => 
     array (
       '@yii/gii' => $vendorDir . '/yiisoft/yii2-gii',
+    ),
+  ),
+  'yiisoft/yii2-faker' => 
+  array (
+    'name' => 'yiisoft/yii2-faker',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@yii/faker' => $vendorDir . '/yiisoft/yii2-faker',
     ),
   ),
 );

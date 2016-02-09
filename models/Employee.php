@@ -23,6 +23,18 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public $partner_approval;
     public $partner_email;
     
+    /** 
+     * Costantata Employee Role
+     * @return cost
+     */
+    const ROLE_ASSISTANT = "Assistant";
+    const ROLE_SENIOR_2 = "Senior-2";
+    const ROLE_SENIOR_1 = "Senior-1";
+    const ROLE_MANAGER = "Manager";
+    const ROLE_PARTNER = "Partner";
+    const ROLE_MANAGER_HRD = "Manager HRD";
+    const ROLE_SENIOR_HRD = "Senior HRD";
+    
     public static function tableName(){
         return 'employee';
     }
@@ -448,6 +460,10 @@ class Employee extends ActiveRecord implements IdentityInterface {
     /**
      *Identity to Login
      */
+    
+    public static function role() {
+    	return 1;
+    }
     
     public static function isAuditorAssistant(){
         $position = isset(Yii::$app->user->identity->EmployeeTitle)?Yii::$app->user->identity->EmployeeTitle:0;

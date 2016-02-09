@@ -184,7 +184,7 @@ $this->params ['addUrl'] = [
 
 
 <div class="row">
-	<div class="col-lg-6">
+	<div class="col-lg-8">
 		<!-- START YOUR CONTENT HERE -->
 		<div class="portlet">
 			<div class="portlet-heading">
@@ -239,7 +239,7 @@ $this->params ['addUrl'] = [
 		</div>
 	</div>
 	
-	<div class="col-lg-6">
+	<div class="col-lg-4">
 		<!-- START YOUR CONTENT HERE -->
 		<div class="portlet">
 			<div class="portlet-heading">
@@ -266,14 +266,14 @@ $this->params ['addUrl'] = [
 							'class' => 'form-horizontal' 
 						],
 						'fieldConfig' => [ 
-							'template' => "{label}\n<div class=\"col-sm-10 search\">{input} {error}</div>\n",
+							'template' => "{label}\n<div class=\"col-sm-9 search\">{input} {error}</div>\n",
 							'labelOptions' => [ 
-								'class' => 'col-sm-2 control-label' 
+								'class' => 'col-sm-3 control-label' 
 							] 
 						] 
 					] );?>
 					
-					<?=$form->field($model,'leave_approval')->dropDownList(Leaves::getListApproval(),['class'=>'col-lg-3'])?>
+					<?=$form->field($model,'leave_approval')->dropDownList(Leaves::getListApproval(),['class'=>'col-lg-6'])?>
                     <?=$form->field($model,'leave_note')->textArea(['rows'=>2]);?>
 					
 					<div class="form-group pull-right">

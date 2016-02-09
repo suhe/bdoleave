@@ -9,7 +9,6 @@ namespace yii\widgets;
 
 use Yii;
 use yii\base\Widget;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\Response;
@@ -45,24 +44,19 @@ use yii\web\Response;
 class Pjax extends Widget
 {
     /**
-     * @var array the HTML attributes for the widget container tag. The following special options are recognized:
-     *
-     * - `tag`: string, the tag name for the container. Defaults to `div`
-     *
+     * @var array the HTML attributes for the widget container tag.
      * @see \yii\helpers\Html::renderTagAttributes() for details on how attributes are being rendered.
      */
     public $options = [];
     /**
-     * @var string|false the jQuery selector of the links that should trigger pjax requests.
+     * @var string the jQuery selector of the links that should trigger pjax requests.
      * If not set, all links within the enclosed content of Pjax will trigger pjax requests.
-     * If set to false, no code will be registered to handle links.
      * Note that if the response to the pjax request is a full page, a normal request will be sent again.
      */
     public $linkSelector;
     /**
-     * @var string|false the jQuery selector of the forms whose submissions should trigger pjax requests.
+     * @var string the jQuery selector of the forms whose submissions should trigger pjax requests.
      * If not set, all forms with `data-pjax` attribute within the enclosed content of Pjax will trigger pjax requests.
-     * If set to false, no code will be registered to handle forms.
      * Note that if the response to the pjax request is a full page, a normal request will be sent again.
      */
     public $formSelector;
@@ -91,6 +85,7 @@ class Pjax extends Widget
      */
     public $clientOptions;
 
+
     /**
      * @inheritdoc
      */
@@ -112,15 +107,7 @@ class Pjax extends Widget
                 echo Html::tag('title', Html::encode($view->title));
             }
         } else {
-            $options = $this->options;
-            $tag = ArrayHelper::remove($options, 'tag', 'div');
-            echo Html::beginTag($tag, array_merge([
-                'data-pjax-container' => '',
-                'data-pjax-push-state' => $this->enablePushState,
-                'data-pjax-replace-state' => $this->enableReplaceState,
-                'data-pjax-timeout' => $this->timeout,
-                'data-pjax-scrollto' => $this->scrollTo,
-            ], $options));
+            echo Html::beginTag('div', $this->options);
         }
     }
 
@@ -130,7 +117,7 @@ class Pjax extends Widget
     public function run()
     {
         if (!$this->requiresPjax()) {
-            echo Html::endTag(ArrayHelper::remove($this->options, 'tag', 'div'));
+            echo Html::endTag('div');
             $this->registerClientScript();
 
             return;
@@ -179,21 +166,13 @@ class Pjax extends Widget
         $this->clientOptions['replace'] = $this->enableReplaceState;
         $this->clientOptions['timeout'] = $this->timeout;
         $this->clientOptions['scrollTo'] = $this->scrollTo;
-        $options = Json::htmlEncode($this->clientOptions);
-        $js = '';
-        if ($this->linkSelector !== false) {
-            $linkSelector = Json::htmlEncode($this->linkSelector !== null ? $this->linkSelector : '#' . $id . ' a');
-            $js .= "jQuery(document).pjax($linkSelector, \"#$id\", $options);";
-        }
-        if ($this->formSelector !== false) {
-            $formSelector = Json::htmlEncode($this->formSelector !== null ? $this->formSelector : '#' . $id . ' form[data-pjax]');
-            $js .= "\njQuery(document).on('submit', $formSelector, function (event) {jQuery.pjax.submit(event, '#$id', $options);});";
-        }
+        $options = Json::encode($this->clientOptions);
+        $linkSelector = Json::encode($this->linkSelector !== null ? $this->linkSelector : '#' . $id . ' a');
+        $formSelector = Json::encode($this->formSelector !== null ? $this->formSelector : '#' . $id . ' form[data-pjax]');
         $view = $this->getView();
         PjaxAsset::register($view);
-
-        if ($js !== '') {
-            $view->registerJs($js);
-        }
+        $js = "jQuery(document).pjax($linkSelector, \"#$id\", $options);";
+        $js .= "\njQuery(document).on('submit', $formSelector, function (event) {jQuery.pjax.submit(event, '#$id', $options);});";
+        $view->registerJs($js);
     }
 }

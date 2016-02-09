@@ -19,6 +19,7 @@ $this->title = 'Yii Debugger';
         <div class="yii-debug-toolbar-block title">
             <a href="<?= Url::to(['index']) ?>">
                 <img width="29" height="30" alt="" src="<?= \yii\debug\Module::getYiiLogo() ?>">
+                Yii Debugger
             </a>
         </div>
 
@@ -27,7 +28,7 @@ $this->title = 'Yii Debugger';
         <?php endforeach; ?>
     </div>
 
-    <div class="container main-container">
+    <div class="container">
         <div class="row">
             <div class="col-lg-2 col-md-2">
                 <div class="list-group">
@@ -42,26 +43,12 @@ $this->title = 'Yii Debugger';
                 </div>
             </div>
             <div class="col-lg-10 col-md-10">
-                <?php
-                $statusCode = $summary['statusCode'];
-                if ($statusCode === null) {
-                    $statusCode = 200;
-                }
-                if ($statusCode >= 200 && $statusCode < 300) {
-                    $calloutClass = 'callout-success';
-                } elseif ($statusCode >= 300 && $statusCode < 400) {
-                    $calloutClass = 'callout-info';
-                } else {
-                    $calloutClass = 'callout-important';
-                }
-                ?>
-                <div class="callout <?= $calloutClass ?>">
+                <div class="callout callout-danger">
                     <?php
                         $count = 0;
                         $items = [];
                         foreach ($manifest as $meta) {
-                            $label = ($meta['tag'] == $tag ? Html::tag('strong', '&#9654;&nbsp;'.$meta['tag']) : $meta['tag'])
-                                . ': ' . $meta['method'] . ' ' . $meta['url'] . ($meta['ajax'] ? ' (AJAX)' : '')
+                            $label = $meta['tag'] . ': ' . $meta['method'] . ' ' . $meta['url'] . ($meta['ajax'] ? ' (AJAX)' : '')
                                 . ', ' . date('Y-m-d h:i:s a', $meta['time'])
                                 . ', ' . $meta['ip'];
                             $url = ['view', 'tag' => $meta['tag'], 'panel' => $activePanel->id];
@@ -74,14 +61,13 @@ $this->title = 'Yii Debugger';
                             }
                         }
                         echo ButtonGroup::widget([
-                            'options'=>['class'=>'btn-group-sm'],
                             'buttons' => [
                                 Html::a('All', ['index'], ['class' => 'btn btn-default']),
                                 Html::a('Latest', ['view', 'panel' => $activePanel->id], ['class' => 'btn btn-default']),
                                 ButtonDropdown::widget([
                                     'label' => 'Last 10',
-                                    'options' => ['class' => 'btn-default btn-sm'],
-                                    'dropdown' => ['items' => $items, 'encodeLabels' => false],
+                                    'options' => ['class' => 'btn-default'],
+                                    'dropdown' => ['items' => $items],
                                 ]),
                             ],
                         ]);
