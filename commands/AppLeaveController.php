@@ -10,6 +10,7 @@ class AppLeaveController extends Controller  {
 	 * This command echoes what you have email.
 	 * @param email
 	 * //cron job php -q /home/k0455101/public_html/devleave/yii app-leave/email
+	 * php -q /home/k0455101/public_html/devleave/yii app-leave/email
 	 */
 	public function actionEmail() {
 		if(Yii::$app->params['send_email'] == true) {
