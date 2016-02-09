@@ -596,9 +596,9 @@ class Leaves extends \yii\db\ActiveRecord {
     	$query = Leaves::find()
     	->join('inner join','employee','employee.employee_id = leaves.employee_id')
     	->select(["*","CONCAT(EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name","DATE_FORMAT(leave_date,'%d/%m/%Y') as leave_date"])
-    	->orWhere([" leave_app_user1_status" => self::$approval_progress])
-    	->orWhere([" leave_app_hrd_status " => self::$approval_progress])
-    	->orWhere([" leave_app_pic_status " => self::$approval_progress])
+    	->orWhere(["leave_app_user1_status" => self::$approval_progress])
+    	->orWhere(["leave_app_hrd_status" => self::$approval_progress])
+    	->orWhere(["leave_app_pic_status" => self::$approval_progress])
     	->limit(5) //for demo
     	->all();
     	 

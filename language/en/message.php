@@ -1,6 +1,7 @@
 <?php
 return [
 		'msg approval and approval email must be valid' => 'Approval and Approval Email must be valid please info BDO Management is your setting is not Valid',
+		'msg request approved leave form' => 'Request Approved Leave Form',
 		'msg request has been approved' => 'Request has been Approved',
 		'msg request has been completed' => 'Request has been Completed',
 		'msg search by nik or name' => 'Search By NIK OR Name',

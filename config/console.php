@@ -14,6 +14,19 @@ return [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
+    	'i18n' => [
+    		'translations' => [
+    			'app*' => [
+    				'class' => 'yii\i18n\PhpMessageSource',
+    				'sourceLanguage' => 'en_us',
+    				'basePath' => '@app/language',
+		    		'fileMap' => [
+		    			'app' => 'app.php',
+		    			'app/message' => 'message.php'
+		    		]
+		    	]
+    		]
+    	],
     	/*'user' => [
     		'class' => 'yii\web\User',
     		'identityClass' => 'app\models\Employee',
