@@ -38,7 +38,7 @@ $this->params ['addUrl'] = [
 						<div class="col-md-6">
 							 <ul class="list-group">
 							  <li class="list-group-item"><a href="<?=Url::to(['report/outstanding'])?>"><i class="fa fa-newspaper-o"></i> <?=Yii::t('app','outstanding report')?> </a>  </li>
-							 
+							 <li class="list-group-item"><a href="<?=Url::to(['tool/beginning-balance'])?>"><i class="fa fa-wrench"></i> <?=Yii::t('app','bulk beginning balance')?> </a>  </li>
 							</ul>
 						</div>
 						

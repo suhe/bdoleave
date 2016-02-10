@@ -170,11 +170,13 @@ class Employee extends ActiveRecord implements IdentityInterface {
     
     public static function getAllEmployee(){
         $Employee = Employee::find()
-        ->select(["E.employee_id","E.EmployeeID","DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate ","E.EmployeeLeaveDate"])
+        ->select(["E.employee_id","E.EmployeeID","DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate ","E.EmployeeLeaveDate",
+        	"CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name","EmployeeTitle"
+        ])
         ->from('employee E')
         ->join('inner join','sys_user U','U.employee_id=E.employee_id')
         ->join('left join','department D','D.department_id=E.department_id')
-        ->where(['U.user_active' => 1])
+        ->where("U.user_active = 1 AND e.EmployeeTitle <> 'Partner' ")
         ->orderBy("E.EmployeeFirstName,E.EmployeeMiddleName,E.EmployeeLastName")
         ->all();
         return $Employee;
