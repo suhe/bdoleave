@@ -31,7 +31,7 @@ class ManageLeaveController extends Controller {
 				'rules' => [
 					[
 						'allow' => true,
-						'actions' => ['index', 'form', 'detail-view','form-leave','load-single-employee'],
+						'actions' => ['index', 'form', 'detail-view','form-leave','form-balance','load-single-employee'],
 						'roles' => [
 							Employee::ROLE_SENIOR_HRD,
 							Employee::ROLE_MANAGER_HRD
@@ -99,7 +99,7 @@ class ManageLeaveController extends Controller {
 		}
 		
 		return $this->render('detail-view',[
-				'title' => Yii::t('app','my leave'),
+				'title' => Yii::t('app','manage leave'),
 				'id' => $id,
 				'model' => $model,
 				'employee' => Employee::getEmployee($app_model->employee_id),
@@ -133,14 +133,14 @@ class ManageLeaveController extends Controller {
 	 * @return \yii\web\Response|string
 	 */
 	public function actionFormBalance() {
-		$model = new \app\models\LeaveBalance(['scenario' => 'add_leave']);
+		$model = new \app\models\LeaveBalance(['scenario' => 'save']);
 		if($model->load(Yii::$app->request->post()) && $model->getSaveBalanceRequest()){
 			Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been created').'</strong></div>');
 			return $this->redirect(['manage-leave/index'],301);
 		}
 	
-		return $this->render('form-single-leave',[
-				'title' => Yii::t('app','leave form'),
+		return $this->render('form-single-balance',[
+				'title' => Yii::t('app','leave balance form'),
 				'employee' => Employee::getEmployee(Yii::$app->user->getId()),
 				'model' => $model,
 		]);

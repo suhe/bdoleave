@@ -145,7 +145,7 @@ $this->params ['addUrl'] = [ 'leave/form' ];
 					<?=$form->field($model,'employee_id')->dropDownList(Employee::getEmployeeList(['label'=>Yii::t('app/message','msg please select employee')]),['class'=>'col-lg-12',])?>
                     <?=$form->field($model,'leave_balance_description')->textArea(['rows'=>3]);?>
                     <?=$form->field($model,'leave_balance_date',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
-					<?=$form->field($model,'leave_balance_total',['template'=> '{input}'])->hiddenInput(['value'=> ($employee->EmployeeLeaveTotal - $employee->EmployeeLeaveUse) ])?>
+					<?=$form->field($model,'leave_balance_total')->textInput(['class' => 'text-right col-md-3','placeholder' => 0]);?>
 					<div class="form-group pull-right" style="margin-top: 5px">
 						<div class="col-md-12">
                                 <?=Html::submitButton('<i class="fa fa-save"></i>'.Yii::t('app','submit'), ['class' => 'btn btn-primary','name' => 'save-button'])?>

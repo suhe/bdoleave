@@ -53,7 +53,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     		$model->employee_id = $this->employee_id;
     		$model->leave_balance_description = $this->leave_balance_description;
     		$model->leave_balance_date = $this->leave_balance_date;
-    		$model->leave_balance_saldo = $this->leave_balance_saldo;
+    		$model->leave_balance_total = $this->leave_balance_total;
     		$model->insert();
     		return true;
     	}

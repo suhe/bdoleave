@@ -6,6 +6,7 @@ use yii\web\Controller;
 use yii\filters\AccessControl;
 use app\components\Role;
 use app\models\Employee;
+use app\models\Leaves;
 
 class ReportController extends Controller {
 	/**
