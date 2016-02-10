@@ -50,6 +50,7 @@ class ManageLeaveController extends Controller {
 	 * @return string
 	 */
 	public function actionIndex() {
+		$app = Leaves::getApprovedTodayLeave();
 		$model = new \app\models\Leaves(['scenario' => 'search']);
 		if($model->validate() && $model->load(Yii::$app->request->queryParams) && isset($_GET['search'])){
 

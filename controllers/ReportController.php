@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use app\components\Role;
 use app\models\Employee;
 use app\models\Leaves;
+use app\models\LeaveBalance;
 
 class ReportController extends Controller {
 	/**
@@ -20,11 +21,11 @@ class ReportController extends Controller {
 				'ruleConfig' => [
 					'class' => Role::className(),
 				],
-				'only' => ['index', 'form','form-approval'],
+				'only' => ['index', 'form','form-approval','remove-balanced-card'],
 					'rules' => [
 						[
 							'allow' => true,
-							'actions' => ['index', 'form','form-approval'],
+							'actions' => ['index', 'form','form-approval','remove-balanced-card'],
 							'roles' => [
 								Employee::ROLE_SENIOR_HRD,
 								Employee::ROLE_MANAGER_HRD
@@ -92,6 +93,18 @@ class ReportController extends Controller {
     			'model' => $model,
     			'dataProvider' => $model->getBalanceLeaveCardDataProvider(Yii::$app->request->queryParams)
     	]);
+    }
+    
+    /** 
+     * Delete Balanced Card\
+     */
+    public function actionRemoveBalancedCard($id) {
+    	$del_command = LeaveBalance::findOne($id);
+    	$del_command->delete();
+    	if($del_command) {
+    		Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been deleted').'</strong></div>');
+    		return $this->redirect(Yii::$app->request->referrer,301);
+    	}
     }
     
     /**

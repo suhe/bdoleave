@@ -99,6 +99,15 @@ $this->params['addUrl'] = ['manage-leave/form'];
 			    	'label' => Yii::t('app','source'),
 			    	'attribute' => 'leave_source_string',
 			    ],
+			    ['class'=>'yii\grid\ActionColumn',
+			    	'template'=>'{delete}',
+			    	'buttons' => [
+			    		'delete' => function ($url,$data) {
+			    			if($data->leave_type_string == Yii::t('app','beginning balance'))
+			    				return Html::a('<i class="fa fa-trash icon-only"></i>',['report/remove-balanced-card','id'=>$data->leave_id],['class' => 'btn btn-inverse btn-xs',]);
+			    		},		 
+			    	],
+			    ],
 			   
 			   ],
 			   //'showFooter' => true ,

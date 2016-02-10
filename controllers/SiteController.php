@@ -41,7 +41,10 @@ class SiteController extends Controller {
 
     public function actionLogin() {
     	if(!Yii::$app->user->isGuest) {
-    		return $this->redirect(['my-leave/index']);
+    		if(Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER)
+    			return $this->redirect(['app-leave/']);
+    		else
+    			return $this->redirect(['my-leave/']);
     	}
     		
 		$model = new Employee(['scenario'=>'login']);
@@ -60,7 +63,7 @@ class SiteController extends Controller {
     	$data['Employee']['EmployeeID'] = $id;
     	$data['Employee']['passtext'] =  $pass;
     	if ($model->load($data) && $model->validate() &&  $model->getLogin()) {
-    		return $this->redirect(['leave/index']);
+    		return $this->redirect(['app-leave/']);
     	} else {
     		return $this->redirect(['/']);
     	}

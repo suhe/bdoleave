@@ -9,9 +9,6 @@ class Leaves extends \yii\db\ActiveRecord {
      * Public Variabel
      * @var string,integer,object
      */
-    public $employeeid;
-    public $employee_name;
-    public $EmployeeTitle;
     public $EmployeeLeaveTotal;
     public $EmployeeLeaveUse;
     public $EmployeeLeaveOver;
@@ -55,6 +52,21 @@ class Leaves extends \yii\db\ActiveRecord {
     public $leave_status_string = '';
     public $leave_source_string = '';
     public $leave_type_string = '';
+    public $leave_app_user1_status_string = '';
+    public $leave_app_hrd_status_string = '';
+    public $leave_app_pic_status_string = '';
+    
+    /** 
+     * Employee Variabel
+     * var @string
+     * **/
+    public $employeeid;
+    public $employee_name;
+    public $EmployeeTitle;
+    public $manager_approval;
+    public $hrd_approval;
+    public $partner_approval;
+    public $EmployeeEmail;
     
     public static function tableName(){
         return 'leaves';
@@ -351,20 +363,20 @@ class Leaves extends \yii\db\ActiveRecord {
      */
     public function getBalanceLeaveCardDataProvider($employee_id = 0,$params = '') {	
     	$sqlquery = "
-	    	SELECT DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_type_string, balanced.leave_description,balanced.leave_total,
+	    	SELECT leave_id,DATE_FORMAT(balanced.leave_date,'%d/%m/%Y') as leave_date,balanced.leave_type_string, balanced.leave_description,balanced.leave_total,
 	    	balanced.leave_saldo,balanced.leave_source_string
 	    	FROM
 	    	(
-	    	SELECT
+	    	SELECT leave_id,
 	    	leave_date,leave_type_string,leave_balance_description as leave_description,leave_total,
 	    	@saldo:=@saldo+leave_total AS leave_saldo,leave_source_string
 	    	FROM
-	    	(SELECT leave_balance_date as leave_date,'".Yii::t('app','beginning balance')."' as leave_type_string,
+	    	(SELECT leave_balance_id as leave_id,leave_balance_date as leave_date,'".Yii::t('app','beginning balance')."' as leave_type_string,
 	    	leave_balance_description,+leave_balance_total as leave_total,'".Yii::t('app','leave')."' as leave_source_string		
 	    	FROM leave_balance
 	    	WHERE employee_id = ".($this->employee_id ? $this->employee_id : 0) ."
 	    	UNION ALL
-	    	SELECT leave_date,
+	    	SELECT leave_id,leave_date,
 	    	(CASE WHEN leave_type = ".self::$cuti_bersama." THEN '".Yii::t('app','cuti bersama')."'
 	    		WHEN leave_type = ".self::$cuti_tahunan." THEN '".Yii::t('app','cuti tahunan')."'
 	    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
@@ -607,6 +619,54 @@ class Leaves extends \yii\db\ActiveRecord {
     	if($query)
     		return $query;
     		return false;
+    }
+    
+    
+    public static function getApprovedTodayLeave() {
+    	$query = Leaves::find()
+    	->select(["l.*",
+    	"CONCAT(e.EmployeeFirstName,' ',e.EmployeeMiddleName,' ',e.EmployeeLastName) as employee_name",
+    	"CONCAT(em.EmployeeFirstName,' ',em.EmployeeMiddleName,' ',em.EmployeeLastName) as manager_approval",
+    	"CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeMiddleName,' ',eh.EmployeeLastName) as hrd_approval",
+    	"CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeMiddleName,' ',ep.EmployeeLastName) as partner_approval",
+    	"e.EmployeeEmail","e.EmployeeTitle","DATE_FORMAT(leave_date,'%d %M %Y') as leave_date",
+    	"DATE_FORMAT(leave_date_from,'%d %M %Y') as leave_date_from","DATE_FORMAT(leave_date_to,'%d %M %Y') as leave_date_to",
+    	"(CASE WHEN l.leave_type = ".self::$cuti_bersama." THEN '".Yii::t('app','cuti bersama')."'
+		  	WHEN l.leave_type = ".self::$cuti_tahunan." THEN '".Yii::t('app','cuti tahunan')."'
+		  	WHEN l.leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
+		  	WHEN l.leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
+		  	WHEN l.leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'
+		END) as leave_type_string",
+    	"(CASE WHEN leave_status = ".self::$request." THEN '".Yii::t('app','request')."'
+    		WHEN leave_status = ".self::$approve_manager." THEN '".Yii::t('app','approved by manager')."'
+    		WHEN leave_status = ".self::$inapprove_manager." THEN '".Yii::t('app','inapproved by manager')."'
+    		WHEN leave_status = ".self::$approve_hrd." THEN '".Yii::t('app','approved by hrd')."'
+    		WHEN leave_status = ".self::$inapprove_hrd." THEN '".Yii::t('app','inapproved by hrd')."'
+    		WHEN leave_status = ".self::$approve_partner." THEN '".Yii::t('app','approved by partner')."'
+    		WHEN leave_status = ".self::$inapprove_partner." THEN '".Yii::t('app','inapproved by partner')."'
+    	END) as leave_status_string",
+    	"(CASE WHEN leave_app_user1_status = ".self::$approval_no." THEN '".Yii::t('app','inapprove')."'
+    		WHEN leave_app_user1_status = ".self::$approval_yes." THEN '".Yii::t('app','approve')."'
+    		WHEN leave_app_user1_status = ".self::$approval_progress." THEN '".Yii::t('app','progress')."'	
+    	END) as leave_app_user1_status_string",
+    	"(CASE WHEN leave_app_hrd_status = ".self::$approval_no." THEN '".Yii::t('app','inapprove')."'
+    		WHEN leave_app_hrd_status = ".self::$approval_yes." THEN '".Yii::t('app','approve')."'
+    		WHEN leave_app_hrd_status = ".self::$approval_progress." THEN '".Yii::t('app','progress')."'
+    	END) as leave_app_hrd_status_string",
+    	"(CASE WHEN leave_app_pic_status = ".self::$approval_no." THEN '".Yii::t('app','inapprove')."'
+    		WHEN leave_app_pic_status = ".self::$approval_yes." THEN '".Yii::t('app','approve')."'
+    		WHEN leave_app_pic_status = ".self::$approval_progress." THEN '".Yii::t('app','progress')."'
+    	END) as leave_app_pic_status_string"
+    	])
+    	->from("leaves l")
+    	->join("inner join","employee e","e.employee_id = l.employee_id")
+    	->join("left join","employee em","em.employee_id = l.leave_app_user1")
+    	->join("left join","employee eh","eh.employee_id = l.leave_app_hrd")
+    	->join("left join","employee ep","ep.employee_id = l.leave_app_pic")
+    	->where("l.leave_status > ".self::$completed)
+    	->andWhere("DATE(l.leave_updated_date) = '".date('Y-m-d')."'")
+    	->andWhere("l.leave_app_pic_status <> ".self::$approval_progress." OR l.leave_app_hrd_status <> ".self::$approval_progress." OR l.leave_app_user1_status <> ".self::$approval_progress)
+    	->all();
     }
     
     
@@ -963,6 +1023,8 @@ class Leaves extends \yii\db\ActiveRecord {
     	if($this->validate()) {
     		$model = new Leaves();
     		$model = $model->findOne($id);
+    		$model->leave_updated_date = date("Y-m-d H:i:s");
+    		$model->leave_updated_by = Yii::$app->user->getId();
     		//choice for employee approval list
     		switch (Yii::$app->user->getId()) {
     			case $model->leave_app_user1 : 

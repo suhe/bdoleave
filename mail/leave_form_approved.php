@@ -65,14 +65,22 @@
 </tr>
 <tr style="padding:5px">
 <td width="30" style="border-collapse:collapse"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','id')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','type')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_id?></td>
+<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_type_string?></td>
+</tr>
+
+</tr>
+<tr style="padding:5px">
+<td width="30" style="border-collapse:collapse"></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','last status')?></td>
+<td width="30" style="border-collapse:collapse;padding:5px">:</td>
+<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_status_string?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','date')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','filing date')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_date?></td>
 </tr>
@@ -93,58 +101,44 @@
 
 <tr>
 <td width="30" style="border-collapse:collapse"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','leave date')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','date')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_date_from.' to '.$data->leave_date_to?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','description')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','necessary')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_description?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','leave of address')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','address')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_address?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','approval name')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','manager approved')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$name?></td>
+<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_app_user1_status_string?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','position')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','hrd approved')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$position?></td>
+<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_app_hrd_status_string?></td>
 </tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','status')?></td>
+<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','partner approved')?></td>
 <td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$leave_status?></td>
-</tr>
-
-<tr>
-<td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','date')?></td>
-<td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$leave_date?></td>
-</tr>
-
-<tr>
-<td width="30" style="border-collapse:collapse;padding:5px"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','note')?></td>
-<td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$leave_note?></td>
+<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_app_pic_status_string?></td>
 </tr>
 
 <tr>

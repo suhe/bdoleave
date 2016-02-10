@@ -3,6 +3,7 @@ namespace app\models;
 use yii;
  
 class LeaveBalance extends \yii\db\ActiveRecord {
+	public $leave_id;
     public $leave_date;
     public $leave_date_from;
     public $leave_date_to;
@@ -52,7 +53,7 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     		$model = new LeaveBalance();
     		$model->employee_id = $this->employee_id;
     		$model->leave_balance_description = $this->leave_balance_description;
-    		$model->leave_balance_date = $this->leave_balance_date;
+    		$model->leave_balance_date = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$this->leave_balance_date);
     		$model->leave_balance_total = $this->leave_balance_total;
     		$model->insert();
     		return true;

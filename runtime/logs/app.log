@@ -1430,3 +1430,2208 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1455076774.655
     'REQUEST_TIME' => 1455076774
 ]
+2016-02-10 11:02:35 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'kartik\select2\Select2' not found' in D:\xampp\htdocs\bdoleave\views\report\balanced-card.php:46
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 11:02:35 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3138'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455076955.567
+    'REQUEST_TIME' => 1455076955
+]
+2016-02-10 11:17:29 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in D:\xampp\htdocs\bdoleave\models\Leaves.php:616
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 11:17:29 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3344'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455077849.574
+    'REQUEST_TIME' => 1455077849
+]
+2016-02-10 11:17:30 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected '}'' in D:\xampp\htdocs\bdoleave\models\Leaves.php:616
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 11:17:30 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'my-leave/index'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3346'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave%2Findex'
+    'REQUEST_URI' => '/web/index.php?r=my-leave%2Findex'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455077850.053
+    'REQUEST_TIME' => 1455077850
+]
+2016-02-10 11:27:01 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'kartik\select2\Select2' not found' in D:\xampp\htdocs\bdoleave\views\report\balanced-card.php:46
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 11:27:01 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3421'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455078421.771
+    'REQUEST_TIME' => 1455078421
+]
+2016-02-10 11:28:34 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'kartik\select2\Select2' not found' in D:\xampp\htdocs\bdoleave\views\report\balanced-card.php:46
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 11:28:34 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3450'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455078514.604
+    'REQUEST_TIME' => 1455078514
+]
+2016-02-10 11:29:20 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(624): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `1leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE (((l.leave_status <= 1) OR (l.leave_app_pic <> 2)) OR (l.leave_app_hrd <> 2)) OR (l.leave_app_user1 <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(624): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.1leaves' doesn't exist
+)
+
+2016-02-10 11:29:19 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3455'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455078559.935
+    'REQUEST_TIME' => 1455078559
+]
+2016-02-10 11:29:55 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(624): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `1leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE (((l.leave_status <= 1) OR (l.leave_app_pic_status <> 2)) OR (l.leave_app_hrd_status <> 2)) OR (l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(624): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.1leaves' doesn't exist
+)
+
+2016-02-10 11:29:55 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3460'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455078595.302
+    'REQUEST_TIME' => 1455078595
+]
+2016-02-10 11:34:58 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `1leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((((l.leave_status <= 1) AND (l.leave_updated_date between STR_TO_DATE('10/02/2016', '%d/%m/%Y') AND STR_TO_DATE('10/02/2016', '%d/%m/%Y'))) OR (l.leave_app_pic_status <> 2)) OR (l.leave_app_hrd_status <> 2)) OR (l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.1leaves' doesn't exist
+)
+
+2016-02-10 11:34:58 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3490'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455078898.781
+    'REQUEST_TIME' => 1455078898
+]
+2016-02-10 11:37:52 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `leaves1` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((((l.leave_status >= 1) AND (l.leave_updated_date between STR_TO_DATE('10/02/2016', '%d/%m/%Y') AND STR_TO_DATE('10/02/2016', '%d/%m/%Y'))) OR (l.leave_app_pic_status <> 2)) OR (l.leave_app_hrd_status <> 2)) OR (l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.leaves1' doesn't exist
+)
+
+2016-02-10 11:37:52 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3517'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455079072.046
+    'REQUEST_TIME' => 1455079072
+]
+2016-02-10 11:38:50 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `leaves1` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((((l.leave_status >= 1) AND (l.leave_updated_date = STR_TO_DATE('10/02/2016', '%d/%m/%Y'))) OR (l.leave_app_pic_status <> 2)) OR (l.leave_app_hrd_status <> 2)) OR (l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(625): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.leaves1' doesn't exist
+)
+
+2016-02-10 11:38:50 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3533'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455079130.04
+    'REQUEST_TIME' => 1455079130
+]
+2016-02-10 11:40:18 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `leaves1` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((l.leave_status >= 1) AND (l.leave_updated_date = STR_TO_DATE('10/02/2016', '%d/%m/%Y'))) AND (l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.leaves1' doesn't exist
+)
+
+2016-02-10 11:40:17 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3554'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455079217.952
+    'REQUEST_TIME' => 1455079217
+]
+2016-02-10 11:55:03 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `leaves1` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.leaves1' doesn't exist
+)
+
+2016-02-10 11:55:03 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3823'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455080103.153
+    'REQUEST_TIME' => 1455080103
+]
+2016-02-10 11:55:27 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.leaves1' doesn't exist
+The SQL being executed was: SELECT `l`.* FROM `leaves1` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((l.leave_status > 1) AND (DATE(l.leave_updated_date) = '2016-02-10')) AND (l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.* FR...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(623): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.leaves1' doesn't exist
+)
+
+2016-02-10 11:55:27 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3828'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455080127.807
+    'REQUEST_TIME' => 1455080127
+]
+2016-02-10 11:59:44 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(634): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'
+The SQL being executed was: SELECT `l`.*, `` FROM `leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((l.leave_status > 1) AND (DATE(l.leave_updated_date) = '2016-02-10')) AND (l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.*, `...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(634): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '' in 'field list'
+)
+
+2016-02-10 11:59:44 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3863'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455080384.646
+    'REQUEST_TIME' => 1455080384
+]
+2016-02-10 11:59:47 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(634): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '' in 'field list'
+The SQL being executed was: SELECT `l`.*, `` FROM `leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((l.leave_status > 1) AND (DATE(l.leave_updated_date) = '2016-02-10')) AND (l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.*, `...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(634): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column '' in 'field list'
+)
+
+2016-02-10 11:59:47 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3864'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455080387.365
+    'REQUEST_TIME' => 1455080387
+]
+2016-02-10 12:25:14 [127.0.0.1][10768][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(669): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'dbtimesheet.1leaves' doesn't exist
+The SQL being executed was: SELECT `l`.*, CONCAT(e.EmployeeFirstName,' ',e.EmployeeMiddleName,' ',e.EmployeeLastName) as employee_name, CONCAT(em.EmployeeFirstName,' ',em.EmployeeMiddleName,' ',em.EmployeeLastName) as manager_approval, CONCAT(eh.EmployeeFirstName,' ',eh.EmployeeMiddleName,' ',eh.EmployeeLastName) as hrd_approval, CONCAT(ep.EmployeeFirstName,' ',ep.EmployeeMiddleName,' ',ep.EmployeeLastName) as partner_approval, `e`.`EmployeeEmail`, `e`.`EmployeeTitle`, DATE_FORMAT(leave_date,'%d %M %Y') as leave_date, DATE_FORMAT(leave_date_from,'%d %M %Y') as leave_date_from, DATE_FORMAT(leave_date_to,'%d %M %Y') as leave_date_to, (CASE WHEN l.leave_type = 1 THEN 'Cuti Bersama'
+		  	WHEN l.leave_type = 2 THEN 'Cuti Tahunan'
+		  	WHEN l.leave_type = 3 THEN 'cuti tambahan'
+		  	WHEN l.leave_type = 4 THEN 'cuti khusus'
+		  	WHEN l.leave_type = 5 THEN 'izin diklasifikan Cuti'
+		END) as leave_type_string, (CASE WHEN leave_status = 5 THEN 'Request'
+    		WHEN leave_status = 4 THEN 'Approved By Manager'
+    		WHEN leave_status = 14 THEN 'Inapproved By Manager'
+    		WHEN leave_status = 3 THEN 'Approved By HRD'
+    		WHEN leave_status = 13 THEN 'Inapproved By HRD'
+    		WHEN leave_status = 2 THEN 'Approved By Partner'
+    		WHEN leave_status = 12 THEN 'Inapproved By Partner'
+    	END) as leave_status_string, (CASE WHEN leave_app_user1_status = 0 THEN 'inapprove'
+    		WHEN leave_app_user1_status = 1 THEN 'approve'
+    		WHEN leave_app_user1_status = 2 THEN 'progress'	
+    	END) as leave_app_user1_status_string, (CASE WHEN leave_app_hrd_status = 0 THEN 'inapprove'
+    		WHEN leave_app_hrd_status = 1 THEN 'approve'
+    		WHEN leave_app_hrd_status = 2 THEN 'progress'
+    	END) as leave_app_hrd_status_string, (CASE WHEN leave_app_pic_status = 0 THEN 'inapprove'
+    		WHEN leave_app_pic_status = 1 THEN 'approve'
+    		WHEN leave_app_pic_status = 2 THEN 'progress'
+    	END) as leave_app_pic_status_string FROM `1leaves` `l` inner join `employee` `e` ON e.employee_id = l.employee_id left join `employee` `em` ON em.employee_id = l.leave_app_user1 left join `employee` `eh` ON eh.employee_id = l.leave_app_hrd left join `employee` `ep` ON ep.employee_id = l.leave_app_pic WHERE ((l.leave_status > 1) AND (DATE(l.leave_updated_date) = '2016-02-10')) AND (l.leave_app_pic_status <> 2 OR l.leave_app_hrd_status <> 2 OR l.leave_app_user1_status <> 2)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `l`.*, C...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\models\Leaves.php(669): yii\db\ActiveQuery->all()
+#5 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(53): app\models\Leaves::getApprovedTodayLeave()
+#6 [internal function]: app\controllers\ManageLeaveController->actionIndex()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave', Array)
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'dbtimesheet.1leaves' doesn't exist
+)
+
+2016-02-10 12:25:14 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave%2Findex'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3909'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455081914.402
+    'REQUEST_TIME' => 1455081914
+]
+2016-02-10 13:48:58 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:48:57 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3993'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455086937.081
+    'REQUEST_TIME' => 1455086937
+]
+2016-02-10 13:49:04 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:49:04 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '3996'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455086944.471
+    'REQUEST_TIME' => 1455086944
+]
+2016-02-10 13:49:08 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:49:08 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4000'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455086948.159
+    'REQUEST_TIME' => 1455086948
+]
+2016-02-10 13:49:12 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:49:12 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4004'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455086952.708
+    'REQUEST_TIME' => 1455086952
+]
+2016-02-10 13:49:44 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:49:44 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4052'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455086984.146
+    'REQUEST_TIME' => 1455086984
+]
+2016-02-10 13:50:27 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method yii\helpers\Json::htmlEncode()' in D:\xampp\htdocs\bdoleave\vendor\kartik-v\yii2-krajee-base\WidgetTrait.php:100
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 13:50:27 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4066'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455087027.162
+    'REQUEST_TIME' => 1455087027
+]
+2016-02-10 14:01:05 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\LeaveBalance::id' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(246): yii\base\Component->__get('id')
+#1 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(107): yii\db\BaseActiveRecord->__get('id')
+#2 [internal function]: yii\base\View->{closure}('/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(158): call_user_func(Object(Closure), '/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#4 [internal function]: yii\grid\ActionColumn->yii\grid\{closure}(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(162): preg_replace_callback('/\\{([\\w\\-\\/]+)\\...', Object(Closure), '{delete}')
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\Column.php(104): yii\grid\ActionColumn->renderDataCellContent(Object(app\models\LeaveBalance), NULL, 0)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(455): yii\grid\Column->renderDataCell(Object(app\models\LeaveBalance), NULL, 0)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(424): yii\grid\GridView->renderTableRow(Object(app\models\LeaveBalance), NULL, 0)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(295): yii\grid\GridView->renderTableBody()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(140): yii\grid\GridView->renderItems()
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(264): yii\widgets\BaseListView->renderSection('{items}')
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(117): yii\grid\GridView->renderSection('{items}')
+#13 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(120): preg_replace_callback('/{\\w+}/', Object(Closure), '<div class="hid...')
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#16 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#17 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(114): yii\base\Widget::widget(Array)
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\ReportController))
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#22 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(94): yii\base\Controller->render('balanced-card', Array)
+#23 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#24 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#25 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#26 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('balanced-card', Array)
+#27 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('report/balanced...', Array)
+#28 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#30 {main}
+2016-02-10 14:01:05 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+    'Leaves' => [
+        'employee_id' => '10444'
+    ]
+    'search' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search='
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4296'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455087665.553
+    'REQUEST_TIME' => 1455087665
+]
+2016-02-10 14:01:34 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\LeaveBalance::leave_balance_saldo' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(246): yii\base\Component->__get('leave_balance_s...')
+#1 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(107): yii\db\BaseActiveRecord->__get('leave_balance_s...')
+#2 [internal function]: yii\base\View->{closure}('/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(158): call_user_func(Object(Closure), '/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#4 [internal function]: yii\grid\ActionColumn->yii\grid\{closure}(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(162): preg_replace_callback('/\\{([\\w\\-\\/]+)\\...', Object(Closure), '{delete}')
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\Column.php(104): yii\grid\ActionColumn->renderDataCellContent(Object(app\models\LeaveBalance), NULL, 0)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(455): yii\grid\Column->renderDataCell(Object(app\models\LeaveBalance), NULL, 0)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(424): yii\grid\GridView->renderTableRow(Object(app\models\LeaveBalance), NULL, 0)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(295): yii\grid\GridView->renderTableBody()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(140): yii\grid\GridView->renderItems()
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(264): yii\widgets\BaseListView->renderSection('{items}')
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(117): yii\grid\GridView->renderSection('{items}')
+#13 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(120): preg_replace_callback('/{\\w+}/', Object(Closure), '<div class="hid...')
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#16 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#17 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(114): yii\base\Widget::widget(Array)
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\ReportController))
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#22 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(94): yii\base\Controller->render('balanced-card', Array)
+#23 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#24 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#25 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#26 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('balanced-card', Array)
+#27 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('report/balanced...', Array)
+#28 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#30 {main}
+2016-02-10 14:01:34 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+    'Leaves' => [
+        'employee_id' => '10444'
+    ]
+    'search' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search='
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4315'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455087694.321
+    'REQUEST_TIME' => 1455087694
+]
+2016-02-10 14:04:08 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\LeaveBalance::leave_id' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(246): yii\base\Component->__get('leave_id')
+#1 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(107): yii\db\BaseActiveRecord->__get('leave_id')
+#2 [internal function]: yii\base\View->{closure}('/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(158): call_user_func(Object(Closure), '/web/index.php?...', Object(app\models\LeaveBalance), NULL)
+#4 [internal function]: yii\grid\ActionColumn->yii\grid\{closure}(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(162): preg_replace_callback('/\\{([\\w\\-\\/]+)\\...', Object(Closure), '{delete}')
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\Column.php(104): yii\grid\ActionColumn->renderDataCellContent(Object(app\models\LeaveBalance), NULL, 0)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(455): yii\grid\Column->renderDataCell(Object(app\models\LeaveBalance), NULL, 0)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(424): yii\grid\GridView->renderTableRow(Object(app\models\LeaveBalance), NULL, 0)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(295): yii\grid\GridView->renderTableBody()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(140): yii\grid\GridView->renderItems()
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(264): yii\widgets\BaseListView->renderSection('{items}')
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(117): yii\grid\GridView->renderSection('{items}')
+#13 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(120): preg_replace_callback('/{\\w+}/', Object(Closure), '<div class="hid...')
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#16 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#17 D:\xampp\htdocs\bdoleave\views\report\balanced-card.php(114): yii\base\Widget::widget(Array)
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\ReportController))
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#22 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(94): yii\base\Controller->render('balanced-card', Array)
+#23 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#24 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#25 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#26 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('balanced-card', Array)
+#27 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('report/balanced...', Array)
+#28 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#30 {main}
+2016-02-10 14:04:07 [127.0.0.1][10768][n6t36i4lt0bga5mtdbtq2bbtt3][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+    'Leaves' => [
+        'employee_id' => '10444'
+    ]
+    'search' => ''
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search='
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4352'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455087847.949
+    'REQUEST_TIME' => 1455087847
+]
+2016-02-10 14:10:42 [127.0.0.1][10768][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\db\ActiveQuery::delete()' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:282
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(102): yii\base\Component->__call('delete', Array)
+#1 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(102): yii\db\ActiveQuery->delete()
+#2 [internal function]: app\controllers\ReportController->actionRemoveBalancedCard('2106')
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('remove-balanced...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('report/remove-b...', Array)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#9 {main}
+2016-02-10 14:10:42 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'report/remove-balanced-card'
+    'id' => '2106'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4437'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fremove-balanced-card&id=2106'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fremove-balanced-card&id=2106'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455088242.529
+    'REQUEST_TIME' => 1455088242
+]
+2016-02-10 14:10:46 [127.0.0.1][10768][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: yii\db\ActiveQuery::delete()' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:282
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(102): yii\base\Component->__call('delete', Array)
+#1 D:\xampp\htdocs\bdoleave\controllers\ReportController.php(102): yii\db\ActiveQuery->delete()
+#2 [internal function]: app\controllers\ReportController->actionRemoveBalancedCard('2106')
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('remove-balanced...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('report/remove-b...', Array)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#9 {main}
+2016-02-10 14:10:46 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'report/remove-balanced-card'
+    'id' => '2106'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'n6t36i4lt0bga5mtdbtq2bbtt3'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=report%2Fbalanced-card&Leaves%5Bemployee_id%5D=10658&search=&Leaves%5Bemployee_id%5D=10444&search='
+    'HTTP_COOKIE' => 'PHPSESSID=n6t36i4lt0bga5mtdbtq2bbtt3; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '4438'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fremove-balanced-card&id=2106'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fremove-balanced-card&id=2106'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455088246.491
+    'REQUEST_TIME' => 1455088246
+]
