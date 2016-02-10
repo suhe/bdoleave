@@ -649,3 +649,423 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1455023403.734
     'REQUEST_TIME' => 1455023403
 ]
+2016-02-10 10:03:23 [127.0.0.1][][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php:579
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(579): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(529): yii\db\Connection->createPdoInstance()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(208): yii\db\Connection->getSlavePdo()
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(813): yii\db\Command->prepare(true)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php(139): yii\db\mysql\Schema->loadTableSchema('employee')
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveRecord.php(286): yii\db\Schema->getTableSchema('employee')
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveRecord.php(319): yii\db\ActiveRecord::getTableSchema()
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(421): yii\db\ActiveRecord->attributes()
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(263): yii\db\BaseActiveRecord->hasAttribute('scenario')
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\BaseYii.php(518): yii\db\BaseActiveRecord->__set('scenario', 'login')
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Object.php(105): yii\BaseYii::configure(Object(app\models\Employee), Array)
+#16 D:\xampp\htdocs\bdoleave\controllers\SiteController.php(47): yii\base\Object->__construct(Array)
+#17 [internal function]: app\controllers\SiteController->actionLogin()
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('site/login', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php:534
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(836): yii\db\Connection->open()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Connection.php(823): yii\db\Connection->getMasterPdo()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(208): yii\db\Connection->getSlavePdo()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(813): yii\db\Command->prepare(true)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\mysql\Schema.php(198): yii\db\Command->queryAll()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\mysql\Schema.php(97): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php(139): yii\db\mysql\Schema->loadTableSchema('employee')
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveRecord.php(286): yii\db\Schema->getTableSchema('employee')
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveRecord.php(319): yii\db\ActiveRecord::getTableSchema()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(421): yii\db\ActiveRecord->attributes()
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(263): yii\db\BaseActiveRecord->hasAttribute('scenario')
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\BaseYii.php(518): yii\db\BaseActiveRecord->__set('scenario', 'login')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Object.php(105): yii\BaseYii::configure(Object(app\models\Employee), Array)
+#14 D:\xampp\htdocs\bdoleave\controllers\SiteController.php(47): yii\base\Object->__construct(Array)
+#15 [internal function]: app\controllers\SiteController->actionLogin()
+#16 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#17 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('login', Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('site/login', Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#21 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#22 {main}
+Additional Information:
+
+2016-02-10 10:03:18 [127.0.0.1][][-][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2390'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455073398.01
+    'REQUEST_TIME' => 1455073398
+]
+2016-02-10 10:06:41 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method app\models\Leaves::getDropDownSelfLeave()' in D:\xampp\htdocs\bdoleave\views\manage-leave\form-single-leave.php:153
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 10:06:38 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'manage-leave/form-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2419'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455073598.895
+    'REQUEST_TIME' => 1455073598
+]
+2016-02-10 10:06:53 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Call to undefined method app\models\Leaves::getDropDownSelfLeave()' in D:\xampp\htdocs\bdoleave\views\manage-leave\form-single-leave.php:153
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 10:06:52 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'manage-leave/form-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2435'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455073612.715
+    'REQUEST_TIME' => 1455073612
+]
+2016-02-10 10:12:20 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Access to undeclared static property: app\models\Leaves::$beginning_balance' in D:\xampp\htdocs\bdoleave\models\Leaves.php:156
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-10 10:12:20 [127.0.0.1][10768][ukvrc9fi4nk922ei9jo4lmtsq5][info][application] $_GET = [
+    'r' => 'manage-leave/form-leave'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2500'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455073940.515
+    'REQUEST_TIME' => 1455073940
+]
+2016-02-10 10:28:53 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: manage-leave/form-balance' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form-balance', Array)
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/fo...', Array)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: manage-leave/form-balance' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php:95
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#2 {main}
+2016-02-10 10:28:53 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'manage-leave/form-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2708'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-balance'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455074933.565
+    'REQUEST_TIME' => 1455074933
+]
+2016-02-10 10:30:35 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: manage-leave/form-balance' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form-balance', Array)
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/fo...', Array)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: manage-leave/form-balance' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php:95
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#2 {main}
+2016-02-10 10:30:35 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'manage-leave/form-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'ukvrc9fi4nk922ei9jo4lmtsq5'
+    '_csrf' => '231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s:32:\"_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:43.0) Gecko/20100101 Firefox/43.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=ukvrc9fi4nk922ei9jo4lmtsq5; _csrf=231ef1e94fe76a8565cb6957af0e26d0b8475fe62f2f1ddc9a1ef15f7ed5e0a2s%3A32%3A%22_A6iPiGFDaWzimLAtkK5jWNZ0Oahdc7t%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '2755'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-balance'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455075035.216
+    'REQUEST_TIME' => 1455075035
+]

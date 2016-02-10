@@ -28,6 +28,7 @@ class AppAsset extends AssetBundle
 	        'assets/css/themes/style.css',
 	        'assets/css/only-for-demos.css',
     		'assets/css/bootstrap-datepicker.min.css',
+    		'assets/css/custom.css',
     ];
       
     public $js = [

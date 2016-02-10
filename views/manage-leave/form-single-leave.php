@@ -134,6 +134,11 @@ $this->params ['addUrl'] = [
 
 			<div id="ft-3" class="panel-collapse collapse in">
 				<div class="portlet-body">
+					<ul class="nav nav-tabs">
+					  <li class="active"><a href="<?=Url::to(['manage-leave/form-leave'])?>"><?=Yii::t('app','leave form')?></a></li>
+					  <li><a href="<?=Url::to(['manage-leave/form-balance'])?>"><?=Yii::t('app','beginning balance')?></a></li>
+					</ul>
+
 					<?=Yii::$app->session->getFlash('msg')?>
                      <?php 
                      $form = ActiveForm::begin ( [ 
@@ -143,14 +148,14 @@ $this->params ['addUrl'] = [
 							'class' => 'form-horizontal' 
 						],
 						'fieldConfig' => [ 
-							'template' => "{label}\n<div class=\"col-sm-10 search\">{input} {error}</div>\n",
+							'template' => "{label}\n<div class=\"col-sm-9 search\">{input} {error}</div>\n",
 							'labelOptions' => [ 
-								'class' => 'col-sm-2 control-label' 
+								'class' => 'col-sm-3 control-label' 
 							] 
 						] 
 					] );?>
 					<?=$form->field($model,'employee_id')->dropDownList(Employee::getEmployeeList(['label'=>Yii::t('app/message','msg please select employee')]),['class'=>'col-lg-12',])?>
-					<?=$form->field($model,'leave_type')->dropDownList(\app\models\Leaves::getDropDownSelfLeave(),['class'=>'col-lg-6'])?>
+					<?=$form->field($model,'leave_type')->dropDownList(\app\models\Leaves::getListLeaveType(['all' => true]),['class'=>'col-lg-6'])?>
 					<?=$form->field($model,'leave_status')->dropDownList(\app\models\Leaves::getListStatusByManagement(),['class'=>'col-lg-6'])?>
                     <?=$form->field($model,'leave_description')->textArea(['rows'=>3]);?>
                     <?=$form->field($model,'leave_date_from',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
@@ -181,6 +186,8 @@ jQuery(function($) {
         autoclose : true,
      	format: "dd/mm/yyyy"
    	});
+
+   	
 
 	$('#leaves-employee_id').on('change', function(event) {
 		event.preventDefault();		

@@ -5,17 +5,10 @@ use yii\widgets\DetailView;
 use app\models\Employee;
 use yii\helpers\Url;
 $this->params ['breadcrumbs'] = [ 
-	[ 
-		'label' => Yii::t ( 'app', 'my leave' ),'url' => [ 'my-leave/index' ] ],
-		[ 'label' => Yii::t ( 'app', 'leave form' ),
-				'url' => [ 
-						'my-leave/form' 
-				] 
-		] 
+		[ 'label' => Yii::t ( 'app', 'my leave' ),'url' => [ 'my-leave/index' ] ],
+		[ 'label' => Yii::t ( 'app', 'leave form' ),'url' => [ 'my-leave/form' ] ] 
 ];
-$this->params ['addUrl'] = [ 
-		'leave/form' 
-];
+$this->params ['addUrl'] = [ 'leave/form' ];
 ?>
 <div class="row">
 	<div class="col-lg-12">
@@ -150,15 +143,9 @@ $this->params ['addUrl'] = [
 						] 
 					] );?>
 					<?=$form->field($model,'employee_id')->dropDownList(Employee::getEmployeeList(['label'=>Yii::t('app/message','msg please select employee')]),['class'=>'col-lg-12',])?>
-					<?=$form->field($model,'leave_type')->dropDownList(\app\models\Leaves::getListLeaveType(['all' => true]),['class'=>'col-lg-6'])?>
-					<?=$form->field($model,'leave_status')->dropDownList(\app\models\Leaves::getListStatusByManagement(),['class'=>'col-lg-6'])?>
-                    <?=$form->field($model,'leave_description')->textArea(['rows'=>3]);?>
-                    <?=$form->field($model,'leave_date_from',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
-			    	<?=$form->field($model,'leave_date_to',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
-                    
-					<?=$form->field($model,'leave_address')->textArea(['rows'=>3]);?>
-					<?=$form->field($model,'leave_saldo_total',['template'=> '{input}'])->hiddenInput(['value'=> ($employee->EmployeeLeaveTotal - $employee->EmployeeLeaveUse) ])?>
-			
+                    <?=$form->field($model,'leave_balance_description')->textArea(['rows'=>3]);?>
+                    <?=$form->field($model,'leave_balance_date',['template' => '{label}<div class="col-sm-4 search"><div class="input-group date">{input}{error}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div></div>'])->textInput();?>
+					<?=$form->field($model,'leave_balance_total',['template'=> '{input}'])->hiddenInput(['value'=> ($employee->EmployeeLeaveTotal - $employee->EmployeeLeaveUse) ])?>
 					<div class="form-group pull-right" style="margin-top: 5px">
 						<div class="col-md-12">
                                 <?=Html::submitButton('<i class="fa fa-save"></i>'.Yii::t('app','submit'), ['class' => 'btn btn-primary','name' => 'save-button'])?>

@@ -26,9 +26,10 @@ class LeaveBalance extends \yii\db\ActiveRecord {
     
     public function rules(){
         return [
+        	[['employee_id'],'required','on'=>['save']],
             [['leave_balance_date'],'required','on'=>['save']],
             [['leave_balance_description'],'required','on'=>['save']],
-            [['leave_balance_stype'],'required','on'=>['save']],
+            //[['leave_balance_stype'],'required','on'=>['save']],
             [['leave_balance_total'],'required','on'=>['save']],
             [['leave_balance_total'],'number','on'=>['save']],
             [['leave_date_from'],'safe','on'=>['search']],
@@ -44,6 +45,19 @@ class LeaveBalance extends \yii\db\ActiveRecord {
             'leave_balance_type' => Yii::t('app','type'),
             'leave_balance_total' => Yii::t('app','total'),
         ];
+    }
+    
+    public function getSaveBalanceRequest() {
+    	if($this->validate()) {
+    		$model = new LeaveBalance();
+    		$model->employee_id = $this->employee_id;
+    		$model->leave_balance_description = $this->leave_balance_description;
+    		$model->leave_balance_date = $this->leave_balance_date;
+    		$model->leave_balance_saldo = $this->leave_balance_saldo;
+    		$model->insert();
+    		return true;
+    	}
+    	return false;
     }
     
     public function getEmployeeLeaveBalance($employee_id){

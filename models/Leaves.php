@@ -46,6 +46,7 @@ class Leaves extends \yii\db\ActiveRecord {
     public static $cuti_tambahan = 3;
     public static $cuti_khusus = 4;
     public static $cuti_izin = 5;
+    public static $beginning_balance = 6;
     
     /**
      * Setting to Component Field
@@ -153,6 +154,7 @@ class Leaves extends \yii\db\ActiveRecord {
     	$lists[self::$cuti_tambahan] = "Cuti Tambahan" ;
     	$lists[self::$cuti_khusus] = "Cuti Khusus" ;
     	$lists[self::$cuti_izin] = "Izin diklasifikasikan Cuti";
+    	//$lists[self::$beginning_balance] = "Saldo Awal";
     	
     	return $lists;
     }
