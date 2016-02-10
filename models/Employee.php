@@ -26,12 +26,34 @@ class Employee extends ActiveRecord implements IdentityInterface {
     /** 
      * Costantata Employee Role
      * @return cost
+     * KAP TSFR
      */
     const ROLE_ASSISTANT = "Assistant";
     const ROLE_SENIOR_2 = "Senior-2";
     const ROLE_SENIOR_1 = "Senior-1";
     const ROLE_MANAGER = "Manager";
     const ROLE_PARTNER = "Partner";
+    
+    
+    /**
+     * Costantata Employee Role
+     * @return cost
+     * PT BDO KI
+     */
+    const ROLE_CONSULTANT = "Consultant";
+    const ROLE_ASS_CONSULTANT = "Associate Consultant";
+    const ROLE_ASS_SENIOR_CONSULTANT = "Sr Associate Consultant";
+    const ROLE_SENIOR_CONSULTANT = "Senior Consultant";
+    const ROLE_MANAGER_ADVISORY = "Manager Advisory";
+    
+    
+    /**
+     * Costantata Employee Role
+     * @return cost
+     * Support & BDO Manajemen Indonesia
+     */
+    const ROLE_SENIOR = "Senior";
+    const ROLE_SUPERVISOR = "Supervisor";
     const ROLE_MANAGER_HRD = "Manager HRD";
     const ROLE_SENIOR_HRD = "Senior HRD";
     

@@ -7,12 +7,52 @@
 namespace app\controllers;
 
 use yii;
+use yii\filters\AccessControl;
 use yii\web\Controller;
+use app\components\Role;
 use app\models\Employee;
 use app\models\Leaves;
 use app\models\LeaveLog;
 
 class AppLeaveController extends Controller {
+	/**
+	 * Behaviour Function
+	 * Control Access Control Rule
+	 */
+	public function behaviors() {
+		return [
+			'access' => [
+				'class' => AccessControl::className(),
+				'ruleConfig' => [
+					'class' => Role::className(),
+				],
+				'only' => ['index', 'form', 'detail-view','balanced-card'],
+				'rules' => [
+					[
+						'allow' => true,
+						'actions' => ['index', 'form','detail-view','balanced-card'],
+						'roles' => [
+							Employee::ROLE_ASSISTANT,
+							Employee::ROLE_ASS_CONSULTANT,
+							Employee::ROLE_ASS_SENIOR_CONSULTANT,
+							Employee::ROLE_CONSULTANT,
+							Employee::ROLE_SENIOR_1,
+							Employee::ROLE_SENIOR_2,
+							Employee::ROLE_SENIOR_CONSULTANT,
+							Employee::ROLE_MANAGER,
+							Employee::ROLE_MANAGER_ADVISORY,
+							Employee::ROLE_SENIOR_HRD,
+							Employee::ROLE_SUPERVISOR,
+							Employee::ROLE_MANAGER_HRD,
+						],
+					],
+				],
+				'denyCallback' => function ($rule, $action) {
+					echo ('You are not allowed to access this page');
+				},
+			],
+		];
+	}
 	/**
 	 *  Action My Leave
 	 * @return string
