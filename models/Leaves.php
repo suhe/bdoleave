@@ -90,11 +90,11 @@ class Leaves extends \yii\db\ActiveRecord {
 	            [['leave_date_from'],'safe','on'=>['search']],
 	            [['leave_date_to'],'safe','on'=>['search']],
 	            //[['leave_date_type'],'safe','on'=>['search']],
-	            [['leave_approval'],'required','on'=>['approval','app-completed']],
+	            [['leave_approval'],'required','on'=>['approval','app-completed','request_completed']],
 	            [['leave_approved'],'safe','on'=>['search','add_leave','add_myleave']],
 	            [['leave_note'],'safe','on'=>['approval','app-completed']],
 	        	//custom validate on use
-        		[['leave_date_from','leave_date_to'],'isValidDateRange','on'=>['add_myleave']],
+        		[['leave_date_from','leave_date_to'],'isValidDateRange','on'=>['add_myleave','add_leave']],
         ];
     }
     
@@ -521,7 +521,7 @@ class Leaves extends \yii\db\ActiveRecord {
     	])
     	->from('leaves')
     	->join('inner join','employee','employee.employee_id = leaves.employee_id')
-    	->where("leave_status <> ".self::$completed." ");
+    	->where("leave_status > ".self::$completed." ");
     
     	$dataProvider = new \yii\data\ActiveDataProvider([
     			'query' => $query,
@@ -877,57 +877,66 @@ class Leaves extends \yii\db\ActiveRecord {
         }
         
     } **/
+        
+    public function getSaveSelectionLeaveRequest() {
+    	if($this->validate()) {
+    		if($this->employee_id == 1) {
+    			$employees = Employee::getAllEmployee();
+    			if($employees) {
+    				foreach ($employees as $employee) {
+    					$this->getSaveLeaveRequest($employee->employee_id,$this->leave_status);
+    				}
+    			}
+    			
+    		} else {
+    			$this->getSaveLeaveRequest($this->employee_id,$this->leave_status);
+    			
+    		}
+    		return true;
+    	}
+    	
+    	return false;
+    }
     
     /** 
      * Save/Update The Process 
      * @param integer $employee_id
      * @return boolean
      */
-    public function getSaveLeaveRequest($employee_id = 0) {
+    public function getSaveLeaveRequest($employee_id = 0,$status = 0) {
     	if($this->validate()) {
     		
     		$is_app_user1 = false;
     		$is_app_hrd = false;
     		$is_app_partner = false;
-    		$status = self::$request;
+    		$status = $status == 0 ? self::$request : $status;
     		
-    		if($employee_id) {
-    			$employee_id = $employee_id;
-    			
-    		} else {
-    			$employee_id = $this->employee_id;
-    			switch ($this->leave_status) {
-    				case self::$completed : 
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = true;
-    					$status = self::$completed;
-    					break;
-    				case self::$approve_partner :
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = true;
-    					$status = self::$approve_partner;
-    					break;
-    				case self::$approve_hrd :
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = false;
-    					$status = self::$approve_hrd;
-    					break;
-    				case self::$approve_manager :
-    					$is_app_user1 = true;
-    					$is_app_hrd =false;
-    					$is_app_partner = false;
-    					$status = self::$approve_manager;
-    					break;
-    			}
-    			
+    		switch ($status) {
+    			case self::$completed : 
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = true;
+    				$status = self::$completed;
+    				break;
+    			case self::$approve_partner :
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = true;
+    				$status = self::$approve_partner;
+    				break;
+    			case self::$approve_hrd :
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = false;
+    				$status = self::$approve_hrd;
+    				break;
+    			case self::$approve_manager :
+    				$is_app_user1 = true;
+    				$is_app_hrd =false;
+    				$is_app_partner = false;
+    				$status = self::$approve_manager;
+    				break;
     		}
-    		
-    		//search employee by parameter or by class variabel
-    		
-    		$employee_id = $employee_id ? $employee_id : $this->employee_id;
     		
     		$model = new Leaves();
 	    	$model->leave_type = $this->leave_type;
@@ -1098,6 +1107,25 @@ class Leaves extends \yii\db\ActiveRecord {
     		}
     
     		if ($model->update()) {
+    			
+    			/**
+    			 *  Updated Leave Balance Summary in Employee
+    			 *  Employee Models
+    			 */
+    			if($model->leave_status == self::$completed) {
+    				$balance_query = LeaveBalance::find()->where(['employee_id'=>$model->employee_id])->sum("leave_balance_total");
+    				$balance_total = $balance_query ? $balance_query : 0;
+    				
+    				$leave_query = Leaves::find()->where(['employee_id'=>$model->employee_id])->sum("leave_total");
+    				$leave_total = $leave_query ? $leave_query : 0;
+    				
+    				$employee  = Employee::findOne($model->employee_id);
+    				$employee->EmployeeLeaveTotal = $balance_total;
+    				$employee->EmployeeLeaveUse = $leave_total;
+    				$employee->update();
+    			}
+    			
+    			
     			/**
     			 * Save to Log Lestatus
     			 * @Set to leave Log

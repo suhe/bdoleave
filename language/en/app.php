@@ -2,6 +2,7 @@
 return [
 		'address' => 'Address',
 		'all' => 'All',
+		'all employee' => 'All Active Employee',
 		'approved by' => 'Approved By',
 		'approved by hrd' => 'Approved By HRD',	
 		'approved by manager' => 'Approved By Manager',

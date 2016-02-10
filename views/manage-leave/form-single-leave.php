@@ -154,7 +154,7 @@ $this->params ['addUrl'] = [
 							] 
 						] 
 					] );?>
-					<?=$form->field($model,'employee_id')->dropDownList(Employee::getEmployeeList(['label'=>Yii::t('app/message','msg please select employee')]),['class'=>'col-lg-12',])?>
+					<?=$form->field($model,'employee_id')->dropDownList(Employee::getEmployeeList(['all_employee'=>true,'label'=>Yii::t('app/message','msg please select employee')]),['class'=>'col-lg-12',])?>
 					<?=$form->field($model,'leave_type')->dropDownList(\app\models\Leaves::getListLeaveType(['all' => true]),['class'=>'col-lg-6'])?>
 					<?=$form->field($model,'leave_status')->dropDownList(\app\models\Leaves::getListStatusByManagement(),['class'=>'col-lg-6'])?>
                     <?=$form->field($model,'leave_description')->textArea(['rows'=>3]);?>

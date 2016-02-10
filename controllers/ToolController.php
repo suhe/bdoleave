@@ -45,31 +45,33 @@ class ToolController extends Controller {
 	 * @return string
 	 */
 	public function actionBeginningBalance() {
-		$users = Employee::getAllEmployee();
+		$tbl = new Employee(['scenario' => 'bulk_save']);
+		$users = $tbl->getAllEmployee();
 		$multipleModel = new Model();
-		//$model = new \app\models\Leaves(['scenario' => 'search']);
 		if (($multipleModel->loadMultiple($users, Yii::$app->request->post())) && ($multipleModel->validateMultiple($users))) {
-			//only checklist will update
-			if(isset($user->employee_id)) {
-				$count = 0;
-				$active_date =  $user->employee_date_from ?  preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$user->employee_date_from) : date("Y-m-d");
-				$balanced = new LeaveBalance();
-				$balanced->leave_balance_date = $active_date;
-				$balanced->leave_balance_total = $user->EmployeeLeaveTotal;
-				$balanced->leave_balance_description = "Saldo Awal Per Tanggal " .$user->employee_date_from;
-				
-				$updated = $balanced->findOne(['employee_id' => $user->employee_id,'leave_balance_date' => $active_date]);
-				if($update) {
-					$balanced = $updated;
-					$balanced->update();
-				} else {
-					$balanced->insert();
+			$count = 0;
+			foreach($users as $user) {
+				//only checklist will update
+				if($user->employee_id == 1 ) {
+					$active_date =  $user->employee_date_from ?  preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$user->employee_date_from) : date("Y-m-d");
+					$display_date = $user->employee_date_from ? $user->employee_date_from : date('d/m/Y');
+					$balanced = new LeaveBalance(['bulk_save']);
+					$balanced->leave_balance_date = $active_date;
+					$balanced->leave_balance_total = $user->EmployeeLeaveTotal;
+					$balanced->leave_balance_description = "Saldo Awal Per Tanggal " .$display_date;
+					//$updated = $balanced->findOne(['employee_id' => $user->employee_id,'leave_balance_date' => $active_date]);
+					//if($updated) {
+						//$balanced = $updated;
+						//$balanced->update();
+					//} else {
+						$balanced->insert();
+					//}
 				}
 				$count++;
 			}
-			Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been saved').'</strong></div>');
-			return $this->redirect("report/balanced-card",301);
 			
+			//Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been saved').'</strong></div>');
+			//return $this->redirect("report/balanced-card",301);
 		}
 		
 		return $this->render('beginning-balance',[
@@ -79,7 +81,6 @@ class ToolController extends Controller {
 				//'dataProvider' => $model->getOutstandingLeaveDataProvider(Yii::$app->request->queryParams)
 		]);
 	}
-
 	
 
 

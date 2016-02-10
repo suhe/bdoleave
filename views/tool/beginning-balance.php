@@ -1,9 +1,6 @@
 <?php
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
-use yii\grid\GridView;
-use yii\helpers\Url;
-use app\models\Leaves;
 
 $this->params['breadcrumbs'] = [
 		['label' => Yii::t('app','reports'),'url' => ['report/index']],
@@ -36,6 +33,7 @@ $this->params['addUrl'] = ['manage-leave/form'];
 				<div class="form">
 				    <?php 
 				    $form = ActiveForm::begin([
+				    	//'action' => ['tool/go-blog'],	
 				    	'fieldConfig' => [
 							'template' => "{input}{error}",
 						 ],
@@ -65,7 +63,7 @@ $this->params['addUrl'] = ['manage-leave/form'];
 				                <td><?=$user->EmployeeHireDate?></td>
 				                <td><?=$form->field($user,"[$i]employee_date_from",['template' => '<div class="input-group date">{input}<div class="input-group-addon"><span class="glyphicon glyphicon-th"></span> </div></div>'])->textInput(['class'=>'form-control input-sm']);?></td>
 				                <td><?=$form->field($user,"[$i]EmployeeLeaveTotal")->textInput(['class'=>'form-control input-sm text-right','placeholder'=>0]); ?></td>
-				                <td class="text-center"><?=$form->field($user,"[$i]employee_id")->checkbox()->label(false);?></td>
+				                <td class="text-center"><?=$form->field($user,"[$i]checklist")->checkbox()->label(false);?></td>
 				            </tr>
 				        <?php 
 				        $no++;

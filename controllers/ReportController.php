@@ -86,6 +86,8 @@ class ReportController extends Controller {
     public function actionBalancedCard() {
     	$model = new Leaves(['scenario' => 'search']);
     	if($model->validate() && $model->load(Yii::$app->request->queryParams)){
+    		//search leave balance saldo
+    		Yii::$app->getRequest()->getQueryParam($model->employee_id);
     		
     	}
     	return $this->render('balanced-card',[

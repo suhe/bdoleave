@@ -59,7 +59,7 @@ $this->params ['addUrl'] = [
 					    	],
 					    	[
 					    		'label' => Yii::t('app','hire date'),
-					    		'format' => ['date', 'php:d M Y'],
+					    		//'format' => ['date', 'php:d M Y'],
 					    		'value' => $employee->EmployeeHireDate,
 					    	],
 					    	[

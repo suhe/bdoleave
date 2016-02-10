@@ -22,6 +22,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public $hrd_email;
     public $partner_approval;
     public $partner_email;
+    public $checklist;
     
     /** 
      * Costantata Employee Role
@@ -74,12 +75,14 @@ class Employee extends ActiveRecord implements IdentityInterface {
             [['EmployeeEmail'],'email','on'=>['update_personal','update_myprofile']],
         	[['EmployeeHandPhone'],'required','on'=>['update_personal']],
             [['employee_name'],'safe','on'=>'search'],
-            [['employee_date_from'],'safe','on'=>'search'],
+            [['employee_date_from'],'safe','on'=>['search','bulk_save']],
             [['employee_date_to'],'safe','on'=>'search'],
             [['EmployeeHireDate'],'required','on'=>'update_personal'],
             [['EmployeeLeavePartner'],'required','on'=>['update_personal_approval','update_myaccount']],
             [['EmployeeLeaveHRD'],'required','on'=>['update_personal_approval','update_myaccount']],
             [['EmployeeLeaveManager'],'safe','on'=>['update_personal_approval','update_myaccount']],
+        	[['EmployeeLeaveTotal'],'required','on'=>['bulk_save']],
+        	[['checklist'],'safe','on'=>['bulk_save']],
             [['leave_status'],'safe','on'=>['search']]
         ];
     }
@@ -132,6 +135,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
     	if(isset($data['label'])) 
     		$lists[0] = $data['label'];
     	
+    	if(isset($data['all_employee']))
+    		$lists[1] = Yii::t('app','all employee');
+    	
     	foreach($models as $row){
     		$lists[$row->employee_id] = $row->EmployeeFirstName.' '.$row->EmployeeMiddleName.' '.$row->EmployeeLastName.' '.$row->EmployeeID;
     	}
@@ -170,13 +176,14 @@ class Employee extends ActiveRecord implements IdentityInterface {
     
     public static function getAllEmployee(){
         $Employee = Employee::find()
-        ->select(["E.employee_id","E.EmployeeID","DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate ","E.EmployeeLeaveDate",
+        ->select(["E.employee_id","E.EmployeeID","DATE_FORMAT(E.EmployeeHireDate,'%d/%m/%Y') EmployeeHireDate","E.EmployeeLeaveDate",
         	"CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name","E.EmployeeTitle"
         ])
         ->from('employee E')
         ->join('inner join','sys_user U','U.employee_id=E.employee_id')
         ->where("U.user_active = 1 AND E.EmployeeLeaveIgnore = 0 ")
         ->orderBy("E.EmployeeFirstName,E.EmployeeMiddleName,E.EmployeeLastName")
+        //->limit(5)
         ->all();
         return $Employee;
     }
