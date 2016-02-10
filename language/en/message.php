@@ -5,6 +5,7 @@ return [
 		'msg request has been approved' => 'Request has been Approved',
 		'msg request has been completed' => 'Request has been Completed',
 		'msg request has been deleted' => 'Request has been Deleted',
+		'msg request has been saved' => 'Request has been Saved',
 		'msg search by nik or name' => 'Search By NIK OR Name',
 		'msg date is already' => 'Date is Available',
 		'msg date range is not valid' => 'Date Range is Not Valid',

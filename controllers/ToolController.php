@@ -52,7 +52,7 @@ class ToolController extends Controller {
 			//only checklist will update
 			if(isset($user->employee_id)) {
 				$count = 0;
-				$active_date =  preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$user->employee_date_from);
+				$active_date =  $user->employee_date_from ?  preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$user->employee_date_from) : date("Y-m-d");
 				$balanced = new LeaveBalance();
 				$balanced->leave_balance_date = $active_date;
 				$balanced->leave_balance_total = $user->EmployeeLeaveTotal;

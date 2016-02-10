@@ -4243,3 +4243,673 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1455097946.42
     'REQUEST_TIME' => 1455097946
 ]
+2016-02-10 22:15:52 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdo.department' doesn't exist in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(181): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bdo.department' doesn't exist
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id left join `department` `D` ON D.department_id=E.department_id WHERE U.user_active = 1 AND e.EmployeeTitle <> 'Partner'  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(181): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S02
+    [1] => 1146
+    [2] => Table 'bdo.department' doesn't exist
+)
+
+2016-02-10 22:15:52 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtUKH8AAQEAAA7J0YgAAAAC'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49480'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117352.015
+    'REQUEST_TIME' => 1455117352
+]
+2016-02-10 22:16:30 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause' in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause'
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id WHERE U.user_active = 1 AND e.EmployeeTitle <> 'Partner'  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'e.EmployeeTitle' in 'where clause'
+)
+
+2016-02-10 22:16:30 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtUTn8AAQEAABkX5i0AAAAJ'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49596'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117390.72
+    'REQUEST_TIME' => 1455117390
+]
+2016-02-10 22:16:33 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause' in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause'
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id WHERE U.user_active = 1 AND e.EmployeeTitle <> 'Partner'  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'e.EmployeeTitle' in 'where clause'
+)
+
+2016-02-10 22:16:33 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtUUX8AAQEAABkYeCEAAAAK'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49598'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117393.016
+    'REQUEST_TIME' => 1455117393
+]
+2016-02-10 22:16:59 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause' in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause'
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `E`.`EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id WHERE U.user_active = 1 AND e.EmployeeTitle <> 'Partner'  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'e.EmployeeTitle' in 'where clause'
+)
+
+2016-02-10 22:16:59 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtUa38AAQEAAA7HDssAAAAA'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49618'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117419.698
+    'REQUEST_TIME' => 1455117419
+]
+2016-02-10 22:17:00 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause' in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'e.EmployeeTitle' in 'where clause'
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `E`.`EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id WHERE U.user_active = 1 AND e.EmployeeTitle <> 'Partner'  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'e.EmployeeTitle' in 'where clause'
+)
+
+2016-02-10 22:17:00 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtUbH8AAQEAABkJ-nEAAAAF'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49620'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117420.786
+    'REQUEST_TIME' => 1455117420
+]
+2016-02-10 22:24:38 [127.0.0.1][10768][-][error][yii\db\Exception] PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'E.EmployeeIgnore' in 'where clause' in /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php:819
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(819): PDOStatement->execute()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'E.EmployeeIgnore' in 'where clause'
+The SQL being executed was: SELECT `E`.`employee_id`, `E`.`EmployeeID`, DATE_FORMAT(E.EmployeeHireDate,'%Y-%m-%d') EmployeeHireDate , `E`.`EmployeeLeaveDate`, CONCAT(E.EmployeeFirstName,' ',EmployeeMiddleName,' ',EmployeeLastName) as employee_name, `E`.`EmployeeTitle` FROM `employee` `E` inner join `sys_user` `U` ON U.employee_id=E.employee_id WHERE U.user_active = 1 AND E.EmployeeIgnore = 1  ORDER BY `E`.`EmployeeFirstName`, `E`.`EmployeeMiddleName`, `E`.`EmployeeLastName` in /app/www/bdoleave/vendor/yiisoft/yii2/db/Schema.php:532
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `E`.`emp...')
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/db/Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/db/Query.php(206): yii\db\Command->queryAll()
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/db/ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 /app/www/bdoleave/models/Employee.php(180): yii\db\ActiveQuery->all()
+#5 /app/www/bdoleave/controllers/ToolController.php(48): app\models\Employee::getAllEmployee()
+#6 [internal function]: app\controllers\ToolController->actionBeginningBalance()
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('beginning-balan...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('tool/beginning-...', Array)
+#11 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'E.EmployeeIgnore' in 'where clause'
+)
+
+2016-02-10 22:24:38 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'tool/beginning-balance'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtWNn8AAQEAAA7HDswAAAAA'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49764'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=tool%2Fbeginning-balance'
+    'REQUEST_URI' => '/web/index.php?r=tool%2Fbeginning-balance'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455117878.625
+    'REQUEST_TIME' => 1455117878
+]
+2016-02-10 22:26:58 [127.0.0.1][10768][mgkvg4h45cqgat1am68suc7vf5][error][Error] Error: Class 'kartik\select2\Select2' not found in /app/www/bdoleave/views/report/balanced-card.php:46
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(325): require()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/app/www/bdolea...', Array)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/app/www/bdolea...', Array, Object(app\controllers\ReportController))
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#4 /app/www/bdoleave/controllers/ReportController.php(94): yii\base\Controller->render('balanced-card', Array)
+#5 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#6 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('balanced-card', Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('report/balanced...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#12 {main}
+2016-02-10 22:26:58 [127.0.0.1][10768][mgkvg4h45cqgat1am68suc7vf5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtWwn8AAQEAABw-GqAAAAAI'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49820'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455118018.908
+    'REQUEST_TIME' => 1455118018
+]
+2016-02-10 22:27:05 [127.0.0.1][10768][mgkvg4h45cqgat1am68suc7vf5][error][Error] Error: Class 'kartik\select2\Select2' not found in /app/www/bdoleave/views/report/balanced-card.php:46
+Stack trace:
+#0 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(325): require()
+#1 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/app/www/bdolea...', Array)
+#2 /app/www/bdoleave/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/app/www/bdolea...', Array, Object(app\controllers\ReportController))
+#3 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(367): yii\base\View->render('balanced-card', Array, Object(app\controllers\ReportController))
+#4 /app/www/bdoleave/controllers/ReportController.php(94): yii\base\Controller->render('balanced-card', Array)
+#5 [internal function]: app\controllers\ReportController->actionBalancedCard()
+#6 /app/www/bdoleave/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#7 /app/www/bdoleave/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#8 /app/www/bdoleave/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('balanced-card', Array)
+#9 /app/www/bdoleave/vendor/yiisoft/yii2/web/Application.php(83): yii\base\Module->runAction('report/balanced...', Array)
+#10 /app/www/bdoleave/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /app/www/bdoleave/web/index.php(13): yii\base\Application->run()
+#12 {main}
+2016-02-10 22:27:05 [127.0.0.1][10768][mgkvg4h45cqgat1am68suc7vf5][info][application] $_GET = [
+    'r' => 'report/balanced-card'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mgkvg4h45cqgat1am68suc7vf5'
+    '_csrf' => 'ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s:32:\"LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV\";'
+]
+
+$_SERVER = [
+    'UNIQUE_ID' => 'VrtWyX8AAQEAAA7HDs8AAAAA'
+    'HTTP_HOST' => 'bdoleave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://bdoleave.local/web/index.php?r=report'
+    'HTTP_COOKIE' => 'PHPSESSID=mgkvg4h45cqgat1am68suc7vf5; _csrf=ff140927d93ea8a0f30ad2bbf11907359acf9b47df653d69ca69dbf0a8db1830s%3A32%3A%22LZpRiIUs7TSMncsL1tAOgXYXV62DGxOV%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'LD_LIBRARY_PATH' => '/opt/lampp/lib:/opt/lampp/lib'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache/2.4.18 (Unix) OpenSSL/1.0.2e PHP/7.0.1 mod_perl/2.0.8-dev Perl/v5.16.3'
+    'SERVER_NAME' => 'bdoleave.local'
+    'SERVER_ADDR' => '127.0.1.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/app/www/bdoleave/'
+    'SERVER_ADMIN' => 'ims@local'
+    'SCRIPT_FILENAME' => '/app/www/bdoleave/web/index.php'
+    'REMOTE_PORT' => '49824'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=report%2Fbalanced-card'
+    'REQUEST_URI' => '/web/index.php?r=report%2Fbalanced-card'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455118025.502
+    'REQUEST_TIME' => 1455118025
+]
