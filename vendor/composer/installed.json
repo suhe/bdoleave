@@ -201,52 +201,6 @@
         ]
     },
     {
-        "name": "alexgx/yii2-phpexcel",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/AlexGx/yii2-phpexcel.git",
-            "reference": "97a8bee210b6fa3ca658430d45b1cdc55a59010e"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/AlexGx/yii2-phpexcel/zipball/97a8bee210b6fa3ca658430d45b1cdc55a59010e",
-            "reference": "97a8bee210b6fa3ca658430d45b1cdc55a59010e",
-            "shasum": ""
-        },
-        "require": {
-            "phpoffice/phpexcel": "1.8.0",
-            "yiisoft/yii2": "*"
-        },
-        "time": "2015-08-31 13:21:41",
-        "type": "yii2-extension",
-        "installation-source": "source",
-        "autoload": {
-            "psr-4": {
-                "alexgx\\phpexcel\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Alexander Gubarev",
-                "email": "gubarev.alex@gmail.com",
-                "homepage": "http://actionmedia-labs.net"
-            }
-        ],
-        "description": "PhpExcel component extension for Yii2.",
-        "keywords": [
-            "PHPExcel",
-            "component",
-            "extension",
-            "yii"
-        ]
-    },
-    {
         "name": "swiftmailer/swiftmailer",
         "version": "5.x-dev",
         "version_normalized": "5.9999999.9999999.9999999-dev",
@@ -1143,6 +1097,52 @@
             "Fixture",
             "faker",
             "yii2"
+        ]
+    },
+    {
+        "name": "alexgx/yii2-phpexcel",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/AlexGx/yii2-phpexcel.git",
+            "reference": "97a8bee210b6fa3ca658430d45b1cdc55a59010e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/AlexGx/yii2-phpexcel/zipball/97a8bee210b6fa3ca658430d45b1cdc55a59010e",
+            "reference": "97a8bee210b6fa3ca658430d45b1cdc55a59010e",
+            "shasum": ""
+        },
+        "require": {
+            "phpoffice/phpexcel": "1.8.0",
+            "yiisoft/yii2": "*"
+        },
+        "time": "2015-08-31 13:21:41",
+        "type": "yii2-extension",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "alexgx\\phpexcel\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Alexander Gubarev",
+                "email": "gubarev.alex@gmail.com",
+                "homepage": "http://actionmedia-labs.net"
+            }
+        ],
+        "description": "PhpExcel component extension for Yii2.",
+        "keywords": [
+            "PHPExcel",
+            "component",
+            "extension",
+            "yii"
         ]
     }
 ]
