@@ -10,11 +10,11 @@ class TimesheetStatus extends \yii\db\ActiveRecord {
     
     //  checkTimesheetWeek
 	/*-------------------------------------------------------------------------------------*/
-	public  function checkTimesheetWeek($timesheet) {
+	public function findOne2($timesheet = array()) {
 		$sql = "
 			select timesheet_status_id
 			from timesheet_status ts
-			where ts.timesheet_approval = 4
+			where ts.timesheet_approval = ".$timesheet['approval']." 
 			and ts.employee_id=".$timesheet['employee_id']." 
 			and ts.week =".$timesheet['week']."
             and ts.year=".$timesheet['year'];

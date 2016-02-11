@@ -1,10 +1,13 @@
 <?php
 namespace app\models;
 use yii;
+use yii\db\ActiveRecord;
 use app\models\LeaveLog;
 use app\models\Employee;
+use app\models\Timesheet;
+use app\models\TimesheetStatus;
  
-class Leaves extends \yii\db\ActiveRecord {
+class Leaves extends ActiveRecord {
     /**
      * Public Variabel
      * @var string,integer,object
@@ -963,6 +966,11 @@ class Leaves extends \yii\db\ActiveRecord {
 	    			$approval = 0;
 	    		
 	    		/** 
+	    		 *  Link to Timesheet
+	    		 */
+	    		$this->setLinkTimesheet($employee_id, $approval);	
+	    		
+	    		/** 
 	    		 * Save to Log Lestatus
 	    		 * @Set to leave Log
 	    		 */	
@@ -981,6 +989,78 @@ class Leaves extends \yii\db\ActiveRecord {
     	return false;
     }
     
+    
+    /**
+     *  Link to Timesheet
+     */
+    public function setLinkTimesheet($employee_id,$approval){
+    	if($this->validate()){
+    		$total_days = $this->getRangeData()['count'];
+    		$data_days = $this->getRangeData()['description'];
+    		
+    		if($total_days > 30)
+    			$timesheet_job_id = 10;
+    		else if($this->leave_type == self::$cuti_tahunan)
+    			$timesheet_job_id = 11;
+    		else if($this->leave_type == self::$cuti_bersama)
+    			$timesheet_job_id = 500;
+    		else if($this->leave_type == self::$cuti_khusus)
+    			$timesheet_job_id = 10;
+    		
+    		$sheet_data = explode(",", $data_days);
+    		for($i=0;$i<$total_days;$i++) {
+    			//set date convert to Y-m-d
+    			$ddate = preg_replace('!(\d+)/(\d+)/(\d+)!', '\3-\2-\1',$sheet_data[$i]);
+    			$date = new \DateTime($ddate);
+    			
+    			//Timeshet Week
+    			$timesheetWeek = new TimesheetStatus();
+    			$find = $timesheetWeek->findOne([
+    				'employee_id' => $employee_id,
+    				'week' => $date->format("W"),
+    				'year' => $date->format("Y"),
+    			]);
+    			
+    			if(!$find) {
+    				$timesheetWeek->week = $date->format("W"); 	
+    				$timesheetWeek->year =  $date->format("Y");
+    				$timesheetWeek->employee_id =  $employee_id;
+    				$timesheetWeek->drequest = date('Y-m-d H:i:s');
+    				$timesheetWeek->approval_id = $approval;
+    				$timesheetWeek->timesheet_approval = 4;
+    				$timesheetWeek->sysdate = date('Y-m-d H:i:s');
+    				$timesheetWeek->sysuser = Yii::$app->user->getId();
+    				$timesheetWeek->insert();
+    				
+    			} else {
+    				$timesheetWeek = $find;
+    			}
+    			
+    			// Timesheet Save
+    			$timesheet = new Timesheet();
+    			$timesheet->timesheet_status_id = $timesheetWeek->timesheet_status_id;
+    			$timesheet->project_id = 1;
+    			$timesheet->job_id = $timesheet_job_id;
+    			$timesheet->employee_id =  $employee_id;
+    			$timesheet->week =  $date->format("W");
+    			$timesheet->year =  $date->format("Y");
+    			$timesheet->hour =  8;
+    			$timesheet->overtime =  0;
+    			$timesheet->cost =  8;
+    			$timesheet->transport_type =  1;
+    			$timesheet->transport_cost =  0;
+    			$timesheet->transport_paid =  1;
+    			$timesheet->notes = $this->leave_description;
+    			$timesheet->timesheetdate = $ddate;
+    			$timesheet->timesheet_approval = 0;
+    			$timesheet->source = self::$leave_source;
+    			$timesheet->sysdate = date('Y-m-d H:i:s');
+    			$timesheet->sysuser = Yii::$app->user->getId();
+    			$timesheet->insert();	
+    		}
+    		
+    	}
+    }
     /**
      *  Process to get Range Total Data
      *  return @array

@@ -43,6 +43,7 @@ $this->params ['addUrl'] = [
 			<div id="ft-3" class="panel-collapse collapse in">
 				<div class="portlet-body">
 					<?=DetailView::widget([
+						'options' => ['class' => 'table table-striped table-bordered detail-view table-responsive'],
 					    'model' => $employee,
 					    'attributes' => [
 					    	[
