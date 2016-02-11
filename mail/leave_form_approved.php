@@ -63,6 +63,7 @@
 </td>
 <td width="23" style="border-collapse:collapse">&nbsp;</td>
 </tr>
+
 <tr style="padding:5px">
 <td width="30" style="border-collapse:collapse"></td>
 <td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','type')?></td>
@@ -70,7 +71,6 @@
 <td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_type_string?></td>
 </tr>
 
-</tr>
 <tr style="padding:5px">
 <td width="30" style="border-collapse:collapse"></td>
 <td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','last status')?></td>
@@ -156,7 +156,7 @@
 </tr>
 <tr>
 <td valign="top" align="center" style="border-collapse:collapse">
-<a target="_blank" style="margin:0;padding:7px 17px;color:#fff;text-decoration:none;display:inline-block;margin-bottom:0;vertical-align:middle;line-height:20px;font-size:13px;font-weight:600;text-align:center;white-space:nowrap;border-radius:2px;background-color:#d15050;background-image:linear-gradient(top,#57b150 0%,#479a40 100%);border:1px solid #398433" href="http://leave.bdoindonesia.com/"><?=$link?></a>
+<a target="_blank" style="margin:0;padding:7px 17px;color:#fff;text-decoration:none;display:inline-block;margin-bottom:0;vertical-align:middle;line-height:20px;font-size:13px;font-weight:600;text-align:center;white-space:nowrap;border-radius:2px;background-color:#d15050;background-image:linear-gradient(top,#57b150 0%,#479a40 100%);border:1px solid #398433" href="http://leave.bdoindonesia.com/"> See My Leave </a>
 </td>
 </tr>
 

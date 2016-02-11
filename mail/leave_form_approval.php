@@ -63,12 +63,6 @@
 </td>
 <td width="23" style="border-collapse:collapse">&nbsp;</td>
 </tr>
-<tr style="padding:5px">
-<td width="30" style="border-collapse:collapse"></td>
-<td width="100" valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px"><?=Yii::t('app','id')?></td>
-<td width="30" style="border-collapse:collapse;padding:5px">:</td>
-<td  valign="top" bgcolor="#FFFFFF" style="background:#ffffff;border-collapse:collapse;padding:5px" colspan="6"><?=$data->leave_id?></td>
-</tr>
 
 <tr>
 <td width="30" style="border-collapse:collapse"></td>

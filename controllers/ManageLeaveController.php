@@ -179,20 +179,19 @@ class ManageLeaveController extends Controller {
 	 * php -q /home/k0455101/public_html/devleave/yii app-leave/approved
 	 */
 	public function actionApproved() {
-		echo 'x';
 		if(Yii::$app->params['send_email'] == true) {
 			$apps = Leaves::getApprovedTodayLeave();
 			if($apps) {
 				$mail = [];
 				foreach($apps as  $app) {
-					echo $app->leave_date_from;
 					$email_receiver = $app->EmployeeEmail;
-					//if($email_receiver) {
-					$mail[]  = Yii::$app->mailer->compose('leave_form_approved',['data' => $app])
-					->setFrom(Yii::$app->params['mail_user'])
-					->setTo("hendarsyahss@gmail.com")
-					->setSubject(Yii::t('app/message','msg result approved leave form'));
-					//}
+					if($email_receiver) {
+						echo $email_receiver;
+						$mail[]  = Yii::$app->mailer->compose('leave_form_approved',['data' => $app])
+						->setFrom(Yii::$app->params['mail_user'])
+						->setTo($email_receiver)
+						->setSubject(Yii::t('app/message','msg result approved leave form'));
+					}
 				}
 				//send multiple email
 				Yii::$app->mailer->sendMultiple($mail);

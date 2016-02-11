@@ -626,7 +626,7 @@ class Leaves extends ActiveRecord {
     
     
     public static function getApprovedTodayLeave() {
-    	$query = Leaves::find()
+    	return Leaves::find()
     	->select(["l.*",
     	"CONCAT(e.EmployeeFirstName,' ',e.EmployeeMiddleName,' ',e.EmployeeLastName) as employee_name",
     	"CONCAT(em.EmployeeFirstName,' ',em.EmployeeMiddleName,' ',em.EmployeeLastName) as manager_approval",
