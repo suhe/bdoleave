@@ -97,7 +97,7 @@ class Leaves extends ActiveRecord {
 	            [['leave_approved'],'safe','on'=>['search','add_leave','add_myleave']],
 	            [['leave_note'],'safe','on'=>['approval','app-completed']],
 	        	//custom validate on use
-        		[['leave_date_from','leave_date_to'],'isValidDateRange','on'=>['add_myleave']],
+        		[['leave_date_from','leave_date_to'],'isValidDateRange','on'=>['add_myleave','add_leave']],
         ];
     }
     
@@ -880,57 +880,68 @@ class Leaves extends ActiveRecord {
         }
         
     } **/
+        
     
+        
+    /**
+     * Selection All Employee
+     *  Get Save All Employee
+     */    
+    public function getSaveSelectionLeaveRequest() {   
+    	if($this->employee_id == 1) {
+    		$employees = Employee::getAllEmployee();
+    		if($employees) {
+    			foreach ($employees as $key => $employee) {
+    				$this->getSaveLeaveRequest($employee->employee_id,$this->leave_status);
+    			}
+    		} else {
+    			$this->getSaveLeaveRequest($this->employee_id,$this->leave_status);
+    		}
+    	}
+    		
+    }
+    
+        
     /** 
      * Save/Update The Process 
      * @param integer $employee_id
      * @return boolean
      */
-    public function getSaveLeaveRequest($employee_id = 0) {
+    public function getSaveLeaveRequest($employee_id = 0,$status = 0) {
     	if($this->validate()) {
     		
     		$is_app_user1 = false;
     		$is_app_hrd = false;
     		$is_app_partner = false;
-    		$status = self::$request;
+    		$status = !$status ? self::$request : $status;
     		
-    		if($employee_id) {
-    			$employee_id = $employee_id;
-    			
-    		} else {
-    			$employee_id = $this->employee_id;
-    			switch ($this->leave_status) {
-    				case self::$completed : 
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = true;
-    					$status = self::$completed;
-    					break;
-    				case self::$approve_partner :
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = true;
-    					$status = self::$approve_partner;
-    					break;
-    				case self::$approve_hrd :
-    					$is_app_user1 = true;
-    					$is_app_hrd =true;
-    					$is_app_partner = false;
-    					$status = self::$approve_hrd;
-    					break;
-    				case self::$approve_manager :
-    					$is_app_user1 = true;
-    					$is_app_hrd =false;
-    					$is_app_partner = false;
-    					$status = self::$approve_manager;
-    					break;
-    			}
-    			
+    		switch ($status) {
+    			case self::$completed : 
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = true;
+    				$status = self::$completed;
+    				break;
+    			case self::$approve_partner :
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = true;
+    				$status = self::$approve_partner;
+    				break;
+    			case self::$approve_hrd :
+    				$is_app_user1 = true;
+    				$is_app_hrd =true;
+    				$is_app_partner = false;
+    				$status = self::$approve_hrd;
+    				break;
+    			case self::$approve_manager :
+    				$is_app_user1 = true;
+    				$is_app_hrd =false;
+    				$is_app_partner = false;
+    				$status = self::$approve_manager;
+    				break;
     		}
-    		
-    		//search employee by parameter or by class variabel
-    		
-    		$employee_id = $employee_id ? $employee_id : $this->employee_id;
+    			
     		
     		$model = new Leaves();
 	    	$model->leave_type = $this->leave_type;

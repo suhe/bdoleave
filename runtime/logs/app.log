@@ -4390,3 +4390,331 @@ Stack trace:
     ]
     'argc' => 2
 ]
+2016-02-11 17:38:29 [127.0.0.1][10768][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: result' in D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php:172
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(172): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 172, Array)
+#1 [internal function]: app\controllers\ManageLeaveController->actionLoadSingleEmployee()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('load-single-emp...', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/lo...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-11 17:38:28 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave/load-single-employee'
+]
+
+$_POST = [
+    'employee_id' => '1'
+]
+
+$_COOKIE = [
+    'laravel_session' => 'eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ=='
+    '_csrf' => '6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs:32:\"7tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM\";'
+    'PHPSESSID' => '2jsd23cfbdhb62qn9pctg441e1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '13'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://leave.local'
+    'HTTP_X_CSRF_TOKEN' => 'RFd2dTd0cEJzIxo3f0YZDQMINyZyE0lzBx5DIlY/BHcIICYvRUEDDw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'id-ID,id;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'laravel_session=eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ%3D%3D; _csrf=6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs%3A32%3A%227tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM%22%3B; PHPSESSID=2jsd23cfbdhb62qn9pctg441e1'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '7976'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=manage-leave%2Fload-single-employee'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fload-single-employee'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455187108.913
+    'REQUEST_TIME' => 1455187108
+]
+2016-02-11 17:39:10 [127.0.0.1][10768][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: result' in D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php:172
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(172): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 172, Array)
+#1 [internal function]: app\controllers\ManageLeaveController->actionLoadSingleEmployee()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('load-single-emp...', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/lo...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-11 17:39:10 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave/load-single-employee'
+]
+
+$_POST = [
+    'employee_id' => '1'
+]
+
+$_COOKIE = [
+    'laravel_session' => 'eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ=='
+    '_csrf' => '6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs:32:\"7tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM\";'
+    'PHPSESSID' => '2jsd23cfbdhb62qn9pctg441e1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '13'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://leave.local'
+    'HTTP_X_CSRF_TOKEN' => 'WW9QaGtzWUJuGzwqI0EwDR4wETsuFGBzGiZlPwo4LXcVGAAyGUYqDw=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'id-ID,id;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'laravel_session=eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ%3D%3D; _csrf=6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs%3A32%3A%227tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM%22%3B; PHPSESSID=2jsd23cfbdhb62qn9pctg441e1'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '7989'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=manage-leave%2Fload-single-employee'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fload-single-employee'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455187150.332
+    'REQUEST_TIME' => 1455187150
+]
+2016-02-11 17:40:06 [127.0.0.1][10768][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: result' in D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php:172
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(172): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 172, Array)
+#1 [internal function]: app\controllers\ManageLeaveController->actionLoadSingleEmployee()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('load-single-emp...', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/lo...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-11 17:40:06 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave/load-single-employee'
+]
+
+$_POST = [
+    'employee_id' => '1'
+]
+
+$_COOKIE = [
+    'laravel_session' => 'eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ=='
+    '_csrf' => '6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs:32:\"7tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM\";'
+    'PHPSESSID' => '2jsd23cfbdhb62qn9pctg441e1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '13'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ORIGIN' => 'http://leave.local'
+    'HTTP_X_CSRF_TOKEN' => 'MmwydVZrOUQFGF43HllQC3UzcyYTDAB1cSUHIjcgTXF.G2IvJF5KCQ=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'id-ID,id;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'laravel_session=eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ%3D%3D; _csrf=6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs%3A32%3A%227tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM%22%3B; PHPSESSID=2jsd23cfbdhb62qn9pctg441e1'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '7996'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=manage-leave%2Fload-single-employee'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fload-single-employee'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455187206.265
+    'REQUEST_TIME' => 1455187206
+]
+2016-02-11 17:40:14 [127.0.0.1][10768][-][error][yii\base\UnknownMethodException] exception 'yii\base\UnknownMethodException' with message 'Calling unknown method: app\models\Leaves::getSaveSelectiongetSaveSelectionLeaveRequest()' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:282
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(119): yii\base\Component->__call('getSaveSelectio...', Array)
+#1 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(119): app\models\Leaves->getSaveSelectiongetSaveSelectionLeaveRequest()
+#2 [internal function]: app\controllers\ManageLeaveController->actionFormLeave()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form-leave', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/fo...', Array)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#9 {main}
+2016-02-11 17:40:14 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave/form-leave'
+]
+
+$_POST = [
+    '_csrf' => 'MmwydVZrOUQFGF43HllQC3UzcyYTDAB1cSUHIjcgTXF.G2IvJF5KCQ=='
+    'Leaves' => [
+        'employee_id' => '1'
+        'leave_type' => '1'
+        'leave_status' => '2'
+        'leave_description' => 'assadasdad'
+        'leave_date_from' => '24/02/2016'
+        'leave_date_to' => '26/02/2016'
+        'leave_address' => 'sadadasd'
+        'leave_saldo_total' => '-3'
+    ]
+    'save-button' => ''
+]
+
+$_COOKIE = [
+    'laravel_session' => 'eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ=='
+    '_csrf' => '6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs:32:\"7tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM\";'
+    'PHPSESSID' => '2jsd23cfbdhb62qn9pctg441e1'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '350'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_ORIGIN' => 'http://leave.local'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.103 Safari/537.36'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'id-ID,id;q=0.8,en-US;q=0.6,en;q=0.4'
+    'HTTP_COOKIE' => 'laravel_session=eyJpdiI6ImdNUThNZE43d1lTNXUrRlRJbU5jUlE9PSIsInZhbHVlIjoiY0VYOXpqaDd3RDN5emZkdkhnUEphMGZtTk1mYVhGTUZmeFRzdHBLMFlOTmVDditoYkFmN1ZLMWdIYVhBSEpwaldraWxlNjl0Zkp6Tm5aWmRDRllJdFE9PSIsIm1hYyI6Ijc4ZDMzNTM2NDhmYWJkNWJiMjU2NTQyNjMxMTkwZGY0NTQyMjUzNDc5NjU0YzNkNDZmYzI0MjdmMzhmY2MzMzMifQ%3D%3D; _csrf=6bc27c031f75bc1e8f7bbee3c1ecef6140335c81afab3bdecaffb864475f6eebs%3A32%3A%227tlBH2iOG_ASEg91CI5WaKt5LwPZr5sM%22%3B; PHPSESSID=2jsd23cfbdhb62qn9pctg441e1'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '8002'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=manage-leave%2Fform-leave'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fform-leave'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1455187214.581
+    'REQUEST_TIME' => 1455187214
+]

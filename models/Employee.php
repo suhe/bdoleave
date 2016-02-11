@@ -132,6 +132,9 @@ class Employee extends ActiveRecord implements IdentityInterface {
     	if(isset($data['label'])) 
     		$lists[0] = $data['label'];
     	
+    	if(isset($data['all employee']))
+    			$lists[1] = Yii::t('app', 'all employee');
+    	
     	foreach($models as $row){
     		$lists[$row->employee_id] = $row->EmployeeFirstName.' '.$row->EmployeeMiddleName.' '.$row->EmployeeLastName.' '.$row->EmployeeID;
     	}
@@ -178,6 +181,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
         ->join('left join','department D','D.department_id=E.department_id')
         ->where("U.user_active = 1 AND e.EmployeeTitle <> 'Partner' ")
         ->orderBy("E.EmployeeFirstName,E.EmployeeMiddleName,E.EmployeeLastName")
+        //->limit(5)
         ->all();
         return $Employee;
     }

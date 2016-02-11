@@ -116,7 +116,7 @@ class ManageLeaveController extends Controller {
 	 */
 	public function actionFormLeave() {
 		$model = new \app\models\Leaves(['scenario' => 'add_leave']);
-		if($model->load(Yii::$app->request->post()) && $model->getSaveLeaveRequest()){
+		if($model->load(Yii::$app->request->post()) && $model->getSaveSelectionLeaveRequest()) {
 			Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been created').'</strong></div>');
 			return $this->redirect(['manage-leave/index'],301);
 		}
