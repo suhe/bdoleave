@@ -27,11 +27,11 @@ class ManageLeaveController extends Controller {
 				'ruleConfig' => [
 					'class' => Role::className(),
 				],
-				'only' => ['index', 'form', 'detail-view','form-leave','form-balance','load-single-employee'],
+				'only' => ['index', 'form', 'detail-view','form-leave','form-balance','load-single-employee','approved'],
 				'rules' => [
 					[
 						'allow' => true,
-						'actions' => ['index', 'form', 'detail-view','form-leave','form-balance','load-single-employee'],
+						'actions' => ['index', 'form', 'detail-view','form-leave','form-balance','load-single-employee','approved'],
 						'roles' => [
 							Employee::ROLE_SENIOR_HRD,
 							Employee::ROLE_MANAGER_HRD
@@ -170,6 +170,36 @@ class ManageLeaveController extends Controller {
 			];
 		}
 		return json_encode($result);
+	}
+	
+	/**
+	 * This command echoes what you have email.
+	 * @param email
+	 * //cron job php -q /home/k0455101/public_html/devleave/yii app-leave/email
+	 * php -q /home/k0455101/public_html/devleave/yii app-leave/approved
+	 */
+	public function actionApproved() {
+		echo 'x';
+		if(Yii::$app->params['send_email'] == true) {
+			$apps = Leaves::getApprovedTodayLeave();
+			if($apps) {
+				$mail = [];
+				foreach($apps as  $app) {
+					echo $app->leave_date_from;
+					$email_receiver = $app->EmployeeEmail;
+					//if($email_receiver) {
+					$mail[]  = Yii::$app->mailer->compose('leave_form_approved',['data' => $app])
+					->setFrom(Yii::$app->params['mail_user'])
+					->setTo("hendarsyahss@gmail.com")
+					->setSubject(Yii::t('app/message','msg result approved leave form'));
+					//}
+				}
+				//send multiple email
+				Yii::$app->mailer->sendMultiple($mail);
+			}
+		}
+		/** end of send email **/
+		return false;
 	}
 
 }

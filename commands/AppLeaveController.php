@@ -60,16 +60,13 @@ class AppLeaveController extends Controller  {
 			if($apps) {
 				$mail = [];
 				foreach($apps as  $app) {
-					$employee = Employee::findOne($employee_id);
-					if($employee) {
-						$email_receiver = $employee ? $employee->EmployeeEmail : "";
-						if($email_receiver) {
-							$mail[]  = Yii::$app->mailer->compose('leave_form_approved',['data' => $app])
-							->setFrom(Yii::$app->params['mail_user'])
-							->setTo($app->EmployeeEmail)
-							->setSubject(Yii::t('app/message','msg request approved leave form'));
-						}
-					}
+					$email_receiver = $app->EmployeeEmail;
+					//if($email_receiver) {
+					$mail[]  = Yii::$app->mailer->compose('leave_form_approved',['data' => $app])
+					->setFrom(Yii::$app->params['mail_user'])
+					->setTo("hendarsyahss@gmail.com")
+					->setSubject(Yii::t('app/message','msg result approved leave form'));
+					//}
 				}
 				//send multiple email
 				Yii::$app->mailer->sendMultiple($mail);

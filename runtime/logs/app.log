@@ -4324,3 +4324,69 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1455177496.851
     'REQUEST_TIME' => 1455177496
 ]
+2016-02-11 09:36:30 [-][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected ':'' in D:\xampp\htdocs\bdoleave\commands\AppLeaveController.php:64
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-11 09:36:29 [-][-][-][info][application] $_SERVER = [
+    'ACPath' => 'C:\\Program Files\\Lenovo\\Access Connections\\'
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'ANDROID_NDK_PATH' => 'C:\\Users\\BDO-IT\\Documents\\Android\\ndk\\android-ndk-r10e'
+    'ANT_HOME' => 'C:\\Program Files\\WinAnt'
+    'APPDATA' => 'C:\\Users\\BDO-IT\\AppData\\Roaming'
+    'CLIPPER' => 'F150'
+    'CM2015DIR' => 'C:\\Program Files\\Common Files\\Autodesk Shared\\Materials\\'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'COMMPath' => 'C:\\Program Files\\Lenovo\\Communications Utility'
+    'COMPUTERNAME' => 'BDOVOTING'
+    'ComSpec' => 'C:\\Windows\\system32\\cmd.exe'
+    'FP_NO_HOST_CHECK' => 'NO'
+    'GTK_BASEPATH' => 'C:\\Program Files\\GtkSharp\\2.12\\'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\BDO-IT'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_40'
+    'LOCALAPPDATA' => 'C:\\Users\\BDO-IT\\AppData\\Local'
+    'LOGONSERVER' => '\\\\BDOVOTING'
+    'MOZ_PLUGIN_PATH' => 'C:\\Program Files\\Foxit Software\\Foxit Reader\\plugins\\'
+    'NUMBER_OF_PROCESSORS' => '4'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PLL' => 'C:\\PLL'
+    'PROCESSOR_ARCHITECTURE' => 'x86'
+    'PROCESSOR_IDENTIFIER' => 'x86 Family 6 Model 58 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '3a09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Windows\\system32\\WindowsPowerShell\\v1.0\\Modules\\'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\Windows'
+    'TEMP' => 'C:\\Users\\BDO-IT\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\BDO-IT\\AppData\\Local\\Temp'
+    'TVT' => 'C:\\Program Files\\Lenovo'
+    'USERDOMAIN' => 'BDOVOTING'
+    'USERNAME' => 'BDO-IT'
+    'USERPROFILE' => 'C:\\Users\\BDO-IT'
+    'VS100COMNTOOLS' => 'C:\\Program Files\\Microsoft Visual Studio 10.0\\Common7\\Tools\\'
+    'windir' => 'C:\\Windows'
+    'windows_tracing_flags' => '3'
+    'windows_tracing_logfile' => 'C:\\BVTBin\\Tests\\installpackage\\csilogfile.log'
+    'YII_PATH' => 'D:\\xampp\\htdocs\\bdoleave\\'
+    'PHP_SELF' => 'D:\\xampp\\htdocs\\bdoleave\\yii'
+    'SCRIPT_NAME' => 'D:\\xampp\\htdocs\\bdoleave\\yii'
+    'SCRIPT_FILENAME' => 'D:\\xampp\\htdocs\\bdoleave\\yii'
+    'PATH_TRANSLATED' => 'D:\\xampp\\htdocs\\bdoleave\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1455179789.6045
+    'REQUEST_TIME' => 1455179789
+    'argv' => [
+        0 => 'D:\\xampp\\htdocs\\bdoleave\\yii'
+        1 => 'app-leave/approved'
+    ]
+    'argc' => 2
+]
