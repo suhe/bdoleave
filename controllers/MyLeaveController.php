@@ -37,6 +37,7 @@ class MyLeaveController extends Controller {
                         	Employee::ROLE_ASS_CONSULTANT,
                         	Employee::ROLE_ASS_SENIOR_CONSULTANT,
                         	Employee::ROLE_CONSULTANT,	
+                        	Employee::ROLE_SENIOR,	
                         	Employee::ROLE_SENIOR_1,
                         	Employee::ROLE_SENIOR_2,
                         	Employee::ROLE_SENIOR_CONSULTANT,
