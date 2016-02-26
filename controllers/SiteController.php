@@ -42,16 +42,20 @@ class SiteController extends Controller {
     public function actionLogin() {
     	if(!Yii::$app->user->isGuest) {
     		if(Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER)
-    			return $this->redirect(['app-leave/']);
+    			return Yii::$app->getResponse()->redirect(array('/app-leave',302));
     		else
-    			return $this->redirect(['my-leave/']);
+    			return Yii::$app->getResponse()->redirect(array('/my-leave',302));
     	}
     		
 		$model = new Employee(['scenario'=>'login']);
 		//$this->TimesheetRevival();
 		///$this->actionRefresh();
         if ($model->load(Yii::$app->request->post()) && $model->validate() && $model->getLogin()) {
-	    	return $this->redirect(['my-leave/index']);
+	    	//return $this->redirect(['my-leave/index']);
+			if($model->EmployeeTitle == 'Partner')
+    			return Yii::$app->getResponse()->redirect(array('/app-leave',302));
+    		else
+    			return Yii::$app->getResponse()->redirect(array('/my-leave',302));
         }
         $this->layout = 'login';
         return $this->render('login',[

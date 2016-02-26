@@ -119,6 +119,7 @@ class Employee extends ActiveRecord implements IdentityInterface {
     public static function getEmployeeList($data = array()){
     	$lists = [];
     	$models = Employee::find()
+    	->select("e.*,su.user_active")
     	->from('employee e')
     	->join('inner join','sys_user su','su.employee_id=e.employee_id')
     	->orderBy('e.EmployeeFirstname ASC,e.EmployeeMiddleName ASC,e.EmployeeLastName ASC')
@@ -279,8 +280,8 @@ class Employee extends ActiveRecord implements IdentityInterface {
         }
         
         if($this->employee_date_from && $this->employee_date_to)
-        	$query->andWhere("EmployeeHireDate between STR_TO_DATE('".$this->employee_date_from."', '%d/%m/%Y') and STR_TO_DATE('".$this->$this->employee_date_to."', '%d/%m/%Y') ");
-        if($this->employee_name) $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',EmployeeLastName)",  $this->employee_name]);
+        	$query->andWhere("e.EmployeeHireDate between STR_TO_DATE('".$this->employee_date_from."', '%d/%m/%Y') and STR_TO_DATE('".$this->$this->employee_date_to."', '%d/%m/%Y') ");
+        if($this->employee_name) $query->andFilterWhere(['like', "CONCAT(e.EmployeeID,' ',e.EmployeeFirstname,' ',e.EmployeeMiddleName,' ',e.EmployeeLastName)",  $this->employee_name]);
         
         return $dataProvider;
         

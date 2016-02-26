@@ -44,6 +44,7 @@ class AppLeaveController extends Controller {
 							Employee::ROLE_SENIOR_HRD,
 							Employee::ROLE_SUPERVISOR,
 							Employee::ROLE_MANAGER_HRD,
+							Employee::ROLE_PARTNER,
 						],
 					],
 				],

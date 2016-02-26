@@ -27,7 +27,7 @@ class AppLeaveController extends Controller  {
 						$employee_id = $app->leave_app_pic;
 					}
 						
-					$employee_id = 10406;
+					//$employee_id = 10406;
 						
 					$employee = Employee::findOne($employee_id);
 					if($employee) {
