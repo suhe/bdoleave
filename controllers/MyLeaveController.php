@@ -31,7 +31,7 @@ class MyLeaveController extends Controller {
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'form','detail-view','balanced-card'],
+                        'actions' => ['index', 'form','detail-view','remove'],
                         'roles' => [
                         	Employee::ROLE_ASSISTANT,
                         	Employee::ROLE_ASS_CONSULTANT,
@@ -46,6 +46,7 @@ class MyLeaveController extends Controller {
                         	Employee::ROLE_SENIOR_HRD,
                         	Employee::ROLE_SUPERVISOR,	
                         	Employee::ROLE_MANAGER_HRD,	
+                        	Employee::ROLE_PARTNER,	
                         ],
                     ],
                 ],
@@ -108,10 +109,22 @@ class MyLeaveController extends Controller {
 		]);
 	}
 	
+	public function actionRemove($id) {
+		$model = new Leaves();
+		$app_model = $model->getDetailView($id);
+		if(isset($app_model)) {
+			if(($app_model->leave_status == 5) && ($app_model->employee_id == Yii::$app->user->getId())) {
+				$model->findOne($id)->delete();
+				Yii::$app->session->setFlash('message','<div class="alert alert-success"> <strong>'.Yii::t('app','success').'! </strong>'.Yii::t('app/message','msg request has been deleted').'</strong></div>');
+			}
+		}
+		return $this->redirect(['my-leave/index'],301);
+	}
+	
 	/**
 	 *  Action Balanced Card
 	 * @return string
-	 */
+	 
 	public function actionBalancedCard() {
 		$model = new Leaves();
 		return $this->render('balanced-card',[
@@ -120,6 +133,7 @@ class MyLeaveController extends Controller {
 				'dataProvider' => $model->getMyBalanceLeaveCardDataProvider()
 		]);
 	}
+	*/
 	
 	/**
 	 * This command echoes what you have email.

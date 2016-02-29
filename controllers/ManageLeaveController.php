@@ -56,7 +56,7 @@ class ManageLeaveController extends Controller {
 
 		}
 		return $this->render('index',[
-				'title' => Yii::t('app','outstanding leave'),
+				'title' => Yii::t('app','manage leave'),
 				'model' => $model,
 				'dataProvider' => $model->getAppManageLeaveDataProvider(Yii::$app->request->queryParams)
 		]);
@@ -106,6 +106,7 @@ class ManageLeaveController extends Controller {
 				'employee' => Employee::getEmployee($app_model->employee_id),
 				'leave' => $app_model,
 				'logDataProvider' => LeaveLog::getLogLeaveDataProvider($id),
+				'employeeLeaveDataProvider' => $model->getEmployeeLeaveDataProvider($app_model->employee_id,$id),
 		]);
 	}
 	

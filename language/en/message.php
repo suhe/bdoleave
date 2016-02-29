@@ -15,6 +15,7 @@ return [
 		'msg hire date must be fill !' => 'Hire Date is empty please fill the hire date field !',
 		'msg request has been created' => 'Leave Form Has been created successfully !',
 		'msg request has been completed' => 'Leave Form Has been completed successfully !',
+		'msg request has been deleted' => 'Leave data has been completed deleted !',
 		'msg leave balance must be fill' => 'Leave Balance is empty please fill the leave balance field !',
 		'msg btn delete' => 'Are you sure want to delete',
 		'msg date range is not correct' => 'Date range is not correct',

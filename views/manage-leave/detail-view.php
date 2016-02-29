@@ -299,6 +299,77 @@ $this->params ['addUrl'] = [
 	
 </div>
 
+<div class="row">
+    <div class="col-lg-12">						
+	<!-- START YOUR CONTENT HERE -->
+	<div class="portlet"><!-- /Portlet -->
+	    <div class="portlet-heading dark">
+		<div class="portlet-title">
+		    <h4 class="text-white"><i class="fa fa-dropbox"></i> <?=Yii::t('app','leave history')?></h4>
+		</div>
+		<div class="portlet-widgets">
+		    <a data-toggle="collapse" data-parent="#accordion" href="#basic"><i class="fa fa-chevron-down"></i></a>
+                        <span class="divider"></span>
+			<a href="#" class="box-close"><i class="fa fa-times"></i></a>
+		</div>
+		<div class="clearfix"></div>
+	    </div>
+	    
+            <div id="basic" class="panel-collapse collapse in">
+		<div class="portlet-body">
+		    
+		    <div class="row">
+		    
+			<div class="col-lg-12">
+			<?=Yii::$app->session->getFlash('message')?>
+			<?=GridView::widget( [
+			    'dataProvider' => $employeeLeaveDataProvider,
+			    'tableOptions' => ['class'=>'table table-bordered table-hover table-striped  tc-table table-responsive'],
+			    'layout' => '<div class="hidden-sm hidden-xs hidden-md">{summary}</div>{errors}{items}<div class="pagination pull-right">{pager}</div> <div class="clearfix"></div>',
+			    'columns'=>[
+				['class' => 'yii\grid\SerialColumn'],
+				'leave_date' => [
+				    'attribute' => 'leave_date',
+				],
+			    'leave_date_from' => [
+			    	'attribute' => 'leave_date_from',
+			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    	'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+			   	],
+			    'leave_date_to' => [
+			    	'attribute' => 'leave_date_to',
+			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
+			    	'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
+			    ],
+			    'leave_description' => [
+			    	'attribute' => 'leave_description',
+			    	//'contentOptions'=> ['class'=>'text-right'],
+			   	],
+					
+				'leave_total' => [
+				    'attribute' => 'leave_total',
+					'contentOptions'=> ['class'=>'text-right'],    
+				],
+				'leave_status' => [
+				    'attribute' => 'leave_status_string',
+				],
+			   				
+				
+			    ],
+			   //'showFooter' => true ,
+			] );?>
+			</div>
+		    
+		     </div>
+		    
+		</div>
+	    </div>
+	</div><!--/Portlet -->
+    </div>  <!-- Enf of col lg-->                                      
+</div>
+<!-- ENd of row -->
+
+
 
 
 <script>

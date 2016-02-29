@@ -43,11 +43,11 @@ html{position:relative;min-height:100%}body{font-family:'Open Sans',sans-serif;f
 
 /* Table Detail View */
 table.detail-view th {
-    width: 30%;
+    width: 35%;
 }
 
 table.detail-view td {
-    width: 70%;
+    width: 65%;
 }
 
 /* jssor slider bullet navigator skin 05 css */

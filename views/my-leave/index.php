@@ -3,6 +3,7 @@ use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\Leaves;
+use yii\helpers\Url;
 
 $this->params['breadcrumbs'] = [
     ['label' => Yii::t('app','my leave'),'url' => ['my-leave/index']],
@@ -96,9 +97,18 @@ $this->params['addUrl'] = ['my-leave/form'];
 				 'template'=>'{detail-view}',
 				    'buttons' => [
 				       'detail-view' => function ($url,$data) {
-					   return Html::a('<i class="fa fa-eye icon-only"></i>',$url,['class' => 'btn btn-inverse btn-xs',
-					   ]);
-				       },
+					   		//return Html::a('<i class="fa fa-eye icon-only"></i>',$url,['class' => 'btn btn-inverse btn-xs',]);
+				       		return ' 
+			    				 <div class="dropdown">
+								  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-pencil icon-only"></i> '.Yii::t('app','edit').'
+								  <span class="caret"></span></button>
+								  <ul class="dropdown-menu">
+								    <li><a href="'.Url::to(['my-leave/detail-view','id'=>$data->leave_id]).'"> <i class="fa fa-eye icon-only"></i> '.Yii::t('app','view').'</a></li>
+								    '.($data->leave_status == 5 ? '<li><a href="'.Url::to(['my-leave/remove','id'=>$data->leave_id]).'"><i class="fa fa-trash icon-only"></i> '.Yii::t('app','remove').'</a></li>' : '').'
+								  </ul>
+								</div>
+			    			';
+						},
 				       
 				       
 				   ],

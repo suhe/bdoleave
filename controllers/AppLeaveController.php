@@ -66,7 +66,7 @@ class AppLeaveController extends Controller {
 		return $this->render('index',[
 				'title' => Yii::t('app','to be approval'),
 				'model' => $model,
-				'dataProvider' => $model->getAppLeaveDataProvider(Yii::$app->request->queryParams)
+				'dataProvider' => $model->getAppLeaveDataProvider(Yii::$app->request->queryParams),
 		]);
 	}
 	
@@ -90,6 +90,7 @@ class AppLeaveController extends Controller {
 				'employee' => Employee::getEmployee($app_model->employee_id),
 				'model' => $model,
 				'logDataProvider' => LeaveLog::getLogLeaveDataProvider($id),
+				'employeeLeaveDataProvider' => $model->getEmployeeLeaveDataProvider($app_model->employee_id,$id),
 		]);
 	}
 	

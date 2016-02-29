@@ -1,0 +1,5 @@
+1. Delete Menu my balance card
+2. Delete Shortcut menu
+3. Delete Spech icon
+4. Can Delete Data when Status if Still Request in My Leave History
+5. History of leave in approval form

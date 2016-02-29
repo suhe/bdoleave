@@ -4718,3 +4718,914 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1455187214.581
     'REQUEST_TIME' => 1455187214
 ]
+2016-02-29 09:35:01 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][error][yii\base\ErrorException:1] exception 'yii\base\ErrorException' with message 'Class 'Url' not found' in D:\xampp\htdocs\bdoleave\views\my-leave\index.php:105
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-02-29 09:35:00 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][info][application] $_GET = [
+    'r' => 'my-leave'
+    0 => '302'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'adqrpbdjbm22ij9cg1c0bn7563'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => 'PHPSESSID=adqrpbdjbm22ij9cg1c0bn7563; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '34920'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave&1=302'
+    'REQUEST_URI' => '/web/index.php?r=my-leave&1=302'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456713300.967
+    'REQUEST_TIME' => 1456713300
+]
+2016-02-29 09:35:22 [127.0.0.1][10406][-][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\Leaves::id' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Component.php:143
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\BaseActiveRecord.php(246): yii\base\Component->__get('id')
+#1 D:\xampp\htdocs\bdoleave\views\my-leave\index.php(106): yii\db\BaseActiveRecord->__get('id')
+#2 [internal function]: yii\base\View->{closure}('/web/index.php?...', Object(app\models\Leaves), 940)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(158): call_user_func(Object(Closure), '/web/index.php?...', Object(app\models\Leaves), 940)
+#4 [internal function]: yii\grid\ActionColumn->yii\grid\{closure}(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\ActionColumn.php(162): preg_replace_callback('/\\{([\\w\\-\\/]+)\\...', Object(Closure), '{detail-view}')
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\Column.php(104): yii\grid\ActionColumn->renderDataCellContent(Object(app\models\Leaves), 940, 0)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(455): yii\grid\Column->renderDataCell(Object(app\models\Leaves), 940, 0)
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(424): yii\grid\GridView->renderTableRow(Object(app\models\Leaves), 940, 0)
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(295): yii\grid\GridView->renderTableBody()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(140): yii\grid\GridView->renderItems()
+#11 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(264): yii\widgets\BaseListView->renderSection('{items}')
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(117): yii\grid\GridView->renderSection('{items}')
+#13 [internal function]: yii\widgets\BaseListView->yii\widgets\{closure}(Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(120): preg_replace_callback('/{\\w+}/', Object(Closure), '<div class="hid...')
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#16 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#17 D:\xampp\htdocs\bdoleave\views\my-leave\index.php(118): yii\base\Widget::widget(Array)
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\MyLeaveController))
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('index', Array, Object(app\controllers\MyLeaveController))
+#22 D:\xampp\htdocs\bdoleave\controllers\MyLeaveController.php(72): yii\base\Controller->render('index', Array)
+#23 [internal function]: app\controllers\MyLeaveController->actionIndex()
+#24 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#25 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#26 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('', Array)
+#27 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('my-leave', Array)
+#28 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#30 {main}
+2016-02-29 09:35:21 [127.0.0.1][10406][-][info][application] $_GET = [
+    'r' => 'my-leave'
+    0 => '302'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'adqrpbdjbm22ij9cg1c0bn7563'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10406
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=site%2Flogin'
+    'HTTP_COOKIE' => 'PHPSESSID=adqrpbdjbm22ij9cg1c0bn7563; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '34929'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave&1=302'
+    'REQUEST_URI' => '/web/index.php?r=my-leave&1=302'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456713321.892
+    'REQUEST_TIME' => 1456713321
+]
+2016-02-29 09:37:51 [127.0.0.1][-][-][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: my-leave/remove' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('remove', Array)
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('my-leave/remove', Array)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Unable to resolve the request: my-leave/remove' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php:95
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#2 {main}
+2016-02-29 09:37:51 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'my-leave/remove'
+    'id' => '3170'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'adqrpbdjbm22ij9cg1c0bn7563'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave&1=302'
+    'HTTP_COOKIE' => 'PHPSESSID=adqrpbdjbm22ij9cg1c0bn7563; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36491'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave%2Fremove&id=3170'
+    'REQUEST_URI' => '/web/index.php?r=my-leave%2Fremove&id=3170'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456713471.366
+    'REQUEST_TIME' => 1456713471
+]
+2016-02-29 09:48:18 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: model' in D:\xampp\htdocs\bdoleave\controllers\MyLeaveController.php:112
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\MyLeaveController.php(112): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 112, Array)
+#1 [internal function]: app\controllers\MyLeaveController->actionRemove('3164')
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('remove', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('my-leave/remove', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-29 09:48:18 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][info][application] $_GET = [
+    'r' => 'my-leave/remove'
+    'id' => '3164'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'adqrpbdjbm22ij9cg1c0bn7563'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave&1=302'
+    'HTTP_COOKIE' => 'PHPSESSID=adqrpbdjbm22ij9cg1c0bn7563; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36532'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave%2Fremove&id=3164'
+    'REQUEST_URI' => '/web/index.php?r=my-leave%2Fremove&id=3164'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456714098.657
+    'REQUEST_TIME' => 1456714098
+]
+2016-02-29 09:48:45 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: app' in D:\xampp\htdocs\bdoleave\controllers\MyLeaveController.php:115
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\MyLeaveController.php(115): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 115, Array)
+#1 [internal function]: app\controllers\MyLeaveController->actionRemove('3164')
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('remove', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('my-leave/remove', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-29 09:48:45 [127.0.0.1][10406][adqrpbdjbm22ij9cg1c0bn7563][info][application] $_GET = [
+    'r' => 'my-leave/remove'
+    'id' => '3164'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'adqrpbdjbm22ij9cg1c0bn7563'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=my-leave&1=302'
+    'HTTP_COOKIE' => 'PHPSESSID=adqrpbdjbm22ij9cg1c0bn7563; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36545'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=my-leave%2Fremove&id=3164'
+    'REQUEST_URI' => '/web/index.php?r=my-leave%2Fremove&id=3164'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456714125.458
+    'REQUEST_TIME' => 1456714125
+]
+2016-02-29 10:03:55 [127.0.0.1][10267][-][error][yii\base\ErrorException:2] exception 'yii\base\ErrorException' with message 'Missing argument 1 for app\models\Leaves::getEmployeeLeaveDataProvider(), called in D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php on line 93 and defined' in D:\xampp\htdocs\bdoleave\models\Leaves.php:316
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\models\Leaves.php(316): yii\base\ErrorHandler->handleError(2, 'Missing argumen...', 'D:\\xampp\\htdocs...', 316, Array)
+#1 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(93): app\models\Leaves->getEmployeeLeaveDataProvider()
+#2 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#9 {main}
+2016-02-29 10:03:55 [127.0.0.1][10267][-][info][application] $_GET = [
+    'r' => 'app-leave/form'
+    'id' => '3177'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '2qadl8pr8hveu6bjudqj109821'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10267
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=app-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=2qadl8pr8hveu6bjudqj109821; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36677'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=app-leave%2Fform&id=3177'
+    'REQUEST_URI' => '/web/index.php?r=app-leave%2Fform&id=3177'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456715035.423
+    'REQUEST_TIME' => 1456715035
+]
+2016-02-29 10:05:20 [127.0.0.1][10267][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'EmployeeID' in 'field list'' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(362): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'EmployeeID' in 'field list'
+The SQL being executed was: SELECT `leave_id`, DATE_FORMAT(leave_date,'%d/%m/%Y') leave_date, `leave_description`, `leave_range`, `EmployeeID`, `leave_total`, `leave_request`, DATE_FORMAT(leave_date_from,'%d/%m/%Y') leave_date_from, `leave_status`, DATE_FORMAT(leave_date_to,'%d/%m/%Y') leave_date_to, (CASE WHEN leave_type = 1 THEN 'Cuti Bersama'
+		    		WHEN leave_type = 2 THEN 'Cuti Tahunan'
+		    		WHEN leave_type = 3 THEN 'cuti tambahan'
+		    		WHEN leave_type = 4 THEN 'cuti khusus'
+		    		WHEN leave_type = 5 THEN 'izin diklasifikan Cuti'
+		    	END) as leave_type_string, (CASE WHEN leave_status = 5 THEN 'Request'
+    			WHEN leave_status = 4 THEN 'Approved By Manager'
+    			WHEN leave_status = 14 THEN 'Inapproved By Manager'
+    			WHEN leave_status = 3 THEN 'Approved By HRD'
+    			WHEN leave_status = 13 THEN 'Inapproved By HRD'
+    			WHEN leave_status = 2 THEN 'Approved By Partner'
+    			WHEN leave_status = 12 THEN 'Inapproved By Partner'
+    			END) as leave_status_string, (CASE WHEN leave_status = 1 THEN 'Timesheet' ELSE 'Leave' END) as leave_source_string FROM `leaves` WHERE `employee_id`=10406 LIMIT 25' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `leave_i...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(362): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'EmployeeID' in 'field list'
+)
+
+2016-02-29 10:05:20 [127.0.0.1][10267][-][info][application] $_GET = [
+    'r' => 'app-leave/form'
+    'id' => '3177'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '2qadl8pr8hveu6bjudqj109821'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10267
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=app-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=2qadl8pr8hveu6bjudqj109821; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36698'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=app-leave%2Fform&id=3177'
+    'REQUEST_URI' => '/web/index.php?r=app-leave%2Fform&id=3177'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456715120.201
+    'REQUEST_TIME' => 1456715120
+]
+2016-02-29 10:18:08 [127.0.0.1][10267][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'employee_id1' in 'where clause'' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(353): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'employee_id1' in 'where clause'
+The SQL being executed was: SELECT `leave_id`, DATE_FORMAT(leave_date,'%d/%m/%Y') leave_date, `leave_description`, `leave_range`, `leave_total`, `leave_request`, DATE_FORMAT(leave_date_from,'%d/%m/%Y') leave_date_from, `leave_status`, DATE_FORMAT(leave_date_to,'%d/%m/%Y') leave_date_to, (CASE WHEN leave_type = 1 THEN 'Cuti Bersama'
+		    		WHEN leave_type = 2 THEN 'Cuti Tahunan'
+		    		WHEN leave_type = 3 THEN 'cuti tambahan'
+		    		WHEN leave_type = 4 THEN 'cuti khusus'
+		    		WHEN leave_type = 5 THEN 'izin diklasifikan Cuti'
+		    	END) as leave_type_string, (CASE WHEN leave_status = 5 THEN 'Request'
+    			WHEN leave_status = 4 THEN 'Approved By Manager'
+    			WHEN leave_status = 14 THEN 'Inapproved By Manager'
+    			WHEN leave_status = 3 THEN 'Approved By HRD'
+    			WHEN leave_status = 13 THEN 'Inapproved By HRD'
+    			WHEN leave_status = 2 THEN 'Approved By Partner'
+    			WHEN leave_status = 12 THEN 'Inapproved By Partner'
+    			END) as leave_status_string, (CASE WHEN leave_status = 1 THEN 'Timesheet' ELSE 'Leave' END) as leave_source_string FROM `leaves` WHERE `employee_id1`=10406 LIMIT 25' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `leave_i...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(353): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'employee_id1' in 'where clause'
+)
+
+2016-02-29 10:18:08 [127.0.0.1][10267][-][info][application] $_GET = [
+    'r' => 'app-leave/form'
+    'id' => '3177'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '2qadl8pr8hveu6bjudqj109821'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10267
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=app-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=2qadl8pr8hveu6bjudqj109821; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36987'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=app-leave%2Fform&id=3177'
+    'REQUEST_URI' => '/web/index.php?r=app-leave%2Fform&id=3177'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456715888.453
+    'REQUEST_TIME' => 1456715888
+]
+2016-02-29 10:18:28 [127.0.0.1][10267][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'leave_id1' in 'where clause'' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php:819
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(819): PDOStatement->execute()
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(353): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'leave_id1' in 'where clause'
+The SQL being executed was: SELECT `leave_id`, DATE_FORMAT(leave_date,'%d/%m/%Y') leave_date, `leave_description`, `leave_range`, `leave_total`, `leave_request`, DATE_FORMAT(leave_date_from,'%d/%m/%Y') leave_date_from, `leave_status`, DATE_FORMAT(leave_date_to,'%d/%m/%Y') leave_date_to, (CASE WHEN leave_type = 1 THEN 'Cuti Bersama'
+		    		WHEN leave_type = 2 THEN 'Cuti Tahunan'
+		    		WHEN leave_type = 3 THEN 'cuti tambahan'
+		    		WHEN leave_type = 4 THEN 'cuti khusus'
+		    		WHEN leave_type = 5 THEN 'izin diklasifikan Cuti'
+		    	END) as leave_type_string, (CASE WHEN leave_status = 5 THEN 'Request'
+    			WHEN leave_status = 4 THEN 'Approved By Manager'
+    			WHEN leave_status = 14 THEN 'Inapproved By Manager'
+    			WHEN leave_status = 3 THEN 'Approved By HRD'
+    			WHEN leave_status = 13 THEN 'Inapproved By HRD'
+    			WHEN leave_status = 2 THEN 'Approved By Partner'
+    			WHEN leave_status = 12 THEN 'Inapproved By Partner'
+    			END) as leave_status_string, (CASE WHEN leave_status = 1 THEN 'Timesheet' ELSE 'Leave' END) as leave_source_string FROM `leaves` WHERE (`leave_id1`<>'3177') AND (`employee_id1`=10406) LIMIT 25' in D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Schema.php:532
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(834): yii\db\Schema->convertException(Object(PDOException), 'SELECT `leave_i...')
+#1 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Command.php(350): yii\db\Command->queryInternal('fetchAll', NULL)
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\Query.php(206): yii\db\Command->queryAll()
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\db\ActiveQuery.php(130): yii\db\Query->all(NULL)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\ActiveDataProvider.php(111): yii\db\ActiveQuery->all(NULL)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(79): yii\data\ActiveDataProvider->prepareModels()
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(92): yii\data\BaseDataProvider->prepare()
+#7 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\data\BaseDataProvider.php(133): yii\data\BaseDataProvider->getModels()
+#8 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\widgets\BaseListView.php(115): yii\data\BaseDataProvider->getCount()
+#9 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\grid\GridView.php(239): yii\widgets\BaseListView->run()
+#10 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Widget.php(96): yii\grid\GridView->run()
+#11 D:\xampp\htdocs\bdoleave\views\app-leave\form.php(353): yii\base\Widget::widget(Array)
+#12 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(325): require('D:\\xampp\\htdocs...')
+#13 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(247): yii\base\View->renderPhpFile('D:\\xampp\\htdocs...', Array)
+#14 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\View.php(149): yii\base\View->renderFile('D:\\xampp\\htdocs...', Array, Object(app\controllers\AppLeaveController))
+#15 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(367): yii\base\View->render('form', Array, Object(app\controllers\AppLeaveController))
+#16 D:\xampp\htdocs\bdoleave\controllers\AppLeaveController.php(94): yii\base\Controller->render('form', Array)
+#17 [internal function]: app\controllers\AppLeaveController->actionForm('3177')
+#18 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#19 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#20 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('form', Array)
+#21 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('app-leave/form', Array)
+#22 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#23 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#24 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'leave_id1' in 'where clause'
+)
+
+2016-02-29 10:18:28 [127.0.0.1][10267][-][info][application] $_GET = [
+    'r' => 'app-leave/form'
+    'id' => '3177'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => '2qadl8pr8hveu6bjudqj109821'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10267
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=app-leave'
+    'HTTP_COOKIE' => 'PHPSESSID=2qadl8pr8hveu6bjudqj109821; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '36999'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=app-leave%2Fform&id=3177'
+    'REQUEST_URI' => '/web/index.php?r=app-leave%2Fform&id=3177'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456715908.125
+    'REQUEST_TIME' => 1456715908
+]
+2016-02-29 10:27:57 [127.0.0.1][10768][-][error][yii\base\ErrorException:8] exception 'yii\base\ErrorException' with message 'Undefined variable: result' in D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php:173
+Stack trace:
+#0 D:\xampp\htdocs\bdoleave\controllers\ManageLeaveController.php(173): yii\base\ErrorHandler->handleError(8, 'Undefined varia...', 'D:\\xampp\\htdocs...', 173, Array)
+#1 [internal function]: app\controllers\ManageLeaveController->actionLoadSingleEmployee()
+#2 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\InlineAction.php(55): call_user_func_array(Array, Array)
+#3 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('load-single-emp...', Array)
+#5 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\web\Application.php(83): yii\base\Module->runAction('manage-leave/lo...', Array)
+#6 D:\xampp\htdocs\bdoleave\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 D:\xampp\htdocs\bdoleave\web\index.php(13): yii\base\Application->run()
+#8 {main}
+2016-02-29 10:27:57 [127.0.0.1][10768][-][info][application] $_GET = [
+    'r' => 'manage-leave/load-single-employee'
+]
+
+$_POST = [
+    'employee_id' => '1'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'gufo0rgub75648jldgq1fp5v76'
+    '_csrf' => '02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs:32:\"NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv\";'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 10768
+]
+
+$_SERVER = [
+    'MIBDIRS' => 'D:/xampp/php/extras/mibs'
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin'
+    'OPENSSL_CONF' => 'D:/xampp/apache/bin/openssl.cnf'
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php'
+    'PHPRC' => '\\xampp\\php'
+    'TMP' => '\\xampp\\tmp'
+    'HTTP_HOST' => 'leave.local'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.1; rv:44.0) Gecko/20100101 Firefox/44.0'
+    'HTTP_ACCEPT' => 'application/json, text/javascript, */*; q=0.01'
+    'HTTP_ACCEPT_LANGUAGE' => 'id,en-US;q=0.7,en;q=0.3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8'
+    'HTTP_X_CSRF_TOKEN' => 'ZWFUX2oyYzYrNBw8GQEocjotAi8wBgpBMlEaOVt/NnJRF3kXCEg1QA=='
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest'
+    'HTTP_REFERER' => 'http://leave.local/web/index.php?r=manage-leave%2Fform-leave'
+    'CONTENT_LENGTH' => '13'
+    'HTTP_COOKIE' => 'PHPSESSID=gufo0rgub75648jldgq1fp5v76; _csrf=02a32faea4b19dc470e7f50eb56a6b5e21f1221fed587baab4f27bd9f898f57bs%3A32%3A%22NUHcs3KD_LVpZ4iwW0Nf1MUD4v-HbzVv%22%3B'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => 'C:\\Program Files\\ActiveState Komodo Edit 9\\;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files\\Intel\\iCLS Client\\;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\OpenCL SDK\\2.0\\bin\\x86;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files\\Lenovo\\Access Connections\\;C:\\Program Files\\Bitvise SSH Client;C:\\Program Data\\Universal Extractor;C:\\Program Data\\Universal Extractor\\bin;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files\\Microsoft SQL Server\\80\\Tools\\BINN;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\VSShell\\Common7\\IDE\\;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\bin;D:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\GtkSharp\\2.12\\bin;C:\\Program Files\\OpenVPN\\bin;C:\\Program Files\\TortoiseGit\\bin;C:\\Program Files\\Java\\jdk1.8.0_40\\bin;C:\\Program Files\\WinAnt\\bin;C:\\Users\\BDO-IT\\AppData\\Roaming\\npm;C:\\App\\apache-maven-3.3.9\\bin'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15 Server at leave.local Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/1.0.1i PHP/5.5.15'
+    'SERVER_NAME' => 'leave.local'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/xampp/htdocs/bdoleave'
+    'SERVER_ADMIN' => 'admin@local'
+    'SCRIPT_FILENAME' => 'D:/xampp/htdocs/bdoleave/web/index.php'
+    'REMOTE_PORT' => '37134'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => 'r=manage-leave%2Fload-single-employee'
+    'REQUEST_URI' => '/web/index.php?r=manage-leave%2Fload-single-employee'
+    'SCRIPT_NAME' => '/web/index.php'
+    'PHP_SELF' => '/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1456716477.337
+    'REQUEST_TIME' => 1456716477
+]

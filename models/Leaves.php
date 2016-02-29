@@ -111,6 +111,7 @@ class Leaves extends ActiveRecord {
 	            'leave_date' => Yii::t('app','date of filing'),
 	            'leave_type' => Yii::t('app','type'),
 	            'leave_status' => Yii::t('app','status'), 
+        		'leave_status_string' => Yii::t('app','status'),
 	            'leave_description' => Yii::t('app','necessary'),
 	            'leave_date_from' => Yii::t('app','date from'),
 	            'leave_date_to' => Yii::t('app','date to'),
@@ -267,7 +268,7 @@ class Leaves extends ActiveRecord {
     public function getMyLeaveDataProvider($params){
     	$query = Leaves::find()
     	->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
-    			'leave_total','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from',
+    			'leave_total','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from','leave_status',
     			'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to',
     			"(CASE WHEN leave_type = ".self::$cuti_bersama." THEN '".Yii::t('app','cuti bersama')."'
 		    		WHEN leave_type = ".self::$cuti_tahunan." THEN '".Yii::t('app','cuti tahunan')."'
@@ -305,6 +306,46 @@ class Leaves extends ActiveRecord {
     	if($this->leave_date_from && $this->leave_date_to)
     		$query->andWhere("leave_date between STR_TO_DATE('".$this->leave_date_from."', '%d/%m/%Y') and STR_TO_DATE('".$this->leave_date_to."', '%d/%m/%Y') ");
     	
+    	return $dataProvider;
+    }
+    
+    /**
+     * Get DataProvider for History App Employee
+     * return $model
+     */
+    public function getEmployeeLeaveDataProvider($employee_id,$not_allowed_leave_id){
+    	$query = Leaves::find()
+    	->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
+    			'leave_total','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from','leave_status',
+    			'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to',
+    			"(CASE WHEN leave_type = ".self::$cuti_bersama." THEN '".Yii::t('app','cuti bersama')."'
+		    		WHEN leave_type = ".self::$cuti_tahunan." THEN '".Yii::t('app','cuti tahunan')."'
+		    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
+		    		WHEN leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
+		    		WHEN leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'
+		    	END) as leave_type_string",
+    			"(CASE WHEN leave_status = ".self::$request." THEN '".Yii::t('app','request')."'
+    			WHEN leave_status = ".self::$approve_manager." THEN '".Yii::t('app','approved by manager')."'
+    			WHEN leave_status = ".self::$inapprove_manager." THEN '".Yii::t('app','inapproved by manager')."'
+    			WHEN leave_status = ".self::$approve_hrd." THEN '".Yii::t('app','approved by hrd')."'
+    			WHEN leave_status = ".self::$inapprove_hrd." THEN '".Yii::t('app','inapproved by hrd')."'
+    			WHEN leave_status = ".self::$approve_partner." THEN '".Yii::t('app','approved by partner')."'
+    			WHEN leave_status = ".self::$inapprove_partner." THEN '".Yii::t('app','inapproved by partner')."'
+    			END) as leave_status_string",
+    			"(CASE WHEN leave_status = 1 THEN '".Yii::t('app','timesheet')."' ELSE '".Yii::t('app','leave')."' END) as leave_source_string"
+    	])
+    	->from('leaves')
+    	->where(['not in','leave_id',[$not_allowed_leave_id]])
+    	->andWhere(['employee_id' => $employee_id]);
+    
+    	$dataProvider = new \yii\data\ActiveDataProvider([
+    			'query' => $query,
+    			'totalCount' => count ($query),
+    			'pagination' =>[
+    					'pageSize' => Yii::$app->params['per_page']
+    			]
+    	]);
+    
     	return $dataProvider;
     }
     

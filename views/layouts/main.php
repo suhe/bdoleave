@@ -87,11 +87,11 @@ AppAssetIE9::register($this);
 	     
 	      
 	      <!--Speech Icon-->
-	      <li class="dropdown">
+	      <!--<li class="dropdown">
 		<a href="#" class="speech-button">
 		  <i class="fa fa-microphone"></i>
 		</a>
-	      </li>
+	      </li>-->
 	      <!--Speech Icon-->
 	      <li class="dropdown user-box">
 		<a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -113,17 +113,9 @@ AppAssetIE9::register($this);
 	    <div class="collapse navbar-collapse top-collapse">
 	      <!-- .nav -->
 	      <ul class="nav navbar-left navbar-nav">
-		<li><a href="<?=Url::to(['my-leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','leave form')?></a></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-		    <i class="fa fa-link"></i> <?=Yii::t('app','quick shortcut')?> <b class="caret"></b>
-		  </a>
-		  <ul class="dropdown-menu">
-		    <li><a href="<?=Url::to(['my-leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','leave form')?></a></li>
-		    <li><a href="<?=Url::to(['my-leave/balanced-card'])?>"> <i class="fa fa-dropbox"></i> <?=Yii::t('app','my balanced card')?></a></li>
-		  </ul>
-	      </li>
-	      <li><a href="<?=Url::to(['guide/index'])?>" target="_blank"><i class="fa fa-umbrella"></i> <?=Yii::t('app','guide')?></a></li>	
+			<li><a href="<?=Url::to(['my-leave/form'])?>"><i class="fa fa-plus"></i> <?=Yii::t('app','leave form')?></a></li>
+		
+	      	<li><a href="<?=Url::to(['guide/index'])?>" target="_blank"><i class="fa fa-umbrella"></i> <?=Yii::t('app','guide')?></a></li>	
 	      <!--<li><a href="http://www.bdo.co.id" target="_blank">Visit Bdo.co.id </a></li>-->
 	    </ul><!-- /.nav -->
 	  </div>
@@ -151,8 +143,7 @@ AppAssetIE9::register($this);
 						
 						<?php echo \yii\widgets\Menu::widget([
 						    'items' => [
-						        ['label' => '<i class="fa fa-user-md"></i> ' .Yii::t('app','my leave'), 'url' => ['my-leave/'],'visible' => Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER ? false :true],
-						    	['label' => '<i class="fa fa-dropbox"></i> ' .Yii::t('app','my balanced card'), 'url' => ['my-leave/balanced-card'],'visible' => Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_PARTNER ? false :true],
+						        ['label' => '<i class="fa fa-user-md"></i> ' .Yii::t('app','my leave'), 'url' => ['my-leave/'],'visible' => true],
 						    	['label' => '<i class="fa fa-plus"></i> ' .Yii::t('app','to be approval'), 'url' => ['app-leave/'],'visible' => Yii::$app->user->isGuest ? false :true],
 						    	['label' => '<i class="fa fa-newspaper-o"></i> ' .Yii::t('app','manage leave'), 'url' => ['manage-leave/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
 						    	['label' => '<i class="fa fa-user"></i> ' .Yii::t('app','employee'), 'url' => ['employee/'],'visible' => (Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_MANAGER_HRD || Yii::$app->user->identity->EmployeeTitle == Employee::ROLE_SENIOR_HRD  ) ? true :false],
