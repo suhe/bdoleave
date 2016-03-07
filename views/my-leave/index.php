@@ -79,17 +79,15 @@ $this->params['addUrl'] = ['my-leave/form'];
 			    	'headerOptions' => ['class'=>'hidden-xs hidden-sm'],
 			    	'contentOptions'=> ['class'=>'hidden-xs hidden-sm'],
 			    ],
-					
-				'leave_total' => [
-				    'attribute' => 'leave_total',
-					'contentOptions'=> ['class'=>'text-right'],
-				    
-				],
+				
 				'leave_status' => [
 				    'attribute' => 'leave_status_string',
 				],
-			    'leave_source' => [
-			    	'attribute' => 'leave_source_string',
+			    'leave_total' => [
+			    		'attribute' => 'leave_total',
+			    ],
+			    'leave_saldo_balanced' => [
+			    	'attribute' => 'leave_saldo_balanced',
 			    ],
 				
 				['class'=>'yii\grid\ActionColumn',

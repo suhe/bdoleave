@@ -204,6 +204,41 @@ class SiteController extends Controller {
 			
         }
     }
+    
+    
+    public function actionLeave() {
+    	$query = \app\models\BalanceTemp::find()
+    	->select(['employee.employee_id','date','balance'])
+    	->join('inner join','employee','employee.EmployeeID = balance_tmp.EmployeeID')
+    	->orderBy(['employee.EmployeeID'=>SORT_ASC])
+    	->all();
+    	
+    	foreach($query as $row) {
+    		$balance = new \app\models\LeaveBalance();
+    		$balance->employee_id = $row->employee_id;
+    		$balance->leave_balance_date = ($row->date == '1970-01-01' ? '0000-00-00' : $row->date);
+    		$balance->leave_balance_stype = 0;
+    		$balance->leave_balance_description = "Transfer Saldo Awal";
+    		$balance->leave_balance_total = $row->balance;
+    		$balance->leave_balance_created_date = date("Y-m-d H:i:s");
+    		$balance->save();
+    		
+    		$leave = new \app\models\Leaves();
+    		$leave->employee_id = $row->employee_id;
+    		$leave->leave_date = '2016-03-01';
+    		$leave->leave_type = 6;
+    		$leave->leave_date_from = ($row->date == '1970-01-01' ? '0000-00-00' : $row->date);
+    		$leave->leave_date_to = ($row->date == '1970-01-01' ? '0000-00-00' : ((substr($row->date,0,4)) + 1).substr($row->date,4,6)); //2010-01-31
+    		$leave->leave_description = "Transfer Saldo Awal Cuti";
+    		$leave->leave_saldo_total = 0;
+    		$leave->leave_total = $row->balance;
+    		$leave->leave_saldo_balanced =  $row->balance;  
+    		$leave->leave_status = 1;
+    		$leave->save();
+    		
+    		$update = \app\models\Employee::updateAll(['EmployeeLeaveTotal'=>$row->balance,'EmployeeLeaveUse'=>0],['employee_id'=>$row->employee_id]);    		
+    	}
+    }
 	
 	
 	 /**

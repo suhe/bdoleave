@@ -17,6 +17,7 @@ class Leaves extends ActiveRecord {
     public $EmployeeLeaveOver;
     public $leave_approval;
     public $leave_note;
+    //public $leave_saldo;
    
     /**
      * Status to Variabel
@@ -110,6 +111,7 @@ class Leaves extends ActiveRecord {
         		'leave_approval' => Yii::t('app','approval'),
 	            'leave_date' => Yii::t('app','date of filing'),
 	            'leave_type' => Yii::t('app','type'),
+        		'leave_type_string' => Yii::t('app','type'),
 	            'leave_status' => Yii::t('app','status'), 
         		'leave_status_string' => Yii::t('app','status'),
 	            'leave_description' => Yii::t('app','necessary'),
@@ -117,6 +119,7 @@ class Leaves extends ActiveRecord {
 	            'leave_date_to' => Yii::t('app','date to'),
 	            'leave_range' => Yii::t('app','range'),
 	            'leave_total' => Yii::t('app','days'),
+        		'leave_saldo_balanced' => Yii::t('app','saldo'),
 	            'leave_address' => Yii::t('app','address'),
         		'leave_note' => Yii::t('app','note'),
 	            'employeefirstname' => Yii::t('app','name'),
@@ -269,12 +272,13 @@ class Leaves extends ActiveRecord {
     	$query = Leaves::find()
     	->select(['leave_id','DATE_FORMAT(leave_date,\'%d/%m/%Y\') leave_date','leave_description','leave_range',
     			'leave_total','leave_request','DATE_FORMAT(leave_date_from,\'%d/%m/%Y\') leave_date_from','leave_status',
-    			'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to',
+    			'DATE_FORMAT(leave_date_to,\'%d/%m/%Y\') leave_date_to','leave_saldo_balanced','leave_total',
     			"(CASE WHEN leave_type = ".self::$cuti_bersama." THEN '".Yii::t('app','cuti bersama')."'
 		    		WHEN leave_type = ".self::$cuti_tahunan." THEN '".Yii::t('app','cuti tahunan')."'
 		    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
 		    		WHEN leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
 		    		WHEN leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'
+    				WHEN leave_type = ".self::$beginning_balance." THEN '".Yii::t('app','saldo awal')."'
 		    	END) as leave_type_string",
     			"(CASE WHEN leave_status = ".self::$request." THEN '".Yii::t('app','request')."'
     			WHEN leave_status = ".self::$approve_manager." THEN '".Yii::t('app','approved by manager')."'
@@ -283,6 +287,7 @@ class Leaves extends ActiveRecord {
     			WHEN leave_status = ".self::$inapprove_hrd." THEN '".Yii::t('app','inapproved by hrd')."'
     			WHEN leave_status = ".self::$approve_partner." THEN '".Yii::t('app','approved by partner')."'
     			WHEN leave_status = ".self::$inapprove_partner." THEN '".Yii::t('app','inapproved by partner')."'
+    			WHEN leave_status = ".self::$completed." THEN '".Yii::t('app','completed')."'
     			END) as leave_status_string",
     			"(CASE WHEN leave_status = 1 THEN '".Yii::t('app','timesheet')."' ELSE '".Yii::t('app','leave')."' END) as leave_source_string"
     	])
@@ -323,7 +328,8 @@ class Leaves extends ActiveRecord {
 		    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
 		    		WHEN leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
 		    		WHEN leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'
-		    	END) as leave_type_string",
+		    		WHEN leave_type = ".self::$beginning_balance." THEN '".Yii::t('app','saldo awal')."'
+    			END) as leave_type_string",
     			"(CASE WHEN leave_status = ".self::$request." THEN '".Yii::t('app','request')."'
     			WHEN leave_status = ".self::$approve_manager." THEN '".Yii::t('app','approved by manager')."'
     			WHEN leave_status = ".self::$inapprove_manager." THEN '".Yii::t('app','inapproved by manager')."'
@@ -375,6 +381,7 @@ class Leaves extends ActiveRecord {
 	    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
 	    		WHEN leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
 	    		WHEN leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'
+	    		WHEN leave_type = ".self::$beginning_balance." THEN '".Yii::t('app','saldo awal')."'
 	    	END) as leave_type_string,
 	    	CONCAT(leave_description,' ',DATE_FORMAT(leave_date_from,'%d %M %Y'),' - ',DATE_FORMAT(leave_date_to,'%d %M %Y')) leave_description,
 	    	-leave_total as leave_total,IF(leave_source = ".self::$timesheet_source.",'".Yii::t('app','timesheet')."','".Yii::t('app','leave')."') as leave_source_string
@@ -426,6 +433,7 @@ class Leaves extends ActiveRecord {
 	    		WHEN leave_type = ".self::$cuti_tambahan." THEN '".Yii::t('app','cuti tambahan')."'
 	    		WHEN leave_type = ".self::$cuti_khusus." THEN '".Yii::t('app','cuti khusus')."'
 	    		WHEN leave_type = ".self::$cuti_izin." THEN '".Yii::t('app','izin diklasifikan Cuti')."'	
+				WHEN leave_type = ".self::$beginning_balance." THEN '".Yii::t('app','saldo awal')."'
 	    	END) as leave_type_string,		
 	    	CONCAT(leave_description,' ',DATE_FORMAT(leave_date_from,'%d %M %Y'),' - ',DATE_FORMAT(leave_date_to,'%d %M %Y')) leave_description,
 	    	-leave_total as leave_total,IF(leave_source = ".self::$timesheet_source.",'".Yii::t('app','timesheet')."','".Yii::t('app','leave1')."') as leave_source_string
