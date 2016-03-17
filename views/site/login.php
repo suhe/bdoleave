@@ -27,47 +27,6 @@ $this->params ['addUrl'] = 'ticket/add';
 						style="cursor: default; position: relative; top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
 						<div data-p="225.00" style="display: none;">
 							<img data-u="image" src="assets/images/red.jpg" />
-							<div
-								style="position: absolute; top: 30px; left: 30px; width: 480px; height: 120px; font-size: 50px; color: #ffffff; line-height: 60px;">TOUCH
-								SWIPE SLIDER</div>
-							<div
-								style="position: absolute; top: 300px; left: 30px; width: 480px; height: 120px; font-size: 30px; color: #ffffff; line-height: 38px;">Build
-								your slider with anything, includes image, content, text, html,
-								photo, picture</div>
-							<div data-u="caption" data-t="0"
-								style="position: absolute; top: 100px; left: 600px; width: 445px; height: 300px;">
-								<img src="assets/images/c-phone.png"
-									style="position: absolute; top: 0px; left: 0px; width: 445px; height: 300px;" />
-								<img src="assets/images/c-jssor-slider.png" data-u="caption"
-									data-t="1"
-									style="position: absolute; top: 70px; left: 130px; width: 102px; height: 78px;" />
-								<img src="assets/images/c-text.png" data-u="caption" data-t="2"
-									style="position: absolute; top: 153px; left: 163px; width: 80px; height: 53px;" />
-								<img src="assets/images/c-fruit.png" data-u="caption" data-t="3"
-									style="position: absolute; top: 60px; left: 220px; width: 140px; height: 90px;" />
-								<img src="assets/images/c-navigator.png" data-u="caption"
-									data-t="4"
-									style="position: absolute; top: -123px; left: 121px; width: 200px; height: 155px;" />
-							</div>
-							<div data-u="caption" data-t="5"
-								style="position: absolute; top: 120px; left: 650px; width: 470px; height: 220px;">
-								<img src="assets/images/c-phone-horizontal.png"
-									style="position: absolute; top: 0px; left: 0px; width: 470px; height: 220px;" />
-								<div
-									style="position: absolute; top: 4px; left: 45px; width: 379px; height: 213px; overflow: hidden;">
-									<img src="assets/images/c-slide-1.jpg" data-u="caption"
-										data-t="6"
-										style="position: absolute; top: 0px; left: 0px; width: 379px; height: 213px;" />
-									<img src="assets/images/c-slide-3.jpg" data-u="caption"
-										data-t="7"
-										style="position: absolute; top: 0px; left: 379px; width: 379px; height: 213px;" />
-								</div>
-								<img src="assets/images/c-navigator-horizontal.png"
-									style="position: absolute; top: 4px; left: 45px; width: 379px; height: 213px;" />
-								<img src="assets/images/c-finger-pointing.png" data-u="caption"
-									data-t="8"
-									style="position: absolute; top: 740px; left: 1600px; width: 257px; height: 300px;" />
-							</div>
 						</div>
 						
 						<div data-p="225.00" style="display: none;">
