@@ -14,6 +14,7 @@ return [
         'gii' => 'yii\gii\Module',
     ],
     'components' => [
+    	
     	'i18n' => [
     		'translations' => [
     			'app*' => [

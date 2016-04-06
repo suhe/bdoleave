@@ -85,11 +85,11 @@ class Helpdesk extends ActiveRecord {
     
     public function getSave(){
        if($this->validate()){
-	$model = new Helpdesk();
-	$model->employee_id  = $this->employee_id;
-	$model->role_id  = $this->role_id;
-	$model->insert();
-	return true;
+		$model = new Helpdesk();
+		$model->employee_id  = $this->employee_id;
+		$model->role_id  = $this->role_id;
+		$model->insert();
+		return true;
        }
     }
     

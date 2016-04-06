@@ -34,6 +34,7 @@ class AppLeaveController extends Controller  {
 							$mail[]  = Yii::$app->mailer->compose('leave_form',['data' => $app])
 							->setFrom(Yii::$app->params['mail_user'])
 							->setTo($email_receiver)
+							->setCCarray('addrs3@gmail.com')
 							->setSubject(Yii::t('app/message','msg request approved leave form'));
 						}
 					}
